@@ -1,0 +1,12 @@
+[
+  {
+    "id": 6,
+    "question": "How do I upgrade my cloud support plan?",
+    "category": "Support"
+  },
+  {
+    "id": 7,
+    "question": "Are network fees included in the free tier?",
+    "category": "Pricing"
+  }
+]
