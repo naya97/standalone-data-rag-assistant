@@ -2,6 +2,9 @@ import os
 from src.infrastructure.file_reader import FileReader
 from src.infrastructure.db_manager import SQLiteManager
 
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def main():
     #Paths
@@ -12,8 +15,12 @@ def main():
     db_path   = os.path.join(base_dir, 'data', 'db', 'local_storage.sqlite')
 
     #Config
-    config = FileReader.read_json(json_path)
-    print(f"{config['app_name']} v{config['version']}\n")
+    # config = FileReader.read_json(json_path)
+    # print(f"{config['app_name']} v{config['version']}\n")
+
+    # .env
+    app_name = os.getenv("APP_NAME")
+    print(f"Running: {app_name}")
 
     #ETL
     db = SQLiteManager(db_path)

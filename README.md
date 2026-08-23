@@ -39,9 +39,11 @@ standalone-data-rag-assistant/
 Main packages (`requirements.txt`):
 
 ```
-fastapi
-uvicorn
-python-dotenv
+fastapi==0.141.1
+uvicorn==0.52.4
+python-dotenv==1.2.3
+pandas==3.0.5
+numpy==2.5.2
 ```
 
 ---
