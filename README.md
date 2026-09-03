@@ -17,12 +17,17 @@ standalone-data-rag-assistant/
 │       ├── config.json               # App config
 │       ├── sample.csv                # Sample data
 │       └── sample.json               # Sample data
+│       └── Superstore.csv               # Week2 data
 ├── src/
 │   ├── api/
 │   │   └── health_controller.py      # FastAPI app + /health endpoint
 │   └── infrastructure/
 │       ├── db_manager.py             # SQLite manager
 │       └── file_reader.py            # CSV/JSON reader
+├── notebooks/
+│   └── superstore-week2.ipynb        # Notebook
+├── SQL/
+│   └── superstore_queries.sql         # SQL Queries
 ├── .env                               # Environment variables
 ├── main.py                            # Entry point (ETL + SQL queries)
 ├── requirements.txt
@@ -109,3 +114,22 @@ Table `rag_topics`:
 | `id`       | INTEGER | Primary key        |
 | `question` | TEXT    | Question text      |
 | `category` | TEXT    | Question category  |
+
+## Superstore Data Analysis (Week 2 Practice)
+
+Located in `notebooks/superstore-week2.ipynb`. This notebook explores the 
+Superstore dataset (Kaggle) using Pandas and SQL (SQLite), answering the 
+same set of analytical questions with both approaches for comparison.
+
+### Dataset
+Download from: https://www.kaggle.com/datasets/binib1997/superstore
+Place the CSV at `data/raw/Superstore.csv`.
+
+### SQL Practice File
+`SQL/superstore_queries.sql` contains the standalone SQL queries used in 
+the notebook. To run them independently:
+
+```bash
+sqlite3 data/db/superstore.db
+sqlite> .read SQL/superstore_queries.sql
+```
