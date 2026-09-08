@@ -204,4 +204,5 @@ Each completed week is marked with an annotated Git tag once finalized, so the p
 ```bash
 git tag           # list all tags
 git checkout tags/week2-complete   # view the project exactly as it was at the end of Week 2
+git checkout tags/week3-complete   # view the project exactly as it was at the end of Week 3
 ```
