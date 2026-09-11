@@ -13,7 +13,7 @@ def health_check():
     db_status = "disconnected"
     
     try:
-        db = SQLiteManager(db_path)
+        db = SQLiteManager(db_path, initialize_default_schema=True)
         result = db.execute_query("SELECT 1") 
         if result:
             db_status = "connected"

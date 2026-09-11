@@ -23,7 +23,7 @@ def main():
     print(f"Running: {app_name}")
 
     #ETL
-    db = SQLiteManager(db_path)
+    db = SQLiteManager(db_path, initialize_default_schema=True)
     csv_rows = FileReader.read_csv(csv_path)
     json_rows = FileReader.read_json(json_data_path)
     all_rows = csv_rows + json_rows

@@ -2,12 +2,11 @@ import sqlite3
 import logging
 from typing import List, Dict
 
-logging.basicConfig(level=logging.INFO)
-
 class SQLiteManager:
-    def __init__(self, db_path: str):
+    def __init__(self, db_path: str, initialize_default_schema: bool = False):
         self.db_path = db_path
-        self._initialize_tables()
+        if initialize_default_schema:
+            self._initialize_tables()
 
     def _initialize_tables(self) -> None:
         query = """
@@ -41,3 +40,12 @@ class SQLiteManager:
                 conn.commit()
         except sqlite3.Error as e:
             logging.error(f"Database Non-Query Error: {e}")
+
+    # Week4 
+    def insert_dataframe(self, table_name: str, df) -> None:
+        try:
+            with sqlite3.connect(self.db_path) as conn:
+                df.to_sql(table_name, conn, if_exists='replace', index=False)
+            logging.info(f"Loaded {len(df)} rows into '{table_name}'")
+        except sqlite3.Error as e:
+            logging.error(f"Database Load Error: {e}")
