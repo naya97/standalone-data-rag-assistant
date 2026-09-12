@@ -13,7 +13,8 @@ logging.basicConfig(
 
 def run_etl_pipeline():
     source_dir = "data/raw/week4"
-    db_destination = "data/db/retail_pipeline.db"
+    # db_destination = "data/db/retail_pipeline.db"
+    db_destination = "data/nonexistent_folder/retail_pipeline.db"
     target_table = "sales_clean"
 
     logging.info("--- Starting ETL Pipeline ---")

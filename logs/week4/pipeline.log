@@ -9,3 +9,47 @@
 2026-09-11 14:40:26,218 - INFO - Loaded 11971 rows into 'sales_clean'
 2026-09-11 14:40:26,218 - INFO - Load: 11971 rows written to 'sales_clean' successfully.
 2026-09-11 14:40:26,218 - INFO - --- ETL Pipeline Finished Successfully ---
+2026-09-12 15:38:57,525 - INFO - --- Starting ETL Pipeline ---
+2026-09-12 15:38:57,525 - INFO - Extract: Scanning directory data/raw/week4 for CSV files.
+2026-09-12 15:38:57,525 - CRITICAL - --- ETL Pipeline Terminated Due To Error: No CSV files found in data/raw/week4 ---
+2026-09-12 15:44:47,483 - INFO - --- Starting ETL Pipeline ---
+2026-09-12 15:44:47,483 - INFO - Extract: Scanning directory data/raw/week4/retail_store_sales2.csv for CSV files.
+2026-09-12 15:44:47,483 - CRITICAL - --- ETL Pipeline Terminated Due To Error: [WinError 267] The directory name is invalid: 'data/raw/week4/retail_store_sales2.csv' ---
+2026-09-12 15:46:01,076 - INFO - --- Starting ETL Pipeline ---
+2026-09-12 15:46:01,076 - INFO - Extract: Scanning directory data/raw/week4 for CSV files.
+2026-09-12 15:46:01,119 - INFO - Extract: Read 12575 rows from retail_store_sales.csv
+2026-09-12 15:46:01,135 - INFO - Extract: Read 12575 rows from retail_store_sales2.csv
+2026-09-12 15:46:01,135 - INFO - Extract: Combined 25150 rows from 2 file(s)
+2026-09-12 15:46:01,135 - INFO - Transform: Starting data cleaning and validation.
+2026-09-12 15:46:01,255 - INFO - Transform: Imputation stats: {'price_from_total_quantity': 1218, 'price_from_item_mapping': 0, 'quantity_from_total_price': 0, 'quantity_rejected_non_integer': 0, 'total_from_quantity_price': 0, 'rows_removed_irrecoverable': 1208, 'item_from_category_price_mapping': 609}
+2026-09-12 15:46:01,317 - ERROR - Transform Phase FAILED: Validation checks failed after cleaning.
+2026-09-12 15:46:01,317 - CRITICAL - --- ETL Pipeline Terminated Due To Error: Validation checks failed after cleaning. ---
+2026-09-12 15:47:49,155 - INFO - --- Starting ETL Pipeline ---
+2026-09-12 15:47:49,155 - INFO - Extract: Scanning directory data/raw/week4 for CSV files.
+2026-09-12 15:47:49,187 - INFO - Extract: Read 12575 rows from retail_store_sales2.csv
+2026-09-12 15:47:49,187 - INFO - Extract: Combined 12575 rows from 1 file(s)
+2026-09-12 15:47:49,187 - INFO - Transform: Starting data cleaning and validation.
+2026-09-12 15:47:49,235 - ERROR - Transform Phase FAILED: ['category']
+2026-09-12 15:47:49,235 - CRITICAL - --- ETL Pipeline Terminated Due To Error: ['category'] ---
+2026-09-12 15:48:44,301 - INFO - --- Starting ETL Pipeline ---
+2026-09-12 15:48:44,301 - INFO - Extract: Scanning directory data/raw/week4 for CSV files.
+2026-09-12 15:48:44,338 - INFO - Extract: Read 12575 rows from retail_store_sales.csv
+2026-09-12 15:48:44,338 - INFO - Extract: Combined 12575 rows from 1 file(s)
+2026-09-12 15:48:44,338 - INFO - Transform: Starting data cleaning and validation.
+2026-09-12 15:48:44,430 - INFO - Transform: Imputation stats: {'price_from_total_quantity': 609, 'price_from_item_mapping': 0, 'quantity_from_total_price': 0, 'quantity_rejected_non_integer': 0, 'total_from_quantity_price': 0, 'rows_removed_irrecoverable': 604, 'item_from_category_price_mapping': 609}
+2026-09-12 15:48:44,478 - INFO - Transform: 11971 rows passed all validations.
+2026-09-12 15:48:44,478 - INFO - Load: Initiating database connection.
+2026-09-12 15:48:44,478 - ERROR - Database Load Error: unable to open database file
+2026-09-12 15:48:44,478 - INFO - Load: 11971 rows written to 'sales_clean' successfully.
+2026-09-12 15:48:44,478 - INFO - --- ETL Pipeline Finished Successfully ---
+2026-09-12 15:51:53,652 - INFO - --- Starting ETL Pipeline ---
+2026-09-12 15:51:53,652 - INFO - Extract: Scanning directory data/raw/week4 for CSV files.
+2026-09-12 15:51:53,670 - INFO - Extract: Read 12575 rows from retail_store_sales.csv
+2026-09-12 15:51:53,670 - INFO - Extract: Combined 12575 rows from 1 file(s)
+2026-09-12 15:51:53,670 - INFO - Transform: Starting data cleaning and validation.
+2026-09-12 15:51:53,735 - INFO - Transform: Imputation stats: {'price_from_total_quantity': 609, 'price_from_item_mapping': 0, 'quantity_from_total_price': 0, 'quantity_rejected_non_integer': 0, 'total_from_quantity_price': 0, 'rows_removed_irrecoverable': 604, 'item_from_category_price_mapping': 609}
+2026-09-12 15:51:53,774 - INFO - Transform: 11971 rows passed all validations.
+2026-09-12 15:51:53,774 - INFO - Load: Initiating database connection.
+2026-09-12 15:51:53,775 - ERROR - Database Load Error: unable to open database file
+2026-09-12 15:51:53,775 - ERROR - Load Phase FAILED: unable to open database file
+2026-09-12 15:51:53,775 - CRITICAL - --- ETL Pipeline Terminated Due To Error: unable to open database file ---

@@ -49,3 +49,4 @@ class SQLiteManager:
             logging.info(f"Loaded {len(df)} rows into '{table_name}'")
         except sqlite3.Error as e:
             logging.error(f"Database Load Error: {e}")
+            raise
