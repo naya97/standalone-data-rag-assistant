@@ -207,10 +207,30 @@ Every run appends to `logs/week4/pipeline.log`, recording each step (rows read, 
 - `_initialize_tables()` (which creates the Task 1 `rag_topics` table) is no longer called automatically — it now requires `initialize_default_schema=True`, so pipelines writing to other databases (like `retail_pipeline.db`) don't get an unrelated table created in them. Task 1's `main.py` and `health_controller.py` were updated to pass `initialize_default_schema=True` explicitly.
 
 ### Failure Handling — Verified Scenarios
-The pipeline was tested against three failure cases to confirm each produces a clear, phase-specific log message rather than a generic error:
-1. Missing input file → `Extract` fails with a clear "no CSV files found" message.
-2. Missing required column → `Transform` fails with the exact missing column name.
-3. Invalid database path → `Load` fails with the underlying SQLite error, clearly attributed to the Load phase.
+The pipeline was tested against real failure cases (see `logs/week4/pipeline.log` history) to confirm each phase fails clearly rather than silently or with a generic error:
+
+1. **Missing input file (Extract):**
+   ```
+   CRITICAL - ETL Pipeline Terminated Due To Error: No CSV files found in data/raw/week4
+   ```
+2. **Missing required column (Transform):**
+   ```
+   ERROR - Transform Phase FAILED: ['category']
+   CRITICAL - ETL Pipeline Terminated Due To Error: ['category']
+   ```
+3. **Duplicate batch input (Transform, extra safeguard):** loading the same file twice was correctly rejected by validation instead of silently producing duplicate rows:
+   ```
+   ERROR - Transform Phase FAILED: Validation checks failed after cleaning.
+   ```
+4. **Invalid database path (Load):**
+   ```
+   ERROR - Database Load Error: unable to open database file
+   ERROR - Load Phase FAILED: unable to open database file
+   CRITICAL - ETL Pipeline Terminated Due To Error: unable to open database file
+   ```
+
+### Bug Found & Fixed During Testing
+An early version of `SQLiteManager.insert_dataframe()` logged database errors but did not re-raise them, so a failed Load step could be swallowed silently and the pipeline would report "Finished Successfully" despite writing no data. This was caught by comparing consecutive test runs in `pipeline.log` and fixed by adding `raise` after the error log, ensuring Load failures always propagate and terminate the pipeline with a clear message (scenario 4 above).
 
 ---
 
