@@ -1,10 +1,10 @@
 # Standalone Data-RAG Assistant Engine
 
-A simple standalone project built to practice core Python and data engineering basics: reading CSV/JSON files, storing data in SQLite, running basic SQL queries, exposing a simple REST API, cleaning messy real-world datasets with Pandas, and building a repeatable ETL pipeline.
+A simple standalone project built to practice core Python and data engineering basics: reading CSV/JSON files, storing data in SQLite, running basic SQL queries, exposing a simple REST API, cleaning messy real-world datasets with Pandas, building a repeatable ETL pipeline, and understanding core Google Cloud / BigQuery concepts.
 
 The project is organized into two parts:
 - **Core application** (Task 1): loads sample question/category data from CSV and JSON files, stores it in a local SQLite database, runs basic SQL queries, and provides a `/health` endpoint.
-- **Weekly practice/exercises**: standalone or building-block exercises (Pandas, SQL, data cleaning, ETL pipelines) kept separate from the core application code, but reusing its shared infrastructure where relevant.
+- **Weekly practice/exercises**: standalone or building-block exercises (Pandas, SQL, data cleaning, ETL pipelines, GCP/BigQuery fundamentals) kept separate from the core application code, but reusing its shared infrastructure where relevant.
 
 ---
 
@@ -57,14 +57,21 @@ standalone-data-rag-assistant/
 │       └── pipeline.log                # ETL pipeline run log (Week 4)
 │
 ├── practice/
-│   └── week2/                          # Standalone Pandas/SQL practice (Superstore dataset)
+│   ├── week2/                          # Standalone Pandas/SQL practice (Superstore dataset)
+│   │   ├── data/
+│   │   │   ├── Superstore.csv
+│   │   │   └── superstore.db           # generated locally, not committed (see .gitignore)
+│   │   ├── notebooks/
+│   │   │   └── superstore-week2.ipynb
+│   │   └── SQL/
+│   │       └── superstore_queries.sql
+│   └── week5/                          # GCP + BigQuery fundamentals (local equivalents)
 │       ├── data/
-│       │   ├── Superstore.csv
-│       │   └── superstore.db           # generated locally, not committed (see .gitignore)
-│       ├── notebooks/
-│       │   └── superstore-week2.ipynb
-│       └── SQL/
-│           └── superstore_queries.sql
+│       │   └── retail_sample.db        # local stand-in for a BigQuery dataset/table
+│       ├── sql/
+│       │   └── week5_queries.sql       # 8 analytical queries (BigQuery-style)
+│       └── notes/
+│           └── GCP_BigQuery_notes.md   # Concept notes + local-equivalent mapping
 │
 ├── .env                                 # Environment variables
 ├── .gitignore
@@ -74,7 +81,7 @@ standalone-data-rag-assistant/
 └── README.md
 ```
 
-> **Note:** `practice/` holds standalone weekly exercises that are self-contained and unrelated to the core application (e.g. Week 2). Weeks that build on each other and feed into the core project (Week 3, and Week 4 which reuses Week 3's cleaning code) live directly under `data/`, `src/`, `notebooks/`, `reports/`, and `logs/`, each in their own `weekN` subfolder.
+> **Note:** `practice/` holds standalone weekly exercises that are self-contained and unrelated to the core application (e.g. Week 2 and Week 5). Weeks that build on each other and feed into the core project (Week 3, and Week 4 which reuses Week 3's cleaning code) live directly under `data/`, `src/`, `notebooks/`, `reports/`, and `logs/`, each in their own `weekN` subfolder.
 
 ---
 
@@ -234,6 +241,24 @@ An early version of `SQLiteManager.insert_dataframe()` logged database errors bu
 
 ---
 
+## Week 5 — GCP + BigQuery Fundamentals
+
+Understanding the core Google Cloud / BigQuery concepts (Cloud Storage, BigQuery, datasets/tables, IAM, service accounts, public datasets, query cost) without requiring advanced cloud administration.
+
+**No GCP sandbox account was available**, so — per the plan's own fallback option — the exercise was reproduced locally: the retail dataset cleaned in Week 3 and loaded by the Week 4 pipeline was treated as a stand-in for a BigQuery dataset/table, and 8 analytical queries were written and run against it locally with the same cost-awareness principles that would apply on real BigQuery.
+
+- **Notes:** `practice/week5/notes/GCP_BigQuery_notes.md` — explains each concept (Cloud Storage, BigQuery, Dataset, Table, IAM, Service Accounts, Public Datasets, Query Cost) and its local equivalent (or why no local equivalent exists, for IAM/Service Accounts).
+- **Queries:** `practice/week5/sql/week5_queries.sql` — 8 analytical SQL queries against the local dataset, written with BigQuery's cost model in mind (only required columns selected, no `SELECT *`, no reliance on `LIMIT` to reduce cost, partitioning noted where relevant).
+- **Local dataset:** `practice/week5/data/retail_sample.db` — a local SQLite database standing in for a BigQuery dataset/table.
+
+### Run the queries
+```bash
+sqlite3 practice/week5/data/retail_sample.db
+sqlite> .read practice/week5/sql/week5_queries.sql
+```
+
+---
+
 ## Git Tags
 
 Each completed week is marked with an annotated Git tag once finalized, so the project history can be browsed one week at a time:
@@ -243,4 +268,5 @@ git tag
 git checkout tags/week2-complete
 git checkout tags/week3-complete
 git checkout tags/week4-complete
+git checkout tags/week5-complete
 ```
