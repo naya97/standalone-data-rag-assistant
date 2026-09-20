@@ -1,10 +1,10 @@
 # Standalone Data-RAG Assistant Engine
 
-A simple standalone project built to practice core Python and data engineering basics: reading CSV/JSON files, storing data in SQLite, running basic SQL queries, exposing a simple REST API, cleaning messy real-world datasets with Pandas, building a repeatable ETL pipeline, and understanding core Google Cloud / BigQuery concepts.
+A simple standalone project built to practice core Python and data engineering basics: reading CSV/JSON files, storing data in SQLite, running basic SQL queries, exposing a simple REST API, cleaning messy real-world datasets with Pandas, building a repeatable ETL pipeline, understanding core Google Cloud / BigQuery concepts, and building a small analytics layer with an interactive dashboard.
 
 The project is organized into two parts:
 - **Core application** (Task 1): loads sample question/category data from CSV and JSON files, stores it in a local SQLite database, runs basic SQL queries, and provides a `/health` endpoint.
-- **Weekly practice/exercises**: standalone or building-block exercises (Pandas, SQL, data cleaning, ETL pipelines, GCP/BigQuery fundamentals) kept separate from the core application code, but reusing its shared infrastructure where relevant.
+- **Weekly practice/exercises**: standalone or building-block exercises (Pandas, SQL, data cleaning, ETL pipelines, GCP/BigQuery fundamentals, analytics/data modeling) kept separate from the core application code, but reusing its shared infrastructure where relevant.
 
 ---
 
@@ -15,7 +15,7 @@ standalone-data-rag-assistant/
 ├── data/
 │   ├── db/
 │   │   ├── local_storage.sqlite        # SQLite database (Task 1)
-│   │   └── retail_pipeline.db          # SQLite database (Week 4 pipeline output)
+│   │   └── retail_pipeline.db          # SQLite database (Week 4 pipeline output, used by Week 6)
 │   ├── raw/
 │   │   ├── config.json                 # App config (Task 1)
 │   │   ├── sample.csv                  # Sample data (Task 1)
@@ -37,20 +37,30 @@ standalone-data-rag-assistant/
 │   ├── week3/
 │   │   ├── cleaning.py                 # DataCleaner class (reusable cleaning pipeline)
 │   │   └── validation.py               # DataValidator class (data-quality checks)
-│   └── pipeline/
-│       └── week4/
-│           ├── extract.py              # Batch CSV extraction
-│           ├── transform.py            # Wraps Week 3's DataCleaner + DataValidator
-│           └── load.py                 # Writes cleaned data to SQLite
+│   ├── pipeline/
+│   │   └── week4/
+│   │       ├── extract.py              # Batch CSV extraction
+│   │       ├── transform.py            # Wraps Week 3's DataCleaner + DataValidator
+│   │       └── load.py                 # Writes cleaned data to SQLite
+│   └── analytics/
+│       └── week6/
+│           └── app.py                  # Streamlit analytics dashboard
+│
+├── sql/
+│   └── week6/
+│       ├── views.sql                   # Analytics layer: dimension table + reusable views
+│       └── queries.sql                 # KPI queries + JOIN-based analysis
 │
 ├── notebooks/
 │   └── week3/
 │       └── week3-retailstore.ipynb     # Data cleaning & validation notebook
 │
 ├── reports/
-│   └── week3/
-│       ├── Report_week3.md             # Short data-quality report
-│       └── Report_week3_detailed.md    # Full investigation details
+│   ├── week3/
+│   │   ├── Report_week3.md             # Short data-quality report
+│   │   └── Report_week3_detailed.md    # Full investigation details
+│   └── week6/
+│       └── Week6_Analytics_Summary.md  # Analytical questions answered with query evidence
 │
 ├── logs/
 │   └── week4/
@@ -81,7 +91,7 @@ standalone-data-rag-assistant/
 └── README.md
 ```
 
-> **Note:** `practice/` holds standalone weekly exercises that are self-contained and unrelated to the core application (e.g. Week 2 and Week 5). Weeks that build on each other and feed into the core project (Week 3, and Week 4 which reuses Week 3's cleaning code) live directly under `data/`, `src/`, `notebooks/`, `reports/`, and `logs/`, each in their own `weekN` subfolder.
+> **Note:** `practice/` holds standalone weekly exercises that are self-contained and unrelated to the core application (e.g. Week 2 and Week 5). Weeks that build on each other and feed into the core project (Week 3, Week 4, and Week 6 — which queries Week 4's pipeline output) live directly under `data/`, `src/`, `sql/`, `notebooks/`, `reports/`, and `logs/`, each in their own `weekN` subfolder. Within `src/`, only importable Python code lives (`analytics/`, `pipeline/`, `week3/`); raw SQL files live under the top-level `sql/` folder instead, kept separate from Python source for the same reason `notebooks/` and `reports/` are separate.
 
 ---
 
@@ -99,6 +109,7 @@ python-dotenv==1.2.3
 pandas==3.0.5
 numpy==2.5.2
 ipykernel
+streamlit
 ```
 
 ---
@@ -259,6 +270,41 @@ sqlite> .read practice/week5/sql/week5_queries.sql
 
 ---
 
+## Week 6 — Analytics and Simple Data Modeling
+
+Shapes the Week 4 pipeline's cleaned output (`sales_clean`) into a small, reusable analytics layer: views, calculated fields, basic fact/dimension thinking, and a set of KPIs — plus an interactive dashboard to explore them.
+
+### Fact / Dimension Design
+`sales_clean` (from `data/db/retail_pipeline.db`) is the **fact table**. Since it's a single flat table with no natural table to join against, a small **dimension table** was added specifically to enable a real JOIN exercise:
+
+- **`category_targets`** — a hypothetical revenue target per category (business data not present in the source dataset), added in `sql/week6/views.sql`.
+
+### Analytics Layer (`sql/week6/views.sql`)
+Reusable SQL views built on top of `sales_clean`:
+- `monthly_sales_summary` — transactions, revenue, and average order value per month.
+- `category_summary` — revenue and units sold per category.
+- `payment_method_summary` — revenue per payment method.
+- `category_performance` — **JOIN** between `category_summary` and `category_targets`, with a **calculated field** (`target_achievement_pct`) showing how much of each category's target was achieved.
+
+### KPI & Analytical Queries (`sql/week6/queries.sql`)
+Reusable queries built on the views above, including:
+- Overall average order value, best-performing month, month-over-month revenue growth (via `LAG()`).
+- Top category by revenue, revenue share by payment method.
+- **Underperforming categories** — a direct `JOIN` + `GROUP BY` + calculated field (`revenue_gap`) against `category_targets`, independent of the views, to demonstrate an explicit join.
+
+### Example Results & Evidence
+`reports/week6/Week6_Analytics_Summary.md` answers a set of practical analytical questions (e.g. *"Does any category generate disproportionately more revenue relative to its transaction count?"*, *"Is there a clear month-over-month trend?"*) using the actual query output as evidence, following the same evidence-based approach used for the `discount_applied` investigation in Week 3.
+
+### Interactive Dashboard
+`src/analytics/week6/app.py` — a Streamlit dashboard that runs `views.sql` automatically on startup and displays the KPIs, monthly trend, category performance (with the JOIN), underperforming categories, and payment method breakdown.
+
+```bash
+streamlit run src/analytics/week6/app.py
+```
+Opens automatically at `http://localhost:8501`. Requires `data/db/retail_pipeline.db` to already exist — run `python run_pipeline.py` first if it doesn't.
+
+---
+
 ## Git Tags
 
 Each completed week is marked with an annotated Git tag once finalized, so the project history can be browsed one week at a time:
@@ -269,4 +315,5 @@ git checkout tags/week2-complete
 git checkout tags/week3-complete
 git checkout tags/week4-complete
 git checkout tags/week5-complete
+git checkout tags/week6-complete
 ```
