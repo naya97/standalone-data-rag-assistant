@@ -45,3 +45,5 @@ uvicorn==0.52.4
 wcwidth==0.8.3
 wheel==0.47.0
 streamlit
+pdfplumber
+pypdf

@@ -1,10 +1,10 @@
 # Standalone Data-RAG Assistant Engine
 
-A simple standalone project built to practice core Python and data engineering basics: reading CSV/JSON files, storing data in SQLite, running basic SQL queries, exposing a simple REST API, cleaning messy real-world datasets with Pandas, building a repeatable ETL pipeline, understanding core Google Cloud / BigQuery concepts, and building a small analytics layer with an interactive dashboard.
+A simple standalone project built to practice core Python and data engineering basics: reading CSV/JSON files, storing data in SQLite, running basic SQL queries, exposing a simple REST API, cleaning messy real-world datasets with Pandas, building a repeatable ETL pipeline, understanding core Google Cloud / BigQuery concepts, building a small analytics layer with an interactive dashboard, and preparing a clean, metadata-tagged document collection as the foundation for a Retrieval-Augmented Generation (RAG) assistant.
 
 The project is organized into two parts:
 - **Core application** (Task 1): loads sample question/category data from CSV and JSON files, stores it in a local SQLite database, runs basic SQL queries, and provides a `/health` endpoint.
-- **Weekly practice/exercises**: standalone or building-block exercises (Pandas, SQL, data cleaning, ETL pipelines, GCP/BigQuery fundamentals, analytics/data modeling) kept separate from the core application code, but reusing its shared infrastructure where relevant.
+- **Weekly practice/exercises**: standalone or building-block exercises (Pandas, SQL, data cleaning, ETL pipelines, GCP/BigQuery fundamentals, analytics/data modeling, RAG document preparation) kept separate from the core application code, but reusing its shared infrastructure where relevant.
 
 ---
 
@@ -14,7 +14,7 @@ The project is organized into two parts:
 standalone-data-rag-assistant/
 ├── data/
 │   ├── db/
-│   │   ├── local_storage.sqlite        # SQLite database (Task 1)
+│   │   ├── local_storage.sqlite        # SQLite database (Task 1 `rag_topics`; Week 7 `rag_documents`/`rag_chunks`)
 │   │   └── retail_pipeline.db          # SQLite database (Week 4 pipeline output, used by Week 6)
 │   ├── raw/
 │   │   ├── config.json                 # App config (Task 1)
@@ -22,8 +22,15 @@ standalone-data-rag-assistant/
 │   │   ├── sample.json                 # Sample data (Task 1)
 │   │   ├── week3/
 │   │   │   └── retail_store_sales.csv  # Raw dataset (Week 3)
-│   │   └── week4/
-│   │       └── retail_store_sales.csv  # Pipeline input folder (Week 4, batch-scanned)
+│   │   ├── week4/
+│   │   │   └── retail_store_sales.csv  # Pipeline input folder (Week 4, batch-scanned)
+│   │   └── week7/
+│   │       ├── invoices/               # Sample + real invoice documents (.txt, .pdf)
+│   │       ├── policies/               # Sample policy documents (.md)
+│   │       ├── reports/                # Sample report documents (.txt)
+│   │       └── misc/                   # Real external PDFs that don't match the naming
+│   │                                   #   convention (job-task briefs, a JSON payload spec) -
+│   │                                   #   ingested as 'unclassified', not renamed
 │   └── processed/
 │       └── week3/
 │           └── retail_store_sales_cleaned.csv   # Cleaned dataset (Week 3)
@@ -42,9 +49,18 @@ standalone-data-rag-assistant/
 │   │       ├── extract.py              # Batch CSV extraction
 │   │       ├── transform.py            # Wraps Week 3's DataCleaner + DataValidator
 │   │       └── load.py                 # Writes cleaned data to SQLite
-│   └── analytics/
-│       └── week6/
-│           └── app.py                  # Streamlit analytics dashboard
+│   ├── analytics/
+│   │   └── week6/
+│   │       └── app.py                  # Streamlit analytics dashboard
+│   └── rag/
+│       └── week7/
+│           ├── document_loader.py      # Unified .txt/.md/.pdf reader (pypdf-based)
+│           ├── table_extractor.py      # pdfplumber, used ONLY to detect/clean PDF tables
+│           ├── metadata_extractor.py   # Best-effort filename classification (never blocking)
+│           ├── text_cleaner.py         # Noise removal, whitespace/paragraph reconstruction
+│           ├── chunking.py             # DocumentChunker - unified, safety-capped chunker
+│           ├── db_store.py             # RagStore - rag_documents / rag_chunks persistence
+│           └── ingest.py               # Orchestrator: Scan→Load→Metadata→Clean→Chunk→Store
 │
 ├── sql/
 │   └── week6/
@@ -52,19 +68,26 @@ standalone-data-rag-assistant/
 │       └── queries.sql                 # KPI queries + JOIN-based analysis
 │
 ├── notebooks/
-│   └── week3/
-│       └── week3-retailstore.ipynb     # Data cleaning & validation notebook
+│   ├── week3/
+│   │   └── week3-retailstore.ipynb     # Data cleaning & validation notebook
+│   └── week7/
+│       └── week7-rag-preparation.ipynb # Sandbox: parsing/metadata/chunking experiments
 │
 ├── reports/
 │   ├── week3/
 │   │   ├── Report_week3.md             # Short data-quality report
 │   │   └── Report_week3_detailed.md    # Full investigation details
-│   └── week6/
-│       └── Week6_Analytics_Summary.md  # Analytical questions answered with query evidence
+│   ├── week6/
+│   │   └── Week6_Analytics_Summary.md  # Analytical questions answered with query evidence
+│   └── week7/
+│       ├── Report_week7.md                      # Summary, results, known limitations
+│       └── parsing_and_chunking_walkthrough.txt  # Full step-by-step design-decision log
 │
 ├── logs/
-│   └── week4/
-│       └── pipeline.log                # ETL pipeline run log (Week 4)
+│   ├── week4/
+│   │   └── pipeline.log                # ETL pipeline run log (Week 4)
+│   └── week7/
+│       └── ingestion.log               # RAG ingestion run log (Week 7)
 │
 ├── practice/
 │   ├── week2/                          # Standalone Pandas/SQL practice (Superstore dataset)
@@ -87,11 +110,12 @@ standalone-data-rag-assistant/
 ├── .gitignore
 ├── main.py                              # Entry point (Task 1: ETL + SQL queries)
 ├── run_pipeline.py                      # Entry point (Week 4: ETL pipeline)
+├── run_rag_ingestion.py                 # Entry point (Week 7: RAG document ingestion)
 ├── requirements.txt
 └── README.md
 ```
 
-> **Note:** `practice/` holds standalone weekly exercises that are self-contained and unrelated to the core application (e.g. Week 2 and Week 5). Weeks that build on each other and feed into the core project (Week 3, Week 4, and Week 6 — which queries Week 4's pipeline output) live directly under `data/`, `src/`, `sql/`, `notebooks/`, `reports/`, and `logs/`, each in their own `weekN` subfolder. Within `src/`, only importable Python code lives (`analytics/`, `pipeline/`, `week3/`); raw SQL files live under the top-level `sql/` folder instead, kept separate from Python source for the same reason `notebooks/` and `reports/` are separate.
+> **Note:** `practice/` holds standalone weekly exercises that are self-contained and unrelated to the core application (e.g. Week 2 and Week 5). Weeks that build on each other and feed into the core project (Week 3, Week 4, Week 6 — which queries Week 4's pipeline output — and Week 7, whose output is the document collection Week 8's RAG assistant will embed and retrieve from) live directly under `data/`, `src/`, `sql/`, `notebooks/`, `reports/`, and `logs/`, each in their own `weekN` subfolder. Within `src/`, only importable Python code lives (`analytics/`, `pipeline/`, `week3/`, `rag/week7/`); raw SQL files live under the top-level `sql/` folder instead, kept separate from Python source for the same reason `notebooks/` and `reports/` are separate.
 
 ---
 
@@ -110,7 +134,11 @@ pandas==3.0.5
 numpy==2.5.2
 ipykernel
 streamlit
+pypdf==5.9.0
+pdfplumber
 ```
+
+`pypdf` is the primary PDF text extractor (Week 7). `pdfplumber` is used narrowly, only to detect and cleanly extract tables on PDF pages that have one — it is not a replacement for `pypdf` (see Week 7 below for why). `fpdf2` was used once, as a dev-only tool, to generate a synthetic sample invoice PDF for testing — it is not a runtime dependency of the ingestion pipeline.
 
 ---
 
@@ -305,6 +333,83 @@ Opens automatically at `http://localhost:8501`. Requires `data/db/retail_pipelin
 
 ---
 
+## Week 7 — RAG Foundations & Document Preparation
+
+Prepares a small, clean, metadata-tagged document collection (invoices, policies, reports, plus real external PDFs) as the input Week 8's RAG assistant will embed and retrieve from. Covers the RAG foundation topics: PDF/text parsing, noise cleaning, chunking, metadata tagging, and table handling — no embedding generation or vector store yet, that's Week 8's scope.
+
+- **Notebook (sandbox):** `notebooks/week7/week7-rag-preparation.ipynb` — where parsing, metadata extraction, and chunking were first calibrated against real sample data before any of it was moved into `src/rag/week7/`.
+- **Full design-decision log:** `reports/week7/parsing_and_chunking_walkthrough.txt` — a detailed, step-by-step account of every parsing/cleaning/chunking decision, what each one does, and why, including every bug found by testing and how it was fixed.
+- **Summary report:** `reports/week7/Report_week7.md`.
+
+### Architecture
+```
+Scan → Load → Metadata (best-effort) → Clean → Chunk → Store
+```
+
+- **`document_loader.py`** — unified `.txt`/`.md`/`.pdf` reader. `pypdf` is the primary PDF extractor; `pdfplumber` is invoked narrowly, only when a page actually contains a table (see "Table Handling" below).
+- **`metadata_extractor.py`** — classifies a document from its filename (`<type>_<YYYY-MM>_<project>_[service].<ext>`) via a single, whole-string, all-or-nothing regex. A filename that doesn't match is **never a hard failure** — it's tagged `unclassified` and still fully ingested. Classification is opt-in enrichment, not a gate: real documents (job-task briefs, a JSON spec) rarely follow a convention invented for our own invoices/policies/reports, and forcing a match either breaks traceability to the real file or silently produces wrong metadata (caught in testing: an early, lenient version of this parsed `email_payload_spec.pdf` as `project='spec'` — plausible-looking, completely wrong).
+- **`text_cleaner.py`** — a `TextCleaner` class, run between loading and chunking: Unicode normalization, bullet-symbol unification, stray control-character removal, de-hyphenation, and (PDF only) reconstruction of real paragraph/sentence breaks from a pypdf text stream that otherwise preserves almost none. The PDF-only "aggressive" rules are explicitly never applied to `.md`/`.txt` — verified by testing that running them on our own clean policy file destroys its markdown headers.
+- **`table_extractor.py`** — `pypdf` has no concept of a table: a PDF table extracts as flat, column-less text. `pdfplumber` is used only to detect tables and splice a clean Markdown version into the *same* position in the `pypdf` text (verified: the cell values `pdfplumber` extracts reproduce `pypdf`'s flattened text exactly, so the swap is safe and leaves zero duplication).
+- **`chunking.py`** — one universal `DocumentChunker` for every document type and format (no per-type chunking strategies). Splits text into whole `\n\n`-delimited units and greedily packs them under a hard `chunk_size` safety cap (default 300 chars) — a unit is never split unless it alone exceeds the cap. "Overlap" (default 50 chars) carries at most one complete prior unit forward, never a raw character fragment. Every chunk is tagged with `section_header` (the header of the section it belongs to, propagated to *every* chunk of that section, not just the first) so retrieval-time context is available without duplicating the header into the stored chunk text itself.
+- **`db_store.py`** — `RagStore` persists into `rag_documents` / `rag_chunks`, in the *same* `local_storage.sqlite` used by Task 1 but fully independent of `rag_topics`. `document_id` / `chunk_id` are app-generated UUIDs, not derived from the filename, so retrieval references stay stable even if a source file is later renamed. `original_filename` is stored verbatim for traceability.
+- **`ingest.py`** — orchestrates all of the above, logging each phase per file and, like Week 4, attributing any failure to the specific phase that caused it rather than a generic error — while letting the rest of the batch continue.
+
+### Run the pipeline
+```bash
+python run_rag_ingestion.py
+```
+
+### Database
+Tables in `data/db/local_storage.sqlite` (independent of Task 1's `rag_topics`):
+
+**`rag_documents`**
+
+| Column | Type | Description |
+|---|---|---|
+| `document_id` | TEXT (UUID) | Primary key |
+| `original_filename` | TEXT | Verbatim source filename |
+| `document_type` | TEXT | `invoice` / `policy` / `report` / `NULL` if unclassified |
+| `source_format` | TEXT | `pdf` / `txt` / `md` |
+| `file_path`, `month`, `project`, `service` | TEXT | — |
+| `classification_status` | TEXT | `classified` / `unclassified` |
+| `created_at` | TEXT | — |
+
+**`rag_chunks`**
+
+| Column | Type | Description |
+|---|---|---|
+| `chunk_id` | TEXT (UUID) | Primary key |
+| `document_id` | TEXT | FK → `rag_documents` |
+| `chunk_index`, `chunk_text`, `char_count` | — | — |
+| `section_header` | TEXT | Header of the section this chunk belongs to (may repeat across several chunks) |
+| `original_filename`, `document_type`, `month`, `project`, `service` | TEXT | Denormalized for filterable retrieval without a JOIN |
+
+### Logs
+Every run appends to `logs/week7/ingestion.log`, with the same per-phase, per-file logging discipline as Week 4.
+
+### Failure Handling — Verified Scenarios
+1. **No input documents found (fatal):** `CRITICAL - Ingestion Terminated: No supported documents (.txt/.md/.pdf) found in <dir>`
+2. **Filename doesn't match the naming convention (non-fatal):** logged as unclassified; the document is still loaded, cleaned, chunked and stored normally.
+3. **Corrupted/unreadable PDF (non-fatal):** `ERROR - Load Phase FAILED for <file>: ...` — attributed to the correct phase; the rest of the batch still completes.
+4. **Table extraction failure on an otherwise-readable PDF (non-fatal):** logged as a warning; the document still ingests using `pypdf`'s original (uncleaned) table text rather than failing the whole document.
+
+### Latest Verified Run
+```
+Files found:  10 (7 authored: invoices/policies/reports, 3 real external PDFs in misc/)
+Processed:    10 | Failed: 0
+Classified:   7  | Unclassified: 3
+Total chunks: 66
+By type:   {invoice: 3, policy: 2, report: 2, unclassified: 3}
+By format: {pdf: 4, txt: 4, md: 2}
+```
+
+### Known Limitations (see `Report_week7.md` for full detail)
+- **PDF table trap:** solved for detected tables (via `pdfplumber` + Markdown splicing); a table `pdfplumber` fails to detect still extracts as flat, column-less text via `pypdf` alone.
+- **Arabic PDF word-spacing:** `pypdf` can drop spaces between Arabic words during extraction (confirmed in the raw text, before any of our own code runs). Tested a second library (`PyMuPDF`) as a potential fix — result was mixed (fixed some occurrences, not others, introduced a different artifact elsewhere) — **not a reliably fixable issue with the current tooling**, documented as accepted technical debt.
+- **Header/footer stripping:** a general-purpose stripper for repeated running headers / "Page X of Y" footers is implemented but currently a no-op — none of the real sample PDFs (up to 3 pages each) had any repeated boilerplate to strip.
+
+---
+
 ## Git Tags
 
 Each completed week is marked with an annotated Git tag once finalized, so the project history can be browsed one week at a time:
@@ -316,4 +421,5 @@ git checkout tags/week3-complete
 git checkout tags/week4-complete
 git checkout tags/week5-complete
 git checkout tags/week6-complete
+git checkout tags/week7-complete
 ```

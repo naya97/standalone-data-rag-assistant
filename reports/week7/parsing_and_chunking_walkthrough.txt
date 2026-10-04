@@ -1,0 +1,425 @@
+================================================================================
+WEEK 7 - PARSING & CHUNKING PIPELINE: FULL WALKTHROUGH
+================================================================================
+Audience: someone who understands RAG concepts and wants a complete,
+step-by-step account of what was built, what each piece does, and WHY each
+design decision was made (including decisions we reversed and why).
+
+Scope of this document: the two phases upstream of embedding/retrieval -
+PARSING (turning a raw file into text) and CHUNKING (turning that text into
+the pieces that will eventually be embedded). Storage schema and retrieval
+(Week 8) are mentioned only where they explain a parsing/chunking decision.
+
+--------------------------------------------------------------------------------
+1. STARTING POINT: WHAT WE WERE ACTUALLY DEALING WITH
+--------------------------------------------------------------------------------
+
+The document collection is intentionally mixed-format and mixed-quality:
+  - .txt / .md files we authored ourselves (invoices, policies, reports) -
+    clean, predictable structure, full control over formatting.
+  - .pdf files from outside sources (a job-task brief, a FinOps trainee
+    spec, a JSON payload spec) - real documents we do NOT control the
+    formatting of, extracted via the `pypdf` library.
+
+This split matters constantly throughout this document: almost every design
+decision below exists BECAUSE PDF-extracted text behaves very differently
+from text we wrote ourselves, and treating them identically caused real,
+demonstrated bugs.
+
+--------------------------------------------------------------------------------
+2. PARSING PHASE (document_loader.py)
+--------------------------------------------------------------------------------
+
+WHAT IT DOES:
+  A single function `load_document(path)` that dispatches by file extension:
+    - .txt / .md -> read directly with Python's open(..., encoding="utf-8")
+    - .pdf       -> read via pypdf's PdfReader, concatenating
+                     page.extract_text() across all pages
+
+WHY encoding="utf-8" IS EXPLICIT:
+  Relying on the OS default encoding works locally but can silently break
+  on a different production environment (different locale). We decided to
+  never leave this implicit.
+
+WHY PDF ERRORS ARE NORMALIZED INTO ONE EXCEPTION TYPE:
+  pypdf can raise several different internal error types for a corrupted or
+  unreadable file (EOFError, its own PdfReadError, etc). We wrap all of them
+  into a single `DocumentLoaderError` so the rest of the pipeline can always
+  reliably know "this file failed to load", regardless of which underlying
+  library raised what. This was verified with an actual corrupted PDF (a
+  text file renamed to .pdf) - before the fix, the failure was attributed to
+  a generic "Unknown" phase in the pipeline log; after wrapping, it is
+  correctly attributed to the "Load" phase.
+
+KEY FINDING THAT SHAPED EVERYTHING DOWNSTREAM - WHAT pypdf ACTUALLY PRODUCES:
+  Before writing any cleaning or chunking logic, we extracted and inspected
+  the RAW text of every real PDF in the collection and found:
+
+  a) Paragraph structure is almost never preserved. Measured directly:
+     0 occurrences of "\n\n" in two of the three real PDFs tested, and only
+     1 occurrence in the third. pypdf gives back one "\n" per visual line,
+     not per paragraph, so any chunking rule built around "\n\n" as the
+     paragraph delimiter is USELESS on raw pypdf output.
+
+  b) Line breaks can appear in the middle of a logical unit. One document
+     (a trainee task brief) came back with nearly one word per line, and
+     critically, numbered headers like "1. Define Assistant Capabilities"
+     were found NOT to reliably start at the beginning of a line - the
+     numbering was sometimes glued onto the end of the previous sentence
+     with no newline before it. This directly disproved an early assumption
+     that a regex anchored at line-start (^\d+\.) could reliably detect
+     numbered section headers in PDF text.
+
+  c) Tables lose their column structure. A generated invoice PDF containing
+     a "Service Description / Quantity / Unit Price" table extracted as
+     plain space-separated text with no delimiter between columns - visually
+     readable, but not machine-parseable into separate fields (some column
+     values themselves contain spaces, so column boundaries are ambiguous).
+     This is documented as accepted technical debt: fine for RAG chunking
+     (a chunk of continuous text), not fine for structured field extraction
+     (would need pdfplumber/camelot instead).
+
+  d) Bullet glyphs get mangled. A bullet character rendered from a custom/
+     symbol font in the source PDF was extracted as a literal DEL control
+     character (\x7f) in one document, and as a private-use-area codepoint
+     (\uf0b7) in another. Neither is the visible bullet symbol.
+
+  e) Arabic text can lose spaces between words entirely - and this is NOT
+     limited to Arabic/English boundaries. Verified with repr() (never trust
+     a plain-text paste or terminal print for RTL text - it visually
+     reorders and can hide the real bug) that pypdf produced fused words
+     like "اضافةمدربين" (should be two words) directly in the RAW text,
+     before any of our own code touched it. Later, testing a second library
+     (PyMuPDF) on the same file gave a MIXED result: it fixed some fused
+     Arabic-Arabic word pairs but not others, and even introduced a new,
+     different corruption elsewhere. Conclusion: this specific limitation is
+     NOT reliably fixable by swapping extraction libraries, and is not
+     something our downstream cleaning code can recover (the space is
+     genuinely gone from the extracted text - there is nothing left to
+     detect it from). This is documented as a known, currently-unresolved
+     technical debt for Arabic PDF content specifically.
+
+  Every decision in sections 3 and 4 below is a direct response to one or
+  more of these five findings.
+
+--------------------------------------------------------------------------------
+3. CLEANING PHASE (text_cleaner.py) - added between parsing and chunking
+--------------------------------------------------------------------------------
+
+WHY THIS STAGE EXISTS AT ALL:
+  Initially, raw pypdf output was fed straight into the chunker. This was
+  flagged as a problem before it caused damage: feeding noisy, fragmented
+  PDF text straight into a chunker that relies on structural delimiters
+  (like "\n\n") produces malformed chunks that waste LLM/embedding tokens
+  and confuse retrieval. A dedicated `TextCleaner` class was introduced as
+  an explicit stage BETWEEN loading and chunking, so cleaning logic is
+  isolated, independently testable, and never silently mixed into either
+  the loader or the chunker.
+
+WHAT IT DOES, IN ORDER (order matters - explained per step):
+
+  Step 1 - Unicode NFKC normalization.
+    Fixes ligature glyphs (e.g. the single "fi" ligature character some
+    PDF fonts produce) and other compatibility-variant characters, folding
+    them to their standard form. Applied universally (safe for all formats).
+
+  Step 2 - Bullet symbol normalization.
+    Any of the bullet-like characters actually observed in our real PDFs
+    (\uf0b7, \x7f, and the standard Unicode bullet/circle/square symbols
+    ●○■▪•) are replaced with a clean "\n\n* " marker, consuming any
+    surrounding whitespace/newlines in the same step. This must run BEFORE
+    the generic control-character stripper (step 3), because \x7f is
+    technically a control character and would otherwise simply be deleted
+    as noise before we get a chance to recognize it as "this was a bullet".
+    Verified against the real email-spec PDF: \x7f appeared 23 times, each
+    time directly before a genuine bullet item.
+
+  Step 3 - Stray control-character removal.
+    Drops any remaining Unicode "control/format" category character
+    (except \n and \t, which we need). Universal, safe for all formats.
+
+  Step 4 - De-hyphenation.
+    Pattern: a letter, a hyphen, a newline, another letter -> join the two
+    letters directly, dropping the hyphen and the newline. This targets the
+    classic PDF line-wrap hyphenation ("informa-\ntion" -> "information").
+    Deliberately restricted to letter-hyphen-newline-letter (not just "any
+    hyphen before a newline") so it does not touch unrelated patterns like a
+    date written "2024-\n01" (digit-hyphen, not letter-hyphen). We accepted
+    a known, documented trade-off here: a genuine compound word that happens
+    to break at a line wrap (e.g. "well-\nknown") will also get joined
+    without its hyphen ("wellknown"). This is standard practice in text
+    de-hyphenation tooling, because line-wrap hyphenation is far more common
+    in continuous prose than a coincidental mid-compound-word line break.
+
+  Step 5 - De-fragmentation of "fake" newlines (PDF ONLY).
+    Rule: any newline NOT immediately preceded by sentence-ending
+    punctuation (. : ؟ !) is treated as a line-wrap artifact, not a real
+    paragraph/sentence break, and is replaced with a single space. This
+    directly targets finding (b) above (the "almost one word per line" PDF).
+
+  Step 6 - Forced paragraph breaks (PDF ONLY).
+    The mirror rule: any newline that IS immediately preceded by
+    sentence-ending punctuation is promoted to a double newline ("\n\n"),
+    manufacturing a reliable paragraph delimiter for the chunker to use,
+    since raw PDF text essentially never contains one on its own (finding a
+    above).
+
+  *** WHY STEPS 5 AND 6 ARE GATED TO source_format == "pdf" ONLY ***
+    This is the single most important design decision in the cleaning
+    stage, and it was found by testing, not by reasoning in the abstract.
+    We ran steps 5-6 against one of our OWN clean .md policy files as a
+    sanity check before shipping this, and it actively DESTROYED the
+    file's structure: the line "# General Access Policy" has no trailing
+    punctuation, so the newline after it was treated as "fake" and merged
+    with a space directly into the next line ("**Project:** Alpha"),
+    silently deleting a markdown header. The rule that fixes noisy PDF text
+    is actively harmful on text we already trust to be well-formed. The
+    fix: `aggressive=True` (which enables steps 5-6) is only ever passed
+    when source_format == "pdf". For .md/.txt, only the universally-safe
+    steps (1-4 and 7) run. This was verified with an explicit assertion
+    test (headers survive intact) before being accepted.
+
+  Step 7 - Whitespace normalization (always last, universal).
+    Collapses repeated spaces/tabs to one, caps any run of 3+ newlines down
+    to exactly two, and strips trailing spaces before each newline. Always
+    runs last so it can clean up any artifacts the earlier steps produced.
+
+  ADDITIONAL, GENERAL-PURPOSE SAFEGUARD (currently a no-op on this batch):
+    A `strip_repeated_header_footer(pages)` helper was written to drop a
+    page's first/last line when that exact line (or a pure page-number
+    pattern) repeats across a large enough fraction of a multi-page
+    document's pages - the classic "running header" / "Page X of Y"
+    footer problem. This requires access to text PER PAGE (before the
+    pages are concatenated into one string), which is why it takes a list
+    of page texts rather than the final flat string. On our actual sample
+    PDFs (checked directly, up to 3 pages each) there was no repeated
+    header/footer text to strip - the function is a defensive measure kept
+    in for future documents that do have this problem, not something we
+    could demonstrate a fix for on the current data.
+
+  A BUG FOUND AND FIXED DURING THIS STAGE (regex backtracking):
+    An early version of step 5's "fake newline" regex tried to protect
+    bullet-marker breaks with a negative lookahead: don't collapse a
+    newline run if it's immediately followed by "* ". This looked correct
+    but was NOT reliable: Python's regex engine backtracks a greedy "\n+"
+    quantifier, so even though the FULL two-newline run correctly failed
+    the lookahead, the engine tried a SHORTER match (just one of the two
+    newlines) which then DID satisfy the lookahead and got collapsed -
+    silently turning a "\n\n* " bullet break into a single "\n* ". This was
+    caught by testing on the real email_payload_spec.pdf output (a section
+    title merged onto the same line as its first bullet). The fix:
+    temporarily swap every "\n\n* " occurrence for a private-use-area
+    placeholder character before running the fragmentation regex, then swap
+    it back afterward - sidestepping the backtracking issue entirely rather
+    than trying to out-clever it with a more complex pattern.
+
+--------------------------------------------------------------------------------
+4. CHUNKING PHASE (chunking.py)
+--------------------------------------------------------------------------------
+
+DESIGN PRINCIPLE ESTABLISHED EARLY AND KEPT THROUGHOUT:
+  ONE general chunking engine for every document type and every source
+  format. We explicitly rejected an earlier proposal to route documents to
+  three different chunker "strategies" by document_type (one-chunk-only for
+  invoices, header-based regex splitting for policies/tasks, paragraph/
+  sentence splitting for reports). That proposal was tested against the
+  real PDFs and shown to fail in practice for reasons directly tied to the
+  parsing findings above (e.g. numbered headers not reliably starting at a
+  line start in PDF text, "\n\n" almost never existing in raw PDF text).
+  Keeping ONE engine, with at most one optional, narrowly-scoped
+  pre-segmentation step, is both simpler and more robust.
+
+4.1 SAFETY CAP (non-negotiable, confirmed as a hard requirement):
+  chunk_size (default 300 characters) is treated as an absolute ceiling,
+  never exceeded, regardless of what came before it - one header, a whole
+  invoice, a very long uninterrupted paragraph. This was explicitly
+  requested (a single header followed by ~5,000 words must never be kept as
+  one giant chunk) and is verified with a dedicated regression test: a
+  synthetic "# Header\n\n" + 400 repeated sentences document, asserting
+  every resulting chunk is <= chunk_size AND that the document is actually
+  split into many chunks, not kept whole.
+
+4.2 NO SPECIAL-CASE RULE FOR SHORT DOCUMENTS (e.g. invoices):
+  An earlier draft of this pipeline hard-coded "an invoice is always
+  exactly one chunk, regardless of length" as a business rule. This was
+  deliberately removed. Decision: a short document naturally becomes a
+  single chunk simply because its full text fits under chunk_size - no
+  special-casing needed. A document that happens to be long (an unusually
+  detailed invoice, say) is safely split like anything else, rather than
+  being force-kept as one oversized, ungainly chunk. This keeps the "one
+  general algorithm" principle intact and avoids a real risk: an
+  unconditionally single-chunked long document could exceed embedding
+  token limits downstream in Week 8.
+
+4.3 BOUNDARY-PRIORITY FOR ANY TEXT THAT STILL NEEDS CHARACTER-LEVEL
+    SPLITTING (used as a fallback - see 4.4):
+  When a single unit of text is too long to keep whole, the cut point is
+  chosen by trying, in order: (1) the nearest paragraph break, (2) the
+  nearest sentence end, (3) the nearest whitespace of any kind (this
+  matters for PDFs whose only separator is a single "\n", and for
+  Arabic/RTL text), and only as an absolute last resort (4) a hard
+  character cut, which is logged as a warning so it's visible if it ever
+  happens. This priority order was chosen specifically because it degrades
+  gracefully on real PDF text, which frequently has none of the "nicer"
+  boundary types available.
+
+4.4 THE MAIN ALGORITHM: WHOLE-UNIT PACKING (this replaced an earlier
+    character-sliding-window design, and IS the current, final design)
+
+  WHAT WAS TRIED FIRST, AND WHY IT WAS REPLACED:
+    The original chunking algorithm was a character-based sliding window:
+    advance chunk_size characters, find the best nearby cut point (per
+    4.3), then back up `overlap` (default 50) characters for the start of
+    the next chunk, re-snapping that new start position forward to the
+    next word boundary so it would never begin mid-word.
+
+    This worked correctly on documents where natural paragraph breaks are
+    spaced out (hundreds of characters apart) - verified extensively at the
+    time (a real policy .md file, the noisiest real PDF, a purely synthetic
+    5,000-word stress test, and Arabic RTL text all passed an automated
+    "no chunk starts or ends mid-word" check).
+
+    It broke down on a different, later real document: after cleaning
+    turned a bullet-heavy JSON field specification into text with VERY
+    frequent paragraph breaks (measured: gaps of only 30-100 characters
+    between consecutive "\n\n" marks, versus a 300-character window), the
+    sliding window would land its cut at the LAST paragraph break inside
+    the window, then back up 50 characters for overlap - and since the
+    gaps between breaks were often smaller than 50 characters, that
+    backed-up position landed INSIDE the second-to-last short unit rather
+    than at a fresh one, causing that unit to be reproduced almost in full,
+    verbatim, at the start of the next chunk. This was confirmed by
+    inspecting the actual resulting chunks side by side (a "* mailbox_email
+    ..." bullet appearing complete at the end of one chunk and again,
+    verbatim, at the start of the next).
+
+  THE REPLACEMENT DESIGN (current, final):
+    Instead of a raw character window, the text is first split on every
+    "\n\n" into a list of whole logical units (a sentence, a bullet item,
+    a short paragraph - whatever the cleaning stage already established as
+    a natural break). Units are then packed GREEDILY into a chunk: keep
+    adding whole units until the next one would push the chunk over
+    chunk_size, then close the chunk and start the next one. A unit is
+    NEVER split apart internally unless it alone is longer than chunk_size
+    (in which case, and only then, it falls back to the old character-level
+    algorithm from 4.3 for that one oversized unit).
+
+    "Overlap" in this design means carrying the single LAST complete unit
+    of a just-closed chunk forward as the seed of the next chunk (for light
+    context continuity across the boundary), rather than an arbitrary
+    character-count backtrack. This directly fixes the duplication problem:
+    at most one bounded, complete unit is ever repeated, never a
+    fragment landing mid-item.
+
+  A REGRESSION FOUND WHILE BUILDING THIS REPLACEMENT (and fixed before
+  shipping):
+    A first version of the "carry the last unit forward" rule seeded the
+    new chunk with that unit UNCONDITIONALLY, then unconditionally appended
+    the next unit on top of it - without checking whether the two together
+    still fit inside chunk_size. This produced a chunk measured at 340
+    characters against a 300-character cap, directly violating the safety
+    cap guarantee from 4.1 (which had been explicitly confirmed as a hard,
+    non-negotiable requirement earlier in the project). The fix: before
+    carrying the last unit forward, we now check whether (last unit +
+    upcoming unit) still fits within chunk_size; if it doesn't, we start
+    the new chunk empty instead (dropping the overlap for that boundary)
+    rather than ever letting the cap be exceeded. This was re-verified
+    against the full regression suite (the 5,000-word synthetic test, the
+    policy .md file, the email spec PDF, the noisiest task-brief PDF, and
+    the Arabic PDF) before being accepted - every case stayed within cap
+    and passed the no-mid-word-cut check.
+
+4.5 OPTIONAL HEADER PRE-SEGMENTATION (allow_header_presplit) - used ONLY
+    for .md/.txt, NEVER for PDF:
+  Before the whole-unit packing described in 4.4 runs, there is an
+  optional earlier step: if the source format is one we authored ourselves
+  (.md/.txt) and the text contains lines that look like real structural
+  headers (a markdown "#"/"##" line, or a numbered "1. " line, anchored at
+  a true line start), the text is first split into sections at those
+  header boundaries, and 4.4's packing algorithm then runs independently
+  within each section. This keeps genuinely distinct sections (e.g. two
+  different policy clauses) from ever being packed into the same chunk,
+  while still letting a single long section be safely sub-divided by the
+  same size-capped packer if it's too long to keep whole.
+
+  This is explicitly NOT enabled for PDF source text, for the same reason
+  given in finding (b) above: a numbered header was directly observed NOT
+  reliably starting a new line in real pypdf output, so a regex anchored
+  at line-start would silently fail to fire, giving a false sense of
+  structural awareness where none reliably exists. Rather than build a
+  fragile PDF-specific header heuristic, PDF text always goes straight to
+  whole-document unit packing (4.4).
+
+4.6 CHUNK-TO-SECTION METADATA (section_header) - added after the initial
+    design, in response to a follow-up question about retrieval quality:
+  Problem identified: when a section is split into several chunks by 4.4's
+  size cap, only the very FIRST resulting chunk would naturally contain the
+  section's header text (since it's literally the first thing in that
+  section). Later chunks of the same section carried no indication of what
+  section they belonged to.
+  Why this matters for retrieval: an embedding model only "sees" what is
+  actually inside the text it's given - it cannot see database metadata
+  columns. A chunk buried deep in an "Authentication" section, with no
+  mention of the word "authentication" in its own text, risks not being
+  judged similar enough to a query like "what is the authentication
+  policy" purely because that context lives in a sibling chunk, not this
+  one.
+  Two extreme solutions were rejected: (a) keep the header ONLY as
+  metadata (cheap to store, but the embedding model never benefits from it
+  for chunks after the first - does not fix the accuracy problem), or (b)
+  physically duplicate the full header text inside every chunk's stored
+  text (fixes accuracy, but pays a storage/token cost on every future use
+  of that chunk, not just when it's actually needed).
+  The adopted design: the chunker's output changed from a plain list of
+  chunk strings to a list of {chunk_text, section_header} pairs - every
+  chunk belonging to a given header-delimited section is tagged with that
+  section's header text as a separate field, propagated to ALL of that
+  section's chunks (not just the first), while the stored chunk_text itself
+  stays exactly as before (no duplication). The header and the chunk text
+  are only meant to be COMBINED at the moment they are actually used - e.g.
+  when constructing the text that gets sent to an embedding model in Week
+  8 (section_header + chunk_text as the embedding input), or when building
+  an LLM prompt from a handful of retrieved results. This keeps storage
+  lean while giving the embedding step everything it needs for accuracy,
+  paying the small extra-token cost only on the results that are actually
+  retrieved and used, never on the full stored corpus. This is the same
+  underlying idea as "contextual retrieval" - prepend short context before
+  embedding, not before storing.
+
+--------------------------------------------------------------------------------
+5. FINAL, ACCEPTED STATE
+--------------------------------------------------------------------------------
+
+A later refinement was also implemented (bonding a bare section title to
+its very next unit, so a short title line could never be carried forward
+alone as a duplicated "overlap" fragment on its own). That specific
+refinement was reviewed and INTENTIONALLY NOT KEPT - the result without it
+(the state documented in section 4.4 above, including its regression fix)
+was judged good enough, and the extra complexity was not considered
+worthwhile for the current scope. This is a deliberate scope decision, not
+an unresolved bug: the one remaining known side effect is that a bare
+section title can occasionally appear as its own short "carried forward"
+line at the top of a chunk in addition to closing out the previous chunk -
+cosmetically slightly redundant, but not a correctness problem (no chunk
+exceeds the safety cap, no unit is ever split mid-way, and the duplicated
+content is always a single short, complete unit, never a fragment).
+
+Current, final pipeline order, end to end, for one document:
+  1. load_document()          - format-aware raw text extraction
+  2. extract_metadata_from_filename() - best-effort, never blocking
+  3. TextCleaner.clean()       - format-aware (aggressive only for PDF)
+  4. DocumentChunker.chunk()   - one universal, safety-capped, unit-packing
+                                  engine; optional header pre-split for
+                                  .md/.txt only; every chunk tagged with its
+                                  section_header
+  5. RagStore.insert_document()/insert_chunks() - persisted with UUID
+     identity, original filename preserved verbatim, classification status
+     recorded
+
+Verified end-to-end on the full 10-document batch (7 originally-authored
+documents + 3 real external PDFs of varying quality/language): 10/10
+processed successfully, 0 failures, 65 chunks stored, safety cap never
+exceeded, and no chunk found to start or end mid-word across every
+document tested, including the two hardest real-world cases (a PDF with
+almost no preserved paragraph structure, and Arabic RTL text).
+================================================================================

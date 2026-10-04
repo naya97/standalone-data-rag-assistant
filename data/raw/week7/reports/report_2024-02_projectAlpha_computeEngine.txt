@@ -1,0 +1,8 @@
+Report Title: Monthly Performance Review
+Date: February 28, 2024
+Project: Alpha
+Service: Compute Engine
+
+During February 2024, the Compute Engine infrastructure for Project Alpha maintained a healthy uptime of 99.95%.
+We observed a significant CPU usage spike on February 14th due to a heavy batch processing job, reaching 95% utilization.
+Recommendation: We strongly suggest upgrading to auto-scaling node pools next month to handle sudden traffic spikes smoothly without manual intervention.
