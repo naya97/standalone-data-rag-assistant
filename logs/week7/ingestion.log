@@ -690,3 +690,530 @@
 2026-10-03 16:55:53,604 - INFO - Store phase: writing report_2024-03_projectBeta_security.txt (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
 2026-10-03 16:55:53,609 - INFO - Finished report_2024-03_projectBeta_security.txt: 3 chunk(s) stored (document_id=7a0e2c5b-b528-4173-85ea-8336ac569cb4, status=classified)
 2026-10-03 16:55:53,609 - INFO - Ingestion finished: 10/10 files processed (7 classified, 3 unclassified), 60 chunks stored, 0 failure(s)
+2026-10-05 13:43:18,007 - INFO - Scan phase: looking for documents under E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\raw\week7
+2026-10-05 13:43:18,007 - INFO - Scan phase: found 10 document(s)
+2026-10-05 13:43:18,007 - INFO - rag_documents / rag_chunks schema ready at E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:43:18,007 - INFO - Load phase: reading invoice_2024-01_projectAlpha_computeEngine.pdf
+2026-10-05 13:43:18,269 - INFO - Table found and cleaned (3 data row(s)) in E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\raw\week7\invoices\invoice_2024-01_projectAlpha_computeEngine.pdf
+2026-10-05 13:43:18,269 - INFO - Metadata phase: best-effort classification for invoice_2024-01_projectAlpha_computeEngine.pdf
+2026-10-05 13:43:18,269 - INFO - Clean phase: cleaning invoice_2024-01_projectAlpha_computeEngine.pdf (aggressive=True)
+2026-10-05 13:43:18,269 - INFO - Chunk phase: splitting invoice_2024-01_projectAlpha_computeEngine.pdf (chunk_size=300, overlap=50)
+2026-10-05 13:43:18,269 - INFO - Store phase: writing invoice_2024-01_projectAlpha_computeEngine.pdf (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:43:18,269 - INFO - Finished invoice_2024-01_projectAlpha_computeEngine.pdf: 3 chunk(s) stored (document_id=2398673d-0e09-4d95-a374-9d74969ee2ca, status=classified)
+2026-10-05 13:43:18,269 - INFO - Load phase: reading invoice_2024-01_projectAlpha_computeEngine.txt
+2026-10-05 13:43:18,269 - INFO - Metadata phase: best-effort classification for invoice_2024-01_projectAlpha_computeEngine.txt
+2026-10-05 13:43:18,269 - INFO - Clean phase: cleaning invoice_2024-01_projectAlpha_computeEngine.txt (aggressive=False)
+2026-10-05 13:43:18,269 - INFO - Chunk phase: splitting invoice_2024-01_projectAlpha_computeEngine.txt (chunk_size=300, overlap=50)
+2026-10-05 13:43:18,269 - INFO - Store phase: writing invoice_2024-01_projectAlpha_computeEngine.txt (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:43:18,287 - INFO - Finished invoice_2024-01_projectAlpha_computeEngine.txt: 3 chunk(s) stored (document_id=2ba4292f-20d7-4655-9afa-6c233dac01a7, status=classified)
+2026-10-05 13:43:18,287 - INFO - Load phase: reading invoice_2024-02_projectBeta_cloudStorage.txt
+2026-10-05 13:43:18,287 - INFO - Metadata phase: best-effort classification for invoice_2024-02_projectBeta_cloudStorage.txt
+2026-10-05 13:43:18,287 - INFO - Clean phase: cleaning invoice_2024-02_projectBeta_cloudStorage.txt (aggressive=False)
+2026-10-05 13:43:18,288 - INFO - Chunk phase: splitting invoice_2024-02_projectBeta_cloudStorage.txt (chunk_size=300, overlap=50)
+2026-10-05 13:43:18,288 - INFO - Store phase: writing invoice_2024-02_projectBeta_cloudStorage.txt (2 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:43:18,293 - INFO - Finished invoice_2024-02_projectBeta_cloudStorage.txt: 2 chunk(s) stored (document_id=eccb4a45-5b53-4ee8-b6bf-860b67c245fa, status=classified)
+2026-10-05 13:43:18,294 - INFO - Load phase: reading email_payload_spec.pdf
+2026-10-05 13:43:18,351 - INFO - Metadata phase: best-effort classification for email_payload_spec.pdf
+2026-10-05 13:43:18,351 - INFO - 'email_payload_spec.pdf' does not match the naming convention - ingesting as unclassified (this does not block loading/chunking/storage).
+2026-10-05 13:43:18,351 - INFO - 'email_payload_spec.pdf' is unclassified - proceeding anyway (not fatal).
+2026-10-05 13:43:18,351 - INFO - Clean phase: cleaning email_payload_spec.pdf (aggressive=True)
+2026-10-05 13:43:18,351 - INFO - Chunk phase: splitting email_payload_spec.pdf (chunk_size=300, overlap=50)
+2026-10-05 13:43:18,351 - INFO - Store phase: writing email_payload_spec.pdf (7 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:43:18,372 - INFO - Finished email_payload_spec.pdf: 7 chunk(s) stored (document_id=aaf7f973-b76e-47fb-a551-3d4d76b563d9, status=unclassified)
+2026-10-05 13:43:18,372 - INFO - Load phase: reading Task-3.pdf
+2026-10-05 13:43:19,001 - INFO - Metadata phase: best-effort classification for Task-3.pdf
+2026-10-05 13:43:19,001 - INFO - 'Task-3.pdf' does not match the naming convention - ingesting as unclassified (this does not block loading/chunking/storage).
+2026-10-05 13:43:19,001 - INFO - 'Task-3.pdf' is unclassified - proceeding anyway (not fatal).
+2026-10-05 13:43:19,001 - INFO - Clean phase: cleaning Task-3.pdf (aggressive=True)
+2026-10-05 13:43:19,018 - INFO - Chunk phase: splitting Task-3.pdf (chunk_size=300, overlap=50)
+2026-10-05 13:43:19,018 - INFO - Store phase: writing Task-3.pdf (24 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:43:19,018 - INFO - Finished Task-3.pdf: 24 chunk(s) stored (document_id=47db8a13-190d-4a32-a979-2f716e7f2c0d, status=unclassified)
+2026-10-05 13:43:19,018 - INFO - Load phase: reading الوظيفة الثانية (1).pdf
+2026-10-05 13:43:19,199 - INFO - Metadata phase: best-effort classification for الوظيفة الثانية (1).pdf
+2026-10-05 13:43:19,199 - INFO - 'الوظيفة الثانية (1).pdf' does not match the naming convention - ingesting as unclassified (this does not block loading/chunking/storage).
+2026-10-05 13:43:19,199 - INFO - 'الوظيفة الثانية (1).pdf' is unclassified - proceeding anyway (not fatal).
+2026-10-05 13:43:19,199 - INFO - Clean phase: cleaning الوظيفة الثانية (1).pdf (aggressive=True)
+2026-10-05 13:43:19,215 - INFO - Chunk phase: splitting الوظيفة الثانية (1).pdf (chunk_size=300, overlap=50)
+2026-10-05 13:43:19,215 - INFO - Store phase: writing الوظيفة الثانية (1).pdf (9 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:43:19,215 - INFO - Finished الوظيفة الثانية (1).pdf: 9 chunk(s) stored (document_id=acb10100-91c7-4551-aebe-9de1f80aa376, status=unclassified)
+2026-10-05 13:43:19,215 - INFO - Load phase: reading policy_2024-01_projectAlpha_general.md
+2026-10-05 13:43:19,215 - INFO - Metadata phase: best-effort classification for policy_2024-01_projectAlpha_general.md
+2026-10-05 13:43:19,215 - INFO - Clean phase: cleaning policy_2024-01_projectAlpha_general.md (aggressive=False)
+2026-10-05 13:43:19,215 - INFO - Chunk phase: splitting policy_2024-01_projectAlpha_general.md (chunk_size=300, overlap=50)
+2026-10-05 13:43:19,215 - INFO - Store phase: writing policy_2024-01_projectAlpha_general.md (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:43:19,228 - INFO - Finished policy_2024-01_projectAlpha_general.md: 3 chunk(s) stored (document_id=7686acfd-8c0b-443c-9d2b-183698cf6b20, status=classified)
+2026-10-05 13:43:19,228 - INFO - Load phase: reading policy_2024-03_projectBeta_billing.md
+2026-10-05 13:43:19,229 - INFO - Metadata phase: best-effort classification for policy_2024-03_projectBeta_billing.md
+2026-10-05 13:43:19,229 - INFO - Clean phase: cleaning policy_2024-03_projectBeta_billing.md (aggressive=False)
+2026-10-05 13:43:19,230 - INFO - Chunk phase: splitting policy_2024-03_projectBeta_billing.md (chunk_size=300, overlap=50)
+2026-10-05 13:43:19,230 - INFO - Store phase: writing policy_2024-03_projectBeta_billing.md (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:43:19,237 - INFO - Finished policy_2024-03_projectBeta_billing.md: 3 chunk(s) stored (document_id=7edb9351-d83a-4a36-ac7f-11f2533b6204, status=classified)
+2026-10-05 13:43:19,237 - INFO - Load phase: reading report_2024-02_projectAlpha_computeEngine.txt
+2026-10-05 13:43:19,237 - INFO - Metadata phase: best-effort classification for report_2024-02_projectAlpha_computeEngine.txt
+2026-10-05 13:43:19,238 - INFO - Clean phase: cleaning report_2024-02_projectAlpha_computeEngine.txt (aggressive=False)
+2026-10-05 13:43:19,238 - INFO - Chunk phase: splitting report_2024-02_projectAlpha_computeEngine.txt (chunk_size=300, overlap=50)
+2026-10-05 13:43:19,238 - INFO - Store phase: writing report_2024-02_projectAlpha_computeEngine.txt (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:43:19,245 - INFO - Finished report_2024-02_projectAlpha_computeEngine.txt: 3 chunk(s) stored (document_id=f8a07d0b-0f8f-423b-96de-60d29c39fecd, status=classified)
+2026-10-05 13:43:19,246 - INFO - Load phase: reading report_2024-03_projectBeta_security.txt
+2026-10-05 13:43:19,246 - INFO - Metadata phase: best-effort classification for report_2024-03_projectBeta_security.txt
+2026-10-05 13:43:19,246 - INFO - Clean phase: cleaning report_2024-03_projectBeta_security.txt (aggressive=False)
+2026-10-05 13:43:19,246 - INFO - Chunk phase: splitting report_2024-03_projectBeta_security.txt (chunk_size=300, overlap=50)
+2026-10-05 13:43:19,246 - INFO - Store phase: writing report_2024-03_projectBeta_security.txt (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:43:19,250 - INFO - Finished report_2024-03_projectBeta_security.txt: 3 chunk(s) stored (document_id=c78e9250-22b4-41a0-93ca-3f225f3d649f, status=classified)
+2026-10-05 13:43:19,250 - INFO - Ingestion finished: 10/10 files processed (7 classified, 3 unclassified), 60 chunks stored, 0 failure(s)
+2026-10-05 13:43:52,778 - INFO - Scan phase: looking for documents under E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\raw\week7
+2026-10-05 13:43:52,779 - INFO - Scan phase: found 10 document(s)
+2026-10-05 13:43:52,780 - INFO - rag_documents / rag_chunks schema ready at E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:43:52,781 - INFO - Load phase: reading invoice_2024-01_projectAlpha_computeEngine.pdf
+2026-10-05 13:43:52,874 - INFO - Table found and cleaned (3 data row(s)) in E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\raw\week7\invoices\invoice_2024-01_projectAlpha_computeEngine.pdf
+2026-10-05 13:43:52,875 - INFO - Metadata phase: best-effort classification for invoice_2024-01_projectAlpha_computeEngine.pdf
+2026-10-05 13:43:52,875 - INFO - Clean phase: cleaning invoice_2024-01_projectAlpha_computeEngine.pdf (aggressive=True)
+2026-10-05 13:43:52,877 - INFO - Chunk phase: splitting invoice_2024-01_projectAlpha_computeEngine.pdf (chunk_size=300, overlap=50)
+2026-10-05 13:43:52,877 - INFO - Store phase: writing invoice_2024-01_projectAlpha_computeEngine.pdf (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:43:52,884 - INFO - Finished invoice_2024-01_projectAlpha_computeEngine.pdf: 3 chunk(s) stored (document_id=b4249dda-b646-40ae-bc81-dcf89a704529, status=classified)
+2026-10-05 13:43:52,884 - INFO - Load phase: reading invoice_2024-01_projectAlpha_computeEngine.txt
+2026-10-05 13:43:52,886 - INFO - Metadata phase: best-effort classification for invoice_2024-01_projectAlpha_computeEngine.txt
+2026-10-05 13:43:52,886 - INFO - Clean phase: cleaning invoice_2024-01_projectAlpha_computeEngine.txt (aggressive=False)
+2026-10-05 13:43:52,886 - INFO - Chunk phase: splitting invoice_2024-01_projectAlpha_computeEngine.txt (chunk_size=300, overlap=50)
+2026-10-05 13:43:52,887 - INFO - Store phase: writing invoice_2024-01_projectAlpha_computeEngine.txt (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:43:52,890 - INFO - Finished invoice_2024-01_projectAlpha_computeEngine.txt: 3 chunk(s) stored (document_id=921856c3-5070-494f-89fa-c4055206ec2e, status=classified)
+2026-10-05 13:43:52,890 - INFO - Load phase: reading invoice_2024-02_projectBeta_cloudStorage.txt
+2026-10-05 13:43:52,890 - INFO - Metadata phase: best-effort classification for invoice_2024-02_projectBeta_cloudStorage.txt
+2026-10-05 13:43:52,890 - INFO - Clean phase: cleaning invoice_2024-02_projectBeta_cloudStorage.txt (aggressive=False)
+2026-10-05 13:43:52,890 - INFO - Chunk phase: splitting invoice_2024-02_projectBeta_cloudStorage.txt (chunk_size=300, overlap=50)
+2026-10-05 13:43:52,890 - INFO - Store phase: writing invoice_2024-02_projectBeta_cloudStorage.txt (2 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:43:52,899 - INFO - Finished invoice_2024-02_projectBeta_cloudStorage.txt: 2 chunk(s) stored (document_id=d7e762f0-e4e4-40a5-af7c-1aab6d9dd3c4, status=classified)
+2026-10-05 13:43:52,899 - INFO - Load phase: reading email_payload_spec.pdf
+2026-10-05 13:43:52,960 - INFO - Metadata phase: best-effort classification for email_payload_spec.pdf
+2026-10-05 13:43:52,960 - INFO - 'email_payload_spec.pdf' does not match the naming convention - ingesting as unclassified (this does not block loading/chunking/storage).
+2026-10-05 13:43:52,960 - INFO - 'email_payload_spec.pdf' is unclassified - proceeding anyway (not fatal).
+2026-10-05 13:43:52,960 - INFO - Clean phase: cleaning email_payload_spec.pdf (aggressive=True)
+2026-10-05 13:43:52,960 - INFO - Chunk phase: splitting email_payload_spec.pdf (chunk_size=300, overlap=50)
+2026-10-05 13:43:52,960 - INFO - Store phase: writing email_payload_spec.pdf (7 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:43:52,966 - INFO - Finished email_payload_spec.pdf: 7 chunk(s) stored (document_id=a4a7aeb6-d9a6-4fa1-90d2-eedf129fc475, status=unclassified)
+2026-10-05 13:43:52,968 - INFO - Load phase: reading Task-3.pdf
+2026-10-05 13:43:53,604 - INFO - Metadata phase: best-effort classification for Task-3.pdf
+2026-10-05 13:43:53,605 - INFO - 'Task-3.pdf' does not match the naming convention - ingesting as unclassified (this does not block loading/chunking/storage).
+2026-10-05 13:43:53,605 - INFO - 'Task-3.pdf' is unclassified - proceeding anyway (not fatal).
+2026-10-05 13:43:53,605 - INFO - Clean phase: cleaning Task-3.pdf (aggressive=True)
+2026-10-05 13:43:53,607 - INFO - Chunk phase: splitting Task-3.pdf (chunk_size=300, overlap=50)
+2026-10-05 13:43:53,608 - INFO - Store phase: writing Task-3.pdf (24 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:43:53,616 - INFO - Finished Task-3.pdf: 24 chunk(s) stored (document_id=6378ae05-9b13-4c6f-ae78-221300b6d259, status=unclassified)
+2026-10-05 13:43:53,616 - INFO - Load phase: reading الوظيفة الثانية (1).pdf
+2026-10-05 13:43:53,806 - INFO - Metadata phase: best-effort classification for الوظيفة الثانية (1).pdf
+2026-10-05 13:43:53,807 - INFO - 'الوظيفة الثانية (1).pdf' does not match the naming convention - ingesting as unclassified (this does not block loading/chunking/storage).
+2026-10-05 13:43:53,807 - INFO - 'الوظيفة الثانية (1).pdf' is unclassified - proceeding anyway (not fatal).
+2026-10-05 13:43:53,807 - INFO - Clean phase: cleaning الوظيفة الثانية (1).pdf (aggressive=True)
+2026-10-05 13:43:53,808 - INFO - Chunk phase: splitting الوظيفة الثانية (1).pdf (chunk_size=300, overlap=50)
+2026-10-05 13:43:53,808 - INFO - Store phase: writing الوظيفة الثانية (1).pdf (9 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:43:53,815 - INFO - Finished الوظيفة الثانية (1).pdf: 9 chunk(s) stored (document_id=c9dc016d-b5b5-42e0-a1e5-4651e7d9f2b2, status=unclassified)
+2026-10-05 13:43:53,816 - INFO - Load phase: reading policy_2024-01_projectAlpha_general.md
+2026-10-05 13:43:53,816 - INFO - Metadata phase: best-effort classification for policy_2024-01_projectAlpha_general.md
+2026-10-05 13:43:53,816 - INFO - Clean phase: cleaning policy_2024-01_projectAlpha_general.md (aggressive=False)
+2026-10-05 13:43:53,818 - INFO - Chunk phase: splitting policy_2024-01_projectAlpha_general.md (chunk_size=300, overlap=50)
+2026-10-05 13:43:53,818 - INFO - Store phase: writing policy_2024-01_projectAlpha_general.md (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:43:53,824 - INFO - Finished policy_2024-01_projectAlpha_general.md: 3 chunk(s) stored (document_id=1a9a3459-a075-4748-a763-b34ca226e030, status=classified)
+2026-10-05 13:43:53,825 - INFO - Load phase: reading policy_2024-03_projectBeta_billing.md
+2026-10-05 13:43:53,825 - INFO - Metadata phase: best-effort classification for policy_2024-03_projectBeta_billing.md
+2026-10-05 13:43:53,826 - INFO - Clean phase: cleaning policy_2024-03_projectBeta_billing.md (aggressive=False)
+2026-10-05 13:43:53,827 - INFO - Chunk phase: splitting policy_2024-03_projectBeta_billing.md (chunk_size=300, overlap=50)
+2026-10-05 13:43:53,827 - INFO - Store phase: writing policy_2024-03_projectBeta_billing.md (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:43:53,835 - INFO - Finished policy_2024-03_projectBeta_billing.md: 3 chunk(s) stored (document_id=813255a0-b63f-454f-9819-9d49e30205ab, status=classified)
+2026-10-05 13:43:53,835 - INFO - Load phase: reading report_2024-02_projectAlpha_computeEngine.txt
+2026-10-05 13:43:53,836 - INFO - Metadata phase: best-effort classification for report_2024-02_projectAlpha_computeEngine.txt
+2026-10-05 13:43:53,836 - INFO - Clean phase: cleaning report_2024-02_projectAlpha_computeEngine.txt (aggressive=False)
+2026-10-05 13:43:53,837 - INFO - Chunk phase: splitting report_2024-02_projectAlpha_computeEngine.txt (chunk_size=300, overlap=50)
+2026-10-05 13:43:53,837 - INFO - Store phase: writing report_2024-02_projectAlpha_computeEngine.txt (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:43:53,844 - INFO - Finished report_2024-02_projectAlpha_computeEngine.txt: 3 chunk(s) stored (document_id=c2871f46-a76e-434f-ae94-fa8cf2058899, status=classified)
+2026-10-05 13:43:53,844 - INFO - Load phase: reading report_2024-03_projectBeta_security.txt
+2026-10-05 13:43:53,844 - INFO - Metadata phase: best-effort classification for report_2024-03_projectBeta_security.txt
+2026-10-05 13:43:53,844 - INFO - Clean phase: cleaning report_2024-03_projectBeta_security.txt (aggressive=False)
+2026-10-05 13:43:53,844 - INFO - Chunk phase: splitting report_2024-03_projectBeta_security.txt (chunk_size=300, overlap=50)
+2026-10-05 13:43:53,844 - INFO - Store phase: writing report_2024-03_projectBeta_security.txt (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:43:53,852 - INFO - Finished report_2024-03_projectBeta_security.txt: 3 chunk(s) stored (document_id=1f6561c6-11f7-4eae-ac5e-259d1d4c1133, status=classified)
+2026-10-05 13:43:53,852 - INFO - Ingestion finished: 10/10 files processed (7 classified, 3 unclassified), 60 chunks stored, 0 failure(s)
+2026-10-05 13:44:31,234 - INFO - Scan phase: looking for documents under E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\raw\week7
+2026-10-05 13:44:31,234 - INFO - Scan phase: found 10 document(s)
+2026-10-05 13:44:31,234 - INFO - rag_documents / rag_chunks schema ready at E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:44:31,234 - INFO - Load phase: reading invoice_2024-01_projectAlpha_computeEngine.pdf
+2026-10-05 13:44:31,330 - INFO - Table found and cleaned (3 data row(s)) in E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\raw\week7\invoices\invoice_2024-01_projectAlpha_computeEngine.pdf
+2026-10-05 13:44:31,331 - INFO - Metadata phase: best-effort classification for invoice_2024-01_projectAlpha_computeEngine.pdf
+2026-10-05 13:44:31,331 - INFO - Clean phase: cleaning invoice_2024-01_projectAlpha_computeEngine.pdf (aggressive=True)
+2026-10-05 13:44:31,333 - INFO - Chunk phase: splitting invoice_2024-01_projectAlpha_computeEngine.pdf (chunk_size=300, overlap=50)
+2026-10-05 13:44:31,334 - INFO - Store phase: writing invoice_2024-01_projectAlpha_computeEngine.pdf (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:44:31,340 - INFO - Finished invoice_2024-01_projectAlpha_computeEngine.pdf: 3 chunk(s) stored (document_id=2dc5b207-bcfa-430a-9a6b-1518937aa1dc, status=classified)
+2026-10-05 13:44:31,340 - INFO - Load phase: reading invoice_2024-01_projectAlpha_computeEngine.txt
+2026-10-05 13:44:31,341 - INFO - Metadata phase: best-effort classification for invoice_2024-01_projectAlpha_computeEngine.txt
+2026-10-05 13:44:31,341 - INFO - Clean phase: cleaning invoice_2024-01_projectAlpha_computeEngine.txt (aggressive=False)
+2026-10-05 13:44:31,341 - INFO - Chunk phase: splitting invoice_2024-01_projectAlpha_computeEngine.txt (chunk_size=300, overlap=50)
+2026-10-05 13:44:31,341 - INFO - Store phase: writing invoice_2024-01_projectAlpha_computeEngine.txt (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:44:31,348 - INFO - Finished invoice_2024-01_projectAlpha_computeEngine.txt: 3 chunk(s) stored (document_id=7aabaa16-72b0-4486-aee2-28109762c88f, status=classified)
+2026-10-05 13:44:31,348 - INFO - Load phase: reading invoice_2024-02_projectBeta_cloudStorage.txt
+2026-10-05 13:44:31,348 - INFO - Metadata phase: best-effort classification for invoice_2024-02_projectBeta_cloudStorage.txt
+2026-10-05 13:44:31,348 - INFO - Clean phase: cleaning invoice_2024-02_projectBeta_cloudStorage.txt (aggressive=False)
+2026-10-05 13:44:31,350 - INFO - Chunk phase: splitting invoice_2024-02_projectBeta_cloudStorage.txt (chunk_size=300, overlap=50)
+2026-10-05 13:44:31,351 - INFO - Store phase: writing invoice_2024-02_projectBeta_cloudStorage.txt (2 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:44:31,357 - INFO - Finished invoice_2024-02_projectBeta_cloudStorage.txt: 2 chunk(s) stored (document_id=5eb585f7-2fba-4096-a358-ecf5d66f011a, status=classified)
+2026-10-05 13:44:31,357 - INFO - Load phase: reading email_payload_spec.pdf
+2026-10-05 13:44:31,418 - INFO - Metadata phase: best-effort classification for email_payload_spec.pdf
+2026-10-05 13:44:31,418 - INFO - 'email_payload_spec.pdf' does not match the naming convention - ingesting as unclassified (this does not block loading/chunking/storage).
+2026-10-05 13:44:31,418 - INFO - 'email_payload_spec.pdf' is unclassified - proceeding anyway (not fatal).
+2026-10-05 13:44:31,418 - INFO - Clean phase: cleaning email_payload_spec.pdf (aggressive=True)
+2026-10-05 13:44:31,418 - INFO - Chunk phase: splitting email_payload_spec.pdf (chunk_size=300, overlap=50)
+2026-10-05 13:44:31,418 - INFO - Store phase: writing email_payload_spec.pdf (7 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:44:31,418 - INFO - Finished email_payload_spec.pdf: 7 chunk(s) stored (document_id=c7af0a79-2fa2-49f2-8fdf-9703b045de06, status=unclassified)
+2026-10-05 13:44:31,418 - INFO - Load phase: reading Task-3.pdf
+2026-10-05 13:44:32,153 - INFO - Metadata phase: best-effort classification for Task-3.pdf
+2026-10-05 13:44:32,153 - INFO - 'Task-3.pdf' does not match the naming convention - ingesting as unclassified (this does not block loading/chunking/storage).
+2026-10-05 13:44:32,153 - INFO - 'Task-3.pdf' is unclassified - proceeding anyway (not fatal).
+2026-10-05 13:44:32,153 - INFO - Clean phase: cleaning Task-3.pdf (aggressive=True)
+2026-10-05 13:44:32,153 - INFO - Chunk phase: splitting Task-3.pdf (chunk_size=300, overlap=50)
+2026-10-05 13:44:32,153 - INFO - Store phase: writing Task-3.pdf (24 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:44:32,153 - INFO - Finished Task-3.pdf: 24 chunk(s) stored (document_id=2a7a6f16-b02c-4856-8fc0-f698dfc00ab2, status=unclassified)
+2026-10-05 13:44:32,153 - INFO - Load phase: reading الوظيفة الثانية (1).pdf
+2026-10-05 13:44:32,356 - INFO - Metadata phase: best-effort classification for الوظيفة الثانية (1).pdf
+2026-10-05 13:44:32,356 - INFO - 'الوظيفة الثانية (1).pdf' does not match the naming convention - ingesting as unclassified (this does not block loading/chunking/storage).
+2026-10-05 13:44:32,356 - INFO - 'الوظيفة الثانية (1).pdf' is unclassified - proceeding anyway (not fatal).
+2026-10-05 13:44:32,356 - INFO - Clean phase: cleaning الوظيفة الثانية (1).pdf (aggressive=True)
+2026-10-05 13:44:32,356 - INFO - Chunk phase: splitting الوظيفة الثانية (1).pdf (chunk_size=300, overlap=50)
+2026-10-05 13:44:32,356 - INFO - Store phase: writing الوظيفة الثانية (1).pdf (9 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:44:32,363 - INFO - Finished الوظيفة الثانية (1).pdf: 9 chunk(s) stored (document_id=8523d0c9-b242-4618-b45b-0857640e149a, status=unclassified)
+2026-10-05 13:44:32,363 - INFO - Load phase: reading policy_2024-01_projectAlpha_general.md
+2026-10-05 13:44:32,363 - INFO - Metadata phase: best-effort classification for policy_2024-01_projectAlpha_general.md
+2026-10-05 13:44:32,363 - INFO - Clean phase: cleaning policy_2024-01_projectAlpha_general.md (aggressive=False)
+2026-10-05 13:44:32,363 - INFO - Chunk phase: splitting policy_2024-01_projectAlpha_general.md (chunk_size=300, overlap=50)
+2026-10-05 13:44:32,367 - INFO - Store phase: writing policy_2024-01_projectAlpha_general.md (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:44:32,374 - INFO - Finished policy_2024-01_projectAlpha_general.md: 3 chunk(s) stored (document_id=ae14c8a3-7bad-4aed-8bfd-79696adf3f15, status=classified)
+2026-10-05 13:44:32,374 - INFO - Load phase: reading policy_2024-03_projectBeta_billing.md
+2026-10-05 13:44:32,375 - INFO - Metadata phase: best-effort classification for policy_2024-03_projectBeta_billing.md
+2026-10-05 13:44:32,376 - INFO - Clean phase: cleaning policy_2024-03_projectBeta_billing.md (aggressive=False)
+2026-10-05 13:44:32,376 - INFO - Chunk phase: splitting policy_2024-03_projectBeta_billing.md (chunk_size=300, overlap=50)
+2026-10-05 13:44:32,412 - INFO - Store phase: writing policy_2024-03_projectBeta_billing.md (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:44:32,434 - INFO - Finished policy_2024-03_projectBeta_billing.md: 3 chunk(s) stored (document_id=2d4cb665-7cbe-40c8-a948-6d0815073f20, status=classified)
+2026-10-05 13:44:32,434 - INFO - Load phase: reading report_2024-02_projectAlpha_computeEngine.txt
+2026-10-05 13:44:32,435 - INFO - Metadata phase: best-effort classification for report_2024-02_projectAlpha_computeEngine.txt
+2026-10-05 13:44:32,436 - INFO - Clean phase: cleaning report_2024-02_projectAlpha_computeEngine.txt (aggressive=False)
+2026-10-05 13:44:32,436 - INFO - Chunk phase: splitting report_2024-02_projectAlpha_computeEngine.txt (chunk_size=300, overlap=50)
+2026-10-05 13:44:32,436 - INFO - Store phase: writing report_2024-02_projectAlpha_computeEngine.txt (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:44:32,451 - INFO - Finished report_2024-02_projectAlpha_computeEngine.txt: 3 chunk(s) stored (document_id=0d317f0b-9b7d-4525-88ec-af8a407bd321, status=classified)
+2026-10-05 13:44:32,451 - INFO - Load phase: reading report_2024-03_projectBeta_security.txt
+2026-10-05 13:44:32,452 - INFO - Metadata phase: best-effort classification for report_2024-03_projectBeta_security.txt
+2026-10-05 13:44:32,452 - INFO - Clean phase: cleaning report_2024-03_projectBeta_security.txt (aggressive=False)
+2026-10-05 13:44:32,453 - INFO - Chunk phase: splitting report_2024-03_projectBeta_security.txt (chunk_size=300, overlap=50)
+2026-10-05 13:44:32,454 - INFO - Store phase: writing report_2024-03_projectBeta_security.txt (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 13:44:32,461 - INFO - Finished report_2024-03_projectBeta_security.txt: 3 chunk(s) stored (document_id=7d01e091-c9c9-4ddd-af0a-8a0e40d1dc20, status=classified)
+2026-10-05 13:44:32,461 - INFO - Ingestion finished: 10/10 files processed (7 classified, 3 unclassified), 60 chunks stored, 0 failure(s)
+2026-10-05 16:24:31,694 - INFO - Scan phase: looking for documents under E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\raw\week7
+2026-10-05 16:24:31,703 - INFO - Scan phase: found 10 document(s)
+2026-10-05 16:24:31,712 - INFO - rag_documents / rag_chunks schema ready at E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:24:31,712 - INFO - Load phase: reading invoice_2024-01_projectAlpha_computeEngine.pdf
+2026-10-05 16:24:31,965 - INFO - Table found and cleaned (3 data row(s)) in E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\raw\week7\invoices\invoice_2024-01_projectAlpha_computeEngine.pdf
+2026-10-05 16:24:31,965 - INFO - Metadata phase: best-effort classification for invoice_2024-01_projectAlpha_computeEngine.pdf
+2026-10-05 16:24:31,965 - INFO - Clean phase: cleaning invoice_2024-01_projectAlpha_computeEngine.pdf (aggressive=True)
+2026-10-05 16:24:31,967 - INFO - Chunk phase: splitting invoice_2024-01_projectAlpha_computeEngine.pdf (chunk_size=300, overlap=50)
+2026-10-05 16:24:31,967 - INFO - Store phase: writing invoice_2024-01_projectAlpha_computeEngine.pdf (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:24:31,969 - INFO - Finished invoice_2024-01_projectAlpha_computeEngine.pdf: 3 chunk(s) stored (document_id=f7eaf16e-c501-4ceb-aa83-f0e341fd6e60, status=classified)
+2026-10-05 16:24:31,969 - INFO - Load phase: reading invoice_2024-01_projectAlpha_computeEngine.txt
+2026-10-05 16:24:31,969 - INFO - Metadata phase: best-effort classification for invoice_2024-01_projectAlpha_computeEngine.txt
+2026-10-05 16:24:31,969 - INFO - Clean phase: cleaning invoice_2024-01_projectAlpha_computeEngine.txt (aggressive=False)
+2026-10-05 16:24:31,969 - INFO - Chunk phase: splitting invoice_2024-01_projectAlpha_computeEngine.txt (chunk_size=300, overlap=50)
+2026-10-05 16:24:31,969 - INFO - Store phase: writing invoice_2024-01_projectAlpha_computeEngine.txt (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:24:31,969 - INFO - Finished invoice_2024-01_projectAlpha_computeEngine.txt: 3 chunk(s) stored (document_id=1833fc6d-6d3d-4ef3-b364-2752b097c167, status=classified)
+2026-10-05 16:24:31,969 - INFO - Load phase: reading invoice_2024-02_projectBeta_cloudStorage.txt
+2026-10-05 16:24:31,977 - INFO - Metadata phase: best-effort classification for invoice_2024-02_projectBeta_cloudStorage.txt
+2026-10-05 16:24:31,977 - INFO - Clean phase: cleaning invoice_2024-02_projectBeta_cloudStorage.txt (aggressive=False)
+2026-10-05 16:24:31,978 - INFO - Chunk phase: splitting invoice_2024-02_projectBeta_cloudStorage.txt (chunk_size=300, overlap=50)
+2026-10-05 16:24:31,978 - INFO - Store phase: writing invoice_2024-02_projectBeta_cloudStorage.txt (2 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:24:31,981 - INFO - Finished invoice_2024-02_projectBeta_cloudStorage.txt: 2 chunk(s) stored (document_id=c6186ab5-a19b-480d-b266-98e75a2f8238, status=classified)
+2026-10-05 16:24:31,981 - INFO - Load phase: reading email_payload_spec.pdf
+2026-10-05 16:24:32,047 - INFO - Metadata phase: best-effort classification for email_payload_spec.pdf
+2026-10-05 16:24:32,047 - INFO - 'email_payload_spec.pdf' does not match the naming convention - ingesting as unclassified (this does not block loading/chunking/storage).
+2026-10-05 16:24:32,047 - INFO - 'email_payload_spec.pdf' is unclassified - proceeding anyway (not fatal).
+2026-10-05 16:24:32,063 - INFO - Clean phase: cleaning email_payload_spec.pdf (aggressive=True)
+2026-10-05 16:24:32,063 - INFO - Chunk phase: splitting email_payload_spec.pdf (chunk_size=300, overlap=50)
+2026-10-05 16:24:32,063 - INFO - Store phase: writing email_payload_spec.pdf (7 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:24:32,067 - INFO - Finished email_payload_spec.pdf: 7 chunk(s) stored (document_id=f0547652-0441-4a7d-a862-c5e61b312d1f, status=unclassified)
+2026-10-05 16:24:32,067 - INFO - Load phase: reading Task-3.pdf
+2026-10-05 16:24:32,750 - INFO - Metadata phase: best-effort classification for Task-3.pdf
+2026-10-05 16:24:32,750 - INFO - 'Task-3.pdf' does not match the naming convention - ingesting as unclassified (this does not block loading/chunking/storage).
+2026-10-05 16:24:32,750 - INFO - 'Task-3.pdf' is unclassified - proceeding anyway (not fatal).
+2026-10-05 16:24:32,750 - INFO - Clean phase: cleaning Task-3.pdf (aggressive=True)
+2026-10-05 16:24:32,760 - INFO - Chunk phase: splitting Task-3.pdf (chunk_size=300, overlap=50)
+2026-10-05 16:24:32,761 - INFO - Store phase: writing Task-3.pdf (24 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:24:32,765 - INFO - Finished Task-3.pdf: 24 chunk(s) stored (document_id=04bdd5ee-1830-40c9-9b5f-73400b12f905, status=unclassified)
+2026-10-05 16:24:32,765 - INFO - Load phase: reading الوظيفة الثانية (1).pdf
+2026-10-05 16:24:32,928 - INFO - Metadata phase: best-effort classification for الوظيفة الثانية (1).pdf
+2026-10-05 16:24:32,929 - INFO - 'الوظيفة الثانية (1).pdf' does not match the naming convention - ingesting as unclassified (this does not block loading/chunking/storage).
+2026-10-05 16:24:32,929 - INFO - 'الوظيفة الثانية (1).pdf' is unclassified - proceeding anyway (not fatal).
+2026-10-05 16:24:32,929 - INFO - Clean phase: cleaning الوظيفة الثانية (1).pdf (aggressive=True)
+2026-10-05 16:24:32,931 - INFO - Chunk phase: splitting الوظيفة الثانية (1).pdf (chunk_size=300, overlap=50)
+2026-10-05 16:24:32,931 - INFO - Store phase: writing الوظيفة الثانية (1).pdf (9 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:24:32,931 - INFO - Finished الوظيفة الثانية (1).pdf: 9 chunk(s) stored (document_id=dc755ead-c797-4744-945f-c26db440a22e, status=unclassified)
+2026-10-05 16:24:32,931 - INFO - Load phase: reading policy_2024-01_projectAlpha_general.md
+2026-10-05 16:24:32,931 - INFO - Metadata phase: best-effort classification for policy_2024-01_projectAlpha_general.md
+2026-10-05 16:24:32,931 - INFO - Clean phase: cleaning policy_2024-01_projectAlpha_general.md (aggressive=False)
+2026-10-05 16:24:32,931 - INFO - Chunk phase: splitting policy_2024-01_projectAlpha_general.md (chunk_size=300, overlap=50)
+2026-10-05 16:24:32,931 - INFO - Store phase: writing policy_2024-01_projectAlpha_general.md (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:24:32,940 - INFO - Finished policy_2024-01_projectAlpha_general.md: 3 chunk(s) stored (document_id=6a7621b2-6695-4419-91b4-fcc8d8bc73be, status=classified)
+2026-10-05 16:24:32,940 - INFO - Load phase: reading policy_2024-03_projectBeta_billing.md
+2026-10-05 16:24:32,941 - INFO - Metadata phase: best-effort classification for policy_2024-03_projectBeta_billing.md
+2026-10-05 16:24:32,941 - INFO - Clean phase: cleaning policy_2024-03_projectBeta_billing.md (aggressive=False)
+2026-10-05 16:24:32,942 - INFO - Chunk phase: splitting policy_2024-03_projectBeta_billing.md (chunk_size=300, overlap=50)
+2026-10-05 16:24:32,942 - INFO - Store phase: writing policy_2024-03_projectBeta_billing.md (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:24:32,946 - INFO - Finished policy_2024-03_projectBeta_billing.md: 3 chunk(s) stored (document_id=37d52003-e25e-428e-9263-d363210892b0, status=classified)
+2026-10-05 16:24:32,946 - INFO - Load phase: reading report_2024-02_projectAlpha_computeEngine.txt
+2026-10-05 16:24:32,946 - INFO - Metadata phase: best-effort classification for report_2024-02_projectAlpha_computeEngine.txt
+2026-10-05 16:24:32,947 - INFO - Clean phase: cleaning report_2024-02_projectAlpha_computeEngine.txt (aggressive=False)
+2026-10-05 16:24:32,947 - INFO - Chunk phase: splitting report_2024-02_projectAlpha_computeEngine.txt (chunk_size=300, overlap=50)
+2026-10-05 16:24:32,947 - INFO - Store phase: writing report_2024-02_projectAlpha_computeEngine.txt (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:24:32,950 - INFO - Finished report_2024-02_projectAlpha_computeEngine.txt: 3 chunk(s) stored (document_id=66e9e3fe-7804-46ee-8948-07096f4baa0b, status=classified)
+2026-10-05 16:24:32,950 - INFO - Load phase: reading report_2024-03_projectBeta_security.txt
+2026-10-05 16:24:32,951 - INFO - Metadata phase: best-effort classification for report_2024-03_projectBeta_security.txt
+2026-10-05 16:24:32,951 - INFO - Clean phase: cleaning report_2024-03_projectBeta_security.txt (aggressive=False)
+2026-10-05 16:24:32,951 - INFO - Chunk phase: splitting report_2024-03_projectBeta_security.txt (chunk_size=300, overlap=50)
+2026-10-05 16:24:32,951 - INFO - Store phase: writing report_2024-03_projectBeta_security.txt (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:24:32,953 - INFO - Finished report_2024-03_projectBeta_security.txt: 3 chunk(s) stored (document_id=e7b14a28-5a8c-4e82-b3d5-cd95c0855abb, status=classified)
+2026-10-05 16:24:32,955 - INFO - Ingestion finished: 10/10 files processed (7 classified, 3 unclassified), 60 chunks stored, 0 replaced, 0 removed, 0 failure(s)
+2026-10-05 16:37:38,661 - INFO - Scan phase: looking for documents under E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\raw\week7
+2026-10-05 16:37:38,661 - INFO - Scan phase: found 10 document(s)
+2026-10-05 16:37:38,661 - INFO - rag_documents / rag_chunks schema ready at E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:37:38,661 - INFO - Load phase: reading invoice_2024-01_projectAlpha_computeEngine.pdf
+2026-10-05 16:37:38,752 - INFO - Table found and cleaned (3 data row(s)) in E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\raw\week7\invoices\invoice_2024-01_projectAlpha_computeEngine.pdf
+2026-10-05 16:37:38,752 - INFO - Metadata phase: best-effort classification for invoice_2024-01_projectAlpha_computeEngine.pdf
+2026-10-05 16:37:38,752 - INFO - Clean phase: cleaning invoice_2024-01_projectAlpha_computeEngine.pdf (aggressive=True)
+2026-10-05 16:37:38,752 - INFO - Chunk phase: splitting invoice_2024-01_projectAlpha_computeEngine.pdf (chunk_size=300, overlap=50)
+2026-10-05 16:37:38,752 - INFO - Store phase: writing invoice_2024-01_projectAlpha_computeEngine.pdf (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:37:38,770 - INFO - 'invoice_2024-01_projectAlpha_computeEngine.pdf' was already stored - previous version replaced.
+2026-10-05 16:37:38,770 - INFO - Finished invoice_2024-01_projectAlpha_computeEngine.pdf: 3 chunk(s) stored (document_id=27e24262-0898-400a-9b1f-483d8379e56d, status=classified)
+2026-10-05 16:37:38,770 - INFO - Load phase: reading invoice_2024-01_projectAlpha_computeEngine.txt
+2026-10-05 16:37:38,771 - INFO - Metadata phase: best-effort classification for invoice_2024-01_projectAlpha_computeEngine.txt
+2026-10-05 16:37:38,771 - INFO - Clean phase: cleaning invoice_2024-01_projectAlpha_computeEngine.txt (aggressive=False)
+2026-10-05 16:37:38,771 - INFO - Chunk phase: splitting invoice_2024-01_projectAlpha_computeEngine.txt (chunk_size=300, overlap=50)
+2026-10-05 16:37:38,772 - INFO - Store phase: writing invoice_2024-01_projectAlpha_computeEngine.txt (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:37:38,776 - INFO - 'invoice_2024-01_projectAlpha_computeEngine.txt' was already stored - previous version replaced.
+2026-10-05 16:37:38,776 - INFO - Finished invoice_2024-01_projectAlpha_computeEngine.txt: 3 chunk(s) stored (document_id=c66ff04e-7417-4fea-b2b1-d3b375860b49, status=classified)
+2026-10-05 16:37:38,776 - INFO - Load phase: reading invoice_2024-02_projectBeta_cloudStorage.txt
+2026-10-05 16:37:38,777 - INFO - Metadata phase: best-effort classification for invoice_2024-02_projectBeta_cloudStorage.txt
+2026-10-05 16:37:38,777 - INFO - Clean phase: cleaning invoice_2024-02_projectBeta_cloudStorage.txt (aggressive=False)
+2026-10-05 16:37:38,777 - INFO - Chunk phase: splitting invoice_2024-02_projectBeta_cloudStorage.txt (chunk_size=300, overlap=50)
+2026-10-05 16:37:38,778 - INFO - Store phase: writing invoice_2024-02_projectBeta_cloudStorage.txt (2 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:37:38,781 - INFO - 'invoice_2024-02_projectBeta_cloudStorage.txt' was already stored - previous version replaced.
+2026-10-05 16:37:38,781 - INFO - Finished invoice_2024-02_projectBeta_cloudStorage.txt: 2 chunk(s) stored (document_id=6bc3238c-e576-4cf7-aa16-ce833f1bcb3c, status=classified)
+2026-10-05 16:37:38,781 - INFO - Load phase: reading email_payload_spec.pdf
+2026-10-05 16:37:38,834 - INFO - Metadata phase: best-effort classification for email_payload_spec.pdf
+2026-10-05 16:37:38,834 - INFO - 'email_payload_spec.pdf' does not match the naming convention - ingesting as unclassified (this does not block loading/chunking/storage).
+2026-10-05 16:37:38,834 - INFO - 'email_payload_spec.pdf' is unclassified - proceeding anyway (not fatal).
+2026-10-05 16:37:38,834 - INFO - Clean phase: cleaning email_payload_spec.pdf (aggressive=True)
+2026-10-05 16:37:38,834 - INFO - Chunk phase: splitting email_payload_spec.pdf (chunk_size=300, overlap=50)
+2026-10-05 16:37:38,834 - INFO - Store phase: writing email_payload_spec.pdf (7 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:37:38,834 - INFO - 'email_payload_spec.pdf' was already stored - previous version replaced.
+2026-10-05 16:37:38,834 - INFO - Finished email_payload_spec.pdf: 7 chunk(s) stored (document_id=bd41302f-6a48-4af9-9050-c2e242e6ecea, status=unclassified)
+2026-10-05 16:37:38,834 - INFO - Load phase: reading Task-3.pdf
+2026-10-05 16:37:39,473 - INFO - Metadata phase: best-effort classification for Task-3.pdf
+2026-10-05 16:37:39,473 - INFO - 'Task-3.pdf' does not match the naming convention - ingesting as unclassified (this does not block loading/chunking/storage).
+2026-10-05 16:37:39,473 - INFO - 'Task-3.pdf' is unclassified - proceeding anyway (not fatal).
+2026-10-05 16:37:39,473 - INFO - Clean phase: cleaning Task-3.pdf (aggressive=True)
+2026-10-05 16:37:39,473 - INFO - Chunk phase: splitting Task-3.pdf (chunk_size=300, overlap=50)
+2026-10-05 16:37:39,484 - INFO - Store phase: writing Task-3.pdf (24 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:37:39,488 - INFO - 'Task-3.pdf' was already stored - previous version replaced.
+2026-10-05 16:37:39,488 - INFO - Finished Task-3.pdf: 24 chunk(s) stored (document_id=36223fdc-e591-41ab-a679-23f1fcb48bf9, status=unclassified)
+2026-10-05 16:37:39,489 - INFO - Load phase: reading الوظيفة الثانية (1).pdf
+2026-10-05 16:37:39,653 - INFO - Metadata phase: best-effort classification for الوظيفة الثانية (1).pdf
+2026-10-05 16:37:39,653 - INFO - 'الوظيفة الثانية (1).pdf' does not match the naming convention - ingesting as unclassified (this does not block loading/chunking/storage).
+2026-10-05 16:37:39,654 - INFO - 'الوظيفة الثانية (1).pdf' is unclassified - proceeding anyway (not fatal).
+2026-10-05 16:37:39,654 - INFO - Clean phase: cleaning الوظيفة الثانية (1).pdf (aggressive=True)
+2026-10-05 16:37:39,654 - INFO - Chunk phase: splitting الوظيفة الثانية (1).pdf (chunk_size=300, overlap=50)
+2026-10-05 16:37:39,655 - INFO - Store phase: writing الوظيفة الثانية (1).pdf (9 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:37:39,659 - INFO - 'الوظيفة الثانية (1).pdf' was already stored - previous version replaced.
+2026-10-05 16:37:39,659 - INFO - Finished الوظيفة الثانية (1).pdf: 9 chunk(s) stored (document_id=c2b7cb7c-5882-4712-9898-e3fef7e32c62, status=unclassified)
+2026-10-05 16:37:39,659 - INFO - Load phase: reading policy_2024-01_projectAlpha_general.md
+2026-10-05 16:37:39,660 - INFO - Metadata phase: best-effort classification for policy_2024-01_projectAlpha_general.md
+2026-10-05 16:37:39,660 - INFO - Clean phase: cleaning policy_2024-01_projectAlpha_general.md (aggressive=False)
+2026-10-05 16:37:39,660 - INFO - Chunk phase: splitting policy_2024-01_projectAlpha_general.md (chunk_size=300, overlap=50)
+2026-10-05 16:37:39,660 - INFO - Store phase: writing policy_2024-01_projectAlpha_general.md (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:37:39,663 - INFO - 'policy_2024-01_projectAlpha_general.md' was already stored - previous version replaced.
+2026-10-05 16:37:39,663 - INFO - Finished policy_2024-01_projectAlpha_general.md: 3 chunk(s) stored (document_id=68519f40-74e6-4b08-9135-cab0e805f9f6, status=classified)
+2026-10-05 16:37:39,663 - INFO - Load phase: reading policy_2024-03_projectBeta_billing.md
+2026-10-05 16:37:39,664 - INFO - Metadata phase: best-effort classification for policy_2024-03_projectBeta_billing.md
+2026-10-05 16:37:39,664 - INFO - Clean phase: cleaning policy_2024-03_projectBeta_billing.md (aggressive=False)
+2026-10-05 16:37:39,664 - INFO - Chunk phase: splitting policy_2024-03_projectBeta_billing.md (chunk_size=300, overlap=50)
+2026-10-05 16:37:39,664 - INFO - Store phase: writing policy_2024-03_projectBeta_billing.md (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:37:39,668 - INFO - 'policy_2024-03_projectBeta_billing.md' was already stored - previous version replaced.
+2026-10-05 16:37:39,668 - INFO - Finished policy_2024-03_projectBeta_billing.md: 3 chunk(s) stored (document_id=2155c5aa-de2f-4414-ba6e-c814cc0cab47, status=classified)
+2026-10-05 16:37:39,668 - INFO - Load phase: reading report_2024-02_projectAlpha_computeEngine.txt
+2026-10-05 16:37:39,669 - INFO - Metadata phase: best-effort classification for report_2024-02_projectAlpha_computeEngine.txt
+2026-10-05 16:37:39,669 - INFO - Clean phase: cleaning report_2024-02_projectAlpha_computeEngine.txt (aggressive=False)
+2026-10-05 16:37:39,669 - INFO - Chunk phase: splitting report_2024-02_projectAlpha_computeEngine.txt (chunk_size=300, overlap=50)
+2026-10-05 16:37:39,669 - INFO - Store phase: writing report_2024-02_projectAlpha_computeEngine.txt (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:37:39,673 - INFO - 'report_2024-02_projectAlpha_computeEngine.txt' was already stored - previous version replaced.
+2026-10-05 16:37:39,673 - INFO - Finished report_2024-02_projectAlpha_computeEngine.txt: 3 chunk(s) stored (document_id=d8ff151b-ed7a-4fcb-846b-21c5f4125882, status=classified)
+2026-10-05 16:37:39,673 - INFO - Load phase: reading report_2024-03_projectBeta_security.txt
+2026-10-05 16:37:39,673 - INFO - Metadata phase: best-effort classification for report_2024-03_projectBeta_security.txt
+2026-10-05 16:37:39,674 - INFO - Clean phase: cleaning report_2024-03_projectBeta_security.txt (aggressive=False)
+2026-10-05 16:37:39,674 - INFO - Chunk phase: splitting report_2024-03_projectBeta_security.txt (chunk_size=300, overlap=50)
+2026-10-05 16:37:39,674 - INFO - Store phase: writing report_2024-03_projectBeta_security.txt (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:37:39,677 - INFO - 'report_2024-03_projectBeta_security.txt' was already stored - previous version replaced.
+2026-10-05 16:37:39,677 - INFO - Finished report_2024-03_projectBeta_security.txt: 3 chunk(s) stored (document_id=ff7df7a1-81f5-4616-8773-b0f9653cac1d, status=classified)
+2026-10-05 16:37:39,678 - INFO - Ingestion finished: 10/10 files processed (7 classified, 3 unclassified), 60 chunks stored, 10 replaced, 0 removed, 0 failure(s)
+2026-10-05 16:38:23,233 - INFO - Scan phase: looking for documents under E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\raw\week7
+2026-10-05 16:38:23,233 - INFO - Scan phase: found 10 document(s)
+2026-10-05 16:38:23,233 - INFO - rag_documents / rag_chunks schema ready at E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:38:23,233 - INFO - Load phase: reading invoice_2024-01_projectAlpha_computeEngine.pdf
+2026-10-05 16:38:23,333 - INFO - Table found and cleaned (3 data row(s)) in E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\raw\week7\invoices\invoice_2024-01_projectAlpha_computeEngine.pdf
+2026-10-05 16:38:23,333 - INFO - Metadata phase: best-effort classification for invoice_2024-01_projectAlpha_computeEngine.pdf
+2026-10-05 16:38:23,333 - INFO - Clean phase: cleaning invoice_2024-01_projectAlpha_computeEngine.pdf (aggressive=True)
+2026-10-05 16:38:23,333 - INFO - Chunk phase: splitting invoice_2024-01_projectAlpha_computeEngine.pdf (chunk_size=300, overlap=50)
+2026-10-05 16:38:23,333 - INFO - Store phase: writing invoice_2024-01_projectAlpha_computeEngine.pdf (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:38:23,333 - INFO - 'invoice_2024-01_projectAlpha_computeEngine.pdf' was already stored - previous version replaced.
+2026-10-05 16:38:23,333 - INFO - Finished invoice_2024-01_projectAlpha_computeEngine.pdf: 3 chunk(s) stored (document_id=047549cd-af03-483b-b873-a3c4d2946ab8, status=classified)
+2026-10-05 16:38:23,333 - INFO - Load phase: reading invoice_2024-01_projectAlpha_computeEngine.txt
+2026-10-05 16:38:23,333 - INFO - Metadata phase: best-effort classification for invoice_2024-01_projectAlpha_computeEngine.txt
+2026-10-05 16:38:23,333 - INFO - Clean phase: cleaning invoice_2024-01_projectAlpha_computeEngine.txt (aggressive=False)
+2026-10-05 16:38:23,333 - INFO - Chunk phase: splitting invoice_2024-01_projectAlpha_computeEngine.txt (chunk_size=300, overlap=50)
+2026-10-05 16:38:23,333 - INFO - Store phase: writing invoice_2024-01_projectAlpha_computeEngine.txt (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:38:23,349 - INFO - 'invoice_2024-01_projectAlpha_computeEngine.txt' was already stored - previous version replaced.
+2026-10-05 16:38:23,349 - INFO - Finished invoice_2024-01_projectAlpha_computeEngine.txt: 3 chunk(s) stored (document_id=79af31c5-4cf5-4f75-b70c-8eb787c50bb9, status=classified)
+2026-10-05 16:38:23,349 - INFO - Load phase: reading invoice_2024-02_projectBeta_cloudStorage.txt
+2026-10-05 16:38:23,350 - INFO - Metadata phase: best-effort classification for invoice_2024-02_projectBeta_cloudStorage.txt
+2026-10-05 16:38:23,350 - INFO - Clean phase: cleaning invoice_2024-02_projectBeta_cloudStorage.txt (aggressive=False)
+2026-10-05 16:38:23,350 - INFO - Chunk phase: splitting invoice_2024-02_projectBeta_cloudStorage.txt (chunk_size=300, overlap=50)
+2026-10-05 16:38:23,351 - INFO - Store phase: writing invoice_2024-02_projectBeta_cloudStorage.txt (2 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:38:23,354 - INFO - 'invoice_2024-02_projectBeta_cloudStorage.txt' was already stored - previous version replaced.
+2026-10-05 16:38:23,354 - INFO - Finished invoice_2024-02_projectBeta_cloudStorage.txt: 2 chunk(s) stored (document_id=02e38b0d-52db-417a-8402-debd1e60b265, status=classified)
+2026-10-05 16:38:23,355 - INFO - Load phase: reading email_payload_spec.pdf
+2026-10-05 16:38:23,401 - INFO - Metadata phase: best-effort classification for email_payload_spec.pdf
+2026-10-05 16:38:23,401 - INFO - 'email_payload_spec.pdf' does not match the naming convention - ingesting as unclassified (this does not block loading/chunking/storage).
+2026-10-05 16:38:23,401 - INFO - 'email_payload_spec.pdf' is unclassified - proceeding anyway (not fatal).
+2026-10-05 16:38:23,401 - INFO - Clean phase: cleaning email_payload_spec.pdf (aggressive=True)
+2026-10-05 16:38:23,417 - INFO - Chunk phase: splitting email_payload_spec.pdf (chunk_size=300, overlap=50)
+2026-10-05 16:38:23,417 - INFO - Store phase: writing email_payload_spec.pdf (7 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:38:23,423 - INFO - 'email_payload_spec.pdf' was already stored - previous version replaced.
+2026-10-05 16:38:23,423 - INFO - Finished email_payload_spec.pdf: 7 chunk(s) stored (document_id=24de554a-944e-43c9-b983-8bb9e35e8221, status=unclassified)
+2026-10-05 16:38:23,423 - INFO - Load phase: reading Task-3.pdf
+2026-10-05 16:38:24,136 - INFO - Metadata phase: best-effort classification for Task-3.pdf
+2026-10-05 16:38:24,136 - INFO - 'Task-3.pdf' does not match the naming convention - ingesting as unclassified (this does not block loading/chunking/storage).
+2026-10-05 16:38:24,136 - INFO - 'Task-3.pdf' is unclassified - proceeding anyway (not fatal).
+2026-10-05 16:38:24,136 - INFO - Clean phase: cleaning Task-3.pdf (aggressive=True)
+2026-10-05 16:38:24,136 - INFO - Chunk phase: splitting Task-3.pdf (chunk_size=300, overlap=50)
+2026-10-05 16:38:24,136 - INFO - Store phase: writing Task-3.pdf (24 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:38:24,152 - INFO - 'Task-3.pdf' was already stored - previous version replaced.
+2026-10-05 16:38:24,152 - INFO - Finished Task-3.pdf: 24 chunk(s) stored (document_id=b6ad180a-4bd2-4325-8476-ceef7e6accf2, status=unclassified)
+2026-10-05 16:38:24,152 - INFO - Load phase: reading الوظيفة الثانية (1).pdf
+2026-10-05 16:38:24,337 - INFO - Metadata phase: best-effort classification for الوظيفة الثانية (1).pdf
+2026-10-05 16:38:24,337 - INFO - 'الوظيفة الثانية (1).pdf' does not match the naming convention - ingesting as unclassified (this does not block loading/chunking/storage).
+2026-10-05 16:38:24,338 - INFO - 'الوظيفة الثانية (1).pdf' is unclassified - proceeding anyway (not fatal).
+2026-10-05 16:38:24,338 - INFO - Clean phase: cleaning الوظيفة الثانية (1).pdf (aggressive=True)
+2026-10-05 16:38:24,339 - INFO - Chunk phase: splitting الوظيفة الثانية (1).pdf (chunk_size=300, overlap=50)
+2026-10-05 16:38:24,340 - INFO - Store phase: writing الوظيفة الثانية (1).pdf (9 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:38:24,344 - INFO - 'الوظيفة الثانية (1).pdf' was already stored - previous version replaced.
+2026-10-05 16:38:24,344 - INFO - Finished الوظيفة الثانية (1).pdf: 9 chunk(s) stored (document_id=84130ce0-0753-4b17-92cc-31a450291e17, status=unclassified)
+2026-10-05 16:38:24,344 - INFO - Load phase: reading policy_2024-01_projectAlpha_general.md
+2026-10-05 16:38:24,345 - INFO - Metadata phase: best-effort classification for policy_2024-01_projectAlpha_general.md
+2026-10-05 16:38:24,345 - INFO - Clean phase: cleaning policy_2024-01_projectAlpha_general.md (aggressive=False)
+2026-10-05 16:38:24,345 - INFO - Chunk phase: splitting policy_2024-01_projectAlpha_general.md (chunk_size=300, overlap=50)
+2026-10-05 16:38:24,345 - INFO - Store phase: writing policy_2024-01_projectAlpha_general.md (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:38:24,349 - INFO - 'policy_2024-01_projectAlpha_general.md' was already stored - previous version replaced.
+2026-10-05 16:38:24,349 - INFO - Finished policy_2024-01_projectAlpha_general.md: 3 chunk(s) stored (document_id=1b17e707-ef06-4c94-8ec6-13df74704e6d, status=classified)
+2026-10-05 16:38:24,350 - INFO - Load phase: reading policy_2024-03_projectBeta_billing.md
+2026-10-05 16:38:24,350 - INFO - Metadata phase: best-effort classification for policy_2024-03_projectBeta_billing.md
+2026-10-05 16:38:24,351 - INFO - Clean phase: cleaning policy_2024-03_projectBeta_billing.md (aggressive=False)
+2026-10-05 16:38:24,352 - INFO - Chunk phase: splitting policy_2024-03_projectBeta_billing.md (chunk_size=300, overlap=50)
+2026-10-05 16:38:24,353 - INFO - Store phase: writing policy_2024-03_projectBeta_billing.md (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:38:24,357 - INFO - 'policy_2024-03_projectBeta_billing.md' was already stored - previous version replaced.
+2026-10-05 16:38:24,358 - INFO - Finished policy_2024-03_projectBeta_billing.md: 3 chunk(s) stored (document_id=213da3dc-ac91-4436-acf1-4f57ee84f8f7, status=classified)
+2026-10-05 16:38:24,358 - INFO - Load phase: reading report_2024-02_projectAlpha_computeEngine.txt
+2026-10-05 16:38:24,358 - INFO - Metadata phase: best-effort classification for report_2024-02_projectAlpha_computeEngine.txt
+2026-10-05 16:38:24,358 - INFO - Clean phase: cleaning report_2024-02_projectAlpha_computeEngine.txt (aggressive=False)
+2026-10-05 16:38:24,358 - INFO - Chunk phase: splitting report_2024-02_projectAlpha_computeEngine.txt (chunk_size=300, overlap=50)
+2026-10-05 16:38:24,358 - INFO - Store phase: writing report_2024-02_projectAlpha_computeEngine.txt (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:38:24,358 - INFO - 'report_2024-02_projectAlpha_computeEngine.txt' was already stored - previous version replaced.
+2026-10-05 16:38:24,358 - INFO - Finished report_2024-02_projectAlpha_computeEngine.txt: 3 chunk(s) stored (document_id=dd337098-5641-490f-815e-c432b87af3bd, status=classified)
+2026-10-05 16:38:24,358 - INFO - Load phase: reading report_2024-03_projectBeta_security.txt
+2026-10-05 16:38:24,358 - INFO - Metadata phase: best-effort classification for report_2024-03_projectBeta_security.txt
+2026-10-05 16:38:24,358 - INFO - Clean phase: cleaning report_2024-03_projectBeta_security.txt (aggressive=False)
+2026-10-05 16:38:24,358 - INFO - Chunk phase: splitting report_2024-03_projectBeta_security.txt (chunk_size=300, overlap=50)
+2026-10-05 16:38:24,358 - INFO - Store phase: writing report_2024-03_projectBeta_security.txt (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 16:38:24,372 - INFO - 'report_2024-03_projectBeta_security.txt' was already stored - previous version replaced.
+2026-10-05 16:38:24,373 - INFO - Finished report_2024-03_projectBeta_security.txt: 3 chunk(s) stored (document_id=7884428f-8735-4abb-ae97-551e2203f0ef, status=classified)
+2026-10-05 16:38:24,373 - INFO - Ingestion finished: 10/10 files processed (7 classified, 3 unclassified), 60 chunks stored, 10 replaced, 0 removed, 0 failure(s)
+2026-10-05 17:48:09,696 - INFO - Scan phase: looking for documents under E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\raw\week7
+2026-10-05 17:48:09,696 - INFO - Scan phase: found 10 document(s)
+2026-10-05 17:48:09,696 - INFO - rag_documents / rag_chunks schema ready at E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 17:48:09,696 - INFO - Load phase: reading invoice_2024-01_projectAlpha_computeEngine.pdf
+2026-10-05 17:48:09,860 - INFO - Table found and cleaned (3 data row(s)) in E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\raw\week7\invoices\invoice_2024-01_projectAlpha_computeEngine.pdf
+2026-10-05 17:48:09,861 - INFO - Metadata phase: best-effort classification for invoice_2024-01_projectAlpha_computeEngine.pdf
+2026-10-05 17:48:09,861 - INFO - Clean phase: cleaning invoice_2024-01_projectAlpha_computeEngine.pdf (aggressive=True)
+2026-10-05 17:48:09,862 - INFO - Chunk phase: splitting invoice_2024-01_projectAlpha_computeEngine.pdf (chunk_size=300, overlap=50)
+2026-10-05 17:48:09,862 - INFO - Store phase: writing invoice_2024-01_projectAlpha_computeEngine.pdf (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 17:48:09,868 - INFO - 'invoice_2024-01_projectAlpha_computeEngine.pdf' was already stored - previous version replaced.
+2026-10-05 17:48:09,868 - INFO - Finished invoice_2024-01_projectAlpha_computeEngine.pdf: 3 chunk(s) stored (document_id=7dec6615-2d20-476f-992b-1ea5a94f9a62, status=classified)
+2026-10-05 17:48:09,868 - INFO - Load phase: reading invoice_2024-01_projectAlpha_computeEngine.txt
+2026-10-05 17:48:09,868 - INFO - Metadata phase: best-effort classification for invoice_2024-01_projectAlpha_computeEngine.txt
+2026-10-05 17:48:09,868 - INFO - Clean phase: cleaning invoice_2024-01_projectAlpha_computeEngine.txt (aggressive=False)
+2026-10-05 17:48:09,869 - INFO - Chunk phase: splitting invoice_2024-01_projectAlpha_computeEngine.txt (chunk_size=300, overlap=50)
+2026-10-05 17:48:09,869 - INFO - Store phase: writing invoice_2024-01_projectAlpha_computeEngine.txt (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 17:48:09,872 - INFO - 'invoice_2024-01_projectAlpha_computeEngine.txt' was already stored - previous version replaced.
+2026-10-05 17:48:09,872 - INFO - Finished invoice_2024-01_projectAlpha_computeEngine.txt: 3 chunk(s) stored (document_id=821a14cb-f706-4f55-8034-715cea255ac4, status=classified)
+2026-10-05 17:48:09,872 - INFO - Load phase: reading invoice_2024-02_projectBeta_cloudStorage.txt
+2026-10-05 17:48:09,872 - INFO - Metadata phase: best-effort classification for invoice_2024-02_projectBeta_cloudStorage.txt
+2026-10-05 17:48:09,872 - INFO - Clean phase: cleaning invoice_2024-02_projectBeta_cloudStorage.txt (aggressive=False)
+2026-10-05 17:48:09,875 - INFO - Chunk phase: splitting invoice_2024-02_projectBeta_cloudStorage.txt (chunk_size=300, overlap=50)
+2026-10-05 17:48:09,875 - INFO - Store phase: writing invoice_2024-02_projectBeta_cloudStorage.txt (2 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 17:48:09,875 - INFO - 'invoice_2024-02_projectBeta_cloudStorage.txt' was already stored - previous version replaced.
+2026-10-05 17:48:09,875 - INFO - Finished invoice_2024-02_projectBeta_cloudStorage.txt: 2 chunk(s) stored (document_id=21480933-00c1-4112-86b2-daef576b3e43, status=classified)
+2026-10-05 17:48:09,875 - INFO - Load phase: reading email_payload_spec.pdf
+2026-10-05 17:48:09,939 - INFO - Metadata phase: best-effort classification for email_payload_spec.pdf
+2026-10-05 17:48:09,940 - INFO - 'email_payload_spec.pdf' does not match the naming convention - ingesting as unclassified (this does not block loading/chunking/storage).
+2026-10-05 17:48:09,940 - INFO - 'email_payload_spec.pdf' is unclassified - proceeding anyway (not fatal).
+2026-10-05 17:48:09,940 - INFO - Clean phase: cleaning email_payload_spec.pdf (aggressive=True)
+2026-10-05 17:48:09,941 - INFO - Chunk phase: splitting email_payload_spec.pdf (chunk_size=300, overlap=50)
+2026-10-05 17:48:09,941 - INFO - Store phase: writing email_payload_spec.pdf (7 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 17:48:09,945 - INFO - 'email_payload_spec.pdf' was already stored - previous version replaced.
+2026-10-05 17:48:09,945 - INFO - Finished email_payload_spec.pdf: 7 chunk(s) stored (document_id=43e4fe9f-3bdd-4b4c-8570-b070e935f8a5, status=unclassified)
+2026-10-05 17:48:09,945 - INFO - Load phase: reading Task-3.pdf
+2026-10-05 17:48:10,566 - INFO - Metadata phase: best-effort classification for Task-3.pdf
+2026-10-05 17:48:10,566 - INFO - 'Task-3.pdf' does not match the naming convention - ingesting as unclassified (this does not block loading/chunking/storage).
+2026-10-05 17:48:10,566 - INFO - 'Task-3.pdf' is unclassified - proceeding anyway (not fatal).
+2026-10-05 17:48:10,566 - INFO - Clean phase: cleaning Task-3.pdf (aggressive=True)
+2026-10-05 17:48:10,582 - INFO - Chunk phase: splitting Task-3.pdf (chunk_size=300, overlap=50)
+2026-10-05 17:48:10,582 - INFO - Store phase: writing Task-3.pdf (24 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 17:48:10,582 - INFO - 'Task-3.pdf' was already stored - previous version replaced.
+2026-10-05 17:48:10,582 - INFO - Finished Task-3.pdf: 24 chunk(s) stored (document_id=be36f717-ad67-4493-bc80-88ea0261565e, status=unclassified)
+2026-10-05 17:48:10,582 - INFO - Load phase: reading الوظيفة الثانية (1).pdf
+2026-10-05 17:48:10,730 - INFO - Metadata phase: best-effort classification for الوظيفة الثانية (1).pdf
+2026-10-05 17:48:10,730 - INFO - 'الوظيفة الثانية (1).pdf' does not match the naming convention - ingesting as unclassified (this does not block loading/chunking/storage).
+2026-10-05 17:48:10,730 - INFO - 'الوظيفة الثانية (1).pdf' is unclassified - proceeding anyway (not fatal).
+2026-10-05 17:48:10,730 - INFO - Clean phase: cleaning الوظيفة الثانية (1).pdf (aggressive=True)
+2026-10-05 17:48:10,730 - INFO - Chunk phase: splitting الوظيفة الثانية (1).pdf (chunk_size=300, overlap=50)
+2026-10-05 17:48:10,730 - INFO - Store phase: writing الوظيفة الثانية (1).pdf (9 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 17:48:10,730 - INFO - 'الوظيفة الثانية (1).pdf' was already stored - previous version replaced.
+2026-10-05 17:48:10,730 - INFO - Finished الوظيفة الثانية (1).pdf: 9 chunk(s) stored (document_id=e2719b92-b95a-415f-a131-097896ef3ad4, status=unclassified)
+2026-10-05 17:48:10,730 - INFO - Load phase: reading policy_2024-01_projectAlpha_general.md
+2026-10-05 17:48:10,730 - INFO - Metadata phase: best-effort classification for policy_2024-01_projectAlpha_general.md
+2026-10-05 17:48:10,730 - INFO - Clean phase: cleaning policy_2024-01_projectAlpha_general.md (aggressive=False)
+2026-10-05 17:48:10,730 - INFO - Chunk phase: splitting policy_2024-01_projectAlpha_general.md (chunk_size=300, overlap=50)
+2026-10-05 17:48:10,730 - INFO - Store phase: writing policy_2024-01_projectAlpha_general.md (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 17:48:10,749 - INFO - 'policy_2024-01_projectAlpha_general.md' was already stored - previous version replaced.
+2026-10-05 17:48:10,749 - INFO - Finished policy_2024-01_projectAlpha_general.md: 3 chunk(s) stored (document_id=f09df10d-dd56-4ac5-a3af-0ee9ae8c1518, status=classified)
+2026-10-05 17:48:10,749 - INFO - Load phase: reading policy_2024-03_projectBeta_billing.md
+2026-10-05 17:48:10,749 - INFO - Metadata phase: best-effort classification for policy_2024-03_projectBeta_billing.md
+2026-10-05 17:48:10,749 - INFO - Clean phase: cleaning policy_2024-03_projectBeta_billing.md (aggressive=False)
+2026-10-05 17:48:10,749 - INFO - Chunk phase: splitting policy_2024-03_projectBeta_billing.md (chunk_size=300, overlap=50)
+2026-10-05 17:48:10,749 - INFO - Store phase: writing policy_2024-03_projectBeta_billing.md (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 17:48:10,749 - INFO - 'policy_2024-03_projectBeta_billing.md' was already stored - previous version replaced.
+2026-10-05 17:48:10,749 - INFO - Finished policy_2024-03_projectBeta_billing.md: 3 chunk(s) stored (document_id=66c89ba1-15d6-46fa-b78b-e266a80631eb, status=classified)
+2026-10-05 17:48:10,749 - INFO - Load phase: reading report_2024-02_projectAlpha_computeEngine.txt
+2026-10-05 17:48:10,749 - INFO - Metadata phase: best-effort classification for report_2024-02_projectAlpha_computeEngine.txt
+2026-10-05 17:48:10,749 - INFO - Clean phase: cleaning report_2024-02_projectAlpha_computeEngine.txt (aggressive=False)
+2026-10-05 17:48:10,749 - INFO - Chunk phase: splitting report_2024-02_projectAlpha_computeEngine.txt (chunk_size=300, overlap=50)
+2026-10-05 17:48:10,749 - INFO - Store phase: writing report_2024-02_projectAlpha_computeEngine.txt (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 17:48:10,760 - INFO - 'report_2024-02_projectAlpha_computeEngine.txt' was already stored - previous version replaced.
+2026-10-05 17:48:10,761 - INFO - Finished report_2024-02_projectAlpha_computeEngine.txt: 3 chunk(s) stored (document_id=b6e3cd77-b277-40b5-9401-8cea872ec40f, status=classified)
+2026-10-05 17:48:10,761 - INFO - Load phase: reading report_2024-03_projectBeta_security.txt
+2026-10-05 17:48:10,762 - INFO - Metadata phase: best-effort classification for report_2024-03_projectBeta_security.txt
+2026-10-05 17:48:10,762 - INFO - Clean phase: cleaning report_2024-03_projectBeta_security.txt (aggressive=False)
+2026-10-05 17:48:10,762 - INFO - Chunk phase: splitting report_2024-03_projectBeta_security.txt (chunk_size=300, overlap=50)
+2026-10-05 17:48:10,762 - INFO - Store phase: writing report_2024-03_projectBeta_security.txt (3 chunks) to E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-05 17:48:10,766 - INFO - 'report_2024-03_projectBeta_security.txt' was already stored - previous version replaced.
+2026-10-05 17:48:10,766 - INFO - Finished report_2024-03_projectBeta_security.txt: 3 chunk(s) stored (document_id=1bd2581a-ad84-4039-ac8c-3298d9b70474, status=classified)
+2026-10-05 17:48:10,766 - INFO - Ingestion finished: 10/10 files processed (7 classified, 3 unclassified), 60 chunks stored, 10 replaced, 0 removed, 0 failure(s)

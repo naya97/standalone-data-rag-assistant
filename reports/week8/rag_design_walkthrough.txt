@@ -1,0 +1,135 @@
+WEEK 8 - DESIGN WALKTHROUGH
+Every decision, why it was taken, and every bug found by testing and how it was fixed.
+
+=====================================================================================
+STEP 0 - Fix the Week 7 ingestion before building on it
+=====================================================================================
+Problem   RagStore.insert_document/insert_chunks always INSERTed with fresh UUIDs. Running run_rag_ingestion.py twice
+          gave 20 documents / 132 chunks instead of 10 / 66, and retrieval would have returned duplicates.
+Decision  Re-ingestion REPLACES: match on file_path, delete the old document and its chunks, insert the new ones,
+          all inside ONE transaction (a failure rolls back and the previous version survives). Documents whose
+          file disappeared from the folder are removed, using every file the scan found (not only the successful
+          ones), so a file that failed this run keeps its old version.
+Tested    run twice -> same counts; edit a file -> only it changes; delete a file -> it disappears; forced failure in
+          the middle of a replace -> old data intact; legacy duplicates are cleaned by the first replace.
+Consequence every ingestion now produces NEW chunk_ids (the same number of chunks, different ids). This shaped the indexer
+          and the stale-index detection below.
+
+=====================================================================================
+STEP 1 - Notebook (notebooks/week8): calibrate before writing code
+=====================================================================================
+Model     paraphrase-multilingual-MiniLM-L12-v2 (384 dim, 128-token input). Local, free, handles Arabic + English.
+          Measured: longest chunk = 86 tokens, nothing is truncated.
+Variant   Embed "chunk_text only" or "section_header + chunk_text"? Identical on every metric (only 6 chunks have a
+          header), so the simpler one was kept: text only.
+ChromaDB  Behaviour checked on the installed version before relying on it:
+            - a None metadata value is REJECTED (TypeError) -> to_chroma_metadata never stores None; a missing key
+              simply never matches a filter; unclassified documents get document_type="unclassified".
+            - Chroma cosine distance == 1 - numpy cosine (verified to 4 decimals).
+            - an empty collection returns an empty result instead of an error -> the retriever must check explicitly.
+            - collection names need >= 3 characters.
+          Embeddings are always passed explicitly so Chroma never loads its own default model.
+Finding   (the important one) the top-1 cosine scores of answerable and unanswerable questions OVERLAP: on the first 10
+          questions 5 of 8 answerable ones scored below the best unanswerable one (0.637). Cosine measures topical
+          closeness, not "this chunk contains the answer". A single threshold would have been arbitrary.
+          The notebook's first automatic suggestion (0.32) rejected 0 unanswerable questions: it was removed.
+
+=====================================================================================
+STEP 2 - Indexer and vector store
+=====================================================================================
+Design    SQLite (rag_chunks) is the source of truth, Chroma only holds vectors + filter fields. Text is always read
+          back from SQLite by chunk_id.
+Sync      The indexer compares the SET of chunk_ids in SQLite and in Chroma: embeds and adds the new ones, deletes the
+          missing ones. If nothing changed, the embedding model is not even loaded. Embedding happens BEFORE touching
+          the index, so a failure leaves the index unchanged; re-running repairs any partial state.
+Guard     The collection stores the model name and text variant that built it; a different configuration is refused
+          with "run --rebuild" instead of silently mixing incomparable vectors.
+Verified  fresh build, no-op run, full re-ingestion (+60/-60), drift repair, NULL metadata, filters, empty/missing tables
+          and database, model that cannot be loaded (index untouched), CLI exit codes.
+Real run  60 chunks -> 60 vectors, 0 truncated, 65 s the first time (almost all of it importing torch; the embedding
+          itself took 1.4 s).
+
+=====================================================================================
+STEP 3 - Retriever and the answerability gate
+=====================================================================================
+Retriever Filters are validated (unknown key = error, empty value = ignored) and matched against the STORED values
+          exactly ("projectBeta", not "Beta"). If filters match no chunk the status is no_documents_match_filter,
+          checked BEFORE querying.
+BUG       Planned to detect a stale index by comparing counts. While designing the test it became clear that
+          re-ingestion keeps the count and changes every id, so a count comparison reports "in sync" while every
+          vector points to a chunk that no longer exists. Fixed: compare the sets of ids. Partly stale results are
+          skipped with a warning; fully stale -> IndexStaleError (HTTP 503).
+Gate      Because cosine cannot separate the cases, the gate looks at the TOP-1 chunk (the one an extractive answer
+          would quote) with cheap, explainable signals:
+            - lexical coverage: share of the question's key words found in the chunk (>= 50%)
+            - unknown entities: capitalised words of the question that appear nowhere in the corpus ("Project Gamma")
+          These were studied on a dev/test split (AUC: coverage 0.88, cosine 0.67). The study showed what the gate cannot
+          do: questions about an existing topic whose fact is missing pass it.
+Equivalence test  the production helpers were compared with the notebook code on 49 questions x all chunks (2,744 pairs):
+          identical, so the calibrated numbers apply to the real code.
+
+=====================================================================================
+STEP 4 - Prompt, answer, service
+=====================================================================================
+Statuses  answered | no_relevant_context | no_documents_match_filter. Caller mistakes (bad filter, empty question,
+          top_k out of range) and index problems (missing, stale) are raised as exceptions, not hidden in a status.
+Prompt    Numbered context, citation rule, an exact "not found" sentence in English and Arabic, and a rule that the
+          context is untrusted text whose instructions must be ignored. The prompt is built now and returned with
+          include_prompt=true, so the LLM generator of Week 9 can send it unchanged.
+Answer    Extractive: the best chunk verbatim, cited [1]. The generator is an interface, so an LLM replaces it later.
+          Messages come in the language of the question (Arabic letters detected).
+Observed  the first CLI latencies were 20-52 s: the embedding model was loaded lazily inside the first request.
+
+=====================================================================================
+STEP 5 - API
+=====================================================================================
+Endpoint  POST /rag/ask (+ GET /rag/status). Request fields are strict (a typo such as "topk" is a 422, not ignored).
+          422 = invalid request, 503 = index missing/stale/model not loadable, both with the fix in the message.
+Startup   The model is loaded once at application start. If the index is missing the application still starts and
+          /health keeps working; building the index later needs no restart (the next request initialises the service).
+          The model is loaded from the local cache first (no network round trips), downloaded only if absent.
+          Calls are serialised with a lock because the endpoints run in a thread pool.
+Swagger   The prefilled example contained filters; typing a different question silently searched only that subset of
+          documents. The example now has no filters.
+
+=====================================================================================
+STEP 6 - Evaluation and what it changed
+=====================================================================================
+Set       84 questions: 49 original (dev/test) + 35 extended (calib/holdout) written after the first findings; each
+          answerable question lists the expected source AND facts that must appear in the answer. The question file
+          is validated against the stored documents before every run.
+Run 1     (extended set, original gate) 0 of 17 valid cross-language questions answered. Retrieval was fine (Hit@3 =
+          100%): the lexical gate compares words, and a question and a chunk in different languages share none.
+FIX       Cross-language pairs (question and best chunk in different scripts) skip the lexical gate and need a cosine
+          floor of 0.30. It was fitted on the calib questions only: the widest empty interval between the off-topic
+          questions (<= 0.12) and the lowest valid question (0.48). Predicted before the change using the stored
+          scores: 17/17 answered, 15 of 28 unanswerable rejected, 3 false refusals. The real run matched exactly.
+          Raising the floor to 0.50 was rejected: 3 more valid questions refused for 2 more rejections.
+BUG       The unknown-entity check flagged the pronoun "I" ("How do I bake bread?"), which would have refused every
+          English question containing "I". Stop words are no longer entities.
+Hypothesis "Add the neighbouring chunk of the same document to the answer": 4 answers had the right source but not the fact.
+          Result: fixed 2 (Q2, Q30), 4 remain (Q27, Q31, Q60, Q66). Kept (it cannot break a correct answer), claimed
+          only as a partial improvement.
+Final     Answerable 47/56 correct, 3 wrongly refused; unanswerable 15/28 rejected; Hit@3 98.2%; p50 17 ms.
+
+=====================================================================================
+WHAT WAS DELIBERATELY NOT DONE (and why)
+=====================================================================================
+- A cross-encoder / reranker: needs another model download, and the LLM of Week 9 will make the "does this chunk
+  contain the answer" decision better. The signals are already stored in every response to compare against later.
+- Neighbour-chunk expansion: would fix 2 of the 4 missing-fact answers, not the other 2; kept the system simple.
+- A query-to-filter router (inferring project/month from the question): belongs to the router work of a later week.
+- Retuning the thresholds on the holdout questions: they must stay a fair test.
+
+=====================================================================================
+FAILURE SCENARIOS VERIFIED
+=====================================================================================
+ 1. rag_chunks empty / tables missing / database missing  -> indexer stops with a clear message, no empty DB created
+ 2. index not built                                       -> /rag/ask 503 "run python run_rag_indexing.py"
+ 3. embedding model cannot be loaded                      -> clear error (hint: stale Hugging Face token), index untouched, /health still 200
+ 4. filters match no chunk                                -> status no_documents_match_filter
+ 5. best chunk fails the gate                             -> status no_relevant_context + reasons + signals
+ 6. empty question / top_k outside 1..10 / unknown filter -> 422
+ 7. index built with another model or text variant        -> refused, "run --rebuild"
+ 8. documents with NULL metadata                          -> indexed and filterable ("unclassified")
+ 9. stale index (same count, different ids)               -> /rag/status in_sync=false, /rag/ask 503, re-index recovers without restart

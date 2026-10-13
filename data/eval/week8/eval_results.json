@@ -1,0 +1,4605 @@
+{
+  "config": {
+    "model": "paraphrase-multilingual-MiniLM-L12-v2",
+    "text_variant": "text_only",
+    "top_k": 3,
+    "min_score": 0.0,
+    "min_lexical_coverage": 0.5,
+    "unknown_entity_check": true
+  },
+  "summary": {
+    "questions": 84,
+    "errors": 0,
+    "answerable": {
+      "n": 56,
+      "correct": 47,
+      "right_source_missing_fact": 4,
+      "wrong_source": 2,
+      "false_refusal": 3,
+      "correct_rate": 0.839,
+      "false_refusal_rate": 0.054
+    },
+    "unanswerable": {
+      "n": 28,
+      "correct_rejection": 15,
+      "leak": 13,
+      "rejection_rate": 0.536
+    },
+    "retrieval": {
+      "hit@1": 0.946,
+      "hit@3": 0.982,
+      "hit@5": 1.0,
+      "mrr": 0.969
+    },
+    "latency_ms": {
+      "p50": 19,
+      "p95": 36,
+      "max": 107
+    }
+  },
+  "groups": {
+    "cross_lingual=no": {
+      "questions": 59,
+      "errors": 0,
+      "answerable": {
+        "n": 39,
+        "correct": 33,
+        "right_source_missing_fact": 2,
+        "wrong_source": 1,
+        "false_refusal": 3,
+        "correct_rate": 0.846,
+        "false_refusal_rate": 0.077
+      },
+      "unanswerable": {
+        "n": 20,
+        "correct_rejection": 12,
+        "leak": 8,
+        "rejection_rate": 0.6
+      },
+      "retrieval": {
+        "hit@1": 0.949,
+        "hit@3": 0.974,
+        "hit@5": 1.0,
+        "mrr": 0.968
+      },
+      "latency_ms": {
+        "p50": 19,
+        "p95": 23,
+        "max": 107
+      }
+    },
+    "cross_lingual=yes": {
+      "questions": 25,
+      "errors": 0,
+      "answerable": {
+        "n": 17,
+        "correct": 14,
+        "right_source_missing_fact": 2,
+        "wrong_source": 1,
+        "false_refusal": 0,
+        "correct_rate": 0.824,
+        "false_refusal_rate": 0.0
+      },
+      "unanswerable": {
+        "n": 8,
+        "correct_rejection": 3,
+        "leak": 5,
+        "rejection_rate": 0.375
+      },
+      "retrieval": {
+        "hit@1": 0.941,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.971
+      },
+      "latency_ms": {
+        "p50": 19,
+        "p95": 38,
+        "max": 39
+      }
+    },
+    "kind=answerable": {
+      "questions": 56,
+      "errors": 0,
+      "answerable": {
+        "n": 56,
+        "correct": 47,
+        "right_source_missing_fact": 4,
+        "wrong_source": 2,
+        "false_refusal": 3,
+        "correct_rate": 0.839,
+        "false_refusal_rate": 0.054
+      },
+      "unanswerable": {
+        "n": 0,
+        "correct_rejection": 0,
+        "leak": 0,
+        "rejection_rate": null
+      },
+      "retrieval": {
+        "hit@1": 0.946,
+        "hit@3": 0.982,
+        "hit@5": 1.0,
+        "mrr": 0.969
+      },
+      "latency_ms": {
+        "p50": 19,
+        "p95": 38,
+        "max": 107
+      }
+    },
+    "kind=filter_no_match": {
+      "questions": 1,
+      "errors": 0,
+      "answerable": {
+        "n": 0,
+        "correct": 0,
+        "right_source_missing_fact": 0,
+        "wrong_source": 0,
+        "false_refusal": 0,
+        "correct_rate": null,
+        "false_refusal_rate": null
+      },
+      "unanswerable": {
+        "n": 1,
+        "correct_rejection": 1,
+        "leak": 0,
+        "rejection_rate": 1.0
+      },
+      "retrieval": {
+        "hit@1": null,
+        "hit@3": null,
+        "hit@5": null,
+        "mrr": null
+      },
+      "latency_ms": {
+        "p50": 1,
+        "p95": 1,
+        "max": 1
+      }
+    },
+    "kind=near_topic_missing": {
+      "questions": 17,
+      "errors": 0,
+      "answerable": {
+        "n": 0,
+        "correct": 0,
+        "right_source_missing_fact": 0,
+        "wrong_source": 0,
+        "false_refusal": 0,
+        "correct_rate": null,
+        "false_refusal_rate": null
+      },
+      "unanswerable": {
+        "n": 17,
+        "correct_rejection": 5,
+        "leak": 12,
+        "rejection_rate": 0.294
+      },
+      "retrieval": {
+        "hit@1": null,
+        "hit@3": null,
+        "hit@5": null,
+        "mrr": null
+      },
+      "latency_ms": {
+        "p50": 19,
+        "p95": 29,
+        "max": 29
+      }
+    },
+    "kind=off_topic": {
+      "questions": 7,
+      "errors": 0,
+      "answerable": {
+        "n": 0,
+        "correct": 0,
+        "right_source_missing_fact": 0,
+        "wrong_source": 0,
+        "false_refusal": 0,
+        "correct_rate": null,
+        "false_refusal_rate": null
+      },
+      "unanswerable": {
+        "n": 7,
+        "correct_rejection": 6,
+        "leak": 1,
+        "rejection_rate": 0.857
+      },
+      "retrieval": {
+        "hit@1": null,
+        "hit@3": null,
+        "hit@5": null,
+        "mrr": null
+      },
+      "latency_ms": {
+        "p50": 18,
+        "p95": 20,
+        "max": 20
+      }
+    },
+    "kind=unknown_entity": {
+      "questions": 3,
+      "errors": 0,
+      "answerable": {
+        "n": 0,
+        "correct": 0,
+        "right_source_missing_fact": 0,
+        "wrong_source": 0,
+        "false_refusal": 0,
+        "correct_rate": null,
+        "false_refusal_rate": null
+      },
+      "unanswerable": {
+        "n": 3,
+        "correct_rejection": 3,
+        "leak": 0,
+        "rejection_rate": 1.0
+      },
+      "retrieval": {
+        "hit@1": null,
+        "hit@3": null,
+        "hit@5": null,
+        "mrr": null
+      },
+      "latency_ms": {
+        "p50": 17,
+        "p95": 18,
+        "max": 18
+      }
+    },
+    "split=calib": {
+      "questions": 24,
+      "errors": 0,
+      "answerable": {
+        "n": 15,
+        "correct": 11,
+        "right_source_missing_fact": 2,
+        "wrong_source": 1,
+        "false_refusal": 1,
+        "correct_rate": 0.733,
+        "false_refusal_rate": 0.067
+      },
+      "unanswerable": {
+        "n": 9,
+        "correct_rejection": 4,
+        "leak": 5,
+        "rejection_rate": 0.444
+      },
+      "retrieval": {
+        "hit@1": 0.867,
+        "hit@3": 0.933,
+        "hit@5": 1.0,
+        "mrr": 0.917
+      },
+      "latency_ms": {
+        "p50": 19,
+        "p95": 38,
+        "max": 39
+      }
+    },
+    "split=dev": {
+      "questions": 33,
+      "errors": 0,
+      "answerable": {
+        "n": 23,
+        "correct": 20,
+        "right_source_missing_fact": 2,
+        "wrong_source": 0,
+        "false_refusal": 1,
+        "correct_rate": 0.87,
+        "false_refusal_rate": 0.043
+      },
+      "unanswerable": {
+        "n": 10,
+        "correct_rejection": 6,
+        "leak": 4,
+        "rejection_rate": 0.6
+      },
+      "retrieval": {
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0
+      },
+      "latency_ms": {
+        "p50": 18,
+        "p95": 24,
+        "max": 107
+      }
+    },
+    "split=holdout": {
+      "questions": 11,
+      "errors": 0,
+      "answerable": {
+        "n": 7,
+        "correct": 5,
+        "right_source_missing_fact": 0,
+        "wrong_source": 1,
+        "false_refusal": 1,
+        "correct_rate": 0.714,
+        "false_refusal_rate": 0.143
+      },
+      "unanswerable": {
+        "n": 4,
+        "correct_rejection": 3,
+        "leak": 1,
+        "rejection_rate": 0.75
+      },
+      "retrieval": {
+        "hit@1": 0.857,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.929
+      },
+      "latency_ms": {
+        "p50": 19,
+        "p95": 36,
+        "max": 36
+      }
+    },
+    "split=test": {
+      "questions": 16,
+      "errors": 0,
+      "answerable": {
+        "n": 11,
+        "correct": 11,
+        "right_source_missing_fact": 0,
+        "wrong_source": 0,
+        "false_refusal": 0,
+        "correct_rate": 1.0,
+        "false_refusal_rate": 0.0
+      },
+      "unanswerable": {
+        "n": 5,
+        "correct_rejection": 2,
+        "leak": 3,
+        "rejection_rate": 0.4
+      },
+      "retrieval": {
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0
+      },
+      "latency_ms": {
+        "p50": 19,
+        "p95": 23,
+        "max": 23
+      }
+    }
+  },
+  "results": [
+    {
+      "id": 1,
+      "question": "What is the total amount due for Project Alpha in January 2024?",
+      "split": "dev",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "two valid sources (txt + pdf)",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "This invoice covers the compute resources utilized for Project Alpha during the month of January 2024.\nTotal usage includes 500 hours of high-memory instances for the data processing pipeline.\nThe total amount due is $4,500 USD.\nPlease process the payment within 30 days to avoid service [1]",
+      "cited_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "invoice_2024-02_projectBeta_cloudStorage.txt",
+        "policy_2024-03_projectBeta_billing.md",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "policy_2024-03_projectBeta_billing.md"
+      ],
+      "retrieved_scores": [
+        0.7075,
+        0.6404,
+        0.6225,
+        0.5702,
+        0.5579
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.7075,
+        "score_gap": 0.0671,
+        "lexical_coverage": 1.0,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 107
+    },
+    {
+      "id": 2,
+      "question": "Which vulnerabilities were found in Project Beta's March security scan?",
+      "split": "dev",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "report",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "Report Title: Security Vulnerability Scan\nDate: March 05, 2024\nProject: Beta\nService: Security Operations [1]\n\nA routine security scan was conducted on Project Beta's staging environment in March 2024.\nTwo low-level vulnerabilities were detected regarding outdated SSL certificates on the frontend servers.\nAction taken: The certificates were successfully rotated and updated on March 6th. [2]",
+      "cited_files": [
+        "report_2024-03_projectBeta_security.txt",
+        "report_2024-03_projectBeta_security.txt"
+      ],
+      "retrieved_files": [
+        "report_2024-03_projectBeta_security.txt",
+        "report_2024-03_projectBeta_security.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "report_2024-03_projectBeta_security.txt",
+        "report_2024-02_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_scores": [
+        0.7833,
+        0.7617,
+        0.4258,
+        0.3999,
+        0.381
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.7833,
+        "score_gap": 0.0216,
+        "lexical_coverage": 0.8571,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 21
+    },
+    {
+      "id": 3,
+      "question": "What is the minimum password length for Project Alpha?",
+      "split": "test",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "policy",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "## 1. Authentication\nAll data engineers working on Project Alpha must use Multi-Factor Authentication (MFA) to access the production SQLite database.\nPasswords must be at least 16 characters long and rotated every 90 days. [1]",
+      "cited_files": [
+        "policy_2024-01_projectAlpha_general.md"
+      ],
+      "retrieved_files": [
+        "policy_2024-01_projectAlpha_general.md",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "policy_2024-03_projectBeta_billing.md",
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "report_2024-02_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_scores": [
+        0.6866,
+        0.5444,
+        0.4689,
+        0.403,
+        0.3871
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.6866,
+        "score_gap": 0.1422,
+        "lexical_coverage": 0.6,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 18
+    },
+    {
+      "id": 4,
+      "question": "Who must approve spending that exceeds Project Beta's budget?",
+      "split": "dev",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "policy",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "## 1. Budget Limits\nThe maximum monthly budget for Project Beta's cloud infrastructure is strictly capped at $5,000 USD.\nAny new service provisioning that exceeds this limit requires explicit written approval from the Chief Technology Officer (CTO). [1]\n\n# Billing and Expense Policy\n**Project:** Beta\n**Effective Date:** March 1, 2024 [2]",
+      "cited_files": [
+        "policy_2024-03_projectBeta_billing.md",
+        "policy_2024-03_projectBeta_billing.md"
+      ],
+      "retrieved_files": [
+        "policy_2024-03_projectBeta_billing.md",
+        "policy_2024-03_projectBeta_billing.md",
+        "policy_2024-03_projectBeta_billing.md",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "invoice_2024-02_projectBeta_cloudStorage.txt"
+      ],
+      "retrieved_scores": [
+        0.6221,
+        0.6217,
+        0.5636,
+        0.5076,
+        0.489
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.6221,
+        "score_gap": 0.0003,
+        "lexical_coverage": 0.8333,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 23
+    },
+    {
+      "id": 5,
+      "question": "Which fields are required in the email ingestion payload?",
+      "split": "dev",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "unclassified PDF",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "Required Routing / Identity Fields\n\n* mailbox_id: Internal mailbox identifier used as the main routing key.\n\n* mailbox_email: Mailbox email address used for validation.\n\n* provider_message_id: Original Gmail message ID for unique identification.\n\nRecommended Envelope / Message Fields [1]\n\nRecommended Envelope / Message Fields\n\n* correlation_id: Internal tracking ID for pipeline tracing.\n\n* thread_id: Gmail thread ID to group related emails.\n\n* subject: Normalized email subject (may be empty).\n\n* from: Sender information (name + email).\n\n* to: List of recipient emails. [2]",
+      "cited_files": [
+        "email_payload_spec.pdf",
+        "email_payload_spec.pdf"
+      ],
+      "retrieved_files": [
+        "email_payload_spec.pdf",
+        "email_payload_spec.pdf",
+        "الوظيفة الثانية (1).pdf",
+        "email_payload_spec.pdf",
+        "الوظيفة الثانية (1).pdf"
+      ],
+      "retrieved_scores": [
+        0.596,
+        0.5073,
+        0.4967,
+        0.4826,
+        0.4806
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.596,
+        "score_gap": 0.0887,
+        "lexical_coverage": 0.6,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 19
+    },
+    {
+      "id": 6,
+      "question": "What is the unit price of the n2-highmem-8 instance?",
+      "split": "test",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "PDF table",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "| Service Description | Quantity | Unit Price |\n| High-Memory Instance (n2-highmem-8) | 500 hrs | $8.50 |\n| Persistent SSD Storage | 1200 GB | $0.17 |\n| Network Egress (Data Pipeline) | 300 GB | $0.12 | [1]",
+      "cited_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.pdf"
+      ],
+      "retrieved_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "invoice_2024-02_projectBeta_cloudStorage.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "policy_2024-03_projectBeta_billing.md",
+        "report_2024-02_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_scores": [
+        0.554,
+        0.4347,
+        0.3356,
+        0.3151,
+        0.314
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.554,
+        "score_gap": 0.1193,
+        "lexical_coverage": 1.0,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 19
+    },
+    {
+      "id": 7,
+      "question": "متى موعد إجراء المقابلات؟",
+      "split": "dev",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "Arabic",
+      "status": "no_relevant_context",
+      "outcome": "false_refusal",
+      "answer": "لم أجد هذه المعلومة في المستندات المتاحة.",
+      "cited_files": [],
+      "retrieved_files": [
+        "الوظيفة الثانية (1).pdf",
+        "الوظيفة الثانية (1).pdf",
+        "Task-3.pdf",
+        "policy_2024-03_projectBeta_billing.md",
+        "Task-3.pdf"
+      ],
+      "retrieved_scores": [
+        0.6243,
+        0.5004,
+        0.3632,
+        0.3295,
+        0.3283
+      ],
+      "rank": 1,
+      "facts_ok": false,
+      "question_lang": "ar",
+      "context_lang": "ar",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.6243,
+        "score_gap": 0.124,
+        "lexical_coverage": 0.3333,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [
+        "only 33% of the question's key words appear in the best chunk (minimum 50%)"
+      ],
+      "latency_ms": 16
+    },
+    {
+      "id": 8,
+      "question": "What is the total amount due?",
+      "split": "dev",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {
+        "project": "projectBeta",
+        "document_type": "invoice"
+      },
+      "tests": "metadata filter ($and)",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "This invoice details the data storage costs for Project Beta in February 2024.\nThe engineering team stored approximately 50 Terabytes of raw analytical backup data.\nThe total amount due for this billing cycle is $1,200 USD.\nPayment is automatically deducted from the corporate credit card on file. [1]",
+      "cited_files": [
+        "invoice_2024-02_projectBeta_cloudStorage.txt"
+      ],
+      "retrieved_files": [
+        "invoice_2024-02_projectBeta_cloudStorage.txt",
+        "invoice_2024-02_projectBeta_cloudStorage.txt"
+      ],
+      "retrieved_scores": [
+        0.5404,
+        0.1032
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.5404,
+        "score_gap": 0.4373,
+        "lexical_coverage": 1.0,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 21
+    },
+    {
+      "id": 11,
+      "question": "How many hours of high-memory instances were used for Project Alpha in January 2024?",
+      "split": "test",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "txt + pdf",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "This invoice covers the compute resources utilized for Project Alpha during the month of January 2024.\nTotal usage includes 500 hours of high-memory instances for the data processing pipeline.\nThe total amount due is $4,500 USD.\nPlease process the payment within 30 days to avoid service [1]",
+      "cited_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "invoice_2024-02_projectBeta_cloudStorage.txt"
+      ],
+      "retrieved_scores": [
+        0.6774,
+        0.6181,
+        0.5845,
+        0.5365,
+        0.5275
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.6774,
+        "score_gap": 0.0593,
+        "lexical_coverage": 0.8,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 18
+    },
+    {
+      "id": 12,
+      "question": "Within how many days must the Project Alpha invoice be paid?",
+      "split": "dev",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "txt + pdf",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "This invoice covers the compute resources utilized for Project Alpha during the month of January 2024.\nTotal usage includes 500 hours of high-memory instances for the data processing pipeline.\nThe total amount due is $4,500 USD.\nPlease process the payment within 30 days to avoid service [1]\n\nthe payment within 30 days to avoid service interruption. [4]",
+      "cited_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "invoice_2024-02_projectBeta_cloudStorage.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "policy_2024-03_projectBeta_billing.md"
+      ],
+      "retrieved_scores": [
+        0.7656,
+        0.6108,
+        0.5401,
+        0.5019,
+        0.4971
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.7656,
+        "score_gap": 0.1548,
+        "lexical_coverage": 0.7143,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 17
+    },
+    {
+      "id": 13,
+      "question": "How much data did the engineering team store for Project Beta in February 2024?",
+      "split": "dev",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "invoice",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "This invoice details the data storage costs for Project Beta in February 2024.\nThe engineering team stored approximately 50 Terabytes of raw analytical backup data.\nThe total amount due for this billing cycle is $1,200 USD.\nPayment is automatically deducted from the corporate credit card on file. [1]",
+      "cited_files": [
+        "invoice_2024-02_projectBeta_cloudStorage.txt"
+      ],
+      "retrieved_files": [
+        "invoice_2024-02_projectBeta_cloudStorage.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf"
+      ],
+      "retrieved_scores": [
+        0.6956,
+        0.5955,
+        0.5506,
+        0.5398,
+        0.538
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.6956,
+        "score_gap": 0.1001,
+        "lexical_coverage": 0.8889,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 21
+    },
+    {
+      "id": 14,
+      "question": "How is payment made for the Project Beta storage invoice?",
+      "split": "test",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "invoice",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "This invoice details the data storage costs for Project Beta in February 2024.\nThe engineering team stored approximately 50 Terabytes of raw analytical backup data.\nThe total amount due for this billing cycle is $1,200 USD.\nPayment is automatically deducted from the corporate credit card on file. [1]",
+      "cited_files": [
+        "invoice_2024-02_projectBeta_cloudStorage.txt"
+      ],
+      "retrieved_files": [
+        "invoice_2024-02_projectBeta_cloudStorage.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "policy_2024-03_projectBeta_billing.md",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "policy_2024-03_projectBeta_billing.md"
+      ],
+      "retrieved_scores": [
+        0.7274,
+        0.7002,
+        0.6027,
+        0.5627,
+        0.5447
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.7274,
+        "score_gap": 0.0272,
+        "lexical_coverage": 0.8333,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 20
+    },
+    {
+      "id": 15,
+      "question": "What is the price per GB of persistent SSD storage?",
+      "split": "dev",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "PDF table",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "| Service Description | Quantity | Unit Price |\n| High-Memory Instance (n2-highmem-8) | 500 hrs | $8.50 |\n| Persistent SSD Storage | 1200 GB | $0.17 |\n| Network Egress (Data Pipeline) | 300 GB | $0.12 | [1]",
+      "cited_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.pdf"
+      ],
+      "retrieved_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "invoice_2024-02_projectBeta_cloudStorage.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "policy_2024-01_projectAlpha_general.md"
+      ],
+      "retrieved_scores": [
+        0.731,
+        0.5076,
+        0.3545,
+        0.3484,
+        0.2809
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.731,
+        "score_gap": 0.2234,
+        "lexical_coverage": 1.0,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 20
+    },
+    {
+      "id": 16,
+      "question": "How much does network egress cost per GB?",
+      "split": "dev",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "PDF table",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "| Service Description | Quantity | Unit Price |\n| High-Memory Instance (n2-highmem-8) | 500 hrs | $8.50 |\n| Persistent SSD Storage | 1200 GB | $0.17 |\n| Network Egress (Data Pipeline) | 300 GB | $0.12 | [1]",
+      "cited_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.pdf"
+      ],
+      "retrieved_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "invoice_2024-02_projectBeta_cloudStorage.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "policy_2024-03_projectBeta_billing.md",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf"
+      ],
+      "retrieved_scores": [
+        0.5642,
+        0.3928,
+        0.3851,
+        0.3506,
+        0.3479
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.5642,
+        "score_gap": 0.1714,
+        "lexical_coverage": 0.6,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 18
+    },
+    {
+      "id": 17,
+      "question": "How often must passwords be rotated for Project Alpha?",
+      "split": "test",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "policy",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "## 1. Authentication\nAll data engineers working on Project Alpha must use Multi-Factor Authentication (MFA) to access the production SQLite database.\nPasswords must be at least 16 characters long and rotated every 90 days. [1]",
+      "cited_files": [
+        "policy_2024-01_projectAlpha_general.md"
+      ],
+      "retrieved_files": [
+        "policy_2024-01_projectAlpha_general.md",
+        "report_2024-03_projectBeta_security.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "report_2024-03_projectBeta_security.txt",
+        "report_2024-02_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_scores": [
+        0.6903,
+        0.4875,
+        0.4466,
+        0.4401,
+        0.4015
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.6903,
+        "score_gap": 0.2028,
+        "lexical_coverage": 0.8,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 20
+    },
+    {
+      "id": 18,
+      "question": "Is direct SSH access allowed from public IP addresses?",
+      "split": "dev",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "policy",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "## 2. Remote Access\nAccessing the compute engines from outside the corporate network requires a secure VPN connection. No direct SSH access is permitted from public IP addresses under any circumstances. [1]",
+      "cited_files": [
+        "policy_2024-01_projectAlpha_general.md"
+      ],
+      "retrieved_files": [
+        "policy_2024-01_projectAlpha_general.md",
+        "policy_2024-01_projectAlpha_general.md",
+        "report_2024-03_projectBeta_security.txt",
+        "الوظيفة الثانية (1).pdf",
+        "report_2024-03_projectBeta_security.txt"
+      ],
+      "retrieved_scores": [
+        0.7909,
+        0.3327,
+        0.3101,
+        0.2804,
+        0.2748
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.7909,
+        "score_gap": 0.4583,
+        "lexical_coverage": 0.8571,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 22
+    },
+    {
+      "id": 19,
+      "question": "What is required to access the compute engines from outside the corporate network?",
+      "split": "dev",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "policy",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "## 2. Remote Access\nAccessing the compute engines from outside the corporate network requires a secure VPN connection. No direct SSH access is permitted from public IP addresses under any circumstances. [1]",
+      "cited_files": [
+        "policy_2024-01_projectAlpha_general.md"
+      ],
+      "retrieved_files": [
+        "policy_2024-01_projectAlpha_general.md",
+        "الوظيفة الثانية (1).pdf",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "Task-3.pdf",
+        "report_2024-02_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_scores": [
+        0.6207,
+        0.4626,
+        0.3994,
+        0.3762,
+        0.3674
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.6207,
+        "score_gap": 0.1582,
+        "lexical_coverage": 1.0,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 24
+    },
+    {
+      "id": 20,
+      "question": "What is the maximum monthly budget for Project Beta's cloud infrastructure?",
+      "split": "test",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "policy",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "## 1. Budget Limits\nThe maximum monthly budget for Project Beta's cloud infrastructure is strictly capped at $5,000 USD.\nAny new service provisioning that exceeds this limit requires explicit written approval from the Chief Technology Officer (CTO). [1]\n\n## 2. Expense Reporting\nAll cloud storage invoices must be submitted to the finance department by the 5th of each month. Late submissions will result in budget cuts for the following quarter. [5]",
+      "cited_files": [
+        "policy_2024-03_projectBeta_billing.md",
+        "policy_2024-03_projectBeta_billing.md"
+      ],
+      "retrieved_files": [
+        "policy_2024-03_projectBeta_billing.md",
+        "invoice_2024-02_projectBeta_cloudStorage.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "policy_2024-03_projectBeta_billing.md"
+      ],
+      "retrieved_scores": [
+        0.8452,
+        0.6559,
+        0.6363,
+        0.6186,
+        0.6139
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.8452,
+        "score_gap": 0.1893,
+        "lexical_coverage": 1.0,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 23
+    },
+    {
+      "id": 21,
+      "question": "By which day of the month must cloud storage invoices be submitted to the finance department?",
+      "split": "dev",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "policy",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "## 2. Expense Reporting\nAll cloud storage invoices must be submitted to the finance department by the 5th of each month. Late submissions will result in budget cuts for the following quarter. [1]\n\n## 1. Budget Limits\nThe maximum monthly budget for Project Beta's cloud infrastructure is strictly capped at $5,000 USD.\nAny new service provisioning that exceeds this limit requires explicit written approval from the Chief Technology Officer (CTO). [5]",
+      "cited_files": [
+        "policy_2024-03_projectBeta_billing.md",
+        "policy_2024-03_projectBeta_billing.md"
+      ],
+      "retrieved_files": [
+        "policy_2024-03_projectBeta_billing.md",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "invoice_2024-02_projectBeta_cloudStorage.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "policy_2024-03_projectBeta_billing.md"
+      ],
+      "retrieved_scores": [
+        0.8226,
+        0.6806,
+        0.6699,
+        0.5848,
+        0.5603
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.8226,
+        "score_gap": 0.142,
+        "lexical_coverage": 0.875,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 20
+    },
+    {
+      "id": 22,
+      "question": "What are the consequences of late invoice submissions?",
+      "split": "dev",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "policy",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "## 2. Expense Reporting\nAll cloud storage invoices must be submitted to the finance department by the 5th of each month. Late submissions will result in budget cuts for the following quarter. [1]\n\n# Billing and Expense Policy\n**Project:** Beta\n**Effective Date:** March 1, 2024 [5]",
+      "cited_files": [
+        "policy_2024-03_projectBeta_billing.md",
+        "policy_2024-03_projectBeta_billing.md"
+      ],
+      "retrieved_files": [
+        "policy_2024-03_projectBeta_billing.md",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "الوظيفة الثانية (1).pdf",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "policy_2024-03_projectBeta_billing.md"
+      ],
+      "retrieved_scores": [
+        0.4917,
+        0.4246,
+        0.4017,
+        0.389,
+        0.3719
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.4917,
+        "score_gap": 0.0671,
+        "lexical_coverage": 0.75,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 18
+    },
+    {
+      "id": 23,
+      "question": "What uptime did Project Alpha's Compute Engine maintain in February 2024?",
+      "split": "test",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "report",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "During February 2024, the Compute Engine infrastructure for Project Alpha maintained a healthy uptime of 99.95%.\nWe observed a significant CPU usage spike on February 14th due to a heavy batch processing job, reaching 95% utilization.\nRecommendation: We strongly suggest upgrading to auto-scaling [1]\n\nReport Title: Monthly Performance Review\nDate: February 28, 2024\nProject: Alpha\nService: Compute Engine [2]",
+      "cited_files": [
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "report_2024-02_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_files": [
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_scores": [
+        0.746,
+        0.7407,
+        0.684,
+        0.6558,
+        0.6161
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.746,
+        "score_gap": 0.0053,
+        "lexical_coverage": 1.0,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 20
+    },
+    {
+      "id": 24,
+      "question": "What caused the CPU usage spike on February 14th?",
+      "split": "dev",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "report",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "During February 2024, the Compute Engine infrastructure for Project Alpha maintained a healthy uptime of 99.95%.\nWe observed a significant CPU usage spike on February 14th due to a heavy batch processing job, reaching 95% utilization.\nRecommendation: We strongly suggest upgrading to auto-scaling [1]\n\nReport Title: Monthly Performance Review\nDate: February 28, 2024\nProject: Alpha\nService: Compute Engine [2]",
+      "cited_files": [
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "report_2024-02_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_files": [
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_scores": [
+        0.6363,
+        0.5096,
+        0.3765,
+        0.3751,
+        0.3558
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.6363,
+        "score_gap": 0.1267,
+        "lexical_coverage": 0.8333,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 15
+    },
+    {
+      "id": 25,
+      "question": "What does the report recommend to handle sudden traffic spikes?",
+      "split": "dev",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "report",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "We strongly suggest upgrading to auto-scaling node pools next month to handle sudden traffic spikes smoothly without manual intervention. [1]",
+      "cited_files": [
+        "report_2024-02_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_files": [
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "الوظيفة الثانية (1).pdf",
+        "policy_2024-01_projectAlpha_general.md",
+        "policy_2024-03_projectBeta_billing.md"
+      ],
+      "retrieved_scores": [
+        0.4791,
+        0.3066,
+        0.3039,
+        0.2606,
+        0.2546
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.4791,
+        "score_gap": 0.1725,
+        "lexical_coverage": 0.6667,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 17
+    },
+    {
+      "id": 26,
+      "question": "When were the outdated SSL certificates rotated?",
+      "split": "test",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "report",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "A routine security scan was conducted on Project Beta's staging environment in March 2024.\nTwo low-level vulnerabilities were detected regarding outdated SSL certificates on the frontend servers.\nAction taken: The certificates were successfully rotated and updated on March 6th. [1]",
+      "cited_files": [
+        "report_2024-03_projectBeta_security.txt"
+      ],
+      "retrieved_files": [
+        "report_2024-03_projectBeta_security.txt",
+        "report_2024-03_projectBeta_security.txt",
+        "report_2024-03_projectBeta_security.txt",
+        "policy_2024-01_projectAlpha_general.md",
+        "policy_2024-01_projectAlpha_general.md"
+      ],
+      "retrieved_scores": [
+        0.6738,
+        0.3715,
+        0.3633,
+        0.3281,
+        0.3172
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.6738,
+        "score_gap": 0.3022,
+        "lexical_coverage": 1.0,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 18
+    },
+    {
+      "id": 27,
+      "question": "Is Project Beta compliant with the internal security standards after the scan?",
+      "split": "dev",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "report",
+      "status": "answered",
+      "outcome": "right_source_missing_fact",
+      "answer": "A routine security scan was conducted on Project Beta's staging environment in March 2024.\nTwo low-level vulnerabilities were detected regarding outdated SSL certificates on the frontend servers.\nAction taken: The certificates were successfully rotated and updated on March 6th. [1]\n\nReport Title: Security Vulnerability Scan\nDate: March 05, 2024\nProject: Beta\nService: Security Operations [2]",
+      "cited_files": [
+        "report_2024-03_projectBeta_security.txt",
+        "report_2024-03_projectBeta_security.txt"
+      ],
+      "retrieved_files": [
+        "report_2024-03_projectBeta_security.txt",
+        "report_2024-03_projectBeta_security.txt",
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "report_2024-03_projectBeta_security.txt",
+        "report_2024-02_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_scores": [
+        0.6946,
+        0.6442,
+        0.5008,
+        0.4778,
+        0.4617
+      ],
+      "rank": 1,
+      "facts_ok": false,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.6946,
+        "score_gap": 0.0503,
+        "lexical_coverage": 0.5,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 20
+    },
+    {
+      "id": 28,
+      "question": "What is the mailbox_id field used for?",
+      "split": "dev",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "unclassified PDF",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "Required Routing / Identity Fields\n\n* mailbox_id: Internal mailbox identifier used as the main routing key.\n\n* mailbox_email: Mailbox email address used for validation.\n\n* provider_message_id: Original Gmail message ID for unique identification.\n\nRecommended Envelope / Message Fields [1]",
+      "cited_files": [
+        "email_payload_spec.pdf"
+      ],
+      "retrieved_files": [
+        "email_payload_spec.pdf",
+        "الوظيفة الثانية (1).pdf",
+        "email_payload_spec.pdf",
+        "email_payload_spec.pdf",
+        "الوظيفة الثانية (1).pdf"
+      ],
+      "retrieved_scores": [
+        0.6836,
+        0.4376,
+        0.4261,
+        0.4112,
+        0.3982
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.6836,
+        "score_gap": 0.2461,
+        "lexical_coverage": 1.0,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 16
+    },
+    {
+      "id": 29,
+      "question": "What value does html_body currently have in the email payload?",
+      "split": "test",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "unclassified PDF",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "* to: List of recipient emails.\n\n* cc: List of CC recipient emails.\n\n* sent_at: Original email timestamp.\n\n* text_body: Cleaned semantic email content.\n\n* html_body: Currently null.\n\n* attachment_names: List of attachment filenames.\n\nHeaders Object\n\n* Reply-To: Reply-to header if present. [1]\n\nEmail Ingestion JSON Payload Specification We send one JSON object per email. The payload shape does not change based on email content such as attachments, URLs, or quoted history. [2]",
+      "cited_files": [
+        "email_payload_spec.pdf",
+        "email_payload_spec.pdf"
+      ],
+      "retrieved_files": [
+        "email_payload_spec.pdf",
+        "email_payload_spec.pdf",
+        "email_payload_spec.pdf",
+        "email_payload_spec.pdf",
+        "email_payload_spec.pdf"
+      ],
+      "retrieved_scores": [
+        0.5188,
+        0.4979,
+        0.4275,
+        0.4015,
+        0.3879
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.5188,
+        "score_gap": 0.0209,
+        "lexical_coverage": 0.6,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 20
+    },
+    {
+      "id": 30,
+      "question": "Which GCP role is needed to read the billing export data in BigQuery?",
+      "split": "dev",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "unclassified PDF",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "* Understand the schema and content of the GCP Cloud Billing Export in BigQuery.\n\n* Develop optimized SQL queries to retrieve specific cost metrics and dimensions (e.g., total cost by project, daily cost by service, cost breakdown by region). [1]\n\n* GCP Access Needed:\n\n* bigquery.dataViewer role (to read GCP billing export data).\n\n* bigquery.jobUser (to run queries).\n\n3.\n\nTrain/Implement LLM Prompts or API (15 hours)\n\n* Goal:\n\nConfigure the LLM to understand FinOps queries and generate appropriate responses or actions.\n\n* Steps: [2]",
+      "cited_files": [
+        "Task-3.pdf",
+        "Task-3.pdf"
+      ],
+      "retrieved_files": [
+        "Task-3.pdf",
+        "Task-3.pdf",
+        "Task-3.pdf",
+        "Task-3.pdf",
+        "Task-3.pdf"
+      ],
+      "retrieved_scores": [
+        0.7238,
+        0.7142,
+        0.6533,
+        0.6088,
+        0.4849
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.7238,
+        "score_gap": 0.0096,
+        "lexical_coverage": 0.5,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 20
+    },
+    {
+      "id": 31,
+      "question": "How many hours are estimated for building the chat interface?",
+      "split": "dev",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "unclassified PDF",
+      "status": "answered",
+      "outcome": "right_source_missing_fact",
+      "answer": "To provide an intuitive interface for users to get real-time cost insights without deep technical knowledge.\n\nThis trainee will build the LLM-powered assistant from data connection to chat interface.\n\n* Estimated Total Hours:\n\n70 hours Detailed Steps:\n\n1.\n\nDefine Assistant Capabilities (5 hours) [1]\n\n* Steps:\n\n* Deploy the complete conversational assistant application to a production-like environment (e.g., Cloud Run).\n\n* Implement logging for all user interactions and LLM responses (e.g., to Cloud Logging) to track usage and identify common query patterns. [2]",
+      "cited_files": [
+        "Task-3.pdf",
+        "Task-3.pdf"
+      ],
+      "retrieved_files": [
+        "Task-3.pdf",
+        "Task-3.pdf",
+        "Task-3.pdf",
+        "Task-3.pdf",
+        "Task-3.pdf"
+      ],
+      "retrieved_scores": [
+        0.6433,
+        0.4936,
+        0.4543,
+        0.4267,
+        0.4261
+      ],
+      "rank": 1,
+      "facts_ok": false,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.6433,
+        "score_gap": 0.1497,
+        "lexical_coverage": 0.8333,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 18
+    },
+    {
+      "id": 32,
+      "question": "What is the estimated total number of hours for the Trainee 3 task?",
+      "split": "test",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "unclassified PDF",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "To provide an intuitive interface for users to get real-time cost insights without deep technical knowledge.\n\nThis trainee will build the LLM-powered assistant from data connection to chat interface.\n\n* Estimated Total Hours:\n\n70 hours Detailed Steps:\n\n1.\n\nDefine Assistant Capabilities (5 hours) [1]\n\nDefine Assistant Capabilities (5 hours)\n\n* Goal:\n\nClearly define what questions the assistant should be able to answer and what actions it can perform.\n\n* Steps: [3]",
+      "cited_files": [
+        "Task-3.pdf",
+        "Task-3.pdf"
+      ],
+      "retrieved_files": [
+        "Task-3.pdf",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "Task-3.pdf",
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "الوظيفة الثانية (1).pdf"
+      ],
+      "retrieved_scores": [
+        0.5232,
+        0.5047,
+        0.4508,
+        0.4121,
+        0.4092
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.5232,
+        "score_gap": 0.0186,
+        "lexical_coverage": 0.6667,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 20
+    },
+    {
+      "id": 33,
+      "question": "من الذي يوافق على إضافة دورة جديدة؟",
+      "split": "dev",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "Arabic",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "اختبار لكل دورة لتقييم المشتركين وتتبع حالتهم. يجب أن تتم الموافقة من قبل الـ admin عند إضافة دورة جديدة يمكن للمستخدمين التسجيل في النظام واستعراض الدورات المتاحة والاشتراك بها بعد دفع الرسوم الخاص لكل دورة، كما يمكنه استعراض جميع الدورات التي اشترك بها وحالته في كل منها. [1]\n\nجميع الدورات التي اشترك بها وحالته في كل منها. يجب على المشتركين اجتياز الاختيار في نهاية كل دورة. المطلوب: 1. تصميم بنية الخدمات: [2]",
+      "cited_files": [
+        "الوظيفة الثانية (1).pdf",
+        "الوظيفة الثانية (1).pdf"
+      ],
+      "retrieved_files": [
+        "الوظيفة الثانية (1).pdf",
+        "الوظيفة الثانية (1).pdf",
+        "policy_2024-03_projectBeta_billing.md",
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "policy_2024-01_projectAlpha_general.md"
+      ],
+      "retrieved_scores": [
+        0.4354,
+        0.367,
+        0.3459,
+        0.2945,
+        0.281
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "ar",
+      "context_lang": "ar",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.4354,
+        "score_gap": 0.0685,
+        "lexical_coverage": 0.75,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 17
+    },
+    {
+      "id": 34,
+      "question": "متى يجب إرسال التقرير المختصر عن الوظيفة؟",
+      "split": "dev",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "Arabic",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "* تجرى المقابلات يوم الأحد بتاريخ 6/7على أن يتم إرسال تقرير مختصرعن الوظيفة قبل نهاية 5/7.\n\n* يجب العمل ضمن مجموعات الوظيفة الأولى ذاتها. بالتوفيق... د.باسم قصيبة م.آية معطي م.أميرأبو الشعر [1]\n\n* اختيار خدمة داخلية واحدة وتطبيق آلية توزيع حمل عليها\n\n* توضيح تكامل آلية توزيع الحمل (مثلRibbon) مع نظام اكتشاف الخدمات نواحي تنظيمية\n\n* تجرى المقابلات يوم الأحد بتاريخ 6/7على أن يتم إرسال تقرير مختصرعن الوظيفة قبل نهاية 5/7. [2]",
+      "cited_files": [
+        "الوظيفة الثانية (1).pdf",
+        "الوظيفة الثانية (1).pdf"
+      ],
+      "retrieved_files": [
+        "الوظيفة الثانية (1).pdf",
+        "الوظيفة الثانية (1).pdf",
+        "policy_2024-03_projectBeta_billing.md",
+        "policy_2024-03_projectBeta_billing.md",
+        "invoice_2024-01_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_scores": [
+        0.6036,
+        0.5308,
+        0.4796,
+        0.4368,
+        0.3893
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "ar",
+      "context_lang": "ar",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.6036,
+        "score_gap": 0.0728,
+        "lexical_coverage": 1.0,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 20
+    },
+    {
+      "id": 35,
+      "question": "ما المطلوب في بند توزيع الحمل؟",
+      "split": "test",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "Arabic",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "* اختيار خدمة داخلية واحدة وتطبيق آلية توزيع حمل عليها\n\n* توضيح تكامل آلية توزيع الحمل (مثلRibbon) مع نظام اكتشاف الخدمات نواحي تنظيمية\n\n* تجرى المقابلات يوم الأحد بتاريخ 6/7على أن يتم إرسال تقرير مختصرعن الوظيفة قبل نهاية 5/7. [1]",
+      "cited_files": [
+        "الوظيفة الثانية (1).pdf"
+      ],
+      "retrieved_files": [
+        "الوظيفة الثانية (1).pdf",
+        "policy_2024-03_projectBeta_billing.md",
+        "الوظيفة الثانية (1).pdf",
+        "policy_2024-01_projectAlpha_general.md",
+        "الوظيفة الثانية (1).pdf"
+      ],
+      "retrieved_scores": [
+        0.5457,
+        0.2554,
+        0.2475,
+        0.2403,
+        0.2292
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "ar",
+      "context_lang": "ar",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.5457,
+        "score_gap": 0.2903,
+        "lexical_coverage": 0.5,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 19
+    },
+    {
+      "id": 36,
+      "question": "What is the total amount due?",
+      "split": "dev",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {
+        "document_type": "invoice",
+        "month": "2024-01"
+      },
+      "tests": "metadata filter (document_type + month)",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "Total amount due: $4,500 USD Please process the payment within 30 days to avoid service interruption. [1]",
+      "cited_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.pdf"
+      ],
+      "retrieved_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf"
+      ],
+      "retrieved_scores": [
+        0.6061,
+        0.5113,
+        0.3529,
+        0.3167,
+        0.2039
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.6061,
+        "score_gap": 0.0948,
+        "lexical_coverage": 1.0,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 17
+    },
+    {
+      "id": 9,
+      "question": "What is the refund policy for Project Beta?",
+      "split": "dev",
+      "kind": "near_topic_missing",
+      "should_reject": true,
+      "filters": {},
+      "tests": "close to the billing policy, no refund policy exists",
+      "status": "answered",
+      "outcome": "leak",
+      "answer": "This invoice details the data storage costs for Project Beta in February 2024.\nThe engineering team stored approximately 50 Terabytes of raw analytical backup data.\nThe total amount due for this billing cycle is $1,200 USD.\nPayment is automatically deducted from the corporate credit card on file. [1]",
+      "cited_files": [
+        "invoice_2024-02_projectBeta_cloudStorage.txt"
+      ],
+      "retrieved_files": [
+        "invoice_2024-02_projectBeta_cloudStorage.txt",
+        "policy_2024-03_projectBeta_billing.md",
+        "policy_2024-03_projectBeta_billing.md",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "report_2024-03_projectBeta_security.txt"
+      ],
+      "retrieved_scores": [
+        0.6057,
+        0.5061,
+        0.4821,
+        0.4671,
+        0.4376
+      ],
+      "rank": null,
+      "facts_ok": null,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.6057,
+        "score_gap": 0.0996,
+        "lexical_coverage": 0.5,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 20
+    },
+    {
+      "id": 10,
+      "question": "What was the cost of Project Gamma in January 2024?",
+      "split": "dev",
+      "kind": "unknown_entity",
+      "should_reject": true,
+      "filters": {},
+      "tests": "looks like the invoices, project does not exist",
+      "status": "no_relevant_context",
+      "outcome": "correct_rejection",
+      "answer": "I could not find this information in the provided documents.",
+      "cited_files": [],
+      "retrieved_files": [
+        "invoice_2024-02_projectBeta_cloudStorage.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "policy_2024-03_projectBeta_billing.md",
+        "policy_2024-03_projectBeta_billing.md",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf"
+      ],
+      "retrieved_scores": [
+        0.6365,
+        0.6332,
+        0.5827,
+        0.5631,
+        0.5566
+      ],
+      "rank": null,
+      "facts_ok": null,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.6365,
+        "score_gap": 0.0033,
+        "lexical_coverage": 0.4,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [
+          "Gamma"
+        ],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [
+        "only 40% of the question's key words appear in the best chunk (minimum 50%)",
+        "the question mentions ['Gamma'] which appear nowhere in the documents"
+      ],
+      "latency_ms": 17
+    },
+    {
+      "id": 37,
+      "question": "What is the multi-factor authentication policy for Project Beta?",
+      "split": "test",
+      "kind": "near_topic_missing",
+      "should_reject": true,
+      "filters": {},
+      "tests": "MFA exists only for Alpha",
+      "status": "answered",
+      "outcome": "leak",
+      "answer": "## 1. Authentication\nAll data engineers working on Project Alpha must use Multi-Factor Authentication (MFA) to access the production SQLite database.\nPasswords must be at least 16 characters long and rotated every 90 days. [1]\n\n# General Access Policy\n**Project:** Alpha\n**Effective Date:** January 1, 2024 [5]",
+      "cited_files": [
+        "policy_2024-01_projectAlpha_general.md",
+        "policy_2024-01_projectAlpha_general.md"
+      ],
+      "retrieved_files": [
+        "policy_2024-01_projectAlpha_general.md",
+        "policy_2024-03_projectBeta_billing.md",
+        "report_2024-03_projectBeta_security.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "policy_2024-01_projectAlpha_general.md"
+      ],
+      "retrieved_scores": [
+        0.5613,
+        0.5098,
+        0.4854,
+        0.4423,
+        0.4365
+      ],
+      "rank": null,
+      "facts_ok": null,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.5613,
+        "score_gap": 0.0515,
+        "lexical_coverage": 0.6667,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 19
+    },
+    {
+      "id": 38,
+      "question": "Who is the Chief Technology Officer of CloudTech Solutions?",
+      "split": "dev",
+      "kind": "near_topic_missing",
+      "should_reject": true,
+      "filters": {},
+      "tests": "the role is mentioned, no name",
+      "status": "no_relevant_context",
+      "outcome": "correct_rejection",
+      "answer": "I could not find this information in the provided documents.",
+      "cited_files": [],
+      "retrieved_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "invoice_2024-02_projectBeta_cloudStorage.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "policy_2024-03_projectBeta_billing.md",
+        "Task-3.pdf"
+      ],
+      "retrieved_scores": [
+        0.7125,
+        0.6582,
+        0.5322,
+        0.511,
+        0.441
+      ],
+      "rank": null,
+      "facts_ok": null,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.7125,
+        "score_gap": 0.0542,
+        "lexical_coverage": 0.4,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [
+        "only 40% of the question's key words appear in the best chunk (minimum 50%)"
+      ],
+      "latency_ms": 13
+    },
+    {
+      "id": 39,
+      "question": "What was the total amount due for Project Beta in March 2024?",
+      "split": "dev",
+      "kind": "near_topic_missing",
+      "should_reject": true,
+      "filters": {},
+      "tests": "Beta's invoice is February",
+      "status": "answered",
+      "outcome": "leak",
+      "answer": "This invoice details the data storage costs for Project Beta in February 2024.\nThe engineering team stored approximately 50 Terabytes of raw analytical backup data.\nThe total amount due for this billing cycle is $1,200 USD.\nPayment is automatically deducted from the corporate credit card on file. [1]",
+      "cited_files": [
+        "invoice_2024-02_projectBeta_cloudStorage.txt"
+      ],
+      "retrieved_files": [
+        "invoice_2024-02_projectBeta_cloudStorage.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "policy_2024-03_projectBeta_billing.md",
+        "policy_2024-03_projectBeta_billing.md",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf"
+      ],
+      "retrieved_scores": [
+        0.6907,
+        0.6495,
+        0.6392,
+        0.5839,
+        0.5568
+      ],
+      "rank": null,
+      "facts_ok": null,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.6907,
+        "score_gap": 0.0412,
+        "lexical_coverage": 0.8571,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 19
+    },
+    {
+      "id": 40,
+      "question": "What was the uptime of Project Alpha's Compute Engine in March 2024?",
+      "split": "test",
+      "kind": "near_topic_missing",
+      "should_reject": true,
+      "filters": {},
+      "tests": "uptime exists for February only",
+      "status": "answered",
+      "outcome": "leak",
+      "answer": "Report Title: Monthly Performance Review\nDate: February 28, 2024\nProject: Alpha\nService: Compute Engine [1]\n\nDuring February 2024, the Compute Engine infrastructure for Project Alpha maintained a healthy uptime of 99.95%.\nWe observed a significant CPU usage spike on February 14th due to a heavy batch processing job, reaching 95% utilization.\nRecommendation: We strongly suggest upgrading to auto-scaling [2]",
+      "cited_files": [
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "report_2024-02_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_files": [
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_scores": [
+        0.7362,
+        0.7096,
+        0.7033,
+        0.6626,
+        0.6274
+      ],
+      "rank": null,
+      "facts_ok": null,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.7362,
+        "score_gap": 0.0267,
+        "lexical_coverage": 0.7143,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 19
+    },
+    {
+      "id": 41,
+      "question": "How many vulnerabilities were found in Project Alpha's security scan?",
+      "split": "dev",
+      "kind": "near_topic_missing",
+      "should_reject": true,
+      "filters": {},
+      "tests": "the scan exists for Beta only",
+      "status": "answered",
+      "outcome": "leak",
+      "answer": "Report Title: Security Vulnerability Scan\nDate: March 05, 2024\nProject: Beta\nService: Security Operations [1]\n\nA routine security scan was conducted on Project Beta's staging environment in March 2024.\nTwo low-level vulnerabilities were detected regarding outdated SSL certificates on the frontend servers.\nAction taken: The certificates were successfully rotated and updated on March 6th. [2]",
+      "cited_files": [
+        "report_2024-03_projectBeta_security.txt",
+        "report_2024-03_projectBeta_security.txt"
+      ],
+      "retrieved_files": [
+        "report_2024-03_projectBeta_security.txt",
+        "report_2024-03_projectBeta_security.txt",
+        "policy_2024-01_projectAlpha_general.md",
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_scores": [
+        0.705,
+        0.6984,
+        0.4607,
+        0.448,
+        0.4281
+      ],
+      "rank": null,
+      "facts_ok": null,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.705,
+        "score_gap": 0.0067,
+        "lexical_coverage": 0.5714,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 20
+    },
+    {
+      "id": 42,
+      "question": "What is the password policy for Project Delta?",
+      "split": "dev",
+      "kind": "unknown_entity",
+      "should_reject": true,
+      "filters": {},
+      "tests": "project does not exist",
+      "status": "no_relevant_context",
+      "outcome": "correct_rejection",
+      "answer": "I could not find this information in the provided documents.",
+      "cited_files": [],
+      "retrieved_files": [
+        "policy_2024-01_projectAlpha_general.md",
+        "policy_2024-03_projectBeta_billing.md",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "report_2024-03_projectBeta_security.txt",
+        "policy_2024-01_projectAlpha_general.md"
+      ],
+      "retrieved_scores": [
+        0.4779,
+        0.4387,
+        0.4076,
+        0.4023,
+        0.3986
+      ],
+      "rank": null,
+      "facts_ok": null,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.4779,
+        "score_gap": 0.0392,
+        "lexical_coverage": 0.5,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [
+          "Delta"
+        ],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [
+        "the question mentions ['Delta'] which appear nowhere in the documents"
+      ],
+      "latency_ms": 16
+    },
+    {
+      "id": 43,
+      "question": "What is the maximum size of an email attachment in the payload?",
+      "split": "test",
+      "kind": "near_topic_missing",
+      "should_reject": true,
+      "filters": {},
+      "tests": "spec lists attachment names only",
+      "status": "answered",
+      "outcome": "leak",
+      "answer": "Email Ingestion JSON Payload Specification We send one JSON object per email. The payload shape does not change based on email content such as attachments, URLs, or quoted history. [1]\n\n* to: List of recipient emails.\n\n* cc: List of CC recipient emails.\n\n* sent_at: Original email timestamp.\n\n* text_body: Cleaned semantic email content.\n\n* html_body: Currently null.\n\n* attachment_names: List of attachment filenames.\n\nHeaders Object\n\n* Reply-To: Reply-to header if present. [3]",
+      "cited_files": [
+        "email_payload_spec.pdf",
+        "email_payload_spec.pdf"
+      ],
+      "retrieved_files": [
+        "email_payload_spec.pdf",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "email_payload_spec.pdf",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "Task-3.pdf"
+      ],
+      "retrieved_scores": [
+        0.492,
+        0.4114,
+        0.3838,
+        0.3241,
+        0.3025
+      ],
+      "rank": null,
+      "facts_ok": null,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.492,
+        "score_gap": 0.0807,
+        "lexical_coverage": 0.6,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 19
+    },
+    {
+      "id": 44,
+      "question": "How much does Cloud Run cost per hour?",
+      "split": "dev",
+      "kind": "near_topic_missing",
+      "should_reject": true,
+      "filters": {},
+      "tests": "Cloud Run is mentioned, no pricing",
+      "status": "no_relevant_context",
+      "outcome": "correct_rejection",
+      "answer": "I could not find this information in the provided documents.",
+      "cited_files": [],
+      "retrieved_files": [
+        "policy_2024-03_projectBeta_billing.md",
+        "invoice_2024-02_projectBeta_cloudStorage.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "policy_2024-03_projectBeta_billing.md",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf"
+      ],
+      "retrieved_scores": [
+        0.6239,
+        0.547,
+        0.5444,
+        0.5006,
+        0.4738
+      ],
+      "rank": null,
+      "facts_ok": null,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.6239,
+        "score_gap": 0.0769,
+        "lexical_coverage": 0.2,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [
+        "only 20% of the question's key words appear in the best chunk (minimum 50%)"
+      ],
+      "latency_ms": 16
+    },
+    {
+      "id": 45,
+      "question": "What is the capital of France?",
+      "split": "dev",
+      "kind": "off_topic",
+      "should_reject": true,
+      "filters": {},
+      "tests": "unrelated",
+      "status": "no_relevant_context",
+      "outcome": "correct_rejection",
+      "answer": "I could not find this information in the provided documents.",
+      "cited_files": [],
+      "retrieved_files": [
+        "report_2024-03_projectBeta_security.txt",
+        "Task-3.pdf",
+        "policy_2024-01_projectAlpha_general.md",
+        "Task-3.pdf",
+        "policy_2024-03_projectBeta_billing.md"
+      ],
+      "retrieved_scores": [
+        0.1223,
+        0.0932,
+        0.0724,
+        0.0722,
+        0.0624
+      ],
+      "rank": null,
+      "facts_ok": null,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.1223,
+        "score_gap": 0.029,
+        "lexical_coverage": 0.0,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [
+          "France"
+        ],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [
+        "only 0% of the question's key words appear in the best chunk (minimum 50%)",
+        "the question mentions ['France'] which appear nowhere in the documents"
+      ],
+      "latency_ms": 17
+    },
+    {
+      "id": 46,
+      "question": "How do I bake sourdough bread?",
+      "split": "test",
+      "kind": "off_topic",
+      "should_reject": true,
+      "filters": {},
+      "tests": "unrelated",
+      "status": "no_relevant_context",
+      "outcome": "correct_rejection",
+      "answer": "I could not find this information in the provided documents.",
+      "cited_files": [],
+      "retrieved_files": [
+        "Task-3.pdf",
+        "Task-3.pdf",
+        "Task-3.pdf",
+        "Task-3.pdf",
+        "Task-3.pdf"
+      ],
+      "retrieved_scores": [
+        0.0695,
+        0.0388,
+        0.0372,
+        0.0329,
+        0.0189
+      ],
+      "rank": null,
+      "facts_ok": null,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.0695,
+        "score_gap": 0.0308,
+        "lexical_coverage": 0.0,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [
+        "only 0% of the question's key words appear in the best chunk (minimum 50%)"
+      ],
+      "latency_ms": 18
+    },
+    {
+      "id": 47,
+      "question": "ما هي سياسة الإجازات السنوية للموظفين؟",
+      "split": "dev",
+      "kind": "off_topic",
+      "should_reject": true,
+      "filters": {},
+      "tests": "Arabic, unrelated",
+      "status": "answered",
+      "outcome": "leak",
+      "answer": "# Billing and Expense Policy\n**Project:** Beta\n**Effective Date:** March 1, 2024 [1]\n\n## 2. Expense Reporting\nAll cloud storage invoices must be submitted to the finance department by the 5th of each month. Late submissions will result in budget cuts for the following quarter. [2]",
+      "cited_files": [
+        "policy_2024-03_projectBeta_billing.md",
+        "policy_2024-03_projectBeta_billing.md"
+      ],
+      "retrieved_files": [
+        "policy_2024-03_projectBeta_billing.md",
+        "policy_2024-03_projectBeta_billing.md",
+        "policy_2024-03_projectBeta_billing.md",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "report_2024-02_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_scores": [
+        0.5014,
+        0.4136,
+        0.3917,
+        0.3823,
+        0.3728
+      ],
+      "rank": null,
+      "facts_ok": null,
+      "question_lang": "ar",
+      "context_lang": "en",
+      "cross_lingual": true,
+      "signals": {
+        "top1_score": 0.5014,
+        "score_gap": 0.0878,
+        "lexical_coverage": 0.0,
+        "lexical_gate_applied": false,
+        "cross_lingual": true,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 18
+    },
+    {
+      "id": 48,
+      "question": "كم راتب المدرب في المنصة؟",
+      "split": "dev",
+      "kind": "near_topic_missing",
+      "should_reject": true,
+      "filters": {},
+      "tests": "Arabic, trainer is mentioned, no salary",
+      "status": "no_relevant_context",
+      "outcome": "correct_rejection",
+      "answer": "لم أجد هذه المعلومة في المستندات المتاحة.",
+      "cited_files": [],
+      "retrieved_files": [
+        "الوظيفة الثانية (1).pdf",
+        "الوظيفة الثانية (1).pdf",
+        "policy_2024-03_projectBeta_billing.md",
+        "Task-3.pdf",
+        "invoice_2024-02_projectBeta_cloudStorage.txt"
+      ],
+      "retrieved_scores": [
+        0.4684,
+        0.3044,
+        0.2818,
+        0.253,
+        0.2465
+      ],
+      "rank": null,
+      "facts_ok": null,
+      "question_lang": "ar",
+      "context_lang": "ar",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.4684,
+        "score_gap": 0.164,
+        "lexical_coverage": 0.3333,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [
+        "only 33% of the question's key words appear in the best chunk (minimum 50%)"
+      ],
+      "latency_ms": 15
+    },
+    {
+      "id": 49,
+      "question": "What is the total amount due?",
+      "split": "test",
+      "kind": "filter_no_match",
+      "should_reject": true,
+      "filters": {
+        "project": "projectBeta",
+        "month": "2024-01"
+      },
+      "tests": "no document matches these filters",
+      "status": "no_documents_match_filter",
+      "outcome": "correct_rejection",
+      "answer": "No documents match the filters you applied.",
+      "cited_files": [],
+      "retrieved_files": [],
+      "retrieved_scores": [],
+      "rank": null,
+      "facts_ok": null,
+      "question_lang": "en",
+      "context_lang": null,
+      "cross_lingual": false,
+      "signals": {},
+      "reasons": [],
+      "latency_ms": 1
+    },
+    {
+      "id": 50,
+      "question": "ما هو الحد الأقصى للميزانية الشهرية لمشروع Beta؟",
+      "split": "calib",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "AR question -> EN policy",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "## 1. Budget Limits\nThe maximum monthly budget for Project Beta's cloud infrastructure is strictly capped at $5,000 USD.\nAny new service provisioning that exceeds this limit requires explicit written approval from the Chief Technology Officer (CTO). [1]\n\n# Billing and Expense Policy\n**Project:** Beta\n**Effective Date:** March 1, 2024 [3]",
+      "cited_files": [
+        "policy_2024-03_projectBeta_billing.md",
+        "policy_2024-03_projectBeta_billing.md"
+      ],
+      "retrieved_files": [
+        "policy_2024-03_projectBeta_billing.md",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "policy_2024-03_projectBeta_billing.md",
+        "invoice_2024-02_projectBeta_cloudStorage.txt",
+        "report_2024-02_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_scores": [
+        0.6603,
+        0.6121,
+        0.6058,
+        0.6039,
+        0.484
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "ar",
+      "context_lang": "en",
+      "cross_lingual": true,
+      "signals": {
+        "top1_score": 0.6603,
+        "score_gap": 0.0483,
+        "lexical_coverage": 0.1667,
+        "lexical_gate_applied": false,
+        "cross_lingual": true,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 19
+    },
+    {
+      "id": 51,
+      "question": "كم عدد ساعات المثيلات عالية الذاكرة المستخدمة في مشروع Alpha؟",
+      "split": "calib",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "AR question -> EN invoice",
+      "status": "answered",
+      "outcome": "wrong_source",
+      "answer": "During February 2024, the Compute Engine infrastructure for Project Alpha maintained a healthy uptime of 99.95%.\nWe observed a significant CPU usage spike on February 14th due to a heavy batch processing job, reaching 95% utilization.\nRecommendation: We strongly suggest upgrading to auto-scaling [1]\n\nReport Title: Monthly Performance Review\nDate: February 28, 2024\nProject: Alpha\nService: Compute Engine [3]",
+      "cited_files": [
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "report_2024-02_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_files": [
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "policy_2024-01_projectAlpha_general.md",
+        "invoice_2024-02_projectBeta_cloudStorage.txt"
+      ],
+      "retrieved_scores": [
+        0.6241,
+        0.6102,
+        0.5436,
+        0.4709,
+        0.4526
+      ],
+      "rank": 2,
+      "facts_ok": false,
+      "question_lang": "ar",
+      "context_lang": "en",
+      "cross_lingual": true,
+      "signals": {
+        "top1_score": 0.6241,
+        "score_gap": 0.0139,
+        "lexical_coverage": 0.125,
+        "lexical_gate_applied": false,
+        "cross_lingual": true,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 17
+    },
+    {
+      "id": 52,
+      "question": "خلال كم يوماً يجب دفع فاتورة مشروع Alpha؟",
+      "split": "holdout",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "AR question -> EN invoice",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "This invoice covers the compute resources utilized for Project Alpha during the month of January 2024.\nTotal usage includes 500 hours of high-memory instances for the data processing pipeline.\nThe total amount due is $4,500 USD.\nPlease process the payment within 30 days to avoid service [1]\n\nthe payment within 30 days to avoid service interruption. [3]",
+      "cited_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "policy_2024-03_projectBeta_billing.md",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "invoice_2024-02_projectBeta_cloudStorage.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf"
+      ],
+      "retrieved_scores": [
+        0.6403,
+        0.586,
+        0.5382,
+        0.5107,
+        0.5086
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "ar",
+      "context_lang": "en",
+      "cross_lingual": true,
+      "signals": {
+        "top1_score": 0.6403,
+        "score_gap": 0.0543,
+        "lexical_coverage": 0.1429,
+        "lexical_gate_applied": false,
+        "cross_lingual": true,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 19
+    },
+    {
+      "id": 53,
+      "question": "كل كم يوماً يجب تغيير كلمات المرور؟",
+      "split": "calib",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "AR question -> EN policy",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "## 1. Authentication\nAll data engineers working on Project Alpha must use Multi-Factor Authentication (MFA) to access the production SQLite database.\nPasswords must be at least 16 characters long and rotated every 90 days. [1]\n\n# General Access Policy\n**Project:** Alpha\n**Effective Date:** January 1, 2024 [2]",
+      "cited_files": [
+        "policy_2024-01_projectAlpha_general.md",
+        "policy_2024-01_projectAlpha_general.md"
+      ],
+      "retrieved_files": [
+        "policy_2024-01_projectAlpha_general.md",
+        "policy_2024-01_projectAlpha_general.md",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "report_2024-03_projectBeta_security.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_scores": [
+        0.4878,
+        0.3419,
+        0.2611,
+        0.2599,
+        0.2567
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "ar",
+      "context_lang": "en",
+      "cross_lingual": true,
+      "signals": {
+        "top1_score": 0.4878,
+        "score_gap": 0.1459,
+        "lexical_coverage": 0.0,
+        "lexical_gate_applied": false,
+        "cross_lingual": true,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 16
+    },
+    {
+      "id": 54,
+      "question": "هل يسمح بالدخول المباشر إلى المحركات من عناوين الإنترنت العامة؟",
+      "split": "calib",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "AR question -> EN policy",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "## 2. Remote Access\nAccessing the compute engines from outside the corporate network requires a secure VPN connection. No direct SSH access is permitted from public IP addresses under any circumstances. [1]",
+      "cited_files": [
+        "policy_2024-01_projectAlpha_general.md"
+      ],
+      "retrieved_files": [
+        "policy_2024-01_projectAlpha_general.md",
+        "الوظيفة الثانية (1).pdf",
+        "الوظيفة الثانية (1).pdf",
+        "email_payload_spec.pdf",
+        "policy_2024-01_projectAlpha_general.md"
+      ],
+      "retrieved_scores": [
+        0.5074,
+        0.366,
+        0.3608,
+        0.3555,
+        0.2951
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "ar",
+      "context_lang": "en",
+      "cross_lingual": true,
+      "signals": {
+        "top1_score": 0.5074,
+        "score_gap": 0.1414,
+        "lexical_coverage": 0.0,
+        "lexical_gate_applied": false,
+        "cross_lingual": true,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 20
+    },
+    {
+      "id": 55,
+      "question": "ما نسبة وقت التشغيل لمحرك الحوسبة في فبراير؟",
+      "split": "holdout",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "AR question -> EN report",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "Report Title: Monthly Performance Review\nDate: February 28, 2024\nProject: Alpha\nService: Compute Engine [1]\n\nDuring February 2024, the Compute Engine infrastructure for Project Alpha maintained a healthy uptime of 99.95%.\nWe observed a significant CPU usage spike on February 14th due to a heavy batch processing job, reaching 95% utilization.\nRecommendation: We strongly suggest upgrading to auto-scaling [2]",
+      "cited_files": [
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "report_2024-02_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_files": [
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "policy_2024-01_projectAlpha_general.md",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "policy_2024-03_projectBeta_billing.md"
+      ],
+      "retrieved_scores": [
+        0.5504,
+        0.5056,
+        0.4947,
+        0.4606,
+        0.448
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "ar",
+      "context_lang": "en",
+      "cross_lingual": true,
+      "signals": {
+        "top1_score": 0.5504,
+        "score_gap": 0.0448,
+        "lexical_coverage": 0.0,
+        "lexical_gate_applied": false,
+        "cross_lingual": true,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 18
+    },
+    {
+      "id": 56,
+      "question": "متى تم تدوير شهادات SSL القديمة؟",
+      "split": "calib",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "AR question -> EN report",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "A routine security scan was conducted on Project Beta's staging environment in March 2024.\nTwo low-level vulnerabilities were detected regarding outdated SSL certificates on the frontend servers.\nAction taken: The certificates were successfully rotated and updated on March 6th. [1]\n\nReport Title: Security Vulnerability Scan\nDate: March 05, 2024\nProject: Beta\nService: Security Operations [3]",
+      "cited_files": [
+        "report_2024-03_projectBeta_security.txt",
+        "report_2024-03_projectBeta_security.txt"
+      ],
+      "retrieved_files": [
+        "report_2024-03_projectBeta_security.txt",
+        "policy_2024-01_projectAlpha_general.md",
+        "report_2024-03_projectBeta_security.txt",
+        "policy_2024-01_projectAlpha_general.md",
+        "invoice_2024-02_projectBeta_cloudStorage.txt"
+      ],
+      "retrieved_scores": [
+        0.6276,
+        0.4415,
+        0.4351,
+        0.3633,
+        0.3551
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "ar",
+      "context_lang": "en",
+      "cross_lingual": true,
+      "signals": {
+        "top1_score": 0.6276,
+        "score_gap": 0.1861,
+        "lexical_coverage": 0.2,
+        "lexical_gate_applied": false,
+        "cross_lingual": true,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 16
+    },
+    {
+      "id": 57,
+      "question": "كم حجم البيانات التي خزنها فريق الهندسة لمشروع Beta؟",
+      "split": "calib",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "AR question -> EN invoice",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "This invoice details the data storage costs for Project Beta in February 2024.\nThe engineering team stored approximately 50 Terabytes of raw analytical backup data.\nThe total amount due for this billing cycle is $1,200 USD.\nPayment is automatically deducted from the corporate credit card on file. [1]",
+      "cited_files": [
+        "invoice_2024-02_projectBeta_cloudStorage.txt"
+      ],
+      "retrieved_files": [
+        "invoice_2024-02_projectBeta_cloudStorage.txt",
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "policy_2024-03_projectBeta_billing.md",
+        "report_2024-02_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_scores": [
+        0.6155,
+        0.5277,
+        0.522,
+        0.4744,
+        0.4652
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "ar",
+      "context_lang": "en",
+      "cross_lingual": true,
+      "signals": {
+        "top1_score": 0.6155,
+        "score_gap": 0.0878,
+        "lexical_coverage": 0.1429,
+        "lexical_gate_applied": false,
+        "cross_lingual": true,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 18
+    },
+    {
+      "id": 58,
+      "question": "كيف يتم دفع فاتورة التخزين الخاصة بمشروع Beta؟",
+      "split": "holdout",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "AR question -> EN invoice",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "This invoice details the data storage costs for Project Beta in February 2024.\nThe engineering team stored approximately 50 Terabytes of raw analytical backup data.\nThe total amount due for this billing cycle is $1,200 USD.\nPayment is automatically deducted from the corporate credit card on file. [1]",
+      "cited_files": [
+        "invoice_2024-02_projectBeta_cloudStorage.txt"
+      ],
+      "retrieved_files": [
+        "invoice_2024-02_projectBeta_cloudStorage.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "policy_2024-03_projectBeta_billing.md",
+        "policy_2024-03_projectBeta_billing.md",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf"
+      ],
+      "retrieved_scores": [
+        0.7744,
+        0.6454,
+        0.5938,
+        0.5207,
+        0.4933
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "ar",
+      "context_lang": "en",
+      "cross_lingual": true,
+      "signals": {
+        "top1_score": 0.7744,
+        "score_gap": 0.129,
+        "lexical_coverage": 0.1429,
+        "lexical_gate_applied": false,
+        "cross_lingual": true,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 36
+    },
+    {
+      "id": 59,
+      "question": "ما سعر الغيغابايت الواحد لتخزين SSD الدائم؟",
+      "split": "calib",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "AR question -> EN PDF table",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "| Service Description | Quantity | Unit Price |\n| High-Memory Instance (n2-highmem-8) | 500 hrs | $8.50 |\n| Persistent SSD Storage | 1200 GB | $0.17 |\n| Network Egress (Data Pipeline) | 300 GB | $0.12 | [1]",
+      "cited_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.pdf"
+      ],
+      "retrieved_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "invoice_2024-02_projectBeta_cloudStorage.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "policy_2024-01_projectAlpha_general.md"
+      ],
+      "retrieved_scores": [
+        0.7388,
+        0.4668,
+        0.3678,
+        0.3528,
+        0.2966
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "ar",
+      "context_lang": "en",
+      "cross_lingual": true,
+      "signals": {
+        "top1_score": 0.7388,
+        "score_gap": 0.272,
+        "lexical_coverage": 0.1667,
+        "lexical_gate_applied": false,
+        "cross_lingual": true,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 19
+    },
+    {
+      "id": 60,
+      "question": "كم ساعة مقدرة لبناء واجهة الدردشة؟",
+      "split": "calib",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "AR question -> EN PDF",
+      "status": "answered",
+      "outcome": "right_source_missing_fact",
+      "answer": "To provide an intuitive interface for users to get real-time cost insights without deep technical knowledge.\n\nThis trainee will build the LLM-powered assistant from data connection to chat interface.\n\n* Estimated Total Hours:\n\n70 hours Detailed Steps:\n\n1.\n\nDefine Assistant Capabilities (5 hours) [1]\n\n* Steps:\n\n* Deploy the complete conversational assistant application to a production-like environment (e.g., Cloud Run).\n\n* Implement logging for all user interactions and LLM responses (e.g., to Cloud Logging) to track usage and identify common query patterns. [2]",
+      "cited_files": [
+        "Task-3.pdf",
+        "Task-3.pdf"
+      ],
+      "retrieved_files": [
+        "Task-3.pdf",
+        "Task-3.pdf",
+        "Task-3.pdf",
+        "Task-3.pdf",
+        "الوظيفة الثانية (1).pdf"
+      ],
+      "retrieved_scores": [
+        0.6052,
+        0.4498,
+        0.4183,
+        0.4175,
+        0.4158
+      ],
+      "rank": 1,
+      "facts_ok": false,
+      "question_lang": "ar",
+      "context_lang": "en",
+      "cross_lingual": true,
+      "signals": {
+        "top1_score": 0.6052,
+        "score_gap": 0.1553,
+        "lexical_coverage": 0.0,
+        "lexical_gate_applied": false,
+        "cross_lingual": true,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 19
+    },
+    {
+      "id": 61,
+      "question": "ما الدور المطلوب لقراءة بيانات الفوترة في BigQuery؟",
+      "split": "holdout",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "AR question -> EN PDF",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "* Create a Python-based data access layer that can execute these BigQuery queries programmatically based on LLM's \"function calls\".\n\n* Tools:\n\nGCP Cloud Billing, BigQuery, Google Cloud SDK, Python with google-cloud-bigquery library.\n\n* GCP Access Needed: [1]\n\n* GCP Access Needed:\n\n* bigquery.dataViewer role (to read GCP billing export data).\n\n* bigquery.jobUser (to run queries).\n\n3.\n\nTrain/Implement LLM Prompts or API (15 hours)\n\n* Goal:\n\nConfigure the LLM to understand FinOps queries and generate appropriate responses or actions.\n\n* Steps: [2]",
+      "cited_files": [
+        "Task-3.pdf",
+        "Task-3.pdf"
+      ],
+      "retrieved_files": [
+        "Task-3.pdf",
+        "Task-3.pdf",
+        "Task-3.pdf",
+        "Task-3.pdf",
+        "Task-3.pdf"
+      ],
+      "retrieved_scores": [
+        0.605,
+        0.5837,
+        0.5813,
+        0.4943,
+        0.4772
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "ar",
+      "context_lang": "en",
+      "cross_lingual": true,
+      "signals": {
+        "top1_score": 0.605,
+        "score_gap": 0.0213,
+        "lexical_coverage": 0.1667,
+        "lexical_gate_applied": false,
+        "cross_lingual": true,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 17
+    },
+    {
+      "id": 62,
+      "question": "ما الحقول المطلوبة في حمولة البريد الإلكتروني؟",
+      "split": "calib",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "AR question -> EN PDF",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "Required Routing / Identity Fields\n\n* mailbox_id: Internal mailbox identifier used as the main routing key.\n\n* mailbox_email: Mailbox email address used for validation.\n\n* provider_message_id: Original Gmail message ID for unique identification.\n\nRecommended Envelope / Message Fields [1]\n\nRecommended Envelope / Message Fields\n\n* correlation_id: Internal tracking ID for pipeline tracing.\n\n* thread_id: Gmail thread ID to group related emails.\n\n* subject: Normalized email subject (may be empty).\n\n* from: Sender information (name + email).\n\n* to: List of recipient emails. [2]",
+      "cited_files": [
+        "email_payload_spec.pdf",
+        "email_payload_spec.pdf"
+      ],
+      "retrieved_files": [
+        "email_payload_spec.pdf",
+        "email_payload_spec.pdf",
+        "email_payload_spec.pdf",
+        "الوظيفة الثانية (1).pdf",
+        "email_payload_spec.pdf"
+      ],
+      "retrieved_scores": [
+        0.5833,
+        0.4729,
+        0.4449,
+        0.412,
+        0.4063
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "ar",
+      "context_lang": "en",
+      "cross_lingual": true,
+      "signals": {
+        "top1_score": 0.5833,
+        "score_gap": 0.1104,
+        "lexical_coverage": 0.0,
+        "lexical_gate_applied": false,
+        "cross_lingual": true,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 23
+    },
+    {
+      "id": 63,
+      "question": "When are the interviews held?",
+      "split": "calib",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "EN question -> AR PDF",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "* تجرى المقابلات يوم الأحد بتاريخ 6/7على أن يتم إرسال تقرير مختصرعن الوظيفة قبل نهاية 5/7.\n\n* يجب العمل ضمن مجموعات الوظيفة الأولى ذاتها. بالتوفيق... د.باسم قصيبة م.آية معطي م.أميرأبو الشعر [1]\n\n* اختيار خدمة داخلية واحدة وتطبيق آلية توزيع حمل عليها\n\n* توضيح تكامل آلية توزيع الحمل (مثلRibbon) مع نظام اكتشاف الخدمات نواحي تنظيمية\n\n* تجرى المقابلات يوم الأحد بتاريخ 6/7على أن يتم إرسال تقرير مختصرعن الوظيفة قبل نهاية 5/7. [2]",
+      "cited_files": [
+        "الوظيفة الثانية (1).pdf",
+        "الوظيفة الثانية (1).pdf"
+      ],
+      "retrieved_files": [
+        "الوظيفة الثانية (1).pdf",
+        "الوظيفة الثانية (1).pdf",
+        "Task-3.pdf",
+        "Task-3.pdf",
+        "Task-3.pdf"
+      ],
+      "retrieved_scores": [
+        0.5984,
+        0.4832,
+        0.4001,
+        0.3481,
+        0.3175
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "ar",
+      "cross_lingual": true,
+      "signals": {
+        "top1_score": 0.5984,
+        "score_gap": 0.1152,
+        "lexical_coverage": 0.0,
+        "lexical_gate_applied": false,
+        "cross_lingual": true,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 38
+    },
+    {
+      "id": 64,
+      "question": "Who must approve a new course?",
+      "split": "holdout",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "EN question -> AR PDF",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "اختبار لكل دورة لتقييم المشتركين وتتبع حالتهم. يجب أن تتم الموافقة من قبل الـ admin عند إضافة دورة جديدة يمكن للمستخدمين التسجيل في النظام واستعراض الدورات المتاحة والاشتراك بها بعد دفع الرسوم الخاص لكل دورة، كما يمكنه استعراض جميع الدورات التي اشترك بها وحالته في كل منها. [1]\n\nجميع الدورات التي اشترك بها وحالته في كل منها. يجب على المشتركين اجتياز الاختيار في نهاية كل دورة. المطلوب: 1. تصميم بنية الخدمات: [2]",
+      "cited_files": [
+        "الوظيفة الثانية (1).pdf",
+        "الوظيفة الثانية (1).pdf"
+      ],
+      "retrieved_files": [
+        "الوظيفة الثانية (1).pdf",
+        "الوظيفة الثانية (1).pdf",
+        "الوظيفة الثانية (1).pdf",
+        "الوظيفة الثانية (1).pdf",
+        "الوظيفة الثانية (1).pdf"
+      ],
+      "retrieved_scores": [
+        0.494,
+        0.4473,
+        0.3499,
+        0.3238,
+        0.2839
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "ar",
+      "cross_lingual": true,
+      "signals": {
+        "top1_score": 0.494,
+        "score_gap": 0.0467,
+        "lexical_coverage": 0.0,
+        "lexical_gate_applied": false,
+        "cross_lingual": true,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 36
+    },
+    {
+      "id": 65,
+      "question": "When must the short report about the job be sent?",
+      "split": "calib",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "EN question -> AR PDF",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "* تجرى المقابلات يوم الأحد بتاريخ 6/7على أن يتم إرسال تقرير مختصرعن الوظيفة قبل نهاية 5/7.\n\n* يجب العمل ضمن مجموعات الوظيفة الأولى ذاتها. بالتوفيق... د.باسم قصيبة م.آية معطي م.أميرأبو الشعر [1]\n\n* اختيار خدمة داخلية واحدة وتطبيق آلية توزيع حمل عليها\n\n* توضيح تكامل آلية توزيع الحمل (مثلRibbon) مع نظام اكتشاف الخدمات نواحي تنظيمية\n\n* تجرى المقابلات يوم الأحد بتاريخ 6/7على أن يتم إرسال تقرير مختصرعن الوظيفة قبل نهاية 5/7. [2]",
+      "cited_files": [
+        "الوظيفة الثانية (1).pdf",
+        "الوظيفة الثانية (1).pdf"
+      ],
+      "retrieved_files": [
+        "الوظيفة الثانية (1).pdf",
+        "الوظيفة الثانية (1).pdf",
+        "policy_2024-03_projectBeta_billing.md",
+        "Task-3.pdf",
+        "report_2024-02_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_scores": [
+        0.6147,
+        0.5056,
+        0.4057,
+        0.3753,
+        0.3439
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "ar",
+      "cross_lingual": true,
+      "signals": {
+        "top1_score": 0.6147,
+        "score_gap": 0.1091,
+        "lexical_coverage": 0.0,
+        "lexical_gate_applied": false,
+        "cross_lingual": true,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 39
+    },
+    {
+      "id": 66,
+      "question": "Which load balancing mechanism is given as an example?",
+      "split": "calib",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "EN question -> AR PDF",
+      "status": "answered",
+      "outcome": "right_source_missing_fact",
+      "answer": "بما يحقق عمليات (Get, Post, ..) بين الخدمات. 6. معالجة حالات فشل الاتصال أو التأخر في الاستجابة بين الخدمات 7. توزيع الحملLoad Balancing:) [1]\n\nجميع الدورات التي اشترك بها وحالته في كل منها. يجب على المشتركين اجتياز الاختيار في نهاية كل دورة. المطلوب: 1. تصميم بنية الخدمات: [3]",
+      "cited_files": [
+        "الوظيفة الثانية (1).pdf",
+        "الوظيفة الثانية (1).pdf"
+      ],
+      "retrieved_files": [
+        "الوظيفة الثانية (1).pdf",
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "الوظيفة الثانية (1).pdf",
+        "الوظيفة الثانية (1).pdf",
+        "report_2024-02_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_scores": [
+        0.4822,
+        0.3502,
+        0.3455,
+        0.3443,
+        0.3049
+      ],
+      "rank": 1,
+      "facts_ok": false,
+      "question_lang": "en",
+      "context_lang": "ar",
+      "cross_lingual": true,
+      "signals": {
+        "top1_score": 0.4822,
+        "score_gap": 0.132,
+        "lexical_coverage": 0.2,
+        "lexical_gate_applied": false,
+        "cross_lingual": true,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 33
+    },
+    {
+      "id": 67,
+      "question": "ما هي سياسة استرداد الأموال لمشروع Beta؟",
+      "split": "calib",
+      "kind": "near_topic_missing",
+      "should_reject": true,
+      "filters": {},
+      "tests": "AR question, EN docs: no refund policy",
+      "status": "answered",
+      "outcome": "leak",
+      "answer": "This invoice details the data storage costs for Project Beta in February 2024.\nThe engineering team stored approximately 50 Terabytes of raw analytical backup data.\nThe total amount due for this billing cycle is $1,200 USD.\nPayment is automatically deducted from the corporate credit card on file. [1]",
+      "cited_files": [
+        "invoice_2024-02_projectBeta_cloudStorage.txt"
+      ],
+      "retrieved_files": [
+        "invoice_2024-02_projectBeta_cloudStorage.txt",
+        "policy_2024-03_projectBeta_billing.md",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "policy_2024-03_projectBeta_billing.md",
+        "report_2024-02_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_scores": [
+        0.6095,
+        0.4859,
+        0.4814,
+        0.4561,
+        0.3937
+      ],
+      "rank": null,
+      "facts_ok": null,
+      "question_lang": "ar",
+      "context_lang": "en",
+      "cross_lingual": true,
+      "signals": {
+        "top1_score": 0.6095,
+        "score_gap": 0.1236,
+        "lexical_coverage": 0.2,
+        "lexical_gate_applied": false,
+        "cross_lingual": true,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 29
+    },
+    {
+      "id": 68,
+      "question": "كم كانت تكلفة مشروع Gamma في يناير؟",
+      "split": "calib",
+      "kind": "unknown_entity",
+      "should_reject": true,
+      "filters": {},
+      "tests": "AR question: project does not exist",
+      "status": "no_relevant_context",
+      "outcome": "correct_rejection",
+      "answer": "لم أجد هذه المعلومة في المستندات المتاحة.",
+      "cited_files": [],
+      "retrieved_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "invoice_2024-02_projectBeta_cloudStorage.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "policy_2024-03_projectBeta_billing.md",
+        "policy_2024-03_projectBeta_billing.md"
+      ],
+      "retrieved_scores": [
+        0.5948,
+        0.5895,
+        0.504,
+        0.4976,
+        0.4926
+      ],
+      "rank": null,
+      "facts_ok": null,
+      "question_lang": "ar",
+      "context_lang": "en",
+      "cross_lingual": true,
+      "signals": {
+        "top1_score": 0.5948,
+        "score_gap": 0.0052,
+        "lexical_coverage": 0.0,
+        "lexical_gate_applied": false,
+        "cross_lingual": true,
+        "unknown_entities": [
+          "Gamma"
+        ],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [
+        "the question mentions ['Gamma'] which appear nowhere in the documents"
+      ],
+      "latency_ms": 18
+    },
+    {
+      "id": 69,
+      "question": "ما هي عاصمة فرنسا؟",
+      "split": "holdout",
+      "kind": "off_topic",
+      "should_reject": true,
+      "filters": {},
+      "tests": "AR question: unrelated",
+      "status": "no_relevant_context",
+      "outcome": "correct_rejection",
+      "answer": "لم أجد هذه المعلومة في المستندات المتاحة.",
+      "cited_files": [],
+      "retrieved_files": [
+        "report_2024-03_projectBeta_security.txt",
+        "Task-3.pdf",
+        "policy_2024-01_projectAlpha_general.md",
+        "Task-3.pdf",
+        "policy_2024-03_projectBeta_billing.md"
+      ],
+      "retrieved_scores": [
+        0.1205,
+        0.0914,
+        0.0763,
+        0.073,
+        0.0665
+      ],
+      "rank": null,
+      "facts_ok": null,
+      "question_lang": "ar",
+      "context_lang": "en",
+      "cross_lingual": true,
+      "signals": {
+        "top1_score": 0.1205,
+        "score_gap": 0.0291,
+        "lexical_coverage": 0.0,
+        "lexical_gate_applied": false,
+        "cross_lingual": true,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [
+        "cross-language question and best chunk: similarity 0.120 is below the cross-language minimum 0.300"
+      ],
+      "latency_ms": 20
+    },
+    {
+      "id": 70,
+      "question": "كيف أخبز خبز العجين المخمر؟",
+      "split": "calib",
+      "kind": "off_topic",
+      "should_reject": true,
+      "filters": {},
+      "tests": "AR question: unrelated",
+      "status": "no_relevant_context",
+      "outcome": "correct_rejection",
+      "answer": "لم أجد هذه المعلومة في المستندات المتاحة.",
+      "cited_files": [],
+      "retrieved_files": [
+        "الوظيفة الثانية (1).pdf",
+        "Task-3.pdf",
+        "Task-3.pdf",
+        "Task-3.pdf",
+        "email_payload_spec.pdf"
+      ],
+      "retrieved_scores": [
+        0.0464,
+        0.0305,
+        0.0092,
+        0.0085,
+        0.0081
+      ],
+      "rank": null,
+      "facts_ok": null,
+      "question_lang": "ar",
+      "context_lang": "ar",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.0464,
+        "score_gap": 0.0159,
+        "lexical_coverage": 0.0,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [
+        "only 0% of the question's key words appear in the best chunk (minimum 50%)"
+      ],
+      "latency_ms": 18
+    },
+    {
+      "id": 71,
+      "question": "من هو المدير التنفيذي لشركة CloudTech؟",
+      "split": "calib",
+      "kind": "near_topic_missing",
+      "should_reject": true,
+      "filters": {},
+      "tests": "AR question: company exists, CEO not stated",
+      "status": "answered",
+      "outcome": "leak",
+      "answer": "Company: CloudTech Solutions\nDate: January 15, 2024\nProject: Alpha\nService: Compute Engine [1]",
+      "cited_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "invoice_2024-02_projectBeta_cloudStorage.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "policy_2024-03_projectBeta_billing.md",
+        "Task-3.pdf"
+      ],
+      "retrieved_scores": [
+        0.6756,
+        0.6491,
+        0.493,
+        0.4759,
+        0.4261
+      ],
+      "rank": null,
+      "facts_ok": null,
+      "question_lang": "ar",
+      "context_lang": "en",
+      "cross_lingual": true,
+      "signals": {
+        "top1_score": 0.6756,
+        "score_gap": 0.0265,
+        "lexical_coverage": 0.25,
+        "lexical_gate_applied": false,
+        "cross_lingual": true,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 19
+    },
+    {
+      "id": 72,
+      "question": "What is the monthly salary of the trainer?",
+      "split": "holdout",
+      "kind": "near_topic_missing",
+      "should_reject": true,
+      "filters": {},
+      "tests": "EN question, AR doc: no salary stated",
+      "status": "answered",
+      "outcome": "leak",
+      "answer": "المدرب من تسجيل الدخول للنظام وإضافة دورات تابعة له وإدارتها، يقوم المدرب بإنشاء اختبار لكل دورة لتقييم المشتركين وتتبع حالتهم. [1]\n\nاختبار لكل دورة لتقييم المشتركين وتتبع حالتهم. يجب أن تتم الموافقة من قبل الـ admin عند إضافة دورة جديدة يمكن للمستخدمين التسجيل في النظام واستعراض الدورات المتاحة والاشتراك بها بعد دفع الرسوم الخاص لكل دورة، كما يمكنه استعراض جميع الدورات التي اشترك بها وحالته في كل منها. [3]",
+      "cited_files": [
+        "الوظيفة الثانية (1).pdf",
+        "الوظيفة الثانية (1).pdf"
+      ],
+      "retrieved_files": [
+        "الوظيفة الثانية (1).pdf",
+        "Task-3.pdf",
+        "الوظيفة الثانية (1).pdf",
+        "invoice_2024-02_projectBeta_cloudStorage.txt",
+        "policy_2024-03_projectBeta_billing.md"
+      ],
+      "retrieved_scores": [
+        0.4503,
+        0.3368,
+        0.3284,
+        0.2964,
+        0.2949
+      ],
+      "rank": null,
+      "facts_ok": null,
+      "question_lang": "en",
+      "context_lang": "ar",
+      "cross_lingual": true,
+      "signals": {
+        "top1_score": 0.4503,
+        "score_gap": 0.1135,
+        "lexical_coverage": 0.0,
+        "lexical_gate_applied": false,
+        "cross_lingual": true,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 22
+    },
+    {
+      "id": 73,
+      "question": "What is the capital of Japan?",
+      "split": "calib",
+      "kind": "off_topic",
+      "should_reject": true,
+      "filters": {},
+      "tests": "EN question: unrelated",
+      "status": "no_relevant_context",
+      "outcome": "correct_rejection",
+      "answer": "I could not find this information in the provided documents.",
+      "cited_files": [],
+      "retrieved_files": [
+        "الوظيفة الثانية (1).pdf",
+        "report_2024-03_projectBeta_security.txt",
+        "policy_2024-01_projectAlpha_general.md",
+        "policy_2024-03_projectBeta_billing.md",
+        "report_2024-02_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_scores": [
+        0.1194,
+        0.11,
+        0.087,
+        0.0549,
+        0.0518
+      ],
+      "rank": null,
+      "facts_ok": null,
+      "question_lang": "en",
+      "context_lang": "ar",
+      "cross_lingual": true,
+      "signals": {
+        "top1_score": 0.1194,
+        "score_gap": 0.0094,
+        "lexical_coverage": 0.0,
+        "lexical_gate_applied": false,
+        "cross_lingual": true,
+        "unknown_entities": [
+          "Japan"
+        ],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [
+        "cross-language question and best chunk: similarity 0.119 is below the cross-language minimum 0.300",
+        "the question mentions ['Japan'] which appear nowhere in the documents"
+      ],
+      "latency_ms": 18
+    },
+    {
+      "id": 74,
+      "question": "ما هي سياسة المصادقة متعددة العوامل لمشروع Beta؟",
+      "split": "calib",
+      "kind": "near_topic_missing",
+      "should_reject": true,
+      "filters": {},
+      "tests": "AR question: MFA exists only for Alpha",
+      "status": "answered",
+      "outcome": "leak",
+      "answer": "# General Access Policy\n**Project:** Alpha\n**Effective Date:** January 1, 2024 [1]",
+      "cited_files": [
+        "policy_2024-01_projectAlpha_general.md"
+      ],
+      "retrieved_files": [
+        "policy_2024-01_projectAlpha_general.md",
+        "policy_2024-03_projectBeta_billing.md",
+        "policy_2024-03_projectBeta_billing.md",
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "report_2024-02_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_scores": [
+        0.4951,
+        0.4901,
+        0.4661,
+        0.46,
+        0.4425
+      ],
+      "rank": null,
+      "facts_ok": null,
+      "question_lang": "ar",
+      "context_lang": "en",
+      "cross_lingual": true,
+      "signals": {
+        "top1_score": 0.4951,
+        "score_gap": 0.0049,
+        "lexical_coverage": 0.0,
+        "lexical_gate_applied": false,
+        "cross_lingual": true,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 22
+    },
+    {
+      "id": 75,
+      "question": "Which service does the February 2024 report for Project Alpha cover?",
+      "split": "holdout",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "same language",
+      "status": "answered",
+      "outcome": "wrong_source",
+      "answer": "CloudTech Solutions - Invoice Date: January 15, 2024 Project: Alpha Service: Compute Engine This invoice covers the compute resources utilized for Project Alpha during the month of January 2024. [1]",
+      "cited_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.pdf"
+      ],
+      "retrieved_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "policy_2024-01_projectAlpha_general.md",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_scores": [
+        0.6571,
+        0.6257,
+        0.6066,
+        0.5841,
+        0.573
+      ],
+      "rank": 2,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.6571,
+        "score_gap": 0.0314,
+        "lexical_coverage": 0.7143,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 19
+    },
+    {
+      "id": 76,
+      "question": "What currency is the Project Beta storage invoice in?",
+      "split": "calib",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "same language",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "This invoice details the data storage costs for Project Beta in February 2024.\nThe engineering team stored approximately 50 Terabytes of raw analytical backup data.\nThe total amount due for this billing cycle is $1,200 USD.\nPayment is automatically deducted from the corporate credit card on file. [1]",
+      "cited_files": [
+        "invoice_2024-02_projectBeta_cloudStorage.txt"
+      ],
+      "retrieved_files": [
+        "invoice_2024-02_projectBeta_cloudStorage.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "policy_2024-03_projectBeta_billing.md",
+        "policy_2024-03_projectBeta_billing.md"
+      ],
+      "retrieved_scores": [
+        0.6652,
+        0.6393,
+        0.5134,
+        0.5003,
+        0.4873
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.6652,
+        "score_gap": 0.0259,
+        "lexical_coverage": 0.8,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 19
+    },
+    {
+      "id": 77,
+      "question": "What is the effective date of Project Alpha's general access policy?",
+      "split": "calib",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "same language",
+      "status": "answered",
+      "outcome": "correct",
+      "answer": "# General Access Policy\n**Project:** Alpha\n**Effective Date:** January 1, 2024 [1]",
+      "cited_files": [
+        "policy_2024-01_projectAlpha_general.md"
+      ],
+      "retrieved_files": [
+        "policy_2024-01_projectAlpha_general.md",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "policy_2024-03_projectBeta_billing.md",
+        "report_2024-02_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_scores": [
+        0.8556,
+        0.5776,
+        0.5741,
+        0.5703,
+        0.5643
+      ],
+      "rank": 1,
+      "facts_ok": true,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.8556,
+        "score_gap": 0.278,
+        "lexical_coverage": 1.0,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 19
+    },
+    {
+      "id": 78,
+      "question": "What does the payload specification say about the Reply-To header?",
+      "split": "holdout",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "same language",
+      "status": "no_relevant_context",
+      "outcome": "false_refusal",
+      "answer": "I could not find this information in the provided documents.",
+      "cited_files": [],
+      "retrieved_files": [
+        "email_payload_spec.pdf",
+        "Task-3.pdf",
+        "email_payload_spec.pdf",
+        "email_payload_spec.pdf",
+        "الوظيفة الثانية (1).pdf"
+      ],
+      "retrieved_scores": [
+        0.537,
+        0.4052,
+        0.3584,
+        0.358,
+        0.3579
+      ],
+      "rank": 1,
+      "facts_ok": false,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.537,
+        "score_gap": 0.1318,
+        "lexical_coverage": 0.4,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [
+        "only 40% of the question's key words appear in the best chunk (minimum 50%)"
+      ],
+      "latency_ms": 19
+    },
+    {
+      "id": 79,
+      "question": "How many hours is the Deploy and Monitor Feedback step estimated at?",
+      "split": "calib",
+      "kind": "answerable",
+      "should_reject": false,
+      "filters": {},
+      "tests": "same language",
+      "status": "no_relevant_context",
+      "outcome": "false_refusal",
+      "answer": "I could not find this information in the provided documents.",
+      "cited_files": [],
+      "retrieved_files": [
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "Task-3.pdf",
+        "invoice_2024-02_projectBeta_cloudStorage.txt"
+      ],
+      "retrieved_scores": [
+        0.5532,
+        0.4977,
+        0.4852,
+        0.4525,
+        0.4434
+      ],
+      "rank": 4,
+      "facts_ok": false,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.5532,
+        "score_gap": 0.0555,
+        "lexical_coverage": 0.0,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [
+        "only 0% of the question's key words appear in the best chunk (minimum 50%)"
+      ],
+      "latency_ms": 19
+    },
+    {
+      "id": 80,
+      "question": "What is the SLA penalty if Project Alpha's uptime drops below 99%?",
+      "split": "holdout",
+      "kind": "near_topic_missing",
+      "should_reject": true,
+      "filters": {},
+      "tests": "same language",
+      "status": "no_relevant_context",
+      "outcome": "correct_rejection",
+      "answer": "I could not find this information in the provided documents.",
+      "cited_files": [],
+      "retrieved_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "policy_2024-03_projectBeta_billing.md",
+        "invoice_2024-02_projectBeta_cloudStorage.txt"
+      ],
+      "retrieved_scores": [
+        0.5297,
+        0.495,
+        0.477,
+        0.4495,
+        0.4274
+      ],
+      "rank": null,
+      "facts_ok": null,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.5297,
+        "score_gap": 0.0347,
+        "lexical_coverage": 0.25,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [
+          "SLA"
+        ],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [
+        "only 25% of the question's key words appear in the best chunk (minimum 50%)",
+        "the question mentions ['SLA'] which appear nowhere in the documents"
+      ],
+      "latency_ms": 20
+    },
+    {
+      "id": 81,
+      "question": "Who approved the Project Beta budget in March 2024?",
+      "split": "calib",
+      "kind": "near_topic_missing",
+      "should_reject": true,
+      "filters": {},
+      "tests": "same language",
+      "status": "answered",
+      "outcome": "leak",
+      "answer": "# Billing and Expense Policy\n**Project:** Beta\n**Effective Date:** March 1, 2024 [1]\n\n## 1. Budget Limits\nThe maximum monthly budget for Project Beta's cloud infrastructure is strictly capped at $5,000 USD.\nAny new service provisioning that exceeds this limit requires explicit written approval from the Chief Technology Officer (CTO). [3]",
+      "cited_files": [
+        "policy_2024-03_projectBeta_billing.md",
+        "policy_2024-03_projectBeta_billing.md"
+      ],
+      "retrieved_files": [
+        "policy_2024-03_projectBeta_billing.md",
+        "policy_2024-01_projectAlpha_general.md",
+        "policy_2024-03_projectBeta_billing.md",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "invoice_2024-02_projectBeta_cloudStorage.txt"
+      ],
+      "retrieved_scores": [
+        0.6965,
+        0.5464,
+        0.5454,
+        0.5447,
+        0.5345
+      ],
+      "rank": null,
+      "facts_ok": null,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.6965,
+        "score_gap": 0.1501,
+        "lexical_coverage": 0.6667,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 19
+    },
+    {
+      "id": 82,
+      "question": "What is the invoice number of the Project Alpha January invoice?",
+      "split": "calib",
+      "kind": "near_topic_missing",
+      "should_reject": true,
+      "filters": {},
+      "tests": "same language",
+      "status": "answered",
+      "outcome": "leak",
+      "answer": "This invoice covers the compute resources utilized for Project Alpha during the month of January 2024.\nTotal usage includes 500 hours of high-memory instances for the data processing pipeline.\nThe total amount due is $4,500 USD.\nPlease process the payment within 30 days to avoid service [1]",
+      "cited_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.txt"
+      ],
+      "retrieved_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "invoice_2024-02_projectBeta_cloudStorage.txt",
+        "policy_2024-01_projectAlpha_general.md",
+        "policy_2024-03_projectBeta_billing.md"
+      ],
+      "retrieved_scores": [
+        0.6712,
+        0.636,
+        0.4746,
+        0.4628,
+        0.4619
+      ],
+      "rank": null,
+      "facts_ok": null,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.6712,
+        "score_gap": 0.0353,
+        "lexical_coverage": 0.8,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [],
+      "latency_ms": 23
+    },
+    {
+      "id": 83,
+      "question": "Which encryption algorithm protects the production database?",
+      "split": "holdout",
+      "kind": "near_topic_missing",
+      "should_reject": true,
+      "filters": {},
+      "tests": "same language",
+      "status": "no_relevant_context",
+      "outcome": "correct_rejection",
+      "answer": "I could not find this information in the provided documents.",
+      "cited_files": [],
+      "retrieved_files": [
+        "report_2024-03_projectBeta_security.txt",
+        "policy_2024-01_projectAlpha_general.md",
+        "report_2024-03_projectBeta_security.txt",
+        "policy_2024-01_projectAlpha_general.md",
+        "Task-3.pdf"
+      ],
+      "retrieved_scores": [
+        0.4565,
+        0.445,
+        0.4446,
+        0.4015,
+        0.3265
+      ],
+      "rank": null,
+      "facts_ok": null,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.4565,
+        "score_gap": 0.0115,
+        "lexical_coverage": 0.0,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [
+        "only 0% of the question's key words appear in the best chunk (minimum 50%)"
+      ],
+      "latency_ms": 19
+    },
+    {
+      "id": 84,
+      "question": "What is the weather in Secaucus today?",
+      "split": "calib",
+      "kind": "off_topic",
+      "should_reject": true,
+      "filters": {},
+      "tests": "same language",
+      "status": "no_relevant_context",
+      "outcome": "correct_rejection",
+      "answer": "I could not find this information in the provided documents.",
+      "cited_files": [],
+      "retrieved_files": [
+        "report_2024-02_projectAlpha_computeEngine.txt",
+        "report_2024-03_projectBeta_security.txt",
+        "policy_2024-01_projectAlpha_general.md",
+        "report_2024-03_projectBeta_security.txt",
+        "policy_2024-03_projectBeta_billing.md"
+      ],
+      "retrieved_scores": [
+        0.1774,
+        0.1734,
+        0.172,
+        0.1614,
+        0.1493
+      ],
+      "rank": null,
+      "facts_ok": null,
+      "question_lang": "en",
+      "context_lang": "en",
+      "cross_lingual": false,
+      "signals": {
+        "top1_score": 0.1774,
+        "score_gap": 0.004,
+        "lexical_coverage": 0.0,
+        "lexical_gate_applied": true,
+        "cross_lingual": false,
+        "unknown_entities": [
+          "Secaucus"
+        ],
+        "thresholds": {
+          "min_score": 0.0,
+          "min_lexical_coverage": 0.5,
+          "unknown_entity_check": true,
+          "min_score_cross_lingual": 0.3
+        }
+      },
+      "reasons": [
+        "only 0% of the question's key words appear in the best chunk (minimum 50%)",
+        "the question mentions ['Secaucus'] which appear nowhere in the documents"
+      ],
+      "latency_ms": 19
+    }
+  ]
+}

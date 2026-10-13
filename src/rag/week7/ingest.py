@@ -61,6 +61,8 @@ def run_ingestion(
         "classified": 0,
         "unclassified": 0,
         "total_chunks": 0,
+        "replaced": 0,
+        "removed": 0,
         "by_type": {},
         "by_format": {},
         "failures": [],
@@ -89,8 +91,11 @@ def run_ingestion(
 
             logger.info("Store phase: writing %s (%d chunks) to %s",
                         path.name, len(chunks), db_path)
-            document_id = store.insert_document(metadata, path)
-            store.insert_chunks(document_id, metadata, chunks)
+            # Replace (not append): re-running ingestion must not duplicate documents.
+            document_id, replaced = store.replace_document(metadata, path, chunks)
+            if replaced:
+                summary["replaced"] += 1
+                logger.info("'%s' was already stored - previous version replaced.", path.name)
 
             summary["processed"] += 1
             summary["total_chunks"] += len(chunks)
@@ -112,11 +117,21 @@ def run_ingestion(
             summary["failed"] += 1
             summary["failures"].append({"file": path.name, "phase": "Unknown", "error": str(exc)})
 
+    # Cleanup: drop documents whose source file no longer exists. Uses every file
+    # found by the scan (not only the successful ones), so a file that failed this
+    # run keeps its previous version instead of being deleted.
+    try:
+        removed = store.delete_documents_not_in(files)
+        summary["removed"] = len(removed)
+    except Exception as exc:  # noqa: BLE001
+        logger.error("Cleanup Phase FAILED: %s", exc)
+        summary["failures"].append({"file": "(cleanup)", "phase": "Cleanup", "error": str(exc)})
+
     logger.info(
         "Ingestion finished: %d/%d files processed (%d classified, %d unclassified), "
-        "%d chunks stored, %d failure(s)",
+        "%d chunks stored, %d replaced, %d removed, %d failure(s)",
         summary["processed"], summary["total_files"],
         summary["classified"], summary["unclassified"],
-        summary["total_chunks"], summary["failed"],
+        summary["total_chunks"], summary["replaced"], summary["removed"], summary["failed"],
     )
     return summary

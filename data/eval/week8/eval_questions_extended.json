@@ -1,0 +1,464 @@
+[
+  {
+    "id": 50,
+    "question": "ما هو الحد الأقصى للميزانية الشهرية لمشروع Beta؟",
+    "filters": {},
+    "expected_sources": [
+      "policy_2024-03_projectBeta_billing.md"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "answer_contains": [
+      "5,000"
+    ],
+    "tests": "AR question -> EN policy",
+    "split": "calib"
+  },
+  {
+    "id": 51,
+    "question": "كم عدد ساعات المثيلات عالية الذاكرة المستخدمة في مشروع Alpha؟",
+    "filters": {},
+    "expected_sources": [
+      "invoice_2024-01_projectAlpha_computeEngine.txt",
+      "invoice_2024-01_projectAlpha_computeEngine.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "answer_contains": [
+      "500"
+    ],
+    "tests": "AR question -> EN invoice",
+    "split": "calib"
+  },
+  {
+    "id": 52,
+    "question": "خلال كم يوماً يجب دفع فاتورة مشروع Alpha؟",
+    "filters": {},
+    "expected_sources": [
+      "invoice_2024-01_projectAlpha_computeEngine.txt",
+      "invoice_2024-01_projectAlpha_computeEngine.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "answer_contains": [
+      "30 days"
+    ],
+    "tests": "AR question -> EN invoice",
+    "split": "holdout"
+  },
+  {
+    "id": 53,
+    "question": "كل كم يوماً يجب تغيير كلمات المرور؟",
+    "filters": {},
+    "expected_sources": [
+      "policy_2024-01_projectAlpha_general.md"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "answer_contains": [
+      "90 days"
+    ],
+    "tests": "AR question -> EN policy",
+    "split": "calib"
+  },
+  {
+    "id": 54,
+    "question": "هل يسمح بالدخول المباشر إلى المحركات من عناوين الإنترنت العامة؟",
+    "filters": {},
+    "expected_sources": [
+      "policy_2024-01_projectAlpha_general.md"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "answer_contains": [
+      "SSH"
+    ],
+    "tests": "AR question -> EN policy",
+    "split": "calib"
+  },
+  {
+    "id": 55,
+    "question": "ما نسبة وقت التشغيل لمحرك الحوسبة في فبراير؟",
+    "filters": {},
+    "expected_sources": [
+      "report_2024-02_projectAlpha_computeEngine.txt"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "answer_contains": [
+      "99.95%"
+    ],
+    "tests": "AR question -> EN report",
+    "split": "holdout"
+  },
+  {
+    "id": 56,
+    "question": "متى تم تدوير شهادات SSL القديمة؟",
+    "filters": {},
+    "expected_sources": [
+      "report_2024-03_projectBeta_security.txt"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "answer_contains": [
+      "March 6th"
+    ],
+    "tests": "AR question -> EN report",
+    "split": "calib"
+  },
+  {
+    "id": 57,
+    "question": "كم حجم البيانات التي خزنها فريق الهندسة لمشروع Beta؟",
+    "filters": {},
+    "expected_sources": [
+      "invoice_2024-02_projectBeta_cloudStorage.txt"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "answer_contains": [
+      "50 Terabytes"
+    ],
+    "tests": "AR question -> EN invoice",
+    "split": "calib"
+  },
+  {
+    "id": 58,
+    "question": "كيف يتم دفع فاتورة التخزين الخاصة بمشروع Beta؟",
+    "filters": {},
+    "expected_sources": [
+      "invoice_2024-02_projectBeta_cloudStorage.txt"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "answer_contains": [
+      "credit card"
+    ],
+    "tests": "AR question -> EN invoice",
+    "split": "holdout"
+  },
+  {
+    "id": 59,
+    "question": "ما سعر الغيغابايت الواحد لتخزين SSD الدائم؟",
+    "filters": {},
+    "expected_sources": [
+      "invoice_2024-01_projectAlpha_computeEngine.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "answer_contains": [
+      "0.17"
+    ],
+    "tests": "AR question -> EN PDF table",
+    "split": "calib"
+  },
+  {
+    "id": 60,
+    "question": "كم ساعة مقدرة لبناء واجهة الدردشة؟",
+    "filters": {},
+    "expected_sources": [
+      "Task-3.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "answer_contains": [
+      "15 hours"
+    ],
+    "tests": "AR question -> EN PDF",
+    "split": "calib"
+  },
+  {
+    "id": 61,
+    "question": "ما الدور المطلوب لقراءة بيانات الفوترة في BigQuery؟",
+    "filters": {},
+    "expected_sources": [
+      "Task-3.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "answer_contains": [
+      "dataViewer"
+    ],
+    "tests": "AR question -> EN PDF",
+    "split": "holdout"
+  },
+  {
+    "id": 62,
+    "question": "ما الحقول المطلوبة في حمولة البريد الإلكتروني؟",
+    "filters": {},
+    "expected_sources": [
+      "email_payload_spec.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "answer_contains": [
+      "mailbox_id"
+    ],
+    "tests": "AR question -> EN PDF",
+    "split": "calib"
+  },
+  {
+    "id": 63,
+    "question": "When are the interviews held?",
+    "filters": {},
+    "expected_sources": [
+      "الوظيفة*الثانية*.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "answer_contains": [
+      "6/7"
+    ],
+    "tests": "EN question -> AR PDF",
+    "split": "calib"
+  },
+  {
+    "id": 64,
+    "question": "Who must approve a new course?",
+    "filters": {},
+    "expected_sources": [
+      "الوظيفة*الثانية*.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "answer_contains": [
+      "admin"
+    ],
+    "tests": "EN question -> AR PDF",
+    "split": "holdout"
+  },
+  {
+    "id": 65,
+    "question": "When must the short report about the job be sent?",
+    "filters": {},
+    "expected_sources": [
+      "الوظيفة*الثانية*.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "answer_contains": [
+      "5/7"
+    ],
+    "tests": "EN question -> AR PDF",
+    "split": "calib"
+  },
+  {
+    "id": 66,
+    "question": "Which load balancing mechanism is given as an example?",
+    "filters": {},
+    "expected_sources": [
+      "الوظيفة*الثانية*.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "answer_contains": [
+      "Ribbon"
+    ],
+    "tests": "EN question -> AR PDF",
+    "split": "calib"
+  },
+  {
+    "id": 67,
+    "question": "ما هي سياسة استرداد الأموال لمشروع Beta؟",
+    "filters": {},
+    "expected_sources": [],
+    "should_reject": true,
+    "kind": "near_topic_missing",
+    "tests": "AR question, EN docs: no refund policy",
+    "split": "calib"
+  },
+  {
+    "id": 68,
+    "question": "كم كانت تكلفة مشروع Gamma في يناير؟",
+    "filters": {},
+    "expected_sources": [],
+    "should_reject": true,
+    "kind": "unknown_entity",
+    "tests": "AR question: project does not exist",
+    "split": "calib"
+  },
+  {
+    "id": 69,
+    "question": "ما هي عاصمة فرنسا؟",
+    "filters": {},
+    "expected_sources": [],
+    "should_reject": true,
+    "kind": "off_topic",
+    "tests": "AR question: unrelated",
+    "split": "holdout"
+  },
+  {
+    "id": 70,
+    "question": "كيف أخبز خبز العجين المخمر؟",
+    "filters": {},
+    "expected_sources": [],
+    "should_reject": true,
+    "kind": "off_topic",
+    "tests": "AR question: unrelated",
+    "split": "calib"
+  },
+  {
+    "id": 71,
+    "question": "من هو المدير التنفيذي لشركة CloudTech؟",
+    "filters": {},
+    "expected_sources": [],
+    "should_reject": true,
+    "kind": "near_topic_missing",
+    "tests": "AR question: company exists, CEO not stated",
+    "split": "calib"
+  },
+  {
+    "id": 72,
+    "question": "What is the monthly salary of the trainer?",
+    "filters": {},
+    "expected_sources": [],
+    "should_reject": true,
+    "kind": "near_topic_missing",
+    "tests": "EN question, AR doc: no salary stated",
+    "split": "holdout"
+  },
+  {
+    "id": 73,
+    "question": "What is the capital of Japan?",
+    "filters": {},
+    "expected_sources": [],
+    "should_reject": true,
+    "kind": "off_topic",
+    "tests": "EN question: unrelated",
+    "split": "calib"
+  },
+  {
+    "id": 74,
+    "question": "ما هي سياسة المصادقة متعددة العوامل لمشروع Beta؟",
+    "filters": {},
+    "expected_sources": [],
+    "should_reject": true,
+    "kind": "near_topic_missing",
+    "tests": "AR question: MFA exists only for Alpha",
+    "split": "calib"
+  },
+  {
+    "id": 75,
+    "question": "Which service does the February 2024 report for Project Alpha cover?",
+    "filters": {},
+    "expected_sources": [
+      "report_2024-02_projectAlpha_computeEngine.txt"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "answer_contains": [
+      "Compute Engine"
+    ],
+    "tests": "same language",
+    "split": "holdout"
+  },
+  {
+    "id": 76,
+    "question": "What currency is the Project Beta storage invoice in?",
+    "filters": {},
+    "expected_sources": [
+      "invoice_2024-02_projectBeta_cloudStorage.txt"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "answer_contains": [
+      "USD"
+    ],
+    "tests": "same language",
+    "split": "calib"
+  },
+  {
+    "id": 77,
+    "question": "What is the effective date of Project Alpha's general access policy?",
+    "filters": {},
+    "expected_sources": [
+      "policy_2024-01_projectAlpha_general.md"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "answer_contains": [
+      "January 1, 2024"
+    ],
+    "tests": "same language",
+    "split": "calib"
+  },
+  {
+    "id": 78,
+    "question": "What does the payload specification say about the Reply-To header?",
+    "filters": {},
+    "expected_sources": [
+      "email_payload_spec.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "answer_contains": [
+      "if present"
+    ],
+    "tests": "same language",
+    "split": "holdout"
+  },
+  {
+    "id": 79,
+    "question": "How many hours is the Deploy and Monitor Feedback step estimated at?",
+    "filters": {},
+    "expected_sources": [
+      "Task-3.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "answer_contains": [
+      "10 hours"
+    ],
+    "tests": "same language",
+    "split": "calib"
+  },
+  {
+    "id": 80,
+    "question": "What is the SLA penalty if Project Alpha's uptime drops below 99%?",
+    "filters": {},
+    "expected_sources": [],
+    "should_reject": true,
+    "kind": "near_topic_missing",
+    "tests": "same language",
+    "split": "holdout"
+  },
+  {
+    "id": 81,
+    "question": "Who approved the Project Beta budget in March 2024?",
+    "filters": {},
+    "expected_sources": [],
+    "should_reject": true,
+    "kind": "near_topic_missing",
+    "tests": "same language",
+    "split": "calib"
+  },
+  {
+    "id": 82,
+    "question": "What is the invoice number of the Project Alpha January invoice?",
+    "filters": {},
+    "expected_sources": [],
+    "should_reject": true,
+    "kind": "near_topic_missing",
+    "tests": "same language",
+    "split": "calib"
+  },
+  {
+    "id": 83,
+    "question": "Which encryption algorithm protects the production database?",
+    "filters": {},
+    "expected_sources": [],
+    "should_reject": true,
+    "kind": "near_topic_missing",
+    "tests": "same language",
+    "split": "holdout"
+  },
+  {
+    "id": 84,
+    "question": "What is the weather in Secaucus today?",
+    "filters": {},
+    "expected_sources": [],
+    "should_reject": true,
+    "kind": "off_topic",
+    "tests": "same language",
+    "split": "calib"
+  }
+]

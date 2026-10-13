@@ -1,0 +1,1265 @@
+2026-10-09 00:16:56,343 - INFO - Read phase: loading chunks from E:\DigitalFutureProjects\TrainingProjects\standalone-data-rag-assistant\data\db\local_storage.sqlite
+2026-10-09 00:16:56,345 - INFO - Read phase: 60 chunk(s) in SQLite
+2026-10-09 00:16:56,346 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-09 00:16:57,047 - INFO - Created collection 'rag_chunks_v1' (cosine, model=paraphrase-multilingual-MiniLM-L12-v2, variant=text_only)
+2026-10-09 00:16:57,047 - INFO - Open phase: collection 'rag_chunks_v1' holds 0 vector(s)
+2026-10-09 00:16:57,047 - INFO - Diff phase: add=60 delete=0 unchanged=0
+2026-10-09 00:17:49,527 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' (the first run downloads it)
+2026-10-09 00:17:49,527 - INFO - No device provided, using cpu
+2026-10-09 00:17:50,591 - INFO - HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-10-09 00:17:50,791 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 00:17:50,796 - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-09 00:17:50,974 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22f7640f94e81bb7f4f04daf1668850b38763a13d9%22 "HTTP/1.1 200 OK"
+2026-10-09 00:17:51,319 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 00:17:51,522 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22b974b349cb2d419ada11181750a733ff82f291ad%22 "HTTP/1.1 200 OK"
+2026-10-09 00:17:51,525 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-09 00:17:51,875 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 00:17:52,059 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22b974b349cb2d419ada11181750a733ff82f291ad%22 "HTTP/1.1 200 OK"
+2026-10-09 00:17:52,251 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 00:17:52,435 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/README.md?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2FREADME.md=&etag=%226bedb7f3622d56b7020f33ab93f6996d33242043%22 "HTTP/1.1 200 OK"
+2026-10-09 00:17:52,779 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 00:17:52,964 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22f7640f94e81bb7f4f04daf1668850b38763a13d9%22 "HTTP/1.1 200 OK"
+2026-10-09 00:17:53,302 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 00:17:53,483 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/sentence_bert_config.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fsentence_bert_config.json=&etag=%225fd10429389515d3e5cccdeda08cae5fea1ae82e%22 "HTTP/1.1 200 OK"
+2026-10-09 00:17:53,714 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-10-09 00:17:54,112 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-09 00:17:54,310 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-09 00:17:56,515 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-09 00:17:56,713 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-09 00:17:57,110 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-09 00:17:58,946 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-09 00:17:59,362 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 00:17:59,533 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/1_Pooling%2Fconfig.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2F1_Pooling%2Fconfig.json=&etag=%22d1514c3162bbe87b343f565fadc62e6c06f04f03%22 "HTTP/1.1 200 OK"
+2026-10-09 00:17:59,962 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-09 00:17:59,985 - INFO - Embed phase: encoding 60 chunk(s) with 'paraphrase-multilingual-MiniLM-L12-v2' (variant=text_only)
+2026-10-09 00:18:01,380 - INFO - Sync phase: +60 / -0 vector(s)
+2026-10-09 00:18:01,388 - INFO - Indexing finished: {'chunks_in_sqlite': 60, 'indexed_before': 0, 'added': 60, 'removed': 0, 'unchanged': 0, 'truncated_chunks': 0, 'vectors_now': 60, 'collection': 'rag_chunks_v1', 'model': 'paraphrase-multilingual-MiniLM-L12-v2', 'text_variant': 'text_only', 'rebuilt': False, 'seconds': 65.04}
+2026-10-09 14:55:38,349 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-09 14:55:50,643 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' (the first run downloads it)
+2026-10-09 14:55:50,643 - INFO - No device provided, using cpu
+2026-10-09 14:55:52,978 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 14:55:52,978 - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-09 14:55:53,474 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22f7640f94e81bb7f4f04daf1668850b38763a13d9%22 "HTTP/1.1 200 OK"
+2026-10-09 14:55:54,079 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 14:55:54,447 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22b974b349cb2d419ada11181750a733ff82f291ad%22 "HTTP/1.1 200 OK"
+2026-10-09 14:55:54,447 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-09 14:55:54,787 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 14:55:56,066 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22b974b349cb2d419ada11181750a733ff82f291ad%22 "HTTP/1.1 200 OK"
+2026-10-09 14:55:56,500 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 14:55:56,872 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/README.md?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2FREADME.md=&etag=%226bedb7f3622d56b7020f33ab93f6996d33242043%22 "HTTP/1.1 200 OK"
+2026-10-09 14:55:57,188 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 14:55:57,541 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22f7640f94e81bb7f4f04daf1668850b38763a13d9%22 "HTTP/1.1 200 OK"
+2026-10-09 14:55:57,910 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 14:55:58,198 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/sentence_bert_config.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fsentence_bert_config.json=&etag=%225fd10429389515d3e5cccdeda08cae5fea1ae82e%22 "HTTP/1.1 200 OK"
+2026-10-09 14:55:58,569 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-10-09 14:55:59,036 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-09 14:55:59,438 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-09 14:56:01,526 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-09 14:56:01,911 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-09 14:56:02,376 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-09 14:56:04,052 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-09 14:56:04,611 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 14:56:04,959 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/1_Pooling%2Fconfig.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2F1_Pooling%2Fconfig.json=&etag=%22d1514c3162bbe87b343f565fadc62e6c06f04f03%22 "HTTP/1.1 200 OK"
+2026-10-09 14:56:05,326 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-09 14:58:07,092 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-09 14:58:15,779 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' (the first run downloads it)
+2026-10-09 14:58:15,779 - INFO - No device provided, using cpu
+2026-10-09 14:58:17,222 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 14:58:17,222 - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-09 14:58:17,497 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22f7640f94e81bb7f4f04daf1668850b38763a13d9%22 "HTTP/1.1 200 OK"
+2026-10-09 14:58:17,800 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 14:58:18,072 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22b974b349cb2d419ada11181750a733ff82f291ad%22 "HTTP/1.1 200 OK"
+2026-10-09 14:58:18,072 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-09 14:58:18,361 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 14:58:18,618 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22b974b349cb2d419ada11181750a733ff82f291ad%22 "HTTP/1.1 200 OK"
+2026-10-09 14:58:18,906 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 14:58:19,260 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/README.md?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2FREADME.md=&etag=%226bedb7f3622d56b7020f33ab93f6996d33242043%22 "HTTP/1.1 200 OK"
+2026-10-09 14:58:19,597 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 14:58:19,869 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22f7640f94e81bb7f4f04daf1668850b38763a13d9%22 "HTTP/1.1 200 OK"
+2026-10-09 14:58:20,190 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 14:58:20,464 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/sentence_bert_config.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fsentence_bert_config.json=&etag=%225fd10429389515d3e5cccdeda08cae5fea1ae82e%22 "HTTP/1.1 200 OK"
+2026-10-09 14:58:20,741 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-10-09 14:58:21,057 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-09 14:58:21,666 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-09 14:58:22,776 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-09 14:58:23,231 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-09 14:58:23,527 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-09 14:58:25,591 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-09 14:58:26,112 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 14:58:26,434 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/1_Pooling%2Fconfig.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2F1_Pooling%2Fconfig.json=&etag=%22d1514c3162bbe87b343f565fadc62e6c06f04f03%22 "HTTP/1.1 200 OK"
+2026-10-09 14:58:26,980 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-09 14:59:23,148 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-09 14:59:31,050 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' (the first run downloads it)
+2026-10-09 14:59:31,050 - INFO - No device provided, using cpu
+2026-10-09 14:59:33,457 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 14:59:33,457 - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-09 14:59:33,747 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22f7640f94e81bb7f4f04daf1668850b38763a13d9%22 "HTTP/1.1 200 OK"
+2026-10-09 14:59:34,034 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 14:59:34,323 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22b974b349cb2d419ada11181750a733ff82f291ad%22 "HTTP/1.1 200 OK"
+2026-10-09 14:59:34,323 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-09 14:59:34,643 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 14:59:34,963 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22b974b349cb2d419ada11181750a733ff82f291ad%22 "HTTP/1.1 200 OK"
+2026-10-09 14:59:35,253 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 14:59:35,653 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/README.md?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2FREADME.md=&etag=%226bedb7f3622d56b7020f33ab93f6996d33242043%22 "HTTP/1.1 200 OK"
+2026-10-09 14:59:36,199 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 14:59:36,488 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22f7640f94e81bb7f4f04daf1668850b38763a13d9%22 "HTTP/1.1 200 OK"
+2026-10-09 14:59:36,793 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 14:59:37,067 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/sentence_bert_config.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fsentence_bert_config.json=&etag=%225fd10429389515d3e5cccdeda08cae5fea1ae82e%22 "HTTP/1.1 200 OK"
+2026-10-09 14:59:37,355 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-10-09 14:59:37,819 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-09 14:59:38,124 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-09 14:59:39,282 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-09 14:59:39,763 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-09 14:59:40,131 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-09 14:59:41,951 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-09 14:59:42,425 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 14:59:42,772 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/1_Pooling%2Fconfig.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2F1_Pooling%2Fconfig.json=&etag=%22d1514c3162bbe87b343f565fadc62e6c06f04f03%22 "HTTP/1.1 200 OK"
+2026-10-09 14:59:43,129 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-09 15:00:38,632 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-09 15:00:46,437 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' (the first run downloads it)
+2026-10-09 15:00:46,437 - INFO - No device provided, using cpu
+2026-10-09 15:00:57,832 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-09 15:01:04,067 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' (the first run downloads it)
+2026-10-09 15:01:04,067 - INFO - No device provided, using cpu
+2026-10-09 15:01:05,514 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 15:01:05,774 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22f7640f94e81bb7f4f04daf1668850b38763a13d9%22 "HTTP/1.1 200 OK"
+2026-10-09 15:01:06,059 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 15:01:06,059 - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-09 15:01:06,312 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22b974b349cb2d419ada11181750a733ff82f291ad%22 "HTTP/1.1 200 OK"
+2026-10-09 15:01:06,328 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-09 15:01:06,602 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 15:01:06,866 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22b974b349cb2d419ada11181750a733ff82f291ad%22 "HTTP/1.1 200 OK"
+2026-10-09 15:01:07,288 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 15:01:07,559 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/README.md?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2FREADME.md=&etag=%226bedb7f3622d56b7020f33ab93f6996d33242043%22 "HTTP/1.1 200 OK"
+2026-10-09 15:01:07,832 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 15:01:08,106 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22f7640f94e81bb7f4f04daf1668850b38763a13d9%22 "HTTP/1.1 200 OK"
+2026-10-09 15:01:08,415 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 15:01:08,682 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/sentence_bert_config.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fsentence_bert_config.json=&etag=%225fd10429389515d3e5cccdeda08cae5fea1ae82e%22 "HTTP/1.1 200 OK"
+2026-10-09 15:01:08,988 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-10-09 15:01:09,276 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-09 15:01:10,031 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-09 15:01:11,018 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-09 15:01:11,503 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-09 15:01:12,109 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-09 15:01:13,737 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-09 15:01:14,234 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-09 15:01:14,570 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/1_Pooling%2Fconfig.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2F1_Pooling%2Fconfig.json=&etag=%22d1514c3162bbe87b343f565fadc62e6c06f04f03%22 "HTTP/1.1 200 OK"
+2026-10-09 15:01:15,082 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-09 15:01:54,070 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-09 15:01:54,245 - INFO - No chunk matches filters {'project': 'projectBeta', 'month': '2024-01'}
+2026-10-09 15:02:16,031 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-09 15:02:16,159 - INFO - No chunk matches filters {'project': 'projectBeta', 'month': '2024-01'}
+2026-10-10 23:40:20,100 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-10 23:42:51,035 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-10 23:44:12,863 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' (the first run downloads it)
+2026-10-10 23:44:12,864 - INFO - No device provided, using cpu
+2026-10-10 23:44:14,334 - INFO - HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-10-10 23:44:14,573 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-10 23:44:14,575 - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-10 23:44:14,786 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22f7640f94e81bb7f4f04daf1668850b38763a13d9%22 "HTTP/1.1 200 OK"
+2026-10-10 23:44:15,307 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-10 23:44:15,500 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22b974b349cb2d419ada11181750a733ff82f291ad%22 "HTTP/1.1 200 OK"
+2026-10-10 23:44:15,501 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-10 23:44:15,769 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-10 23:44:15,967 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22b974b349cb2d419ada11181750a733ff82f291ad%22 "HTTP/1.1 200 OK"
+2026-10-10 23:44:16,198 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-10-10 23:44:16,424 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/README.md?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2FREADME.md=&etag=%226bedb7f3622d56b7020f33ab93f6996d33242043%22 "HTTP/1.1 200 OK"
+2026-10-10 23:44:16,640 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-10 23:44:17,866 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22f7640f94e81bb7f4f04daf1668850b38763a13d9%22 "HTTP/1.1 200 OK"
+2026-10-10 23:44:18,400 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-10 23:44:18,615 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/sentence_bert_config.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fsentence_bert_config.json=&etag=%225fd10429389515d3e5cccdeda08cae5fea1ae82e%22 "HTTP/1.1 200 OK"
+2026-10-10 23:44:18,864 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-10-10 23:44:19,116 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-10 23:44:19,364 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-10 23:44:20,900 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-10 23:44:21,244 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-10 23:44:21,778 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-10 23:44:23,266 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-10 23:44:23,691 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-10 23:44:23,887 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/1_Pooling%2Fconfig.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2F1_Pooling%2Fconfig.json=&etag=%22d1514c3162bbe87b343f565fadc62e6c06f04f03%22 "HTTP/1.1 200 OK"
+2026-10-10 23:44:24,133 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-10 23:44:24,314 - INFO - ask status=answered filters={'project': 'projectBeta', 'document_type': 'invoice'} top1=0.5404 latency_ms=93051 q='What is the total amount due?'
+2026-10-10 23:44:53,264 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-10 23:45:03,797 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' (the first run downloads it)
+2026-10-10 23:45:03,797 - INFO - No device provided, using cpu
+2026-10-10 23:45:05,594 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-10 23:45:05,866 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22f7640f94e81bb7f4f04daf1668850b38763a13d9%22 "HTTP/1.1 200 OK"
+2026-10-10 23:45:06,095 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-10 23:45:06,287 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22b974b349cb2d419ada11181750a733ff82f291ad%22 "HTTP/1.1 200 OK"
+2026-10-10 23:45:06,290 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-10 23:45:06,768 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-10 23:45:06,768 - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-10 23:45:06,999 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22b974b349cb2d419ada11181750a733ff82f291ad%22 "HTTP/1.1 200 OK"
+2026-10-10 23:45:07,707 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-10-10 23:45:08,193 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/README.md?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2FREADME.md=&etag=%226bedb7f3622d56b7020f33ab93f6996d33242043%22 "HTTP/1.1 200 OK"
+2026-10-10 23:45:08,693 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-10 23:45:09,001 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22f7640f94e81bb7f4f04daf1668850b38763a13d9%22 "HTTP/1.1 200 OK"
+2026-10-10 23:45:09,339 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-10 23:45:09,561 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/sentence_bert_config.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fsentence_bert_config.json=&etag=%225fd10429389515d3e5cccdeda08cae5fea1ae82e%22 "HTTP/1.1 200 OK"
+2026-10-10 23:45:10,951 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-10-10 23:45:11,566 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-10 23:45:12,584 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-10 23:45:15,051 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-10 23:45:18,336 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-10 23:45:20,161 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-10 23:45:22,427 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-10 23:45:45,585 - INFO - ask status=answered filters={'project': 'projectBeta', 'document_type': 'invoice'} top1=0.5404 latency_ms=52028 q='What is the total amount due?'
+2026-10-10 23:48:38,316 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-10 23:48:46,098 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' (the first run downloads it)
+2026-10-10 23:48:46,098 - INFO - No device provided, using cpu
+2026-10-10 23:49:10,187 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-10 23:50:32,674 - WARNING - '[Errno 11001] getaddrinfo failed' thrown while requesting HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/adapter_config.json
+2026-10-10 23:50:32,674 - WARNING - Retrying in 1s [Retry 1/5].
+2026-10-10 23:50:45,741 - WARNING - '[Errno 11001] getaddrinfo failed' thrown while requesting HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/adapter_config.json
+2026-10-10 23:50:45,741 - WARNING - Retrying in 2s [Retry 2/5].
+2026-10-10 23:50:59,795 - WARNING - '[Errno 11001] getaddrinfo failed' thrown while requesting HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/adapter_config.json
+2026-10-10 23:50:59,795 - WARNING - Retrying in 4s [Retry 3/5].
+2026-10-10 23:51:15,843 - WARNING - '[Errno 11001] getaddrinfo failed' thrown while requesting HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/adapter_config.json
+2026-10-10 23:51:15,843 - WARNING - Retrying in 8s [Retry 4/5].
+2026-10-10 23:51:34,223 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-10 23:51:41,116 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' (the first run downloads it)
+2026-10-10 23:51:41,116 - INFO - No device provided, using cpu
+2026-10-10 23:51:44,395 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-10 23:51:44,395 - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-10 23:51:44,716 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22f7640f94e81bb7f4f04daf1668850b38763a13d9%22 "HTTP/1.1 200 OK"
+2026-10-10 23:51:45,022 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-10 23:51:45,321 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22b974b349cb2d419ada11181750a733ff82f291ad%22 "HTTP/1.1 200 OK"
+2026-10-10 23:51:45,337 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-10 23:51:45,785 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-10 23:51:46,104 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22b974b349cb2d419ada11181750a733ff82f291ad%22 "HTTP/1.1 200 OK"
+2026-10-10 23:51:46,441 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-10-10 23:51:46,713 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/README.md?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2FREADME.md=&etag=%226bedb7f3622d56b7020f33ab93f6996d33242043%22 "HTTP/1.1 200 OK"
+2026-10-10 23:51:46,985 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-10 23:51:47,225 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22f7640f94e81bb7f4f04daf1668850b38763a13d9%22 "HTTP/1.1 200 OK"
+2026-10-10 23:51:47,498 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-10 23:51:47,756 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/sentence_bert_config.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fsentence_bert_config.json=&etag=%225fd10429389515d3e5cccdeda08cae5fea1ae82e%22 "HTTP/1.1 200 OK"
+2026-10-10 23:51:48,027 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-10-10 23:51:48,507 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-10 23:51:48,924 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-10 23:51:50,110 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-10 23:51:50,651 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-10 23:51:50,997 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-10 23:51:53,425 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-10 23:51:53,906 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-10 23:51:54,182 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/1_Pooling%2Fconfig.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2F1_Pooling%2Fconfig.json=&etag=%22d1514c3162bbe87b343f565fadc62e6c06f04f03%22 "HTTP/1.1 200 OK"
+2026-10-10 23:51:54,449 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-10 23:51:54,655 - INFO - ask status=no_relevant_context filters={} top1=0.5014 latency_ms=20210 q='ما هي سياسة الإجازات السنوية للموظفين؟'
+2026-10-10 23:52:54,229 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-10 23:53:05,387 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' (the first run downloads it)
+2026-10-10 23:53:05,387 - INFO - No device provided, using cpu
+2026-10-10 23:53:07,940 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-10 23:53:07,942 - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-10 23:53:08,414 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22f7640f94e81bb7f4f04daf1668850b38763a13d9%22 "HTTP/1.1 200 OK"
+2026-10-10 23:53:09,008 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-10 23:53:09,313 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22b974b349cb2d419ada11181750a733ff82f291ad%22 "HTTP/1.1 200 OK"
+2026-10-10 23:53:09,313 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-10 23:53:09,639 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-10 23:53:09,975 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22b974b349cb2d419ada11181750a733ff82f291ad%22 "HTTP/1.1 200 OK"
+2026-10-10 23:53:10,244 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-10-10 23:53:10,533 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/README.md?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2FREADME.md=&etag=%226bedb7f3622d56b7020f33ab93f6996d33242043%22 "HTTP/1.1 200 OK"
+2026-10-10 23:53:10,854 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-10 23:53:11,110 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22f7640f94e81bb7f4f04daf1668850b38763a13d9%22 "HTTP/1.1 200 OK"
+2026-10-10 23:53:11,606 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-10 23:53:11,894 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/sentence_bert_config.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fsentence_bert_config.json=&etag=%225fd10429389515d3e5cccdeda08cae5fea1ae82e%22 "HTTP/1.1 200 OK"
+2026-10-10 23:53:12,407 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-10-10 23:53:12,807 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-10 23:53:13,081 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-10 23:53:15,010 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-10 23:53:16,004 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-10 23:53:16,856 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-10 23:53:21,643 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-10 23:53:23,568 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-10 23:53:25,351 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/1_Pooling%2Fconfig.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2F1_Pooling%2Fconfig.json=&etag=%22d1514c3162bbe87b343f565fadc62e6c06f04f03%22 "HTTP/1.1 200 OK"
+2026-10-10 23:53:26,843 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-10 23:53:26,953 - INFO - ask status=answered filters={} top1=0.6057 latency_ms=32485 q='What is the refund policy for Project Beta?'
+2026-10-11 00:19:47,688 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-11 00:19:47,690 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-11 00:20:08,287 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-11 00:20:08,303 - INFO - No device provided, using cpu
+2026-10-11 00:20:08,309 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-11 00:20:14,569 - INFO - RAG service ready (embedding model loaded, index opened)
+2026-10-11 00:20:26,243 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-11 00:20:26,245 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-11 00:20:47,213 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-11 00:20:47,215 - INFO - No device provided, using cpu
+2026-10-11 00:20:47,232 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-11 00:20:52,806 - INFO - RAG service ready (embedding model loaded, index opened)
+2026-10-11 00:22:14,479 - INFO - ask status=answered filters={'document_type': 'invoice', 'project': 'projectBeta'} top1=0.5404 latency_ms=331 q='What is the total amount due?'
+2026-10-11 12:11:03,974 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-11 12:11:18,666 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-11 12:11:18,666 - INFO - No device provided, using cpu
+2026-10-11 12:11:18,674 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-11 12:11:21,271 - INFO - ask status=answered filters={} top1=0.7075 latency_ms=134 q='What is the total amount due for Project Alpha in January 2024?'
+2026-10-11 12:11:21,271 - INFO - eval 1/84 Q1 -> correct (answered)
+2026-10-11 12:11:21,300 - INFO - ask status=answered filters={} top1=0.7833 latency_ms=25 q="Which vulnerabilities were found in Project Beta's March security scan?"
+2026-10-11 12:11:21,300 - INFO - eval 2/84 Q2 -> right_source_missing_fact (answered)
+2026-10-11 12:11:21,327 - INFO - ask status=answered filters={} top1=0.6866 latency_ms=26 q='What is the minimum password length for Project Alpha?'
+2026-10-11 12:11:21,327 - INFO - eval 3/84 Q3 -> correct (answered)
+2026-10-11 12:11:21,353 - INFO - ask status=answered filters={} top1=0.6221 latency_ms=24 q="Who must approve spending that exceeds Project Beta's budget?"
+2026-10-11 12:11:21,353 - INFO - eval 4/84 Q4 -> correct (answered)
+2026-10-11 12:11:21,381 - INFO - ask status=answered filters={} top1=0.596 latency_ms=28 q='Which fields are required in the email ingestion payload?'
+2026-10-11 12:11:21,381 - INFO - eval 5/84 Q5 -> correct (answered)
+2026-10-11 12:11:21,408 - INFO - ask status=answered filters={} top1=0.554 latency_ms=26 q='What is the unit price of the n2-highmem-8 instance?'
+2026-10-11 12:11:21,408 - INFO - eval 6/84 Q6 -> correct (answered)
+2026-10-11 12:11:21,431 - INFO - ask status=no_relevant_context filters={} top1=0.6243 latency_ms=22 q='متى موعد إجراء المقابلات؟'
+2026-10-11 12:11:21,431 - INFO - eval 7/84 Q7 -> false_refusal (no_relevant_context)
+2026-10-11 12:11:21,459 - INFO - ask status=answered filters={'project': 'projectBeta', 'document_type': 'invoice'} top1=0.5404 latency_ms=27 q='What is the total amount due?'
+2026-10-11 12:11:21,459 - INFO - eval 8/84 Q8 -> correct (answered)
+2026-10-11 12:11:21,487 - INFO - ask status=answered filters={} top1=0.6774 latency_ms=27 q='How many hours of high-memory instances were used for Project Alpha in January 2'
+2026-10-11 12:11:21,487 - INFO - eval 9/84 Q11 -> correct (answered)
+2026-10-11 12:11:21,515 - INFO - ask status=answered filters={} top1=0.7656 latency_ms=28 q='Within how many days must the Project Alpha invoice be paid?'
+2026-10-11 12:11:21,516 - INFO - eval 10/84 Q12 -> correct (answered)
+2026-10-11 12:11:21,542 - INFO - ask status=answered filters={} top1=0.6956 latency_ms=26 q='How much data did the engineering team store for Project Beta in February 2024?'
+2026-10-11 12:11:21,542 - INFO - eval 11/84 Q13 -> correct (answered)
+2026-10-11 12:11:21,564 - INFO - ask status=answered filters={} top1=0.7274 latency_ms=21 q='How is payment made for the Project Beta storage invoice?'
+2026-10-11 12:11:21,564 - INFO - eval 12/84 Q14 -> correct (answered)
+2026-10-11 12:11:21,589 - INFO - ask status=answered filters={} top1=0.731 latency_ms=25 q='What is the price per GB of persistent SSD storage?'
+2026-10-11 12:11:21,590 - INFO - eval 13/84 Q15 -> correct (answered)
+2026-10-11 12:11:21,606 - INFO - ask status=answered filters={} top1=0.5642 latency_ms=22 q='How much does network egress cost per GB?'
+2026-10-11 12:11:21,606 - INFO - eval 14/84 Q16 -> correct (answered)
+2026-10-11 12:11:21,637 - INFO - ask status=answered filters={} top1=0.6903 latency_ms=26 q='How often must passwords be rotated for Project Alpha?'
+2026-10-11 12:11:21,637 - INFO - eval 15/84 Q17 -> correct (answered)
+2026-10-11 12:11:21,659 - INFO - ask status=answered filters={} top1=0.7909 latency_ms=22 q='Is direct SSH access allowed from public IP addresses?'
+2026-10-11 12:11:21,659 - INFO - eval 16/84 Q18 -> correct (answered)
+2026-10-11 12:11:21,684 - INFO - ask status=answered filters={} top1=0.6207 latency_ms=27 q='What is required to access the compute engines from outside the corporate networ'
+2026-10-11 12:11:21,684 - INFO - eval 17/84 Q19 -> correct (answered)
+2026-10-11 12:11:21,708 - INFO - ask status=answered filters={} top1=0.8452 latency_ms=21 q="What is the maximum monthly budget for Project Beta's cloud infrastructure?"
+2026-10-11 12:11:21,708 - INFO - eval 18/84 Q20 -> correct (answered)
+2026-10-11 12:11:21,718 - INFO - ask status=answered filters={} top1=0.8226 latency_ms=18 q='By which day of the month must cloud storage invoices be submitted to the financ'
+2026-10-11 12:11:21,718 - INFO - eval 19/84 Q21 -> correct (answered)
+2026-10-11 12:11:21,744 - INFO - ask status=answered filters={} top1=0.4917 latency_ms=16 q='What are the consequences of late invoice submissions?'
+2026-10-11 12:11:21,744 - INFO - eval 20/84 Q22 -> correct (answered)
+2026-10-11 12:11:21,764 - INFO - ask status=answered filters={} top1=0.746 latency_ms=19 q="What uptime did Project Alpha's Compute Engine maintain in February 2024?"
+2026-10-11 12:11:21,764 - INFO - eval 21/84 Q23 -> correct (answered)
+2026-10-11 12:11:21,783 - INFO - ask status=answered filters={} top1=0.6363 latency_ms=18 q='What caused the CPU usage spike on February 14th?'
+2026-10-11 12:11:21,783 - INFO - eval 22/84 Q24 -> correct (answered)
+2026-10-11 12:11:21,800 - INFO - ask status=answered filters={} top1=0.4791 latency_ms=17 q='What does the report recommend to handle sudden traffic spikes?'
+2026-10-11 12:11:21,800 - INFO - eval 23/84 Q25 -> correct (answered)
+2026-10-11 12:11:21,820 - INFO - ask status=answered filters={} top1=0.6738 latency_ms=16 q='When were the outdated SSL certificates rotated?'
+2026-10-11 12:11:21,820 - INFO - eval 24/84 Q26 -> correct (answered)
+2026-10-11 12:11:21,832 - INFO - ask status=answered filters={} top1=0.6946 latency_ms=18 q='Is Project Beta compliant with the internal security standards after the scan?'
+2026-10-11 12:11:21,832 - INFO - eval 25/84 Q27 -> right_source_missing_fact (answered)
+2026-10-11 12:11:21,857 - INFO - ask status=answered filters={} top1=0.6836 latency_ms=18 q='What is the mailbox_id field used for?'
+2026-10-11 12:11:21,857 - INFO - eval 26/84 Q28 -> correct (answered)
+2026-10-11 12:11:21,874 - INFO - ask status=answered filters={} top1=0.5188 latency_ms=18 q='What value does html_body currently have in the email payload?'
+2026-10-11 12:11:21,874 - INFO - eval 27/84 Q29 -> correct (answered)
+2026-10-11 12:11:21,888 - INFO - ask status=answered filters={} top1=0.7238 latency_ms=19 q='Which GCP role is needed to read the billing export data in BigQuery?'
+2026-10-11 12:11:21,888 - INFO - eval 28/84 Q30 -> right_source_missing_fact (answered)
+2026-10-11 12:11:21,904 - INFO - ask status=answered filters={} top1=0.6433 latency_ms=18 q='How many hours are estimated for building the chat interface?'
+2026-10-11 12:11:21,904 - INFO - eval 29/84 Q31 -> right_source_missing_fact (answered)
+2026-10-11 12:11:21,937 - INFO - ask status=answered filters={} top1=0.5232 latency_ms=21 q='What is the estimated total number of hours for the Trainee 3 task?'
+2026-10-11 12:11:21,937 - INFO - eval 30/84 Q32 -> correct (answered)
+2026-10-11 12:11:21,955 - INFO - ask status=answered filters={} top1=0.4354 latency_ms=17 q='من الذي يوافق على إضافة دورة جديدة؟'
+2026-10-11 12:11:21,956 - INFO - eval 31/84 Q33 -> correct (answered)
+2026-10-11 12:11:21,958 - INFO - ask status=answered filters={} top1=0.6036 latency_ms=14 q='متى يجب إرسال التقرير المختصر عن الوظيفة؟'
+2026-10-11 12:11:21,958 - INFO - eval 32/84 Q34 -> correct (answered)
+2026-10-11 12:11:21,983 - INFO - ask status=answered filters={} top1=0.5457 latency_ms=13 q='ما المطلوب في بند توزيع الحمل؟'
+2026-10-11 12:11:21,983 - INFO - eval 33/84 Q35 -> correct (answered)
+2026-10-11 12:11:21,989 - INFO - ask status=answered filters={'document_type': 'invoice', 'month': '2024-01'} top1=0.6061 latency_ms=15 q='What is the total amount due?'
+2026-10-11 12:11:21,989 - INFO - eval 34/84 Q36 -> correct (answered)
+2026-10-11 12:11:22,005 - INFO - ask status=answered filters={} top1=0.6057 latency_ms=14 q='What is the refund policy for Project Beta?'
+2026-10-11 12:11:22,005 - INFO - eval 35/84 Q9 -> leak (answered)
+2026-10-11 12:11:22,033 - INFO - ask status=no_relevant_context filters={} top1=0.6365 latency_ms=17 q='What was the cost of Project Gamma in January 2024?'
+2026-10-11 12:11:22,033 - INFO - eval 36/84 Q10 -> correct_rejection (no_relevant_context)
+2026-10-11 12:11:22,052 - INFO - ask status=answered filters={} top1=0.5613 latency_ms=18 q='What is the multi-factor authentication policy for Project Beta?'
+2026-10-11 12:11:22,052 - INFO - eval 37/84 Q37 -> leak (answered)
+2026-10-11 12:11:22,068 - INFO - ask status=no_relevant_context filters={} top1=0.7125 latency_ms=16 q='Who is the Chief Technology Officer of CloudTech Solutions?'
+2026-10-11 12:11:22,068 - INFO - eval 38/84 Q38 -> correct_rejection (no_relevant_context)
+2026-10-11 12:11:22,084 - INFO - ask status=answered filters={} top1=0.6907 latency_ms=16 q='What was the total amount due for Project Beta in March 2024?'
+2026-10-11 12:11:22,084 - INFO - eval 39/84 Q39 -> leak (answered)
+2026-10-11 12:11:22,104 - INFO - ask status=answered filters={} top1=0.7362 latency_ms=21 q="What was the uptime of Project Alpha's Compute Engine in March 2024?"
+2026-10-11 12:11:22,104 - INFO - eval 40/84 Q40 -> leak (answered)
+2026-10-11 12:11:22,128 - INFO - ask status=answered filters={} top1=0.705 latency_ms=20 q="How many vulnerabilities were found in Project Alpha's security scan?"
+2026-10-11 12:11:22,128 - INFO - eval 41/84 Q41 -> leak (answered)
+2026-10-11 12:11:22,149 - INFO - ask status=no_relevant_context filters={} top1=0.4779 latency_ms=21 q='What is the password policy for Project Delta?'
+2026-10-11 12:11:22,149 - INFO - eval 42/84 Q42 -> correct_rejection (no_relevant_context)
+2026-10-11 12:11:22,173 - INFO - ask status=answered filters={} top1=0.492 latency_ms=23 q='What is the maximum size of an email attachment in the payload?'
+2026-10-11 12:11:22,173 - INFO - eval 43/84 Q43 -> leak (answered)
+2026-10-11 12:11:22,199 - INFO - ask status=no_relevant_context filters={} top1=0.6239 latency_ms=25 q='How much does Cloud Run cost per hour?'
+2026-10-11 12:11:22,199 - INFO - eval 44/84 Q44 -> correct_rejection (no_relevant_context)
+2026-10-11 12:11:22,224 - INFO - ask status=no_relevant_context filters={} top1=0.1223 latency_ms=25 q='What is the capital of France?'
+2026-10-11 12:11:22,224 - INFO - eval 45/84 Q45 -> correct_rejection (no_relevant_context)
+2026-10-11 12:11:22,260 - INFO - ask status=no_relevant_context filters={} top1=0.0695 latency_ms=35 q='How do I bake sourdough bread?'
+2026-10-11 12:11:22,261 - INFO - eval 46/84 Q46 -> correct_rejection (no_relevant_context)
+2026-10-11 12:11:22,394 - INFO - ask status=no_relevant_context filters={} top1=0.5014 latency_ms=133 q='ما هي سياسة الإجازات السنوية للموظفين؟'
+2026-10-11 12:11:22,394 - INFO - eval 47/84 Q47 -> correct_rejection (no_relevant_context)
+2026-10-11 12:11:22,445 - INFO - ask status=no_relevant_context filters={} top1=0.4684 latency_ms=50 q='كم راتب المدرب في المنصة؟'
+2026-10-11 12:11:22,445 - INFO - eval 48/84 Q48 -> correct_rejection (no_relevant_context)
+2026-10-11 12:11:22,446 - INFO - No chunk matches filters {'project': 'projectBeta', 'month': '2024-01'}
+2026-10-11 12:11:22,446 - INFO - ask status=no_documents_match_filter filters={'project': 'projectBeta', 'month': '2024-01'} top1=None latency_ms=2 q='What is the total amount due?'
+2026-10-11 12:11:22,446 - INFO - eval 49/84 Q49 -> correct_rejection (no_documents_match_filter)
+2026-10-11 12:11:22,485 - INFO - ask status=no_relevant_context filters={} top1=0.6603 latency_ms=36 q='ما هو الحد الأقصى للميزانية الشهرية لمشروع Beta؟'
+2026-10-11 12:11:22,485 - INFO - eval 50/84 Q50 -> false_refusal (no_relevant_context)
+2026-10-11 12:11:22,509 - INFO - ask status=no_relevant_context filters={} top1=0.6241 latency_ms=26 q='كم عدد ساعات المثيلات عالية الذاكرة المستخدمة في مشروع Alpha؟'
+2026-10-11 12:11:22,509 - INFO - eval 51/84 Q51 -> false_refusal (no_relevant_context)
+2026-10-11 12:11:22,526 - INFO - ask status=no_relevant_context filters={} top1=0.6403 latency_ms=22 q='خلال كم يوماً يجب دفع فاتورة مشروع Alpha؟'
+2026-10-11 12:11:22,526 - INFO - eval 52/84 Q52 -> false_refusal (no_relevant_context)
+2026-10-11 12:11:22,555 - INFO - ask status=no_relevant_context filters={} top1=0.4878 latency_ms=20 q='كل كم يوماً يجب تغيير كلمات المرور؟'
+2026-10-11 12:11:22,555 - INFO - eval 53/84 Q53 -> false_refusal (no_relevant_context)
+2026-10-11 12:11:22,575 - INFO - ask status=no_relevant_context filters={} top1=0.5074 latency_ms=20 q='هل يسمح بالدخول المباشر إلى المحركات من عناوين الإنترنت العامة؟'
+2026-10-11 12:11:22,575 - INFO - eval 54/84 Q54 -> false_refusal (no_relevant_context)
+2026-10-11 12:11:22,592 - INFO - ask status=no_relevant_context filters={} top1=0.5504 latency_ms=18 q='ما نسبة وقت التشغيل لمحرك الحوسبة في فبراير؟'
+2026-10-11 12:11:22,592 - INFO - eval 55/84 Q55 -> false_refusal (no_relevant_context)
+2026-10-11 12:11:22,612 - INFO - ask status=no_relevant_context filters={} top1=0.6276 latency_ms=20 q='متى تم تدوير شهادات SSL القديمة؟'
+2026-10-11 12:11:22,612 - INFO - eval 56/84 Q56 -> false_refusal (no_relevant_context)
+2026-10-11 12:11:22,636 - INFO - ask status=no_relevant_context filters={} top1=0.6155 latency_ms=20 q='كم حجم البيانات التي خزنها فريق الهندسة لمشروع Beta؟'
+2026-10-11 12:11:22,636 - INFO - eval 57/84 Q57 -> false_refusal (no_relevant_context)
+2026-10-11 12:11:22,660 - INFO - ask status=no_relevant_context filters={} top1=0.7744 latency_ms=22 q='كيف يتم دفع فاتورة التخزين الخاصة بمشروع Beta؟'
+2026-10-11 12:11:22,660 - INFO - eval 58/84 Q58 -> false_refusal (no_relevant_context)
+2026-10-11 12:11:22,680 - INFO - ask status=no_relevant_context filters={} top1=0.7388 latency_ms=23 q='ما سعر الغيغابايت الواحد لتخزين SSD الدائم؟'
+2026-10-11 12:11:22,680 - INFO - eval 59/84 Q59 -> false_refusal (no_relevant_context)
+2026-10-11 12:11:22,707 - INFO - ask status=no_relevant_context filters={} top1=0.6052 latency_ms=23 q='كم ساعة مقدرة لبناء واجهة الدردشة؟'
+2026-10-11 12:11:22,708 - INFO - eval 60/84 Q60 -> false_refusal (no_relevant_context)
+2026-10-11 12:11:22,728 - INFO - ask status=no_relevant_context filters={} top1=0.605 latency_ms=20 q='ما الدور المطلوب لقراءة بيانات الفوترة في BigQuery؟'
+2026-10-11 12:11:22,728 - INFO - eval 61/84 Q61 -> false_refusal (no_relevant_context)
+2026-10-11 12:11:22,750 - INFO - ask status=no_relevant_context filters={} top1=0.5833 latency_ms=21 q='ما الحقول المطلوبة في حمولة البريد الإلكتروني؟'
+2026-10-11 12:11:22,750 - INFO - eval 62/84 Q62 -> false_refusal (no_relevant_context)
+2026-10-11 12:11:22,774 - INFO - ask status=no_relevant_context filters={} top1=0.5984 latency_ms=23 q='When are the interviews held?'
+2026-10-11 12:11:22,774 - INFO - eval 63/84 Q63 -> false_refusal (no_relevant_context)
+2026-10-11 12:11:22,797 - INFO - ask status=no_relevant_context filters={} top1=0.494 latency_ms=23 q='Who must approve a new course?'
+2026-10-11 12:11:22,797 - INFO - eval 64/84 Q64 -> false_refusal (no_relevant_context)
+2026-10-11 12:11:22,811 - INFO - ask status=no_relevant_context filters={} top1=0.6147 latency_ms=21 q='When must the short report about the job be sent?'
+2026-10-11 12:11:22,811 - INFO - eval 65/84 Q65 -> false_refusal (no_relevant_context)
+2026-10-11 12:11:22,845 - INFO - ask status=no_relevant_context filters={} top1=0.4822 latency_ms=28 q='Which load balancing mechanism is given as an example?'
+2026-10-11 12:11:22,845 - INFO - eval 66/84 Q66 -> false_refusal (no_relevant_context)
+2026-10-11 12:11:22,873 - INFO - ask status=no_relevant_context filters={} top1=0.6095 latency_ms=24 q='ما هي سياسة استرداد الأموال لمشروع Beta؟'
+2026-10-11 12:11:22,875 - INFO - eval 67/84 Q67 -> correct_rejection (no_relevant_context)
+2026-10-11 12:11:22,895 - INFO - ask status=no_relevant_context filters={} top1=0.5948 latency_ms=23 q='كم كانت تكلفة مشروع Gamma في يناير؟'
+2026-10-11 12:11:22,895 - INFO - eval 68/84 Q68 -> correct_rejection (no_relevant_context)
+2026-10-11 12:11:22,919 - INFO - ask status=no_relevant_context filters={} top1=0.1205 latency_ms=22 q='ما هي عاصمة فرنسا؟'
+2026-10-11 12:11:22,919 - INFO - eval 69/84 Q69 -> correct_rejection (no_relevant_context)
+2026-10-11 12:11:22,942 - INFO - ask status=no_relevant_context filters={} top1=0.0464 latency_ms=21 q='كيف أخبز خبز العجين المخمر؟'
+2026-10-11 12:11:22,944 - INFO - eval 70/84 Q70 -> correct_rejection (no_relevant_context)
+2026-10-11 12:11:22,963 - INFO - ask status=no_relevant_context filters={} top1=0.6756 latency_ms=19 q='من هو المدير التنفيذي لشركة CloudTech؟'
+2026-10-11 12:11:22,964 - INFO - eval 71/84 Q71 -> correct_rejection (no_relevant_context)
+2026-10-11 12:11:22,975 - INFO - ask status=no_relevant_context filters={} top1=0.4503 latency_ms=17 q='What is the monthly salary of the trainer?'
+2026-10-11 12:11:22,975 - INFO - eval 72/84 Q72 -> correct_rejection (no_relevant_context)
+2026-10-11 12:11:22,998 - INFO - ask status=no_relevant_context filters={} top1=0.1194 latency_ms=17 q='What is the capital of Japan?'
+2026-10-11 12:11:22,998 - INFO - eval 73/84 Q73 -> correct_rejection (no_relevant_context)
+2026-10-11 12:11:23,019 - INFO - ask status=no_relevant_context filters={} top1=0.4951 latency_ms=20 q='ما هي سياسة المصادقة متعددة العوامل لمشروع Beta؟'
+2026-10-11 12:11:23,019 - INFO - eval 74/84 Q74 -> correct_rejection (no_relevant_context)
+2026-10-11 12:11:23,037 - INFO - ask status=answered filters={} top1=0.6571 latency_ms=17 q='Which service does the February 2024 report for Project Alpha cover?'
+2026-10-11 12:11:23,037 - INFO - eval 75/84 Q75 -> wrong_source (answered)
+2026-10-11 12:11:23,058 - INFO - ask status=answered filters={} top1=0.6652 latency_ms=20 q='What currency is the Project Beta storage invoice in?'
+2026-10-11 12:11:23,058 - INFO - eval 76/84 Q76 -> correct (answered)
+2026-10-11 12:11:23,075 - INFO - ask status=answered filters={} top1=0.8556 latency_ms=18 q="What is the effective date of Project Alpha's general access policy?"
+2026-10-11 12:11:23,075 - INFO - eval 77/84 Q77 -> correct (answered)
+2026-10-11 12:11:23,090 - INFO - ask status=no_relevant_context filters={} top1=0.537 latency_ms=21 q='What does the payload specification say about the Reply-To header?'
+2026-10-11 12:11:23,090 - INFO - eval 78/84 Q78 -> false_refusal (no_relevant_context)
+2026-10-11 12:11:23,119 - INFO - ask status=no_relevant_context filters={} top1=0.5532 latency_ms=19 q='How many hours is the Deploy and Monitor Feedback step estimated at?'
+2026-10-11 12:11:23,119 - INFO - eval 79/84 Q79 -> false_refusal (no_relevant_context)
+2026-10-11 12:11:23,138 - INFO - ask status=no_relevant_context filters={} top1=0.5297 latency_ms=18 q="What is the SLA penalty if Project Alpha's uptime drops below 99%?"
+2026-10-11 12:11:23,138 - INFO - eval 80/84 Q80 -> correct_rejection (no_relevant_context)
+2026-10-11 12:11:23,154 - INFO - ask status=answered filters={} top1=0.6965 latency_ms=16 q='Who approved the Project Beta budget in March 2024?'
+2026-10-11 12:11:23,154 - INFO - eval 81/84 Q81 -> leak (answered)
+2026-10-11 12:11:23,172 - INFO - ask status=answered filters={} top1=0.6712 latency_ms=17 q='What is the invoice number of the Project Alpha January invoice?'
+2026-10-11 12:11:23,172 - INFO - eval 82/84 Q82 -> leak (answered)
+2026-10-11 12:11:23,190 - INFO - ask status=no_relevant_context filters={} top1=0.4565 latency_ms=17 q='Which encryption algorithm protects the production database?'
+2026-10-11 12:11:23,190 - INFO - eval 83/84 Q83 -> correct_rejection (no_relevant_context)
+2026-10-11 12:11:23,203 - INFO - ask status=no_relevant_context filters={} top1=0.1774 latency_ms=15 q='What is the weather in Secaucus today?'
+2026-10-11 12:11:23,203 - INFO - eval 84/84 Q84 -> correct_rejection (no_relevant_context)
+2026-10-11 12:14:23,935 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-11 12:14:34,923 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-11 12:14:34,925 - INFO - No device provided, using cpu
+2026-10-11 12:14:34,930 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-11 12:14:39,025 - INFO - ask status=no_relevant_context filters={} top1=0.6603 latency_ms=170 q='ما هو الحد الأقصى للميزانية الشهرية لمشروع Beta؟'
+2026-10-11 12:14:39,027 - INFO - eval 1/35 Q50 -> false_refusal (no_relevant_context)
+2026-10-11 12:14:39,063 - INFO - ask status=no_relevant_context filters={} top1=0.6241 latency_ms=35 q='كم عدد ساعات المثيلات عالية الذاكرة المستخدمة في مشروع Alpha؟'
+2026-10-11 12:14:39,063 - INFO - eval 2/35 Q51 -> false_refusal (no_relevant_context)
+2026-10-11 12:14:39,088 - INFO - ask status=no_relevant_context filters={} top1=0.6403 latency_ms=24 q='خلال كم يوماً يجب دفع فاتورة مشروع Alpha؟'
+2026-10-11 12:14:39,088 - INFO - eval 3/35 Q52 -> false_refusal (no_relevant_context)
+2026-10-11 12:14:39,111 - INFO - ask status=no_relevant_context filters={} top1=0.4878 latency_ms=23 q='كل كم يوماً يجب تغيير كلمات المرور؟'
+2026-10-11 12:14:39,112 - INFO - eval 4/35 Q53 -> false_refusal (no_relevant_context)
+2026-10-11 12:14:39,140 - INFO - ask status=no_relevant_context filters={} top1=0.5074 latency_ms=28 q='هل يسمح بالدخول المباشر إلى المحركات من عناوين الإنترنت العامة؟'
+2026-10-11 12:14:39,140 - INFO - eval 5/35 Q54 -> false_refusal (no_relevant_context)
+2026-10-11 12:14:39,165 - INFO - ask status=no_relevant_context filters={} top1=0.5504 latency_ms=24 q='ما نسبة وقت التشغيل لمحرك الحوسبة في فبراير؟'
+2026-10-11 12:14:39,166 - INFO - eval 6/35 Q55 -> false_refusal (no_relevant_context)
+2026-10-11 12:14:39,192 - INFO - ask status=no_relevant_context filters={} top1=0.6276 latency_ms=26 q='متى تم تدوير شهادات SSL القديمة؟'
+2026-10-11 12:14:39,193 - INFO - eval 7/35 Q56 -> false_refusal (no_relevant_context)
+2026-10-11 12:14:39,217 - INFO - ask status=no_relevant_context filters={} top1=0.6155 latency_ms=24 q='كم حجم البيانات التي خزنها فريق الهندسة لمشروع Beta؟'
+2026-10-11 12:14:39,217 - INFO - eval 8/35 Q57 -> false_refusal (no_relevant_context)
+2026-10-11 12:14:39,249 - INFO - ask status=no_relevant_context filters={} top1=0.7744 latency_ms=30 q='كيف يتم دفع فاتورة التخزين الخاصة بمشروع Beta؟'
+2026-10-11 12:14:39,249 - INFO - eval 9/35 Q58 -> false_refusal (no_relevant_context)
+2026-10-11 12:14:39,272 - INFO - ask status=no_relevant_context filters={} top1=0.7388 latency_ms=22 q='ما سعر الغيغابايت الواحد لتخزين SSD الدائم؟'
+2026-10-11 12:14:39,272 - INFO - eval 10/35 Q59 -> false_refusal (no_relevant_context)
+2026-10-11 12:14:39,300 - INFO - ask status=no_relevant_context filters={} top1=0.6052 latency_ms=28 q='كم ساعة مقدرة لبناء واجهة الدردشة؟'
+2026-10-11 12:14:39,300 - INFO - eval 11/35 Q60 -> false_refusal (no_relevant_context)
+2026-10-11 12:14:39,328 - INFO - ask status=no_relevant_context filters={} top1=0.605 latency_ms=26 q='ما الدور المطلوب لقراءة بيانات الفوترة في BigQuery؟'
+2026-10-11 12:14:39,328 - INFO - eval 12/35 Q61 -> false_refusal (no_relevant_context)
+2026-10-11 12:14:39,351 - INFO - ask status=no_relevant_context filters={} top1=0.5833 latency_ms=23 q='ما الحقول المطلوبة في حمولة البريد الإلكتروني؟'
+2026-10-11 12:14:39,351 - INFO - eval 13/35 Q62 -> false_refusal (no_relevant_context)
+2026-10-11 12:14:39,377 - INFO - ask status=no_relevant_context filters={} top1=0.5984 latency_ms=25 q='When are the interviews held?'
+2026-10-11 12:14:39,377 - INFO - eval 14/35 Q63 -> false_refusal (no_relevant_context)
+2026-10-11 12:14:39,403 - INFO - ask status=no_relevant_context filters={} top1=0.494 latency_ms=25 q='Who must approve a new course?'
+2026-10-11 12:14:39,403 - INFO - eval 15/35 Q64 -> false_refusal (no_relevant_context)
+2026-10-11 12:14:39,435 - INFO - ask status=no_relevant_context filters={} top1=0.6147 latency_ms=31 q='When must the short report about the job be sent?'
+2026-10-11 12:14:39,436 - INFO - eval 16/35 Q65 -> false_refusal (no_relevant_context)
+2026-10-11 12:14:39,472 - INFO - ask status=no_relevant_context filters={} top1=0.4822 latency_ms=35 q='Which load balancing mechanism is given as an example?'
+2026-10-11 12:14:39,472 - INFO - eval 17/35 Q66 -> false_refusal (no_relevant_context)
+2026-10-11 12:14:39,505 - INFO - ask status=no_relevant_context filters={} top1=0.6095 latency_ms=33 q='ما هي سياسة استرداد الأموال لمشروع Beta؟'
+2026-10-11 12:14:39,506 - INFO - eval 18/35 Q67 -> correct_rejection (no_relevant_context)
+2026-10-11 12:14:39,550 - INFO - ask status=no_relevant_context filters={} top1=0.5948 latency_ms=43 q='كم كانت تكلفة مشروع Gamma في يناير؟'
+2026-10-11 12:14:39,551 - INFO - eval 19/35 Q68 -> correct_rejection (no_relevant_context)
+2026-10-11 12:14:39,595 - INFO - ask status=no_relevant_context filters={} top1=0.1205 latency_ms=43 q='ما هي عاصمة فرنسا؟'
+2026-10-11 12:14:39,595 - INFO - eval 20/35 Q69 -> correct_rejection (no_relevant_context)
+2026-10-11 12:14:39,620 - INFO - ask status=no_relevant_context filters={} top1=0.0464 latency_ms=27 q='كيف أخبز خبز العجين المخمر؟'
+2026-10-11 12:14:39,620 - INFO - eval 21/35 Q70 -> correct_rejection (no_relevant_context)
+2026-10-11 12:14:39,636 - INFO - ask status=no_relevant_context filters={} top1=0.6756 latency_ms=23 q='من هو المدير التنفيذي لشركة CloudTech؟'
+2026-10-11 12:14:39,636 - INFO - eval 22/35 Q71 -> correct_rejection (no_relevant_context)
+2026-10-11 12:14:39,673 - INFO - ask status=no_relevant_context filters={} top1=0.4503 latency_ms=25 q='What is the monthly salary of the trainer?'
+2026-10-11 12:14:39,673 - INFO - eval 23/35 Q72 -> correct_rejection (no_relevant_context)
+2026-10-11 12:14:39,698 - INFO - ask status=no_relevant_context filters={} top1=0.1194 latency_ms=24 q='What is the capital of Japan?'
+2026-10-11 12:14:39,698 - INFO - eval 24/35 Q73 -> correct_rejection (no_relevant_context)
+2026-10-11 12:14:39,731 - INFO - ask status=no_relevant_context filters={} top1=0.4951 latency_ms=33 q='ما هي سياسة المصادقة متعددة العوامل لمشروع Beta؟'
+2026-10-11 12:14:39,732 - INFO - eval 25/35 Q74 -> correct_rejection (no_relevant_context)
+2026-10-11 12:14:39,760 - INFO - ask status=answered filters={} top1=0.6571 latency_ms=29 q='Which service does the February 2024 report for Project Alpha cover?'
+2026-10-11 12:14:39,760 - INFO - eval 26/35 Q75 -> wrong_source (answered)
+2026-10-11 12:14:39,790 - INFO - ask status=answered filters={} top1=0.6652 latency_ms=28 q='What currency is the Project Beta storage invoice in?'
+2026-10-11 12:14:39,790 - INFO - eval 27/35 Q76 -> correct (answered)
+2026-10-11 12:14:39,816 - INFO - ask status=answered filters={} top1=0.8556 latency_ms=26 q="What is the effective date of Project Alpha's general access policy?"
+2026-10-11 12:14:39,816 - INFO - eval 28/35 Q77 -> correct (answered)
+2026-10-11 12:14:39,845 - INFO - ask status=no_relevant_context filters={} top1=0.537 latency_ms=28 q='What does the payload specification say about the Reply-To header?'
+2026-10-11 12:14:39,845 - INFO - eval 29/35 Q78 -> false_refusal (no_relevant_context)
+2026-10-11 12:14:39,872 - INFO - ask status=no_relevant_context filters={} top1=0.5532 latency_ms=26 q='How many hours is the Deploy and Monitor Feedback step estimated at?'
+2026-10-11 12:14:39,872 - INFO - eval 30/35 Q79 -> false_refusal (no_relevant_context)
+2026-10-11 12:14:39,904 - INFO - ask status=no_relevant_context filters={} top1=0.5297 latency_ms=31 q="What is the SLA penalty if Project Alpha's uptime drops below 99%?"
+2026-10-11 12:14:39,904 - INFO - eval 31/35 Q80 -> correct_rejection (no_relevant_context)
+2026-10-11 12:14:39,933 - INFO - ask status=answered filters={} top1=0.6965 latency_ms=28 q='Who approved the Project Beta budget in March 2024?'
+2026-10-11 12:14:39,934 - INFO - eval 32/35 Q81 -> leak (answered)
+2026-10-11 12:14:39,962 - INFO - ask status=answered filters={} top1=0.6712 latency_ms=28 q='What is the invoice number of the Project Alpha January invoice?'
+2026-10-11 12:14:39,962 - INFO - eval 33/35 Q82 -> leak (answered)
+2026-10-11 12:14:39,991 - INFO - ask status=no_relevant_context filters={} top1=0.4565 latency_ms=28 q='Which encryption algorithm protects the production database?'
+2026-10-11 12:14:39,991 - INFO - eval 34/35 Q83 -> correct_rejection (no_relevant_context)
+2026-10-11 12:14:40,019 - INFO - ask status=no_relevant_context filters={} top1=0.1774 latency_ms=28 q='What is the weather in Secaucus today?'
+2026-10-11 12:14:40,020 - INFO - eval 35/35 Q84 -> correct_rejection (no_relevant_context)
+2026-10-11 12:17:39,492 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-11 12:17:48,061 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-11 12:17:48,062 - INFO - No device provided, using cpu
+2026-10-11 12:17:48,065 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-11 12:17:50,674 - INFO - ask status=answered filters={} top1=0.6866 latency_ms=127 q='What is the minimum password length for Project Alpha?'
+2026-10-11 12:17:50,674 - INFO - eval 1/27 Q3 -> correct (answered)
+2026-10-11 12:17:50,691 - INFO - ask status=answered filters={} top1=0.554 latency_ms=19 q='What is the unit price of the n2-highmem-8 instance?'
+2026-10-11 12:17:50,691 - INFO - eval 2/27 Q6 -> correct (answered)
+2026-10-11 12:17:50,716 - INFO - ask status=answered filters={} top1=0.6774 latency_ms=22 q='How many hours of high-memory instances were used for Project Alpha in January 2'
+2026-10-11 12:17:50,716 - INFO - eval 3/27 Q11 -> correct (answered)
+2026-10-11 12:17:50,743 - INFO - ask status=answered filters={} top1=0.7274 latency_ms=26 q='How is payment made for the Project Beta storage invoice?'
+2026-10-11 12:17:50,743 - INFO - eval 4/27 Q14 -> correct (answered)
+2026-10-11 12:17:50,767 - INFO - ask status=answered filters={} top1=0.6903 latency_ms=23 q='How often must passwords be rotated for Project Alpha?'
+2026-10-11 12:17:50,767 - INFO - eval 5/27 Q17 -> correct (answered)
+2026-10-11 12:17:50,785 - INFO - ask status=answered filters={} top1=0.8452 latency_ms=24 q="What is the maximum monthly budget for Project Beta's cloud infrastructure?"
+2026-10-11 12:17:50,785 - INFO - eval 6/27 Q20 -> correct (answered)
+2026-10-11 12:17:50,811 - INFO - ask status=answered filters={} top1=0.746 latency_ms=18 q="What uptime did Project Alpha's Compute Engine maintain in February 2024?"
+2026-10-11 12:17:50,811 - INFO - eval 7/27 Q23 -> correct (answered)
+2026-10-11 12:17:50,825 - INFO - ask status=answered filters={} top1=0.6738 latency_ms=14 q='When were the outdated SSL certificates rotated?'
+2026-10-11 12:17:50,825 - INFO - eval 8/27 Q26 -> correct (answered)
+2026-10-11 12:17:50,835 - INFO - ask status=answered filters={} top1=0.5188 latency_ms=16 q='What value does html_body currently have in the email payload?'
+2026-10-11 12:17:50,835 - INFO - eval 9/27 Q29 -> correct (answered)
+2026-10-11 12:17:50,856 - INFO - ask status=answered filters={} top1=0.5232 latency_ms=15 q='What is the estimated total number of hours for the Trainee 3 task?'
+2026-10-11 12:17:50,857 - INFO - eval 10/27 Q32 -> correct (answered)
+2026-10-11 12:17:50,873 - INFO - ask status=answered filters={} top1=0.5457 latency_ms=16 q='ما المطلوب في بند توزيع الحمل؟'
+2026-10-11 12:17:50,873 - INFO - eval 11/27 Q35 -> correct (answered)
+2026-10-11 12:17:50,885 - INFO - ask status=answered filters={} top1=0.5613 latency_ms=17 q='What is the multi-factor authentication policy for Project Beta?'
+2026-10-11 12:17:50,885 - INFO - eval 12/27 Q37 -> leak (answered)
+2026-10-11 12:17:50,911 - INFO - ask status=answered filters={} top1=0.7362 latency_ms=20 q="What was the uptime of Project Alpha's Compute Engine in March 2024?"
+2026-10-11 12:17:50,912 - INFO - eval 13/27 Q40 -> leak (answered)
+2026-10-11 12:17:50,929 - INFO - ask status=answered filters={} top1=0.492 latency_ms=17 q='What is the maximum size of an email attachment in the payload?'
+2026-10-11 12:17:50,929 - INFO - eval 14/27 Q43 -> leak (answered)
+2026-10-11 12:17:50,935 - INFO - ask status=no_relevant_context filters={} top1=0.0695 latency_ms=14 q='How do I bake sourdough bread?'
+2026-10-11 12:17:50,935 - INFO - eval 15/27 Q46 -> correct_rejection (no_relevant_context)
+2026-10-11 12:17:50,935 - INFO - No chunk matches filters {'project': 'projectBeta', 'month': '2024-01'}
+2026-10-11 12:17:50,935 - INFO - ask status=no_documents_match_filter filters={'project': 'projectBeta', 'month': '2024-01'} top1=None latency_ms=2 q='What is the total amount due?'
+2026-10-11 12:17:50,935 - INFO - eval 16/27 Q49 -> correct_rejection (no_documents_match_filter)
+2026-10-11 12:17:50,961 - INFO - ask status=no_relevant_context filters={} top1=0.6403 latency_ms=14 q='خلال كم يوماً يجب دفع فاتورة مشروع Alpha؟'
+2026-10-11 12:17:50,962 - INFO - eval 17/27 Q52 -> false_refusal (no_relevant_context)
+2026-10-11 12:17:50,979 - INFO - ask status=no_relevant_context filters={} top1=0.5504 latency_ms=17 q='ما نسبة وقت التشغيل لمحرك الحوسبة في فبراير؟'
+2026-10-11 12:17:50,979 - INFO - eval 18/27 Q55 -> false_refusal (no_relevant_context)
+2026-10-11 12:17:50,985 - INFO - ask status=no_relevant_context filters={} top1=0.7744 latency_ms=16 q='كيف يتم دفع فاتورة التخزين الخاصة بمشروع Beta؟'
+2026-10-11 12:17:50,985 - INFO - eval 19/27 Q58 -> false_refusal (no_relevant_context)
+2026-10-11 12:17:51,011 - INFO - ask status=no_relevant_context filters={} top1=0.605 latency_ms=15 q='ما الدور المطلوب لقراءة بيانات الفوترة في BigQuery؟'
+2026-10-11 12:17:51,011 - INFO - eval 20/27 Q61 -> false_refusal (no_relevant_context)
+2026-10-11 12:17:51,026 - INFO - ask status=no_relevant_context filters={} top1=0.494 latency_ms=14 q='Who must approve a new course?'
+2026-10-11 12:17:51,026 - INFO - eval 21/27 Q64 -> false_refusal (no_relevant_context)
+2026-10-11 12:17:51,035 - INFO - ask status=no_relevant_context filters={} top1=0.1205 latency_ms=15 q='ما هي عاصمة فرنسا؟'
+2026-10-11 12:17:51,035 - INFO - eval 22/27 Q69 -> correct_rejection (no_relevant_context)
+2026-10-11 12:17:51,056 - INFO - ask status=no_relevant_context filters={} top1=0.4503 latency_ms=14 q='What is the monthly salary of the trainer?'
+2026-10-11 12:17:51,056 - INFO - eval 23/27 Q72 -> correct_rejection (no_relevant_context)
+2026-10-11 12:17:51,072 - INFO - ask status=answered filters={} top1=0.6571 latency_ms=15 q='Which service does the February 2024 report for Project Alpha cover?'
+2026-10-11 12:17:51,072 - INFO - eval 24/27 Q75 -> wrong_source (answered)
+2026-10-11 12:17:51,085 - INFO - ask status=no_relevant_context filters={} top1=0.537 latency_ms=17 q='What does the payload specification say about the Reply-To header?'
+2026-10-11 12:17:51,085 - INFO - eval 25/27 Q78 -> false_refusal (no_relevant_context)
+2026-10-11 12:17:51,111 - INFO - ask status=no_relevant_context filters={} top1=0.5297 latency_ms=20 q="What is the SLA penalty if Project Alpha's uptime drops below 99%?"
+2026-10-11 12:17:51,111 - INFO - eval 26/27 Q80 -> correct_rejection (no_relevant_context)
+2026-10-11 12:17:51,125 - INFO - ask status=no_relevant_context filters={} top1=0.4565 latency_ms=14 q='Which encryption algorithm protects the production database?'
+2026-10-11 12:17:51,125 - INFO - eval 27/27 Q83 -> correct_rejection (no_relevant_context)
+2026-10-11 12:18:36,174 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-11 12:18:44,951 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-11 12:18:44,953 - INFO - No device provided, using cpu
+2026-10-11 12:18:44,956 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-11 12:18:47,249 - INFO - ask status=answered filters={} top1=0.7075 latency_ms=109 q='What is the total amount due for Project Alpha in January 2024?'
+2026-10-11 12:18:47,249 - INFO - eval 1/84 Q1 -> correct (answered)
+2026-10-11 12:18:47,265 - INFO - ask status=answered filters={} top1=0.7833 latency_ms=15 q="Which vulnerabilities were found in Project Beta's March security scan?"
+2026-10-11 12:18:47,265 - INFO - eval 2/84 Q2 -> right_source_missing_fact (answered)
+2026-10-11 12:18:47,280 - INFO - ask status=answered filters={} top1=0.6866 latency_ms=14 q='What is the minimum password length for Project Alpha?'
+2026-10-11 12:18:47,280 - INFO - eval 3/84 Q3 -> correct (answered)
+2026-10-11 12:18:47,285 - INFO - ask status=answered filters={} top1=0.6221 latency_ms=17 q="Who must approve spending that exceeds Project Beta's budget?"
+2026-10-11 12:18:47,285 - INFO - eval 4/84 Q4 -> correct (answered)
+2026-10-11 12:18:47,313 - INFO - ask status=answered filters={} top1=0.596 latency_ms=14 q='Which fields are required in the email ingestion payload?'
+2026-10-11 12:18:47,313 - INFO - eval 5/84 Q5 -> correct (answered)
+2026-10-11 12:18:47,331 - INFO - ask status=answered filters={} top1=0.554 latency_ms=18 q='What is the unit price of the n2-highmem-8 instance?'
+2026-10-11 12:18:47,332 - INFO - eval 6/84 Q6 -> correct (answered)
+2026-10-11 12:18:47,336 - INFO - ask status=no_relevant_context filters={} top1=0.6243 latency_ms=17 q='متى موعد إجراء المقابلات؟'
+2026-10-11 12:18:47,336 - INFO - eval 7/84 Q7 -> false_refusal (no_relevant_context)
+2026-10-11 12:18:47,372 - INFO - ask status=answered filters={'project': 'projectBeta', 'document_type': 'invoice'} top1=0.5404 latency_ms=23 q='What is the total amount due?'
+2026-10-11 12:18:47,373 - INFO - eval 8/84 Q8 -> correct (answered)
+2026-10-11 12:18:47,384 - INFO - ask status=answered filters={} top1=0.6774 latency_ms=19 q='How many hours of high-memory instances were used for Project Alpha in January 2'
+2026-10-11 12:18:47,384 - INFO - eval 9/84 Q11 -> correct (answered)
+2026-10-11 12:18:47,408 - INFO - ask status=answered filters={} top1=0.7656 latency_ms=15 q='Within how many days must the Project Alpha invoice be paid?'
+2026-10-11 12:18:47,408 - INFO - eval 10/84 Q12 -> correct (answered)
+2026-10-11 12:18:47,428 - INFO - ask status=answered filters={} top1=0.6956 latency_ms=19 q='How much data did the engineering team store for Project Beta in February 2024?'
+2026-10-11 12:18:47,428 - INFO - eval 11/84 Q13 -> correct (answered)
+2026-10-11 12:18:47,434 - INFO - ask status=answered filters={} top1=0.7274 latency_ms=17 q='How is payment made for the Project Beta storage invoice?'
+2026-10-11 12:18:47,434 - INFO - eval 12/84 Q14 -> correct (answered)
+2026-10-11 12:18:47,464 - INFO - ask status=answered filters={} top1=0.731 latency_ms=17 q='What is the price per GB of persistent SSD storage?'
+2026-10-11 12:18:47,464 - INFO - eval 13/84 Q15 -> correct (answered)
+2026-10-11 12:18:47,481 - INFO - ask status=answered filters={} top1=0.5642 latency_ms=17 q='How much does network egress cost per GB?'
+2026-10-11 12:18:47,481 - INFO - eval 14/84 Q16 -> correct (answered)
+2026-10-11 12:18:47,496 - INFO - ask status=answered filters={} top1=0.6903 latency_ms=16 q='How often must passwords be rotated for Project Alpha?'
+2026-10-11 12:18:47,496 - INFO - eval 15/84 Q17 -> correct (answered)
+2026-10-11 12:18:47,514 - INFO - ask status=answered filters={} top1=0.7909 latency_ms=16 q='Is direct SSH access allowed from public IP addresses?'
+2026-10-11 12:18:47,514 - INFO - eval 16/84 Q18 -> correct (answered)
+2026-10-11 12:18:47,533 - INFO - ask status=answered filters={} top1=0.6207 latency_ms=19 q='What is required to access the compute engines from outside the corporate networ'
+2026-10-11 12:18:47,533 - INFO - eval 17/84 Q19 -> correct (answered)
+2026-10-11 12:18:47,554 - INFO - ask status=answered filters={} top1=0.8452 latency_ms=19 q="What is the maximum monthly budget for Project Beta's cloud infrastructure?"
+2026-10-11 12:18:47,554 - INFO - eval 18/84 Q20 -> correct (answered)
+2026-10-11 12:18:47,570 - INFO - ask status=answered filters={} top1=0.8226 latency_ms=16 q='By which day of the month must cloud storage invoices be submitted to the financ'
+2026-10-11 12:18:47,570 - INFO - eval 19/84 Q21 -> correct (answered)
+2026-10-11 12:18:47,584 - INFO - ask status=answered filters={} top1=0.4917 latency_ms=16 q='What are the consequences of late invoice submissions?'
+2026-10-11 12:18:47,584 - INFO - eval 20/84 Q22 -> correct (answered)
+2026-10-11 12:18:47,604 - INFO - ask status=answered filters={} top1=0.746 latency_ms=16 q="What uptime did Project Alpha's Compute Engine maintain in February 2024?"
+2026-10-11 12:18:47,604 - INFO - eval 21/84 Q23 -> correct (answered)
+2026-10-11 12:18:47,622 - INFO - ask status=answered filters={} top1=0.6363 latency_ms=16 q='What caused the CPU usage spike on February 14th?'
+2026-10-11 12:18:47,622 - INFO - eval 22/84 Q24 -> correct (answered)
+2026-10-11 12:18:47,635 - INFO - ask status=answered filters={} top1=0.4791 latency_ms=18 q='What does the report recommend to handle sudden traffic spikes?'
+2026-10-11 12:18:47,635 - INFO - eval 23/84 Q25 -> correct (answered)
+2026-10-11 12:18:47,658 - INFO - ask status=answered filters={} top1=0.6738 latency_ms=17 q='When were the outdated SSL certificates rotated?'
+2026-10-11 12:18:47,658 - INFO - eval 24/84 Q26 -> correct (answered)
+2026-10-11 12:18:47,676 - INFO - ask status=answered filters={} top1=0.6946 latency_ms=17 q='Is Project Beta compliant with the internal security standards after the scan?'
+2026-10-11 12:18:47,676 - INFO - eval 25/84 Q27 -> right_source_missing_fact (answered)
+2026-10-11 12:18:47,692 - INFO - ask status=answered filters={} top1=0.6836 latency_ms=19 q='What is the mailbox_id field used for?'
+2026-10-11 12:18:47,692 - INFO - eval 26/84 Q28 -> correct (answered)
+2026-10-11 12:18:47,712 - INFO - ask status=answered filters={} top1=0.5188 latency_ms=17 q='What value does html_body currently have in the email payload?'
+2026-10-11 12:18:47,713 - INFO - eval 27/84 Q29 -> correct (answered)
+2026-10-11 12:18:47,735 - INFO - ask status=answered filters={} top1=0.7238 latency_ms=21 q='Which GCP role is needed to read the billing export data in BigQuery?'
+2026-10-11 12:18:47,735 - INFO - eval 28/84 Q30 -> right_source_missing_fact (answered)
+2026-10-11 12:18:47,754 - INFO - ask status=answered filters={} top1=0.6433 latency_ms=19 q='How many hours are estimated for building the chat interface?'
+2026-10-11 12:18:47,755 - INFO - eval 29/84 Q31 -> right_source_missing_fact (answered)
+2026-10-11 12:18:47,774 - INFO - ask status=answered filters={} top1=0.5232 latency_ms=19 q='What is the estimated total number of hours for the Trainee 3 task?'
+2026-10-11 12:18:47,774 - INFO - eval 30/84 Q32 -> correct (answered)
+2026-10-11 12:18:47,797 - INFO - ask status=answered filters={} top1=0.4354 latency_ms=23 q='من الذي يوافق على إضافة دورة جديدة؟'
+2026-10-11 12:18:47,797 - INFO - eval 31/84 Q33 -> correct (answered)
+2026-10-11 12:18:47,815 - INFO - ask status=answered filters={} top1=0.6036 latency_ms=17 q='متى يجب إرسال التقرير المختصر عن الوظيفة؟'
+2026-10-11 12:18:47,815 - INFO - eval 32/84 Q34 -> correct (answered)
+2026-10-11 12:18:47,832 - INFO - ask status=answered filters={} top1=0.5457 latency_ms=16 q='ما المطلوب في بند توزيع الحمل؟'
+2026-10-11 12:18:47,833 - INFO - eval 33/84 Q35 -> correct (answered)
+2026-10-11 12:18:47,854 - INFO - ask status=answered filters={'document_type': 'invoice', 'month': '2024-01'} top1=0.6061 latency_ms=20 q='What is the total amount due?'
+2026-10-11 12:18:47,854 - INFO - eval 34/84 Q36 -> correct (answered)
+2026-10-11 12:18:47,870 - INFO - ask status=answered filters={} top1=0.6057 latency_ms=19 q='What is the refund policy for Project Beta?'
+2026-10-11 12:18:47,870 - INFO - eval 35/84 Q9 -> leak (answered)
+2026-10-11 12:18:47,892 - INFO - ask status=no_relevant_context filters={} top1=0.6365 latency_ms=19 q='What was the cost of Project Gamma in January 2024?'
+2026-10-11 12:18:47,892 - INFO - eval 36/84 Q10 -> correct_rejection (no_relevant_context)
+2026-10-11 12:18:47,912 - INFO - ask status=answered filters={} top1=0.5613 latency_ms=18 q='What is the multi-factor authentication policy for Project Beta?'
+2026-10-11 12:18:47,912 - INFO - eval 37/84 Q37 -> leak (answered)
+2026-10-11 12:18:47,929 - INFO - ask status=no_relevant_context filters={} top1=0.7125 latency_ms=17 q='Who is the Chief Technology Officer of CloudTech Solutions?'
+2026-10-11 12:18:47,929 - INFO - eval 38/84 Q38 -> correct_rejection (no_relevant_context)
+2026-10-11 12:18:47,954 - INFO - ask status=answered filters={} top1=0.6907 latency_ms=23 q='What was the total amount due for Project Beta in March 2024?'
+2026-10-11 12:18:47,954 - INFO - eval 39/84 Q39 -> leak (answered)
+2026-10-11 12:18:47,974 - INFO - ask status=answered filters={} top1=0.7362 latency_ms=21 q="What was the uptime of Project Alpha's Compute Engine in March 2024?"
+2026-10-11 12:18:47,975 - INFO - eval 40/84 Q40 -> leak (answered)
+2026-10-11 12:18:47,996 - INFO - ask status=answered filters={} top1=0.705 latency_ms=21 q="How many vulnerabilities were found in Project Alpha's security scan?"
+2026-10-11 12:18:47,996 - INFO - eval 41/84 Q41 -> leak (answered)
+2026-10-11 12:18:48,014 - INFO - ask status=no_relevant_context filters={} top1=0.4779 latency_ms=16 q='What is the password policy for Project Delta?'
+2026-10-11 12:18:48,014 - INFO - eval 42/84 Q42 -> correct_rejection (no_relevant_context)
+2026-10-11 12:18:48,032 - INFO - ask status=answered filters={} top1=0.492 latency_ms=17 q='What is the maximum size of an email attachment in the payload?'
+2026-10-11 12:18:48,032 - INFO - eval 43/84 Q43 -> leak (answered)
+2026-10-11 12:18:48,051 - INFO - ask status=no_relevant_context filters={} top1=0.6239 latency_ms=19 q='How much does Cloud Run cost per hour?'
+2026-10-11 12:18:48,052 - INFO - eval 44/84 Q44 -> correct_rejection (no_relevant_context)
+2026-10-11 12:18:48,069 - INFO - ask status=no_relevant_context filters={} top1=0.1223 latency_ms=17 q='What is the capital of France?'
+2026-10-11 12:18:48,069 - INFO - eval 45/84 Q45 -> correct_rejection (no_relevant_context)
+2026-10-11 12:18:48,089 - INFO - ask status=no_relevant_context filters={} top1=0.0695 latency_ms=21 q='How do I bake sourdough bread?'
+2026-10-11 12:18:48,089 - INFO - eval 46/84 Q46 -> correct_rejection (no_relevant_context)
+2026-10-11 12:18:48,105 - INFO - ask status=no_relevant_context filters={} top1=0.5014 latency_ms=23 q='ما هي سياسة الإجازات السنوية للموظفين؟'
+2026-10-11 12:18:48,105 - INFO - eval 47/84 Q47 -> correct_rejection (no_relevant_context)
+2026-10-11 12:18:48,137 - INFO - ask status=no_relevant_context filters={} top1=0.4684 latency_ms=22 q='كم راتب المدرب في المنصة؟'
+2026-10-11 12:18:48,137 - INFO - eval 48/84 Q48 -> correct_rejection (no_relevant_context)
+2026-10-11 12:18:48,137 - INFO - No chunk matches filters {'project': 'projectBeta', 'month': '2024-01'}
+2026-10-11 12:18:48,137 - INFO - ask status=no_documents_match_filter filters={'project': 'projectBeta', 'month': '2024-01'} top1=None latency_ms=2 q='What is the total amount due?'
+2026-10-11 12:18:48,137 - INFO - eval 49/84 Q49 -> correct_rejection (no_documents_match_filter)
+2026-10-11 12:18:48,159 - INFO - ask status=no_relevant_context filters={} top1=0.6603 latency_ms=21 q='ما هو الحد الأقصى للميزانية الشهرية لمشروع Beta؟'
+2026-10-11 12:18:48,159 - INFO - eval 50/84 Q50 -> false_refusal (no_relevant_context)
+2026-10-11 12:18:48,186 - INFO - ask status=no_relevant_context filters={} top1=0.6241 latency_ms=26 q='كم عدد ساعات المثيلات عالية الذاكرة المستخدمة في مشروع Alpha؟'
+2026-10-11 12:18:48,186 - INFO - eval 51/84 Q51 -> false_refusal (no_relevant_context)
+2026-10-11 12:18:48,207 - INFO - ask status=no_relevant_context filters={} top1=0.6403 latency_ms=18 q='خلال كم يوماً يجب دفع فاتورة مشروع Alpha؟'
+2026-10-11 12:18:48,207 - INFO - eval 52/84 Q52 -> false_refusal (no_relevant_context)
+2026-10-11 12:18:48,226 - INFO - ask status=no_relevant_context filters={} top1=0.4878 latency_ms=18 q='كل كم يوماً يجب تغيير كلمات المرور؟'
+2026-10-11 12:18:48,226 - INFO - eval 53/84 Q53 -> false_refusal (no_relevant_context)
+2026-10-11 12:18:48,260 - INFO - ask status=no_relevant_context filters={} top1=0.5074 latency_ms=33 q='هل يسمح بالدخول المباشر إلى المحركات من عناوين الإنترنت العامة؟'
+2026-10-11 12:18:48,260 - INFO - eval 54/84 Q54 -> false_refusal (no_relevant_context)
+2026-10-11 12:18:48,289 - INFO - ask status=no_relevant_context filters={} top1=0.5504 latency_ms=30 q='ما نسبة وقت التشغيل لمحرك الحوسبة في فبراير؟'
+2026-10-11 12:18:48,291 - INFO - eval 55/84 Q55 -> false_refusal (no_relevant_context)
+2026-10-11 12:18:48,320 - INFO - ask status=no_relevant_context filters={} top1=0.6276 latency_ms=29 q='متى تم تدوير شهادات SSL القديمة؟'
+2026-10-11 12:18:48,320 - INFO - eval 56/84 Q56 -> false_refusal (no_relevant_context)
+2026-10-11 12:18:48,349 - INFO - ask status=no_relevant_context filters={} top1=0.6155 latency_ms=29 q='كم حجم البيانات التي خزنها فريق الهندسة لمشروع Beta؟'
+2026-10-11 12:18:48,349 - INFO - eval 57/84 Q57 -> false_refusal (no_relevant_context)
+2026-10-11 12:18:48,375 - INFO - ask status=no_relevant_context filters={} top1=0.7744 latency_ms=24 q='كيف يتم دفع فاتورة التخزين الخاصة بمشروع Beta؟'
+2026-10-11 12:18:48,375 - INFO - eval 58/84 Q58 -> false_refusal (no_relevant_context)
+2026-10-11 12:18:48,398 - INFO - ask status=no_relevant_context filters={} top1=0.7388 latency_ms=22 q='ما سعر الغيغابايت الواحد لتخزين SSD الدائم؟'
+2026-10-11 12:18:48,398 - INFO - eval 59/84 Q59 -> false_refusal (no_relevant_context)
+2026-10-11 12:18:48,418 - INFO - ask status=no_relevant_context filters={} top1=0.6052 latency_ms=19 q='كم ساعة مقدرة لبناء واجهة الدردشة؟'
+2026-10-11 12:18:48,418 - INFO - eval 60/84 Q60 -> false_refusal (no_relevant_context)
+2026-10-11 12:18:48,435 - INFO - ask status=no_relevant_context filters={} top1=0.605 latency_ms=17 q='ما الدور المطلوب لقراءة بيانات الفوترة في BigQuery؟'
+2026-10-11 12:18:48,435 - INFO - eval 61/84 Q61 -> false_refusal (no_relevant_context)
+2026-10-11 12:18:48,451 - INFO - ask status=no_relevant_context filters={} top1=0.5833 latency_ms=15 q='ما الحقول المطلوبة في حمولة البريد الإلكتروني؟'
+2026-10-11 12:18:48,451 - INFO - eval 62/84 Q62 -> false_refusal (no_relevant_context)
+2026-10-11 12:18:48,469 - INFO - ask status=no_relevant_context filters={} top1=0.5984 latency_ms=17 q='When are the interviews held?'
+2026-10-11 12:18:48,469 - INFO - eval 63/84 Q63 -> false_refusal (no_relevant_context)
+2026-10-11 12:18:48,491 - INFO - ask status=no_relevant_context filters={} top1=0.494 latency_ms=20 q='Who must approve a new course?'
+2026-10-11 12:18:48,491 - INFO - eval 64/84 Q64 -> false_refusal (no_relevant_context)
+2026-10-11 12:18:48,512 - INFO - ask status=no_relevant_context filters={} top1=0.6147 latency_ms=20 q='When must the short report about the job be sent?'
+2026-10-11 12:18:48,512 - INFO - eval 65/84 Q65 -> false_refusal (no_relevant_context)
+2026-10-11 12:18:48,527 - INFO - ask status=no_relevant_context filters={} top1=0.4822 latency_ms=16 q='Which load balancing mechanism is given as an example?'
+2026-10-11 12:18:48,528 - INFO - eval 66/84 Q66 -> false_refusal (no_relevant_context)
+2026-10-11 12:18:48,584 - INFO - ask status=no_relevant_context filters={} top1=0.6095 latency_ms=56 q='ما هي سياسة استرداد الأموال لمشروع Beta؟'
+2026-10-11 12:18:48,584 - INFO - eval 67/84 Q67 -> correct_rejection (no_relevant_context)
+2026-10-11 12:18:48,613 - INFO - ask status=no_relevant_context filters={} top1=0.5948 latency_ms=28 q='كم كانت تكلفة مشروع Gamma في يناير؟'
+2026-10-11 12:18:48,613 - INFO - eval 68/84 Q68 -> correct_rejection (no_relevant_context)
+2026-10-11 12:18:48,639 - INFO - ask status=no_relevant_context filters={} top1=0.1205 latency_ms=24 q='ما هي عاصمة فرنسا؟'
+2026-10-11 12:18:48,639 - INFO - eval 69/84 Q69 -> correct_rejection (no_relevant_context)
+2026-10-11 12:18:48,664 - INFO - ask status=no_relevant_context filters={} top1=0.0464 latency_ms=26 q='كيف أخبز خبز العجين المخمر؟'
+2026-10-11 12:18:48,664 - INFO - eval 70/84 Q70 -> correct_rejection (no_relevant_context)
+2026-10-11 12:18:48,685 - INFO - ask status=no_relevant_context filters={} top1=0.6756 latency_ms=19 q='من هو المدير التنفيذي لشركة CloudTech؟'
+2026-10-11 12:18:48,685 - INFO - eval 71/84 Q71 -> correct_rejection (no_relevant_context)
+2026-10-11 12:18:48,702 - INFO - ask status=no_relevant_context filters={} top1=0.4503 latency_ms=15 q='What is the monthly salary of the trainer?'
+2026-10-11 12:18:48,702 - INFO - eval 72/84 Q72 -> correct_rejection (no_relevant_context)
+2026-10-11 12:18:48,720 - INFO - ask status=no_relevant_context filters={} top1=0.1194 latency_ms=18 q='What is the capital of Japan?'
+2026-10-11 12:18:48,720 - INFO - eval 73/84 Q73 -> correct_rejection (no_relevant_context)
+2026-10-11 12:18:48,739 - INFO - ask status=no_relevant_context filters={} top1=0.4951 latency_ms=20 q='ما هي سياسة المصادقة متعددة العوامل لمشروع Beta؟'
+2026-10-11 12:18:48,739 - INFO - eval 74/84 Q74 -> correct_rejection (no_relevant_context)
+2026-10-11 12:18:48,762 - INFO - ask status=answered filters={} top1=0.6571 latency_ms=19 q='Which service does the February 2024 report for Project Alpha cover?'
+2026-10-11 12:18:48,762 - INFO - eval 75/84 Q75 -> wrong_source (answered)
+2026-10-11 12:18:48,778 - INFO - ask status=answered filters={} top1=0.6652 latency_ms=18 q='What currency is the Project Beta storage invoice in?'
+2026-10-11 12:18:48,778 - INFO - eval 76/84 Q76 -> correct (answered)
+2026-10-11 12:18:48,804 - INFO - ask status=answered filters={} top1=0.8556 latency_ms=22 q="What is the effective date of Project Alpha's general access policy?"
+2026-10-11 12:18:48,804 - INFO - eval 77/84 Q77 -> correct (answered)
+2026-10-11 12:18:48,827 - INFO - ask status=no_relevant_context filters={} top1=0.537 latency_ms=22 q='What does the payload specification say about the Reply-To header?'
+2026-10-11 12:18:48,827 - INFO - eval 78/84 Q78 -> false_refusal (no_relevant_context)
+2026-10-11 12:18:48,851 - INFO - ask status=no_relevant_context filters={} top1=0.5532 latency_ms=24 q='How many hours is the Deploy and Monitor Feedback step estimated at?'
+2026-10-11 12:18:48,852 - INFO - eval 79/84 Q79 -> false_refusal (no_relevant_context)
+2026-10-11 12:18:48,874 - INFO - ask status=no_relevant_context filters={} top1=0.5297 latency_ms=23 q="What is the SLA penalty if Project Alpha's uptime drops below 99%?"
+2026-10-11 12:18:48,874 - INFO - eval 80/84 Q80 -> correct_rejection (no_relevant_context)
+2026-10-11 12:18:48,893 - INFO - ask status=answered filters={} top1=0.6965 latency_ms=18 q='Who approved the Project Beta budget in March 2024?'
+2026-10-11 12:18:48,893 - INFO - eval 81/84 Q81 -> leak (answered)
+2026-10-11 12:18:48,902 - INFO - ask status=answered filters={} top1=0.6712 latency_ms=19 q='What is the invoice number of the Project Alpha January invoice?'
+2026-10-11 12:18:48,902 - INFO - eval 82/84 Q82 -> leak (answered)
+2026-10-11 12:18:48,929 - INFO - ask status=no_relevant_context filters={} top1=0.4565 latency_ms=15 q='Which encryption algorithm protects the production database?'
+2026-10-11 12:18:48,929 - INFO - eval 83/84 Q83 -> correct_rejection (no_relevant_context)
+2026-10-11 12:18:48,941 - INFO - ask status=no_relevant_context filters={} top1=0.1774 latency_ms=17 q='What is the weather in Secaucus today?'
+2026-10-11 12:18:48,941 - INFO - eval 84/84 Q84 -> correct_rejection (no_relevant_context)
+2026-10-11 12:45:57,083 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-11 12:46:05,769 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-11 12:46:05,770 - INFO - No device provided, using cpu
+2026-10-11 12:46:05,774 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-11 12:46:08,349 - INFO - ask status=answered filters={} top1=0.7075 latency_ms=120 q='What is the total amount due for Project Alpha in January 2024?'
+2026-10-11 12:46:08,349 - INFO - eval 1/84 Q1 -> correct (answered)
+2026-10-11 12:46:08,374 - INFO - ask status=answered filters={} top1=0.7833 latency_ms=20 q="Which vulnerabilities were found in Project Beta's March security scan?"
+2026-10-11 12:46:08,374 - INFO - eval 2/84 Q2 -> correct (answered)
+2026-10-11 12:46:08,391 - INFO - ask status=answered filters={} top1=0.6866 latency_ms=18 q='What is the minimum password length for Project Alpha?'
+2026-10-11 12:46:08,391 - INFO - eval 3/84 Q3 -> correct (answered)
+2026-10-11 12:46:08,413 - INFO - ask status=answered filters={} top1=0.6221 latency_ms=20 q="Who must approve spending that exceeds Project Beta's budget?"
+2026-10-11 12:46:08,413 - INFO - eval 4/84 Q4 -> correct (answered)
+2026-10-11 12:46:08,432 - INFO - ask status=answered filters={} top1=0.596 latency_ms=18 q='Which fields are required in the email ingestion payload?'
+2026-10-11 12:46:08,432 - INFO - eval 5/84 Q5 -> correct (answered)
+2026-10-11 12:46:08,444 - INFO - ask status=answered filters={} top1=0.554 latency_ms=16 q='What is the unit price of the n2-highmem-8 instance?'
+2026-10-11 12:46:08,444 - INFO - eval 6/84 Q6 -> correct (answered)
+2026-10-11 12:46:08,464 - INFO - ask status=no_relevant_context filters={} top1=0.6243 latency_ms=16 q='متى موعد إجراء المقابلات؟'
+2026-10-11 12:46:08,464 - INFO - eval 7/84 Q7 -> false_refusal (no_relevant_context)
+2026-10-11 12:46:08,490 - INFO - ask status=answered filters={'project': 'projectBeta', 'document_type': 'invoice'} top1=0.5404 latency_ms=23 q='What is the total amount due?'
+2026-10-11 12:46:08,490 - INFO - eval 8/84 Q8 -> correct (answered)
+2026-10-11 12:46:08,508 - INFO - ask status=answered filters={} top1=0.6774 latency_ms=25 q='How many hours of high-memory instances were used for Project Alpha in January 2'
+2026-10-11 12:46:08,508 - INFO - eval 9/84 Q11 -> correct (answered)
+2026-10-11 12:46:08,534 - INFO - ask status=answered filters={} top1=0.7656 latency_ms=21 q='Within how many days must the Project Alpha invoice be paid?'
+2026-10-11 12:46:08,534 - INFO - eval 10/84 Q12 -> correct (answered)
+2026-10-11 12:46:08,557 - INFO - ask status=answered filters={} top1=0.6956 latency_ms=20 q='How much data did the engineering team store for Project Beta in February 2024?'
+2026-10-11 12:46:08,557 - INFO - eval 11/84 Q13 -> correct (answered)
+2026-10-11 12:46:08,575 - INFO - ask status=answered filters={} top1=0.7274 latency_ms=16 q='How is payment made for the Project Beta storage invoice?'
+2026-10-11 12:46:08,575 - INFO - eval 12/84 Q14 -> correct (answered)
+2026-10-11 12:46:08,590 - INFO - ask status=answered filters={} top1=0.731 latency_ms=18 q='What is the price per GB of persistent SSD storage?'
+2026-10-11 12:46:08,590 - INFO - eval 13/84 Q15 -> correct (answered)
+2026-10-11 12:46:08,612 - INFO - ask status=answered filters={} top1=0.5642 latency_ms=17 q='How much does network egress cost per GB?'
+2026-10-11 12:46:08,613 - INFO - eval 14/84 Q16 -> correct (answered)
+2026-10-11 12:46:08,613 - INFO - ask status=answered filters={} top1=0.6903 latency_ms=14 q='How often must passwords be rotated for Project Alpha?'
+2026-10-11 12:46:08,613 - INFO - eval 15/84 Q17 -> correct (answered)
+2026-10-11 12:46:08,644 - INFO - ask status=answered filters={} top1=0.7909 latency_ms=18 q='Is direct SSH access allowed from public IP addresses?'
+2026-10-11 12:46:08,644 - INFO - eval 16/84 Q18 -> correct (answered)
+2026-10-11 12:46:08,666 - INFO - ask status=answered filters={} top1=0.6207 latency_ms=20 q='What is required to access the compute engines from outside the corporate networ'
+2026-10-11 12:46:08,666 - INFO - eval 17/84 Q19 -> correct (answered)
+2026-10-11 12:46:08,676 - INFO - ask status=answered filters={} top1=0.8452 latency_ms=18 q="What is the maximum monthly budget for Project Beta's cloud infrastructure?"
+2026-10-11 12:46:08,676 - INFO - eval 18/84 Q20 -> correct (answered)
+2026-10-11 12:46:08,704 - INFO - ask status=answered filters={} top1=0.8226 latency_ms=20 q='By which day of the month must cloud storage invoices be submitted to the financ'
+2026-10-11 12:46:08,704 - INFO - eval 19/84 Q21 -> correct (answered)
+2026-10-11 12:46:08,725 - INFO - ask status=answered filters={} top1=0.4917 latency_ms=20 q='What are the consequences of late invoice submissions?'
+2026-10-11 12:46:08,725 - INFO - eval 20/84 Q22 -> correct (answered)
+2026-10-11 12:46:08,739 - INFO - ask status=answered filters={} top1=0.746 latency_ms=18 q="What uptime did Project Alpha's Compute Engine maintain in February 2024?"
+2026-10-11 12:46:08,739 - INFO - eval 21/84 Q23 -> correct (answered)
+2026-10-11 12:46:08,758 - INFO - ask status=answered filters={} top1=0.6363 latency_ms=16 q='What caused the CPU usage spike on February 14th?'
+2026-10-11 12:46:08,758 - INFO - eval 22/84 Q24 -> correct (answered)
+2026-10-11 12:46:08,777 - INFO - ask status=answered filters={} top1=0.4791 latency_ms=16 q='What does the report recommend to handle sudden traffic spikes?'
+2026-10-11 12:46:08,777 - INFO - eval 23/84 Q25 -> correct (answered)
+2026-10-11 12:46:08,792 - INFO - ask status=answered filters={} top1=0.6738 latency_ms=14 q='When were the outdated SSL certificates rotated?'
+2026-10-11 12:46:08,792 - INFO - eval 24/84 Q26 -> correct (answered)
+2026-10-11 12:46:08,802 - INFO - ask status=answered filters={} top1=0.6946 latency_ms=17 q='Is Project Beta compliant with the internal security standards after the scan?'
+2026-10-11 12:46:08,802 - INFO - eval 25/84 Q27 -> right_source_missing_fact (answered)
+2026-10-11 12:46:08,818 - INFO - ask status=answered filters={} top1=0.6836 latency_ms=16 q='What is the mailbox_id field used for?'
+2026-10-11 12:46:08,818 - INFO - eval 26/84 Q28 -> correct (answered)
+2026-10-11 12:46:08,834 - INFO - ask status=answered filters={} top1=0.5188 latency_ms=17 q='What value does html_body currently have in the email payload?'
+2026-10-11 12:46:08,834 - INFO - eval 27/84 Q29 -> correct (answered)
+2026-10-11 12:46:08,850 - INFO - ask status=answered filters={} top1=0.7238 latency_ms=18 q='Which GCP role is needed to read the billing export data in BigQuery?'
+2026-10-11 12:46:08,850 - INFO - eval 28/84 Q30 -> correct (answered)
+2026-10-11 12:46:08,876 - INFO - ask status=answered filters={} top1=0.6433 latency_ms=14 q='How many hours are estimated for building the chat interface?'
+2026-10-11 12:46:08,876 - INFO - eval 29/84 Q31 -> right_source_missing_fact (answered)
+2026-10-11 12:46:08,892 - INFO - ask status=answered filters={} top1=0.5232 latency_ms=15 q='What is the estimated total number of hours for the Trainee 3 task?'
+2026-10-11 12:46:08,892 - INFO - eval 30/84 Q32 -> correct (answered)
+2026-10-11 12:46:08,909 - INFO - ask status=answered filters={} top1=0.4354 latency_ms=17 q='من الذي يوافق على إضافة دورة جديدة؟'
+2026-10-11 12:46:08,909 - INFO - eval 31/84 Q33 -> correct (answered)
+2026-10-11 12:46:08,925 - INFO - ask status=answered filters={} top1=0.6036 latency_ms=15 q='متى يجب إرسال التقرير المختصر عن الوظيفة؟'
+2026-10-11 12:46:08,927 - INFO - eval 32/84 Q34 -> correct (answered)
+2026-10-11 12:46:08,941 - INFO - ask status=answered filters={} top1=0.5457 latency_ms=14 q='ما المطلوب في بند توزيع الحمل؟'
+2026-10-11 12:46:08,941 - INFO - eval 33/84 Q35 -> correct (answered)
+2026-10-11 12:46:08,945 - INFO - ask status=answered filters={'document_type': 'invoice', 'month': '2024-01'} top1=0.6061 latency_ms=14 q='What is the total amount due?'
+2026-10-11 12:46:08,945 - INFO - eval 34/84 Q36 -> correct (answered)
+2026-10-11 12:46:08,969 - INFO - ask status=answered filters={} top1=0.6057 latency_ms=13 q='What is the refund policy for Project Beta?'
+2026-10-11 12:46:08,971 - INFO - eval 35/84 Q9 -> leak (answered)
+2026-10-11 12:46:08,987 - INFO - ask status=no_relevant_context filters={} top1=0.6365 latency_ms=16 q='What was the cost of Project Gamma in January 2024?'
+2026-10-11 12:46:08,987 - INFO - eval 36/84 Q10 -> correct_rejection (no_relevant_context)
+2026-10-11 12:46:09,005 - INFO - ask status=answered filters={} top1=0.5613 latency_ms=18 q='What is the multi-factor authentication policy for Project Beta?'
+2026-10-11 12:46:09,005 - INFO - eval 37/84 Q37 -> leak (answered)
+2026-10-11 12:46:09,024 - INFO - ask status=no_relevant_context filters={} top1=0.7125 latency_ms=18 q='Who is the Chief Technology Officer of CloudTech Solutions?'
+2026-10-11 12:46:09,024 - INFO - eval 38/84 Q38 -> correct_rejection (no_relevant_context)
+2026-10-11 12:46:09,040 - INFO - ask status=answered filters={} top1=0.6907 latency_ms=15 q='What was the total amount due for Project Beta in March 2024?'
+2026-10-11 12:46:09,040 - INFO - eval 39/84 Q39 -> leak (answered)
+2026-10-11 12:46:09,056 - INFO - ask status=answered filters={} top1=0.7362 latency_ms=16 q="What was the uptime of Project Alpha's Compute Engine in March 2024?"
+2026-10-11 12:46:09,056 - INFO - eval 40/84 Q40 -> leak (answered)
+2026-10-11 12:46:09,072 - INFO - ask status=answered filters={} top1=0.705 latency_ms=20 q="How many vulnerabilities were found in Project Alpha's security scan?"
+2026-10-11 12:46:09,072 - INFO - eval 41/84 Q41 -> leak (answered)
+2026-10-11 12:46:09,093 - INFO - ask status=no_relevant_context filters={} top1=0.4779 latency_ms=15 q='What is the password policy for Project Delta?'
+2026-10-11 12:46:09,093 - INFO - eval 42/84 Q42 -> correct_rejection (no_relevant_context)
+2026-10-11 12:46:09,115 - INFO - ask status=answered filters={} top1=0.492 latency_ms=21 q='What is the maximum size of an email attachment in the payload?'
+2026-10-11 12:46:09,115 - INFO - eval 43/84 Q43 -> leak (answered)
+2026-10-11 12:46:09,130 - INFO - ask status=no_relevant_context filters={} top1=0.6239 latency_ms=14 q='How much does Cloud Run cost per hour?'
+2026-10-11 12:46:09,131 - INFO - eval 44/84 Q44 -> correct_rejection (no_relevant_context)
+2026-10-11 12:46:09,146 - INFO - ask status=no_relevant_context filters={} top1=0.1223 latency_ms=14 q='What is the capital of France?'
+2026-10-11 12:46:09,146 - INFO - eval 45/84 Q45 -> correct_rejection (no_relevant_context)
+2026-10-11 12:46:09,146 - INFO - ask status=no_relevant_context filters={} top1=0.0695 latency_ms=13 q='How do I bake sourdough bread?'
+2026-10-11 12:46:09,146 - INFO - eval 46/84 Q46 -> correct_rejection (no_relevant_context)
+2026-10-11 12:46:09,162 - INFO - ask status=answered filters={} top1=0.5014 latency_ms=13 q='ما هي سياسة الإجازات السنوية للموظفين؟'
+2026-10-11 12:46:09,162 - INFO - eval 47/84 Q47 -> leak (answered)
+2026-10-11 12:46:09,179 - INFO - ask status=no_relevant_context filters={} top1=0.4684 latency_ms=15 q='كم راتب المدرب في المنصة؟'
+2026-10-11 12:46:09,179 - INFO - eval 48/84 Q48 -> correct_rejection (no_relevant_context)
+2026-10-11 12:46:09,191 - INFO - No chunk matches filters {'project': 'projectBeta', 'month': '2024-01'}
+2026-10-11 12:46:09,191 - INFO - ask status=no_documents_match_filter filters={'project': 'projectBeta', 'month': '2024-01'} top1=None latency_ms=1 q='What is the total amount due?'
+2026-10-11 12:46:09,191 - INFO - eval 49/84 Q49 -> correct_rejection (no_documents_match_filter)
+2026-10-11 12:46:09,206 - INFO - ask status=answered filters={} top1=0.6603 latency_ms=14 q='ما هو الحد الأقصى للميزانية الشهرية لمشروع Beta؟'
+2026-10-11 12:46:09,206 - INFO - eval 50/84 Q50 -> correct (answered)
+2026-10-11 12:46:09,220 - INFO - ask status=answered filters={} top1=0.6241 latency_ms=15 q='كم عدد ساعات المثيلات عالية الذاكرة المستخدمة في مشروع Alpha؟'
+2026-10-11 12:46:09,222 - INFO - eval 51/84 Q51 -> wrong_source (answered)
+2026-10-11 12:46:09,236 - INFO - ask status=answered filters={} top1=0.6403 latency_ms=13 q='خلال كم يوماً يجب دفع فاتورة مشروع Alpha؟'
+2026-10-11 12:46:09,236 - INFO - eval 52/84 Q52 -> correct (answered)
+2026-10-11 12:46:09,241 - INFO - ask status=answered filters={} top1=0.4878 latency_ms=16 q='كل كم يوماً يجب تغيير كلمات المرور؟'
+2026-10-11 12:46:09,241 - INFO - eval 53/84 Q53 -> correct (answered)
+2026-10-11 12:46:09,257 - INFO - ask status=answered filters={} top1=0.5074 latency_ms=17 q='هل يسمح بالدخول المباشر إلى المحركات من عناوين الإنترنت العامة؟'
+2026-10-11 12:46:09,257 - INFO - eval 54/84 Q54 -> correct (answered)
+2026-10-11 12:46:09,285 - INFO - ask status=answered filters={} top1=0.5504 latency_ms=14 q='ما نسبة وقت التشغيل لمحرك الحوسبة في فبراير؟'
+2026-10-11 12:46:09,285 - INFO - eval 55/84 Q55 -> correct (answered)
+2026-10-11 12:46:09,299 - INFO - ask status=answered filters={} top1=0.6276 latency_ms=13 q='متى تم تدوير شهادات SSL القديمة؟'
+2026-10-11 12:46:09,299 - INFO - eval 56/84 Q56 -> correct (answered)
+2026-10-11 12:46:09,314 - INFO - ask status=answered filters={} top1=0.6155 latency_ms=19 q='كم حجم البيانات التي خزنها فريق الهندسة لمشروع Beta؟'
+2026-10-11 12:46:09,314 - INFO - eval 57/84 Q57 -> correct (answered)
+2026-10-11 12:46:09,349 - INFO - ask status=answered filters={} top1=0.7744 latency_ms=28 q='كيف يتم دفع فاتورة التخزين الخاصة بمشروع Beta؟'
+2026-10-11 12:46:09,349 - INFO - eval 58/84 Q58 -> correct (answered)
+2026-10-11 12:46:09,369 - INFO - ask status=answered filters={} top1=0.7388 latency_ms=25 q='ما سعر الغيغابايت الواحد لتخزين SSD الدائم؟'
+2026-10-11 12:46:09,369 - INFO - eval 59/84 Q59 -> correct (answered)
+2026-10-11 12:46:09,396 - INFO - ask status=answered filters={} top1=0.6052 latency_ms=24 q='كم ساعة مقدرة لبناء واجهة الدردشة؟'
+2026-10-11 12:46:09,400 - INFO - eval 60/84 Q60 -> right_source_missing_fact (answered)
+2026-10-11 12:46:09,420 - INFO - ask status=answered filters={} top1=0.605 latency_ms=27 q='ما الدور المطلوب لقراءة بيانات الفوترة في BigQuery؟'
+2026-10-11 12:46:09,420 - INFO - eval 61/84 Q61 -> correct (answered)
+2026-10-11 12:46:09,447 - INFO - ask status=answered filters={} top1=0.5833 latency_ms=22 q='ما الحقول المطلوبة في حمولة البريد الإلكتروني؟'
+2026-10-11 12:46:09,447 - INFO - eval 62/84 Q62 -> correct (answered)
+2026-10-11 12:46:09,472 - INFO - ask status=answered filters={} top1=0.5984 latency_ms=21 q='When are the interviews held?'
+2026-10-11 12:46:09,472 - INFO - eval 63/84 Q63 -> correct (answered)
+2026-10-11 12:46:09,479 - INFO - ask status=answered filters={} top1=0.494 latency_ms=15 q='Who must approve a new course?'
+2026-10-11 12:46:09,479 - INFO - eval 64/84 Q64 -> correct (answered)
+2026-10-11 12:46:09,495 - INFO - ask status=answered filters={} top1=0.6147 latency_ms=16 q='When must the short report about the job be sent?'
+2026-10-11 12:46:09,495 - INFO - eval 65/84 Q65 -> correct (answered)
+2026-10-11 12:46:09,511 - INFO - ask status=answered filters={} top1=0.4822 latency_ms=17 q='Which load balancing mechanism is given as an example?'
+2026-10-11 12:46:09,511 - INFO - eval 66/84 Q66 -> right_source_missing_fact (answered)
+2026-10-11 12:46:09,535 - INFO - ask status=answered filters={} top1=0.6095 latency_ms=14 q='ما هي سياسة استرداد الأموال لمشروع Beta؟'
+2026-10-11 12:46:09,535 - INFO - eval 67/84 Q67 -> leak (answered)
+2026-10-11 12:46:09,543 - INFO - ask status=no_relevant_context filters={} top1=0.5948 latency_ms=18 q='كم كانت تكلفة مشروع Gamma في يناير؟'
+2026-10-11 12:46:09,543 - INFO - eval 68/84 Q68 -> correct_rejection (no_relevant_context)
+2026-10-11 12:46:09,559 - INFO - ask status=no_relevant_context filters={} top1=0.1205 latency_ms=14 q='ما هي عاصمة فرنسا؟'
+2026-10-11 12:46:09,559 - INFO - eval 69/84 Q69 -> correct_rejection (no_relevant_context)
+2026-10-11 12:46:09,588 - INFO - ask status=no_relevant_context filters={} top1=0.0464 latency_ms=20 q='كيف أخبز خبز العجين المخمر؟'
+2026-10-11 12:46:09,588 - INFO - eval 70/84 Q70 -> correct_rejection (no_relevant_context)
+2026-10-11 12:46:09,607 - INFO - ask status=answered filters={} top1=0.6756 latency_ms=16 q='من هو المدير التنفيذي لشركة CloudTech؟'
+2026-10-11 12:46:09,607 - INFO - eval 71/84 Q71 -> leak (answered)
+2026-10-11 12:46:09,628 - INFO - ask status=answered filters={} top1=0.4503 latency_ms=20 q='What is the monthly salary of the trainer?'
+2026-10-11 12:46:09,628 - INFO - eval 72/84 Q72 -> leak (answered)
+2026-10-11 12:46:09,645 - INFO - ask status=no_relevant_context filters={} top1=0.1194 latency_ms=16 q='What is the capital of Japan?'
+2026-10-11 12:46:09,645 - INFO - eval 73/84 Q73 -> correct_rejection (no_relevant_context)
+2026-10-11 12:46:09,662 - INFO - ask status=answered filters={} top1=0.4951 latency_ms=16 q='ما هي سياسة المصادقة متعددة العوامل لمشروع Beta؟'
+2026-10-11 12:46:09,662 - INFO - eval 74/84 Q74 -> leak (answered)
+2026-10-11 12:46:09,680 - INFO - ask status=answered filters={} top1=0.6571 latency_ms=17 q='Which service does the February 2024 report for Project Alpha cover?'
+2026-10-11 12:46:09,680 - INFO - eval 75/84 Q75 -> wrong_source (answered)
+2026-10-11 12:46:09,692 - INFO - ask status=answered filters={} top1=0.6652 latency_ms=15 q='What currency is the Project Beta storage invoice in?'
+2026-10-11 12:46:09,692 - INFO - eval 76/84 Q76 -> correct (answered)
+2026-10-11 12:46:09,716 - INFO - ask status=answered filters={} top1=0.8556 latency_ms=21 q="What is the effective date of Project Alpha's general access policy?"
+2026-10-11 12:46:09,716 - INFO - eval 77/84 Q77 -> correct (answered)
+2026-10-11 12:46:09,734 - INFO - ask status=no_relevant_context filters={} top1=0.537 latency_ms=18 q='What does the payload specification say about the Reply-To header?'
+2026-10-11 12:46:09,734 - INFO - eval 78/84 Q78 -> false_refusal (no_relevant_context)
+2026-10-11 12:46:09,754 - INFO - ask status=no_relevant_context filters={} top1=0.5532 latency_ms=18 q='How many hours is the Deploy and Monitor Feedback step estimated at?'
+2026-10-11 12:46:09,754 - INFO - eval 79/84 Q79 -> false_refusal (no_relevant_context)
+2026-10-11 12:46:09,772 - INFO - ask status=no_relevant_context filters={} top1=0.5297 latency_ms=18 q="What is the SLA penalty if Project Alpha's uptime drops below 99%?"
+2026-10-11 12:46:09,772 - INFO - eval 80/84 Q80 -> correct_rejection (no_relevant_context)
+2026-10-11 12:46:09,788 - INFO - ask status=answered filters={} top1=0.6965 latency_ms=15 q='Who approved the Project Beta budget in March 2024?'
+2026-10-11 12:46:09,788 - INFO - eval 81/84 Q81 -> leak (answered)
+2026-10-11 12:46:09,807 - INFO - ask status=answered filters={} top1=0.6712 latency_ms=20 q='What is the invoice number of the Project Alpha January invoice?'
+2026-10-11 12:46:09,807 - INFO - eval 82/84 Q82 -> leak (answered)
+2026-10-11 12:46:09,823 - INFO - ask status=no_relevant_context filters={} top1=0.4565 latency_ms=16 q='Which encryption algorithm protects the production database?'
+2026-10-11 12:46:09,823 - INFO - eval 83/84 Q83 -> correct_rejection (no_relevant_context)
+2026-10-11 12:46:09,839 - INFO - ask status=no_relevant_context filters={} top1=0.1774 latency_ms=17 q='What is the weather in Secaucus today?'
+2026-10-11 12:46:09,839 - INFO - eval 84/84 Q84 -> correct_rejection (no_relevant_context)
+2026-10-11 12:56:50,496 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-11 12:57:03,656 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-11 12:57:03,656 - INFO - No device provided, using cpu
+2026-10-11 12:57:03,660 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-11 12:57:07,130 - INFO - ask status=answered filters={} top1=0.6603 latency_ms=144 q='ما هو الحد الأقصى للميزانية الشهرية لمشروع Beta؟'
+2026-10-11 12:57:07,132 - INFO - eval 1/35 Q50 -> correct (answered)
+2026-10-11 12:57:07,162 - INFO - ask status=answered filters={} top1=0.6241 latency_ms=29 q='كم عدد ساعات المثيلات عالية الذاكرة المستخدمة في مشروع Alpha؟'
+2026-10-11 12:57:07,162 - INFO - eval 2/35 Q51 -> wrong_source (answered)
+2026-10-11 12:57:07,204 - INFO - ask status=answered filters={} top1=0.6403 latency_ms=42 q='خلال كم يوماً يجب دفع فاتورة مشروع Alpha؟'
+2026-10-11 12:57:07,204 - INFO - eval 3/35 Q52 -> correct (answered)
+2026-10-11 12:57:07,229 - INFO - ask status=answered filters={} top1=0.4878 latency_ms=23 q='كل كم يوماً يجب تغيير كلمات المرور؟'
+2026-10-11 12:57:07,229 - INFO - eval 4/35 Q53 -> correct (answered)
+2026-10-11 12:57:07,235 - INFO - ask status=answered filters={} top1=0.5074 latency_ms=17 q='هل يسمح بالدخول المباشر إلى المحركات من عناوين الإنترنت العامة؟'
+2026-10-11 12:57:07,235 - INFO - eval 5/35 Q54 -> correct (answered)
+2026-10-11 12:57:07,258 - INFO - ask status=answered filters={} top1=0.5504 latency_ms=15 q='ما نسبة وقت التشغيل لمحرك الحوسبة في فبراير؟'
+2026-10-11 12:57:07,258 - INFO - eval 6/35 Q55 -> correct (answered)
+2026-10-11 12:57:07,279 - INFO - ask status=answered filters={} top1=0.6276 latency_ms=18 q='متى تم تدوير شهادات SSL القديمة؟'
+2026-10-11 12:57:07,279 - INFO - eval 7/35 Q56 -> correct (answered)
+2026-10-11 12:57:07,293 - INFO - ask status=answered filters={} top1=0.6155 latency_ms=14 q='كم حجم البيانات التي خزنها فريق الهندسة لمشروع Beta؟'
+2026-10-11 12:57:07,293 - INFO - eval 8/35 Q57 -> correct (answered)
+2026-10-11 12:57:07,314 - INFO - ask status=answered filters={} top1=0.7744 latency_ms=19 q='كيف يتم دفع فاتورة التخزين الخاصة بمشروع Beta؟'
+2026-10-11 12:57:07,314 - INFO - eval 9/35 Q58 -> correct (answered)
+2026-10-11 12:57:07,330 - INFO - ask status=answered filters={} top1=0.7388 latency_ms=14 q='ما سعر الغيغابايت الواحد لتخزين SSD الدائم؟'
+2026-10-11 12:57:07,330 - INFO - eval 10/35 Q59 -> correct (answered)
+2026-10-11 12:57:07,348 - INFO - ask status=answered filters={} top1=0.6052 latency_ms=17 q='كم ساعة مقدرة لبناء واجهة الدردشة؟'
+2026-10-11 12:57:07,348 - INFO - eval 11/35 Q60 -> right_source_missing_fact (answered)
+2026-10-11 12:57:07,368 - INFO - ask status=answered filters={} top1=0.605 latency_ms=19 q='ما الدور المطلوب لقراءة بيانات الفوترة في BigQuery؟'
+2026-10-11 12:57:07,368 - INFO - eval 12/35 Q61 -> correct (answered)
+2026-10-11 12:57:07,385 - INFO - ask status=answered filters={} top1=0.5833 latency_ms=17 q='ما الحقول المطلوبة في حمولة البريد الإلكتروني؟'
+2026-10-11 12:57:07,385 - INFO - eval 13/35 Q62 -> correct (answered)
+2026-10-11 12:57:07,399 - INFO - ask status=answered filters={} top1=0.5984 latency_ms=13 q='When are the interviews held?'
+2026-10-11 12:57:07,399 - INFO - eval 14/35 Q63 -> correct (answered)
+2026-10-11 12:57:07,415 - INFO - ask status=answered filters={} top1=0.494 latency_ms=19 q='Who must approve a new course?'
+2026-10-11 12:57:07,415 - INFO - eval 15/35 Q64 -> correct (answered)
+2026-10-11 12:57:07,425 - INFO - ask status=answered filters={} top1=0.6147 latency_ms=18 q='When must the short report about the job be sent?'
+2026-10-11 12:57:07,425 - INFO - eval 16/35 Q65 -> correct (answered)
+2026-10-11 12:57:07,451 - INFO - ask status=answered filters={} top1=0.4822 latency_ms=14 q='Which load balancing mechanism is given as an example?'
+2026-10-11 12:57:07,451 - INFO - eval 17/35 Q66 -> right_source_missing_fact (answered)
+2026-10-11 12:57:07,457 - INFO - ask status=answered filters={} top1=0.6095 latency_ms=15 q='ما هي سياسة استرداد الأموال لمشروع Beta؟'
+2026-10-11 12:57:07,457 - INFO - eval 18/35 Q67 -> leak (answered)
+2026-10-11 12:57:07,482 - INFO - ask status=no_relevant_context filters={} top1=0.5948 latency_ms=17 q='كم كانت تكلفة مشروع Gamma في يناير؟'
+2026-10-11 12:57:07,482 - INFO - eval 19/35 Q68 -> correct_rejection (no_relevant_context)
+2026-10-11 12:57:07,499 - INFO - ask status=no_relevant_context filters={} top1=0.1205 latency_ms=15 q='ما هي عاصمة فرنسا؟'
+2026-10-11 12:57:07,502 - INFO - eval 20/35 Q69 -> correct_rejection (no_relevant_context)
+2026-10-11 12:57:07,519 - INFO - ask status=no_relevant_context filters={} top1=0.0464 latency_ms=18 q='كيف أخبز خبز العجين المخمر؟'
+2026-10-11 12:57:07,519 - INFO - eval 21/35 Q70 -> correct_rejection (no_relevant_context)
+2026-10-11 12:57:07,545 - INFO - ask status=answered filters={} top1=0.6756 latency_ms=23 q='من هو المدير التنفيذي لشركة CloudTech؟'
+2026-10-11 12:57:07,545 - INFO - eval 22/35 Q71 -> leak (answered)
+2026-10-11 12:57:07,569 - INFO - ask status=answered filters={} top1=0.4503 latency_ms=24 q='What is the monthly salary of the trainer?'
+2026-10-11 12:57:07,569 - INFO - eval 23/35 Q72 -> leak (answered)
+2026-10-11 12:57:07,590 - INFO - ask status=no_relevant_context filters={} top1=0.1194 latency_ms=21 q='What is the capital of Japan?'
+2026-10-11 12:57:07,590 - INFO - eval 24/35 Q73 -> correct_rejection (no_relevant_context)
+2026-10-11 12:57:07,614 - INFO - ask status=answered filters={} top1=0.4951 latency_ms=22 q='ما هي سياسة المصادقة متعددة العوامل لمشروع Beta؟'
+2026-10-11 12:57:07,614 - INFO - eval 25/35 Q74 -> leak (answered)
+2026-10-11 12:57:07,637 - INFO - ask status=answered filters={} top1=0.6571 latency_ms=22 q='Which service does the February 2024 report for Project Alpha cover?'
+2026-10-11 12:57:07,637 - INFO - eval 26/35 Q75 -> wrong_source (answered)
+2026-10-11 12:57:07,656 - INFO - ask status=answered filters={} top1=0.6652 latency_ms=18 q='What currency is the Project Beta storage invoice in?'
+2026-10-11 12:57:07,656 - INFO - eval 27/35 Q76 -> correct (answered)
+2026-10-11 12:57:07,682 - INFO - ask status=answered filters={} top1=0.8556 latency_ms=25 q="What is the effective date of Project Alpha's general access policy?"
+2026-10-11 12:57:07,682 - INFO - eval 28/35 Q77 -> correct (answered)
+2026-10-11 12:57:07,707 - INFO - ask status=no_relevant_context filters={} top1=0.537 latency_ms=24 q='What does the payload specification say about the Reply-To header?'
+2026-10-11 12:57:07,707 - INFO - eval 29/35 Q78 -> false_refusal (no_relevant_context)
+2026-10-11 12:57:07,729 - INFO - ask status=no_relevant_context filters={} top1=0.5532 latency_ms=23 q='How many hours is the Deploy and Monitor Feedback step estimated at?'
+2026-10-11 12:57:07,729 - INFO - eval 30/35 Q79 -> false_refusal (no_relevant_context)
+2026-10-11 12:57:07,739 - INFO - ask status=no_relevant_context filters={} top1=0.5297 latency_ms=23 q="What is the SLA penalty if Project Alpha's uptime drops below 99%?"
+2026-10-11 12:57:07,739 - INFO - eval 31/35 Q80 -> correct_rejection (no_relevant_context)
+2026-10-11 12:57:07,773 - INFO - ask status=answered filters={} top1=0.6965 latency_ms=20 q='Who approved the Project Beta budget in March 2024?'
+2026-10-11 12:57:07,773 - INFO - eval 32/35 Q81 -> leak (answered)
+2026-10-11 12:57:07,803 - INFO - ask status=answered filters={} top1=0.6712 latency_ms=27 q='What is the invoice number of the Project Alpha January invoice?'
+2026-10-11 12:57:07,803 - INFO - eval 33/35 Q82 -> leak (answered)
+2026-10-11 12:57:07,818 - INFO - ask status=no_relevant_context filters={} top1=0.4565 latency_ms=22 q='Which encryption algorithm protects the production database?'
+2026-10-11 12:57:07,818 - INFO - eval 34/35 Q83 -> correct_rejection (no_relevant_context)
+2026-10-11 12:57:07,887 - INFO - ask status=no_relevant_context filters={} top1=0.1774 latency_ms=61 q='What is the weather in Secaucus today?'
+2026-10-11 12:57:07,887 - INFO - eval 35/35 Q84 -> correct_rejection (no_relevant_context)
+2026-10-11 12:58:35,907 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-11 12:58:44,703 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-11 12:58:44,704 - INFO - No device provided, using cpu
+2026-10-11 12:58:44,708 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-11 12:58:47,160 - INFO - ask status=answered filters={} top1=0.6866 latency_ms=105 q='What is the minimum password length for Project Alpha?'
+2026-10-11 12:58:47,160 - INFO - eval 1/27 Q3 -> correct (answered)
+2026-10-11 12:58:47,174 - INFO - ask status=answered filters={} top1=0.554 latency_ms=19 q='What is the unit price of the n2-highmem-8 instance?'
+2026-10-11 12:58:47,174 - INFO - eval 2/27 Q6 -> correct (answered)
+2026-10-11 12:58:47,204 - INFO - ask status=answered filters={} top1=0.6774 latency_ms=23 q='How many hours of high-memory instances were used for Project Alpha in January 2'
+2026-10-11 12:58:47,204 - INFO - eval 3/27 Q11 -> correct (answered)
+2026-10-11 12:58:47,220 - INFO - ask status=answered filters={} top1=0.7274 latency_ms=15 q='How is payment made for the Project Beta storage invoice?'
+2026-10-11 12:58:47,220 - INFO - eval 4/27 Q14 -> correct (answered)
+2026-10-11 12:58:47,239 - INFO - ask status=answered filters={} top1=0.6903 latency_ms=18 q='How often must passwords be rotated for Project Alpha?'
+2026-10-11 12:58:47,239 - INFO - eval 5/27 Q17 -> correct (answered)
+2026-10-11 12:58:47,259 - INFO - ask status=answered filters={} top1=0.8452 latency_ms=20 q="What is the maximum monthly budget for Project Beta's cloud infrastructure?"
+2026-10-11 12:58:47,259 - INFO - eval 6/27 Q20 -> correct (answered)
+2026-10-11 12:58:47,272 - INFO - ask status=answered filters={} top1=0.746 latency_ms=22 q="What uptime did Project Alpha's Compute Engine maintain in February 2024?"
+2026-10-11 12:58:47,272 - INFO - eval 7/27 Q23 -> correct (answered)
+2026-10-11 12:58:47,301 - INFO - ask status=answered filters={} top1=0.6738 latency_ms=18 q='When were the outdated SSL certificates rotated?'
+2026-10-11 12:58:47,301 - INFO - eval 8/27 Q26 -> correct (answered)
+2026-10-11 12:58:47,323 - INFO - ask status=answered filters={} top1=0.5188 latency_ms=21 q='What value does html_body currently have in the email payload?'
+2026-10-11 12:58:47,323 - INFO - eval 9/27 Q29 -> correct (answered)
+2026-10-11 12:58:47,345 - INFO - ask status=answered filters={} top1=0.5232 latency_ms=22 q='What is the estimated total number of hours for the Trainee 3 task?'
+2026-10-11 12:58:47,346 - INFO - eval 10/27 Q32 -> correct (answered)
+2026-10-11 12:58:47,362 - INFO - ask status=answered filters={} top1=0.5457 latency_ms=16 q='ما المطلوب في بند توزيع الحمل؟'
+2026-10-11 12:58:47,362 - INFO - eval 11/27 Q35 -> correct (answered)
+2026-10-11 12:58:47,380 - INFO - ask status=answered filters={} top1=0.5613 latency_ms=19 q='What is the multi-factor authentication policy for Project Beta?'
+2026-10-11 12:58:47,380 - INFO - eval 12/27 Q37 -> leak (answered)
+2026-10-11 12:58:47,403 - INFO - ask status=answered filters={} top1=0.7362 latency_ms=21 q="What was the uptime of Project Alpha's Compute Engine in March 2024?"
+2026-10-11 12:58:47,403 - INFO - eval 13/27 Q40 -> leak (answered)
+2026-10-11 12:58:47,422 - INFO - ask status=answered filters={} top1=0.492 latency_ms=18 q='What is the maximum size of an email attachment in the payload?'
+2026-10-11 12:58:47,422 - INFO - eval 14/27 Q43 -> leak (answered)
+2026-10-11 12:58:47,441 - INFO - ask status=no_relevant_context filters={} top1=0.0695 latency_ms=19 q='How do I bake sourdough bread?'
+2026-10-11 12:58:47,441 - INFO - eval 15/27 Q46 -> correct_rejection (no_relevant_context)
+2026-10-11 12:58:47,447 - INFO - No chunk matches filters {'project': 'projectBeta', 'month': '2024-01'}
+2026-10-11 12:58:47,447 - INFO - ask status=no_documents_match_filter filters={'project': 'projectBeta', 'month': '2024-01'} top1=None latency_ms=5 q='What is the total amount due?'
+2026-10-11 12:58:47,447 - INFO - eval 16/27 Q49 -> correct_rejection (no_documents_match_filter)
+2026-10-11 12:58:47,466 - INFO - ask status=answered filters={} top1=0.6403 latency_ms=19 q='خلال كم يوماً يجب دفع فاتورة مشروع Alpha؟'
+2026-10-11 12:58:47,467 - INFO - eval 17/27 Q52 -> correct (answered)
+2026-10-11 12:58:47,472 - INFO - ask status=answered filters={} top1=0.5504 latency_ms=15 q='ما نسبة وقت التشغيل لمحرك الحوسبة في فبراير؟'
+2026-10-11 12:58:47,472 - INFO - eval 18/27 Q55 -> correct (answered)
+2026-10-11 12:58:47,500 - INFO - ask status=answered filters={} top1=0.7744 latency_ms=18 q='كيف يتم دفع فاتورة التخزين الخاصة بمشروع Beta؟'
+2026-10-11 12:58:47,501 - INFO - eval 19/27 Q58 -> correct (answered)
+2026-10-11 12:58:47,521 - INFO - ask status=answered filters={} top1=0.605 latency_ms=19 q='ما الدور المطلوب لقراءة بيانات الفوترة في BigQuery؟'
+2026-10-11 12:58:47,521 - INFO - eval 20/27 Q61 -> correct (answered)
+2026-10-11 12:58:47,537 - INFO - ask status=answered filters={} top1=0.494 latency_ms=17 q='Who must approve a new course?'
+2026-10-11 12:58:47,537 - INFO - eval 21/27 Q64 -> correct (answered)
+2026-10-11 12:58:47,556 - INFO - ask status=no_relevant_context filters={} top1=0.1205 latency_ms=17 q='ما هي عاصمة فرنسا؟'
+2026-10-11 12:58:47,556 - INFO - eval 22/27 Q69 -> correct_rejection (no_relevant_context)
+2026-10-11 12:58:47,571 - INFO - ask status=answered filters={} top1=0.4503 latency_ms=15 q='What is the monthly salary of the trainer?'
+2026-10-11 12:58:47,572 - INFO - eval 23/27 Q72 -> leak (answered)
+2026-10-11 12:58:47,584 - INFO - ask status=answered filters={} top1=0.6571 latency_ms=14 q='Which service does the February 2024 report for Project Alpha cover?'
+2026-10-11 12:58:47,584 - INFO - eval 24/27 Q75 -> wrong_source (answered)
+2026-10-11 12:58:47,604 - INFO - ask status=no_relevant_context filters={} top1=0.537 latency_ms=17 q='What does the payload specification say about the Reply-To header?'
+2026-10-11 12:58:47,604 - INFO - eval 25/27 Q78 -> false_refusal (no_relevant_context)
+2026-10-11 12:58:47,623 - INFO - ask status=no_relevant_context filters={} top1=0.5297 latency_ms=19 q="What is the SLA penalty if Project Alpha's uptime drops below 99%?"
+2026-10-11 12:58:47,623 - INFO - eval 26/27 Q80 -> correct_rejection (no_relevant_context)
+2026-10-11 12:58:47,641 - INFO - ask status=no_relevant_context filters={} top1=0.4565 latency_ms=16 q='Which encryption algorithm protects the production database?'
+2026-10-11 12:58:47,641 - INFO - eval 27/27 Q83 -> correct_rejection (no_relevant_context)
+2026-10-11 15:05:20,681 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-11 15:05:32,775 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-11 15:05:32,775 - INFO - No device provided, using cpu
+2026-10-11 15:05:32,775 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-11 15:05:35,195 - INFO - ask status=answered filters={} top1=0.7075 latency_ms=107 q='What is the total amount due for Project Alpha in January 2024?'
+2026-10-11 15:05:35,195 - INFO - eval 1/84 Q1 -> correct (answered)
+2026-10-11 15:05:35,217 - INFO - ask status=answered filters={} top1=0.7833 latency_ms=21 q="Which vulnerabilities were found in Project Beta's March security scan?"
+2026-10-11 15:05:35,217 - INFO - eval 2/84 Q2 -> correct (answered)
+2026-10-11 15:05:35,237 - INFO - ask status=answered filters={} top1=0.6866 latency_ms=18 q='What is the minimum password length for Project Alpha?'
+2026-10-11 15:05:35,237 - INFO - eval 3/84 Q3 -> correct (answered)
+2026-10-11 15:05:35,261 - INFO - ask status=answered filters={} top1=0.6221 latency_ms=23 q="Who must approve spending that exceeds Project Beta's budget?"
+2026-10-11 15:05:35,261 - INFO - eval 4/84 Q4 -> correct (answered)
+2026-10-11 15:05:35,281 - INFO - ask status=answered filters={} top1=0.596 latency_ms=19 q='Which fields are required in the email ingestion payload?'
+2026-10-11 15:05:35,281 - INFO - eval 5/84 Q5 -> correct (answered)
+2026-10-11 15:05:35,298 - INFO - ask status=answered filters={} top1=0.554 latency_ms=19 q='What is the unit price of the n2-highmem-8 instance?'
+2026-10-11 15:05:35,300 - INFO - eval 6/84 Q6 -> correct (answered)
+2026-10-11 15:05:35,316 - INFO - ask status=no_relevant_context filters={} top1=0.6243 latency_ms=16 q='متى موعد إجراء المقابلات؟'
+2026-10-11 15:05:35,316 - INFO - eval 7/84 Q7 -> false_refusal (no_relevant_context)
+2026-10-11 15:05:35,338 - INFO - ask status=answered filters={'project': 'projectBeta', 'document_type': 'invoice'} top1=0.5404 latency_ms=21 q='What is the total amount due?'
+2026-10-11 15:05:35,338 - INFO - eval 8/84 Q8 -> correct (answered)
+2026-10-11 15:05:35,357 - INFO - ask status=answered filters={} top1=0.6774 latency_ms=18 q='How many hours of high-memory instances were used for Project Alpha in January 2'
+2026-10-11 15:05:35,357 - INFO - eval 9/84 Q11 -> correct (answered)
+2026-10-11 15:05:35,375 - INFO - ask status=answered filters={} top1=0.7656 latency_ms=17 q='Within how many days must the Project Alpha invoice be paid?'
+2026-10-11 15:05:35,375 - INFO - eval 10/84 Q12 -> correct (answered)
+2026-10-11 15:05:35,397 - INFO - ask status=answered filters={} top1=0.6956 latency_ms=21 q='How much data did the engineering team store for Project Beta in February 2024?'
+2026-10-11 15:05:35,397 - INFO - eval 11/84 Q13 -> correct (answered)
+2026-10-11 15:05:35,417 - INFO - ask status=answered filters={} top1=0.7274 latency_ms=20 q='How is payment made for the Project Beta storage invoice?'
+2026-10-11 15:05:35,419 - INFO - eval 12/84 Q14 -> correct (answered)
+2026-10-11 15:05:35,438 - INFO - ask status=answered filters={} top1=0.731 latency_ms=20 q='What is the price per GB of persistent SSD storage?'
+2026-10-11 15:05:35,439 - INFO - eval 13/84 Q15 -> correct (answered)
+2026-10-11 15:05:35,457 - INFO - ask status=answered filters={} top1=0.5642 latency_ms=18 q='How much does network egress cost per GB?'
+2026-10-11 15:05:35,458 - INFO - eval 14/84 Q16 -> correct (answered)
+2026-10-11 15:05:35,478 - INFO - ask status=answered filters={} top1=0.6903 latency_ms=20 q='How often must passwords be rotated for Project Alpha?'
+2026-10-11 15:05:35,479 - INFO - eval 15/84 Q17 -> correct (answered)
+2026-10-11 15:05:35,501 - INFO - ask status=answered filters={} top1=0.7909 latency_ms=22 q='Is direct SSH access allowed from public IP addresses?'
+2026-10-11 15:05:35,502 - INFO - eval 16/84 Q18 -> correct (answered)
+2026-10-11 15:05:35,527 - INFO - ask status=answered filters={} top1=0.6207 latency_ms=24 q='What is required to access the compute engines from outside the corporate networ'
+2026-10-11 15:05:35,527 - INFO - eval 17/84 Q19 -> correct (answered)
+2026-10-11 15:05:35,551 - INFO - ask status=answered filters={} top1=0.8452 latency_ms=23 q="What is the maximum monthly budget for Project Beta's cloud infrastructure?"
+2026-10-11 15:05:35,551 - INFO - eval 18/84 Q20 -> correct (answered)
+2026-10-11 15:05:35,572 - INFO - ask status=answered filters={} top1=0.8226 latency_ms=20 q='By which day of the month must cloud storage invoices be submitted to the financ'
+2026-10-11 15:05:35,572 - INFO - eval 19/84 Q21 -> correct (answered)
+2026-10-11 15:05:35,591 - INFO - ask status=answered filters={} top1=0.4917 latency_ms=18 q='What are the consequences of late invoice submissions?'
+2026-10-11 15:05:35,591 - INFO - eval 20/84 Q22 -> correct (answered)
+2026-10-11 15:05:35,599 - INFO - ask status=answered filters={} top1=0.746 latency_ms=20 q="What uptime did Project Alpha's Compute Engine maintain in February 2024?"
+2026-10-11 15:05:35,599 - INFO - eval 21/84 Q23 -> correct (answered)
+2026-10-11 15:05:35,627 - INFO - ask status=answered filters={} top1=0.6363 latency_ms=15 q='What caused the CPU usage spike on February 14th?'
+2026-10-11 15:05:35,627 - INFO - eval 22/84 Q24 -> correct (answered)
+2026-10-11 15:05:35,638 - INFO - ask status=answered filters={} top1=0.4791 latency_ms=17 q='What does the report recommend to handle sudden traffic spikes?'
+2026-10-11 15:05:35,638 - INFO - eval 23/84 Q25 -> correct (answered)
+2026-10-11 15:05:35,662 - INFO - ask status=answered filters={} top1=0.6738 latency_ms=18 q='When were the outdated SSL certificates rotated?'
+2026-10-11 15:05:35,662 - INFO - eval 24/84 Q26 -> correct (answered)
+2026-10-11 15:05:35,678 - INFO - ask status=answered filters={} top1=0.6946 latency_ms=20 q='Is Project Beta compliant with the internal security standards after the scan?'
+2026-10-11 15:05:35,678 - INFO - eval 25/84 Q27 -> right_source_missing_fact (answered)
+2026-10-11 15:05:35,698 - INFO - ask status=answered filters={} top1=0.6836 latency_ms=16 q='What is the mailbox_id field used for?'
+2026-10-11 15:05:35,698 - INFO - eval 26/84 Q28 -> correct (answered)
+2026-10-11 15:05:35,710 - INFO - ask status=answered filters={} top1=0.5188 latency_ms=20 q='What value does html_body currently have in the email payload?'
+2026-10-11 15:05:35,710 - INFO - eval 27/84 Q29 -> correct (answered)
+2026-10-11 15:05:35,742 - INFO - ask status=answered filters={} top1=0.7238 latency_ms=20 q='Which GCP role is needed to read the billing export data in BigQuery?'
+2026-10-11 15:05:35,742 - INFO - eval 28/84 Q30 -> correct (answered)
+2026-10-11 15:05:35,760 - INFO - ask status=answered filters={} top1=0.6433 latency_ms=18 q='How many hours are estimated for building the chat interface?'
+2026-10-11 15:05:35,760 - INFO - eval 29/84 Q31 -> right_source_missing_fact (answered)
+2026-10-11 15:05:35,774 - INFO - ask status=answered filters={} top1=0.5232 latency_ms=20 q='What is the estimated total number of hours for the Trainee 3 task?'
+2026-10-11 15:05:35,774 - INFO - eval 30/84 Q32 -> correct (answered)
+2026-10-11 15:05:35,801 - INFO - ask status=answered filters={} top1=0.4354 latency_ms=17 q='من الذي يوافق على إضافة دورة جديدة؟'
+2026-10-11 15:05:35,802 - INFO - eval 31/84 Q33 -> correct (answered)
+2026-10-11 15:05:35,817 - INFO - ask status=answered filters={} top1=0.6036 latency_ms=20 q='متى يجب إرسال التقرير المختصر عن الوظيفة؟'
+2026-10-11 15:05:35,817 - INFO - eval 32/84 Q34 -> correct (answered)
+2026-10-11 15:05:35,841 - INFO - ask status=answered filters={} top1=0.5457 latency_ms=19 q='ما المطلوب في بند توزيع الحمل؟'
+2026-10-11 15:05:35,843 - INFO - eval 33/84 Q35 -> correct (answered)
+2026-10-11 15:05:35,860 - INFO - ask status=answered filters={'document_type': 'invoice', 'month': '2024-01'} top1=0.6061 latency_ms=17 q='What is the total amount due?'
+2026-10-11 15:05:35,860 - INFO - eval 34/84 Q36 -> correct (answered)
+2026-10-11 15:05:35,880 - INFO - ask status=answered filters={} top1=0.6057 latency_ms=20 q='What is the refund policy for Project Beta?'
+2026-10-11 15:05:35,880 - INFO - eval 35/84 Q9 -> leak (answered)
+2026-10-11 15:05:35,899 - INFO - ask status=no_relevant_context filters={} top1=0.6365 latency_ms=17 q='What was the cost of Project Gamma in January 2024?'
+2026-10-11 15:05:35,899 - INFO - eval 36/84 Q10 -> correct_rejection (no_relevant_context)
+2026-10-11 15:05:35,917 - INFO - ask status=answered filters={} top1=0.5613 latency_ms=19 q='What is the multi-factor authentication policy for Project Beta?'
+2026-10-11 15:05:35,917 - INFO - eval 37/84 Q37 -> leak (answered)
+2026-10-11 15:05:35,932 - INFO - ask status=no_relevant_context filters={} top1=0.7125 latency_ms=13 q='Who is the Chief Technology Officer of CloudTech Solutions?'
+2026-10-11 15:05:35,932 - INFO - eval 38/84 Q38 -> correct_rejection (no_relevant_context)
+2026-10-11 15:05:35,951 - INFO - ask status=answered filters={} top1=0.6907 latency_ms=19 q='What was the total amount due for Project Beta in March 2024?'
+2026-10-11 15:05:35,951 - INFO - eval 39/84 Q39 -> leak (answered)
+2026-10-11 15:05:35,971 - INFO - ask status=answered filters={} top1=0.7362 latency_ms=19 q="What was the uptime of Project Alpha's Compute Engine in March 2024?"
+2026-10-11 15:05:35,971 - INFO - eval 40/84 Q40 -> leak (answered)
+2026-10-11 15:05:35,992 - INFO - ask status=answered filters={} top1=0.705 latency_ms=20 q="How many vulnerabilities were found in Project Alpha's security scan?"
+2026-10-11 15:05:35,992 - INFO - eval 41/84 Q41 -> leak (answered)
+2026-10-11 15:05:36,008 - INFO - ask status=no_relevant_context filters={} top1=0.4779 latency_ms=16 q='What is the password policy for Project Delta?'
+2026-10-11 15:05:36,009 - INFO - eval 42/84 Q42 -> correct_rejection (no_relevant_context)
+2026-10-11 15:05:36,029 - INFO - ask status=answered filters={} top1=0.492 latency_ms=19 q='What is the maximum size of an email attachment in the payload?'
+2026-10-11 15:05:36,029 - INFO - eval 43/84 Q43 -> leak (answered)
+2026-10-11 15:05:36,046 - INFO - ask status=no_relevant_context filters={} top1=0.6239 latency_ms=16 q='How much does Cloud Run cost per hour?'
+2026-10-11 15:05:36,046 - INFO - eval 44/84 Q44 -> correct_rejection (no_relevant_context)
+2026-10-11 15:05:36,063 - INFO - ask status=no_relevant_context filters={} top1=0.1223 latency_ms=17 q='What is the capital of France?'
+2026-10-11 15:05:36,063 - INFO - eval 45/84 Q45 -> correct_rejection (no_relevant_context)
+2026-10-11 15:05:36,082 - INFO - ask status=no_relevant_context filters={} top1=0.0695 latency_ms=18 q='How do I bake sourdough bread?'
+2026-10-11 15:05:36,082 - INFO - eval 46/84 Q46 -> correct_rejection (no_relevant_context)
+2026-10-11 15:05:36,101 - INFO - ask status=answered filters={} top1=0.5014 latency_ms=18 q='ما هي سياسة الإجازات السنوية للموظفين؟'
+2026-10-11 15:05:36,101 - INFO - eval 47/84 Q47 -> leak (answered)
+2026-10-11 15:05:36,116 - INFO - ask status=no_relevant_context filters={} top1=0.4684 latency_ms=15 q='كم راتب المدرب في المنصة؟'
+2026-10-11 15:05:36,116 - INFO - eval 48/84 Q48 -> correct_rejection (no_relevant_context)
+2026-10-11 15:05:36,117 - INFO - No chunk matches filters {'project': 'projectBeta', 'month': '2024-01'}
+2026-10-11 15:05:36,117 - INFO - ask status=no_documents_match_filter filters={'project': 'projectBeta', 'month': '2024-01'} top1=None latency_ms=1 q='What is the total amount due?'
+2026-10-11 15:05:36,117 - INFO - eval 49/84 Q49 -> correct_rejection (no_documents_match_filter)
+2026-10-11 15:05:36,137 - INFO - ask status=answered filters={} top1=0.6603 latency_ms=19 q='ما هو الحد الأقصى للميزانية الشهرية لمشروع Beta؟'
+2026-10-11 15:05:36,137 - INFO - eval 50/84 Q50 -> correct (answered)
+2026-10-11 15:05:36,155 - INFO - ask status=answered filters={} top1=0.6241 latency_ms=17 q='كم عدد ساعات المثيلات عالية الذاكرة المستخدمة في مشروع Alpha؟'
+2026-10-11 15:05:36,192 - INFO - eval 51/84 Q51 -> wrong_source (answered)
+2026-10-11 15:05:36,211 - INFO - ask status=answered filters={} top1=0.6403 latency_ms=19 q='خلال كم يوماً يجب دفع فاتورة مشروع Alpha؟'
+2026-10-11 15:05:36,212 - INFO - eval 52/84 Q52 -> correct (answered)
+2026-10-11 15:05:36,228 - INFO - ask status=answered filters={} top1=0.4878 latency_ms=16 q='كل كم يوماً يجب تغيير كلمات المرور؟'
+2026-10-11 15:05:36,228 - INFO - eval 53/84 Q53 -> correct (answered)
+2026-10-11 15:05:36,239 - INFO - ask status=answered filters={} top1=0.5074 latency_ms=20 q='هل يسمح بالدخول المباشر إلى المحركات من عناوين الإنترنت العامة؟'
+2026-10-11 15:05:36,249 - INFO - eval 54/84 Q54 -> correct (answered)
+2026-10-11 15:05:36,267 - INFO - ask status=answered filters={} top1=0.5504 latency_ms=18 q='ما نسبة وقت التشغيل لمحرك الحوسبة في فبراير؟'
+2026-10-11 15:05:36,268 - INFO - eval 55/84 Q55 -> correct (answered)
+2026-10-11 15:05:36,285 - INFO - ask status=answered filters={} top1=0.6276 latency_ms=16 q='متى تم تدوير شهادات SSL القديمة؟'
+2026-10-11 15:05:36,285 - INFO - eval 56/84 Q56 -> correct (answered)
+2026-10-11 15:05:36,304 - INFO - ask status=answered filters={} top1=0.6155 latency_ms=18 q='كم حجم البيانات التي خزنها فريق الهندسة لمشروع Beta؟'
+2026-10-11 15:05:36,304 - INFO - eval 57/84 Q57 -> correct (answered)
+2026-10-11 15:05:36,339 - INFO - ask status=answered filters={} top1=0.7744 latency_ms=36 q='كيف يتم دفع فاتورة التخزين الخاصة بمشروع Beta؟'
+2026-10-11 15:05:36,339 - INFO - eval 58/84 Q58 -> correct (answered)
+2026-10-11 15:05:36,348 - INFO - ask status=answered filters={} top1=0.7388 latency_ms=19 q='ما سعر الغيغابايت الواحد لتخزين SSD الدائم؟'
+2026-10-11 15:05:36,348 - INFO - eval 59/84 Q59 -> correct (answered)
+2026-10-11 15:05:36,380 - INFO - ask status=answered filters={} top1=0.6052 latency_ms=19 q='كم ساعة مقدرة لبناء واجهة الدردشة؟'
+2026-10-11 15:05:36,380 - INFO - eval 60/84 Q60 -> right_source_missing_fact (answered)
+2026-10-11 15:05:36,396 - INFO - ask status=answered filters={} top1=0.605 latency_ms=17 q='ما الدور المطلوب لقراءة بيانات الفوترة في BigQuery؟'
+2026-10-11 15:05:36,396 - INFO - eval 61/84 Q61 -> correct (answered)
+2026-10-11 15:05:36,423 - INFO - ask status=answered filters={} top1=0.5833 latency_ms=23 q='ما الحقول المطلوبة في حمولة البريد الإلكتروني؟'
+2026-10-11 15:05:36,423 - INFO - eval 62/84 Q62 -> correct (answered)
+2026-10-11 15:05:36,461 - INFO - ask status=answered filters={} top1=0.5984 latency_ms=38 q='When are the interviews held?'
+2026-10-11 15:05:36,461 - INFO - eval 63/84 Q63 -> correct (answered)
+2026-10-11 15:05:36,496 - INFO - ask status=answered filters={} top1=0.494 latency_ms=36 q='Who must approve a new course?'
+2026-10-11 15:05:36,499 - INFO - eval 64/84 Q64 -> correct (answered)
+2026-10-11 15:05:36,538 - INFO - ask status=answered filters={} top1=0.6147 latency_ms=39 q='When must the short report about the job be sent?'
+2026-10-11 15:05:36,539 - INFO - eval 65/84 Q65 -> correct (answered)
+2026-10-11 15:05:36,569 - INFO - ask status=answered filters={} top1=0.4822 latency_ms=33 q='Which load balancing mechanism is given as an example?'
+2026-10-11 15:05:36,573 - INFO - eval 66/84 Q66 -> right_source_missing_fact (answered)
+2026-10-11 15:05:36,603 - INFO - ask status=answered filters={} top1=0.6095 latency_ms=29 q='ما هي سياسة استرداد الأموال لمشروع Beta؟'
+2026-10-11 15:05:36,603 - INFO - eval 67/84 Q67 -> leak (answered)
+2026-10-11 15:05:36,621 - INFO - ask status=no_relevant_context filters={} top1=0.5948 latency_ms=18 q='كم كانت تكلفة مشروع Gamma في يناير؟'
+2026-10-11 15:05:36,621 - INFO - eval 68/84 Q68 -> correct_rejection (no_relevant_context)
+2026-10-11 15:05:36,642 - INFO - ask status=no_relevant_context filters={} top1=0.1205 latency_ms=20 q='ما هي عاصمة فرنسا؟'
+2026-10-11 15:05:36,642 - INFO - eval 69/84 Q69 -> correct_rejection (no_relevant_context)
+2026-10-11 15:05:36,660 - INFO - ask status=no_relevant_context filters={} top1=0.0464 latency_ms=18 q='كيف أخبز خبز العجين المخمر؟'
+2026-10-11 15:05:36,660 - INFO - eval 70/84 Q70 -> correct_rejection (no_relevant_context)
+2026-10-11 15:05:36,680 - INFO - ask status=answered filters={} top1=0.6756 latency_ms=19 q='من هو المدير التنفيذي لشركة CloudTech؟'
+2026-10-11 15:05:36,680 - INFO - eval 71/84 Q71 -> leak (answered)
+2026-10-11 15:05:36,702 - INFO - ask status=answered filters={} top1=0.4503 latency_ms=22 q='What is the monthly salary of the trainer?'
+2026-10-11 15:05:36,702 - INFO - eval 72/84 Q72 -> leak (answered)
+2026-10-11 15:05:36,720 - INFO - ask status=no_relevant_context filters={} top1=0.1194 latency_ms=18 q='What is the capital of Japan?'
+2026-10-11 15:05:36,722 - INFO - eval 73/84 Q73 -> correct_rejection (no_relevant_context)
+2026-10-11 15:05:36,743 - INFO - ask status=answered filters={} top1=0.4951 latency_ms=22 q='ما هي سياسة المصادقة متعددة العوامل لمشروع Beta؟'
+2026-10-11 15:05:36,743 - INFO - eval 74/84 Q74 -> leak (answered)
+2026-10-11 15:05:36,765 - INFO - ask status=answered filters={} top1=0.6571 latency_ms=19 q='Which service does the February 2024 report for Project Alpha cover?'
+2026-10-11 15:05:36,765 - INFO - eval 75/84 Q75 -> wrong_source (answered)
+2026-10-11 15:05:36,785 - INFO - ask status=answered filters={} top1=0.6652 latency_ms=19 q='What currency is the Project Beta storage invoice in?'
+2026-10-11 15:05:36,785 - INFO - eval 76/84 Q76 -> correct (answered)
+2026-10-11 15:05:36,804 - INFO - ask status=answered filters={} top1=0.8556 latency_ms=19 q="What is the effective date of Project Alpha's general access policy?"
+2026-10-11 15:05:36,805 - INFO - eval 77/84 Q77 -> correct (answered)
+2026-10-11 15:05:36,825 - INFO - ask status=no_relevant_context filters={} top1=0.537 latency_ms=19 q='What does the payload specification say about the Reply-To header?'
+2026-10-11 15:05:36,825 - INFO - eval 78/84 Q78 -> false_refusal (no_relevant_context)
+2026-10-11 15:05:36,844 - INFO - ask status=no_relevant_context filters={} top1=0.5532 latency_ms=19 q='How many hours is the Deploy and Monitor Feedback step estimated at?'
+2026-10-11 15:05:36,844 - INFO - eval 79/84 Q79 -> false_refusal (no_relevant_context)
+2026-10-11 15:05:36,863 - INFO - ask status=no_relevant_context filters={} top1=0.5297 latency_ms=20 q="What is the SLA penalty if Project Alpha's uptime drops below 99%?"
+2026-10-11 15:05:36,863 - INFO - eval 80/84 Q80 -> correct_rejection (no_relevant_context)
+2026-10-11 15:05:36,884 - INFO - ask status=answered filters={} top1=0.6965 latency_ms=19 q='Who approved the Project Beta budget in March 2024?'
+2026-10-11 15:05:36,884 - INFO - eval 81/84 Q81 -> leak (answered)
+2026-10-11 15:05:36,906 - INFO - ask status=answered filters={} top1=0.6712 latency_ms=23 q='What is the invoice number of the Project Alpha January invoice?'
+2026-10-11 15:05:36,909 - INFO - eval 82/84 Q82 -> leak (answered)
+2026-10-11 15:05:36,927 - INFO - ask status=no_relevant_context filters={} top1=0.4565 latency_ms=19 q='Which encryption algorithm protects the production database?'
+2026-10-11 15:05:36,927 - INFO - eval 83/84 Q83 -> correct_rejection (no_relevant_context)
+2026-10-11 15:05:36,947 - INFO - ask status=no_relevant_context filters={} top1=0.1774 latency_ms=19 q='What is the weather in Secaucus today?'
+2026-10-11 15:05:36,947 - INFO - eval 84/84 Q84 -> correct_rejection (no_relevant_context)
+2026-10-13 13:07:09,113 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-13 13:07:09,113 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-13 13:08:12,103 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-13 13:08:12,103 - INFO - No device provided, using cpu
+2026-10-13 13:08:15,607 - INFO - HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-10-13 13:08:15,621 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-13 13:08:18,820 - INFO - RAG service ready (embedding model loaded, index opened)
+2026-10-13 13:08:23,731 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-13 13:08:23,731 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-13 13:08:32,397 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-13 13:08:32,399 - INFO - No device provided, using cpu
+2026-10-13 13:08:32,404 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-13 13:08:34,661 - INFO - RAG service ready (embedding model loaded, index opened)
+2026-10-13 13:35:04,841 - INFO - ask status=answered filters={} top1=0.6061 latency_ms=591 q='What is the total amount due?'
+2026-10-13 14:58:20,034 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-13 14:58:20,034 - WARNING - python-dotenv could not parse statement starting at line 4
+2026-10-13 14:58:38,577 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-13 14:58:38,579 - INFO - No device provided, using cpu
+2026-10-13 14:58:38,585 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-13 14:58:44,163 - INFO - RAG service ready (embedding model loaded, index opened)

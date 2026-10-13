@@ -20,5 +20,3 @@ SELECT original_filename, section_header, COUNT(*) as chunks_count
 FROM rag_chunks
 WHERE section_header IS NOT NULL
 GROUP BY original_filename, section_header;
-
-

@@ -15,7 +15,13 @@ standalone-data-rag-assistant/
 ├── data/
 │   ├── db/
 │   │   ├── local_storage.sqlite        # SQLite database (Task 1 `rag_topics`; Week 7 `rag_documents`/`rag_chunks`)
-│   │   └── retail_pipeline.db          # SQLite database (Week 4 pipeline output, used by Week 6)
+│   │   ├── retail_pipeline.db          # SQLite database (Week 4 pipeline output, used by Week 6)
+│   │   └── chroma/                     # (Week 8) ChromaDB vector index, derived from rag_chunks (git-ignored)
+│   ├── eval/
+│   │   └── week8/
+│   │       ├── eval_questions.json            # 49 questions (dev/test), expected sources + expected facts
+│   │       ├── eval_questions_extended.json   # 35 questions (calib/holdout): cross-language + fresh ones
+│   │       └── eval_results.json              # last evaluation run (every score, signal and answer)
 │   ├── raw/
 │   │   ├── config.json                 # App config (Task 1)
 │   │   ├── sample.csv                  # Sample data (Task 1)
@@ -37,7 +43,8 @@ standalone-data-rag-assistant/
 │
 ├── src/
 │   ├── api/
-│   │   └── health_controller.py        # FastAPI app + /health endpoint (Task 1)
+│   │   ├── health_controller.py        # FastAPI app + /health endpoint (Task 1)
+│   │   └── rag_controller.py           # (Week 8) POST /rag/ask, GET /rag/status
 │   ├── infrastructure/
 │   │   ├── db_manager.py               # SQLiteManager (Task 1, extended in Week 4)
 │   │   └── file_reader.py              # CSV/JSON reader (Task 1)
@@ -53,14 +60,25 @@ standalone-data-rag-assistant/
 │   │   └── week6/
 │   │       └── app.py                  # Streamlit analytics dashboard
 │   └── rag/
-│       └── week7/
-│           ├── document_loader.py      # Unified .txt/.md/.pdf reader (pypdf-based)
-│           ├── table_extractor.py      # pdfplumber, used ONLY to detect/clean PDF tables
-│           ├── metadata_extractor.py   # Best-effort filename classification (never blocking)
-│           ├── text_cleaner.py         # Noise removal, whitespace/paragraph reconstruction
-│           ├── chunking.py             # DocumentChunker - unified, safety-capped chunker
-│           ├── db_store.py             # RagStore - rag_documents / rag_chunks persistence
-│           └── ingest.py               # Orchestrator: Scan→Load→Metadata→Clean→Chunk→Store
+│       ├── week7/
+│       │   ├── document_loader.py      # Unified .txt/.md/.pdf reader (pypdf-based)
+│       │   ├── table_extractor.py      # pdfplumber, used ONLY to detect/clean PDF tables
+│       │   ├── metadata_extractor.py   # Best-effort filename classification (never blocking)
+│       │   ├── text_cleaner.py         # Noise removal, whitespace/paragraph reconstruction
+│       │   ├── chunking.py             # DocumentChunker - unified, safety-capped chunker
+│       │   ├── db_store.py             # RagStore - rag_documents / rag_chunks persistence
+│       │   └── ingest.py               # Orchestrator: Scan→Load→Metadata→Clean→Chunk→Store
+│       └── week8/
+│           ├── config.py               # settings from .env
+│           ├── embedder.py             # sentence-transformers wrapper (model loaded once)
+│           ├── vector_store.py         # ChromaDB wrapper (metadata cleaning, filters, model guard)
+│           ├── indexer.py              # rag_chunks -> embeddings -> Chroma (idempotent sync)
+│           ├── retriever.py            # top-k + metadata filters + stale-index detection
+│           ├── answerability.py        # can the best chunk answer the question? (rule calibrated in the notebook)
+│           ├── prompt_builder.py       # grounded prompt + fixed messages (EN/AR)
+│           ├── answer_generator.py     # extractive answer (interface for the Week 9 LLM)
+│           ├── rag_service.py          # ask(): ties everything together
+│           └── evaluator.py            # system-level evaluation
 │
 ├── sql/
 │   └── week6/
@@ -70,8 +88,10 @@ standalone-data-rag-assistant/
 ├── notebooks/
 │   ├── week3/
 │   │   └── week3-retailstore.ipynb     # Data cleaning & validation notebook
-│   └── week7/
-│       └── week7-rag-preparation.ipynb # Sandbox: parsing/metadata/chunking experiments
+│   ├── week7/
+│   │   └── week7-rag-preparation.ipynb # Sandbox: parsing/metadata/chunking experiments
+│   └── week8/
+│       └── week8-retrieval-experiments.ipynb
 │
 ├── reports/
 │   ├── week3/
@@ -79,15 +99,21 @@ standalone-data-rag-assistant/
 │   │   └── Report_week3_detailed.md    # Full investigation details
 │   ├── week6/
 │   │   └── Week6_Analytics_Summary.md  # Analytical questions answered with query evidence
-│   └── week7/
-│       ├── Report_week7.md                      # Summary, results, known limitations
-│       └── parsing_and_chunking_walkthrough.txt  # Full step-by-step design-decision log
+│   ├── week7/
+│   │   ├── Report_week7.md                      # Summary, results, known limitations
+│   │   └── parsing_and_chunking_walkthrough.txt  # Full step-by-step design-decision log
+│   └── week8/
+│       ├── Report_week8.md
+│       ├── retrieval_evaluation.md         # evaluation notes (the 10 predefined questions + the 84-question run)
+│       └── rag_design_walkthrough.txt
 │
 ├── logs/
 │   ├── week4/
 │   │   └── pipeline.log                # ETL pipeline run log (Week 4)
-│   └── week7/
-│       └── ingestion.log               # RAG ingestion run log (Week 7)
+│   ├── week7/
+│   │   └── ingestion.log               # RAG ingestion run log (Week 7)
+│   └── week8/
+│       └── rag.log
 │
 ├── practice/
 │   ├── week2/                          # Standalone Pandas/SQL practice (Superstore dataset)
@@ -111,11 +137,14 @@ standalone-data-rag-assistant/
 ├── main.py                              # Entry point (Task 1: ETL + SQL queries)
 ├── run_pipeline.py                      # Entry point (Week 4: ETL pipeline)
 ├── run_rag_ingestion.py                 # Entry point (Week 7: RAG document ingestion)
+├── run_rag_indexing.py                  # build / sync the vector index (Week 8)
+├── run_rag_query.py                     # dev tool: one question from the terminal (--ask prints the full response)
+├── run_rag_eval.py                      # evaluation entry point
 ├── requirements.txt
 └── README.md
 ```
 
-> **Note:** `practice/` holds standalone weekly exercises that are self-contained and unrelated to the core application (e.g. Week 2 and Week 5). Weeks that build on each other and feed into the core project (Week 3, Week 4, Week 6 — which queries Week 4's pipeline output — and Week 7, whose output is the document collection Week 8's RAG assistant will embed and retrieve from) live directly under `data/`, `src/`, `sql/`, `notebooks/`, `reports/`, and `logs/`, each in their own `weekN` subfolder. Within `src/`, only importable Python code lives (`analytics/`, `pipeline/`, `week3/`, `rag/week7/`); raw SQL files live under the top-level `sql/` folder instead, kept separate from Python source for the same reason `notebooks/` and `reports/` are separate.
+> **Note:** `practice/` holds standalone weekly exercises that are self-contained and unrelated to the core application (e.g. Week 2 and Week 5). Weeks that build on each other and feed into the core project (Week 3, Week 4, Week 6 — which queries Week 4's pipeline output — and Week 7, whose output is the document collection Week 8's RAG assistant will embed and retrieve from) live directly under `data/`, `src/`, `sql/`, `notebooks/`, `reports/`, and `logs/`, each in their own `weekN` subfolder. Within `src/`, only importable Python code lives (`analytics/`, `pipeline/`, `week3/`, `rag/week7/`); raw SQL files live under the top-level `sql/` folder instead, kept separate from Python source for the same reason `notebooks/` and `reports/` are separate. Week 8 is **not** a standalone exercise: it builds on Week 7's chunks and is the base of the LLM, tools and routing work of the following weeks, so it lives under `src/`, `data/`, `reports/`, `notebooks/` and `logs/` (`week8` subfolders), not under `practice/`.
 
 ---
 
@@ -136,24 +165,13 @@ ipykernel
 streamlit
 pypdf==5.9.0
 pdfplumber
+sentence-transformers==<version>
+chromadb==<version>
 ```
 
 `pypdf` is the primary PDF text extractor (Week 7). `pdfplumber` is used narrowly, only to detect and cleanly extract tables on PDF pages that have one — it is not a replacement for `pypdf` (see Week 7 below for why). `fpdf2` was used once, as a dev-only tool, to generate a synthetic sample invoice PDF for testing — it is not a runtime dependency of the ingestion pipeline.
 
----
-
-## Setup
-
-```bash
-git clone <repo-url>
-cd standalone-data-rag-assistant
-
-python -m venv venv
-venv\Scripts\activate      # Windows
-source venv/bin/activate   # macOS/Linux
-
-pip install -r requirements.txt
-```
+For `sentence-transformers` and `chromadb`, pin the versions printed by `pip show sentence-transformers chromadb`. The first run downloads the embedding model (~470 MB); afterwards it loads from the local cache.
 
 ---
 
@@ -164,7 +182,21 @@ APP_NAME="Standalone Data-RAG Assistant"
 APP_ENV="development"
 DEBUG_MODE=True
 DB_PATH="data/db/local_storage.sqlite"
+
+EMBEDDING_MODEL_NAME="paraphrase-multilingual-MiniLM-L12-v2"
+EMBEDDING_TEXT_VARIANT="text_only"
+CHROMA_PATH="data/db/chroma"
+RAG_COLLECTION="rag_chunks_v1"
+EMBED_BATCH_SIZE=32
+RAG_TOP_K=3
+RAG_MIN_SCORE=0.0
+RAG_MIN_LEXICAL_COVERAGE=0.5
+RAG_UNKNOWN_ENTITY_CHECK=True
+RAG_MIN_SCORE_CROSS_LINGUAL=0.30
+RAG_SUPPORT_RATIO=0.65
 ```
+
+`.gitignore`: add `data/db/chroma/`.
 
 ---
 
@@ -410,6 +442,81 @@ By format: {pdf: 4, txt: 4, md: 2}
 
 ---
 
+## Week 8 — Basic RAG Assistant (Embeddings, Vector Store, Retrieval, Citations)
+
+Turns the Week 7 document collection into a question-answering flow: local embeddings, a local vector store, retrieval
+with metadata filtering, a grounded prompt, citations, handling of missing information, an evaluation set, and a
+`POST /rag/ask` endpoint. No LLM yet (Week 9): the answer is **extractive** (the best chunk, quoted verbatim, cited).
+
+### Architecture
+```
+rag_chunks (SQLite, source of truth)
+   └─ run_rag_indexing.py ─► embeddings ─► ChromaDB (cosine)
+question ─► embed ─► top-k (+ filters) ─► answerability gate ─► grounded prompt ─► extractive answer + citations
+```
+- **SQLite stays the source of truth.** Chroma holds vectors and filter fields only; text is read back by `chunk_id`.
+- **Indexing is a sync, not a rebuild:** it compares the sets of `chunk_id`s, embeds what is new, deletes what disappeared, and does not even load the model when nothing changed. The collection records the embedding model and text variant; a mismatch is refused (`--rebuild`).
+- **Answerability gate.** One cosine threshold cannot separate answerable from unanswerable questions (their scores overlap), so the best chunk must share ≥ 50% of the question's key words and the question may not name an entity that appears nowhere in the documents. For questions in a different language than the best chunk (no shared words) the word check is replaced by a cosine floor of 0.30, fitted on a separate calibration split.
+- **Three statuses:** `answered`, `no_relevant_context`, `no_documents_match_filter`. Refusals return their reasons and the measured signals.
+- **Shared infrastructure change.** `RagStore.replace_document()` makes re-ingestion **replace** a document and its chunks in one transaction (it used to append duplicates), and removes documents whose file disappeared. `health_controller.py` mounts the RAG router and loads the model once at startup; `/health` is unchanged.
+
+### Run
+```bash
+python run_rag_ingestion.py          # Week 7: documents -> rag_documents / rag_chunks
+python run_rag_indexing.py           # Week 8: chunks -> vectors   (--rebuild after changing the model)
+uvicorn src.api.health_controller:app --reload       # http://127.0.0.1:8000/docs
+python run_rag_query.py "What is the total amount due?" --filter project=projectBeta --filter document_type=invoice --ask
+python run_rag_eval.py               # evaluation
+```
+Run `run_rag_indexing.py` after every ingestion (chunk ids change); restart the API after changing the documents.
+
+### API
+`POST /rag/ask`
+```json
+{ "question": "What is the total amount due?", "top_k": 3,
+  "filters": {"project": "projectBeta", "document_type": "invoice"}, "include_prompt": false }
+```
+Allowed filters (exact stored values): `document_type`, `month`, `project`, `service`, `original_filename`.
+Response: `status`, `answer`, `citations` (file, section, chunk, score, text), `answerability` (reasons + signals),
+`latency_ms`; with `include_prompt=true` also the grounded `prompt` and every retrieved chunk.
+`GET /rag/status` compares the index with SQLite by chunk id.
+
+### Failure handling — verified scenarios
+1. Index not built: `/rag/ask` → 503 `run python run_rag_indexing.py`; the app and `/health` still work, and building the index needs no restart.
+2. Stale index (re-ingested, not re-indexed; same count, different ids): `/rag/status` shows `in_sync: false`, `/rag/ask` → 503.
+3. Embedding model cannot be loaded: clear error (hint: stale Hugging Face token), index untouched, `/health` still 200.
+4. Filters match nothing: `no_documents_match_filter`.
+5. Invalid request (empty question, `top_k` outside 1–10, unknown filter or field): 422.
+6. Index built with another model or text variant: refused.
+7. Documents with NULL metadata are indexed (`document_type="unclassified"`) because Chroma rejects `None`.
+
+### Bugs found and fixed during Week 8
+- **Re-ingestion duplicated everything** (Week 7 code): fixed with replace-in-one-transaction.
+- **Stale-index check by count was wrong:** re-ingestion keeps the count and changes every id; now compared by id.
+- **Model loaded inside the first request** (20–50 s): now loaded once at startup.
+- **Every valid cross-language question was refused** (0/17): found by the evaluation; fixed as described above (17/17 answered, holdout 5/5).
+- **The pronoun "I" counted as an unknown entity:** stop words are no longer entities.
+
+### Latest verified run (84 questions: 56 answerable, 28 unanswerable)
+```
+Index:         60 chunks / 60 vectors
+Retrieval:     Hit@1 94.6% | Hit@3 98.2% | Hit@5 100% | MRR 0.969
+Answerable:    47 correct | 4 right source, fact missing | 2 wrong source | 3 false refusals
+Unanswerable:  15 rejected | 13 leaked
+Latency:       p50 17 ms | p95 25 ms
+10 predefined questions: correct source retrieved 8/8 answerable; answered correctly 7/8; unanswerable refused 1/2
+```
+Details: `reports/week8/retrieval_evaluation.md`.
+
+### Known limitations (see `Report_week8.md`)
+- Questions about an existing topic whose specific fact is missing mostly pass the gate (12 of 17 leak); separating them needs an LLM or a cross-encoder.
+- The cross-language gate only removes off-topic questions.
+- The lexical gate is literal: 3 false refusals (Arabic morphology, paraphrased wording, one retrieval miss).
+- Extractive answers are verbatim chunks: 4 right-source answers lack the fact.
+- Small evaluation set (84 questions, 11 in the holdout).
+
+---
+
 ## Git Tags
 
 Each completed week is marked with an annotated Git tag once finalized, so the project history can be browsed one week at a time:
@@ -422,4 +529,5 @@ git checkout tags/week4-complete
 git checkout tags/week5-complete
 git checkout tags/week6-complete
 git checkout tags/week7-complete
+git checkout tags/week8-complete
 ```

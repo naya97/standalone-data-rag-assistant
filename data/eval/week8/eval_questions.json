@@ -1,0 +1,675 @@
+[
+  {
+    "id": 1,
+    "question": "What is the total amount due for Project Alpha in January 2024?",
+    "filters": {},
+    "expected_sources": [
+      "invoice_2024-01_projectAlpha_computeEngine.txt",
+      "invoice_2024-01_projectAlpha_computeEngine.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "two valid sources (txt + pdf)",
+    "split": "dev",
+    "answer_contains": [
+      "4,500"
+    ]
+  },
+  {
+    "id": 2,
+    "question": "Which vulnerabilities were found in Project Beta's March security scan?",
+    "filters": {},
+    "expected_sources": [
+      "report_2024-03_projectBeta_security.txt"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "report",
+    "split": "dev",
+    "answer_contains": [
+      "SSL"
+    ]
+  },
+  {
+    "id": 3,
+    "question": "What is the minimum password length for Project Alpha?",
+    "filters": {},
+    "expected_sources": [
+      "policy_2024-01_projectAlpha_general.md"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "policy",
+    "split": "test",
+    "answer_contains": [
+      "16 characters"
+    ]
+  },
+  {
+    "id": 4,
+    "question": "Who must approve spending that exceeds Project Beta's budget?",
+    "filters": {},
+    "expected_sources": [
+      "policy_2024-03_projectBeta_billing.md"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "policy",
+    "split": "dev",
+    "answer_contains": [
+      "CTO"
+    ]
+  },
+  {
+    "id": 5,
+    "question": "Which fields are required in the email ingestion payload?",
+    "filters": {},
+    "expected_sources": [
+      "email_payload_spec.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "unclassified PDF",
+    "split": "dev",
+    "answer_contains": [
+      "mailbox_id"
+    ]
+  },
+  {
+    "id": 6,
+    "question": "What is the unit price of the n2-highmem-8 instance?",
+    "filters": {},
+    "expected_sources": [
+      "invoice_2024-01_projectAlpha_computeEngine.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "PDF table",
+    "split": "test",
+    "answer_contains": [
+      "8.50"
+    ]
+  },
+  {
+    "id": 7,
+    "question": "متى موعد إجراء المقابلات؟",
+    "filters": {},
+    "expected_sources": [
+      "الوظيفة*الثانية*.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "Arabic",
+    "split": "dev",
+    "answer_contains": [
+      "6/7"
+    ]
+  },
+  {
+    "id": 8,
+    "question": "What is the total amount due?",
+    "filters": {
+      "project": "projectBeta",
+      "document_type": "invoice"
+    },
+    "expected_sources": [
+      "invoice_2024-02_projectBeta_cloudStorage.txt"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "metadata filter ($and)",
+    "split": "dev",
+    "answer_contains": [
+      "1,200"
+    ]
+  },
+  {
+    "id": 11,
+    "question": "How many hours of high-memory instances were used for Project Alpha in January 2024?",
+    "filters": {},
+    "expected_sources": [
+      "invoice_2024-01_projectAlpha_computeEngine.txt",
+      "invoice_2024-01_projectAlpha_computeEngine.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "txt + pdf",
+    "split": "test",
+    "answer_contains": [
+      "500"
+    ]
+  },
+  {
+    "id": 12,
+    "question": "Within how many days must the Project Alpha invoice be paid?",
+    "filters": {},
+    "expected_sources": [
+      "invoice_2024-01_projectAlpha_computeEngine.txt",
+      "invoice_2024-01_projectAlpha_computeEngine.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "txt + pdf",
+    "split": "dev",
+    "answer_contains": [
+      "30 days"
+    ]
+  },
+  {
+    "id": 13,
+    "question": "How much data did the engineering team store for Project Beta in February 2024?",
+    "filters": {},
+    "expected_sources": [
+      "invoice_2024-02_projectBeta_cloudStorage.txt"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "invoice",
+    "split": "dev",
+    "answer_contains": [
+      "50 Terabytes"
+    ]
+  },
+  {
+    "id": 14,
+    "question": "How is payment made for the Project Beta storage invoice?",
+    "filters": {},
+    "expected_sources": [
+      "invoice_2024-02_projectBeta_cloudStorage.txt"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "invoice",
+    "split": "test",
+    "answer_contains": [
+      "credit card"
+    ]
+  },
+  {
+    "id": 15,
+    "question": "What is the price per GB of persistent SSD storage?",
+    "filters": {},
+    "expected_sources": [
+      "invoice_2024-01_projectAlpha_computeEngine.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "PDF table",
+    "split": "dev",
+    "answer_contains": [
+      "0.17"
+    ]
+  },
+  {
+    "id": 16,
+    "question": "How much does network egress cost per GB?",
+    "filters": {},
+    "expected_sources": [
+      "invoice_2024-01_projectAlpha_computeEngine.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "PDF table",
+    "split": "dev",
+    "answer_contains": [
+      "0.12"
+    ]
+  },
+  {
+    "id": 17,
+    "question": "How often must passwords be rotated for Project Alpha?",
+    "filters": {},
+    "expected_sources": [
+      "policy_2024-01_projectAlpha_general.md"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "policy",
+    "split": "test",
+    "answer_contains": [
+      "90 days"
+    ]
+  },
+  {
+    "id": 18,
+    "question": "Is direct SSH access allowed from public IP addresses?",
+    "filters": {},
+    "expected_sources": [
+      "policy_2024-01_projectAlpha_general.md"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "policy",
+    "split": "dev",
+    "answer_contains": [
+      "SSH"
+    ]
+  },
+  {
+    "id": 19,
+    "question": "What is required to access the compute engines from outside the corporate network?",
+    "filters": {},
+    "expected_sources": [
+      "policy_2024-01_projectAlpha_general.md"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "policy",
+    "split": "dev",
+    "answer_contains": [
+      "VPN"
+    ]
+  },
+  {
+    "id": 20,
+    "question": "What is the maximum monthly budget for Project Beta's cloud infrastructure?",
+    "filters": {},
+    "expected_sources": [
+      "policy_2024-03_projectBeta_billing.md"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "policy",
+    "split": "test",
+    "answer_contains": [
+      "5,000"
+    ]
+  },
+  {
+    "id": 21,
+    "question": "By which day of the month must cloud storage invoices be submitted to the finance department?",
+    "filters": {},
+    "expected_sources": [
+      "policy_2024-03_projectBeta_billing.md"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "policy",
+    "split": "dev",
+    "answer_contains": [
+      "5th"
+    ]
+  },
+  {
+    "id": 22,
+    "question": "What are the consequences of late invoice submissions?",
+    "filters": {},
+    "expected_sources": [
+      "policy_2024-03_projectBeta_billing.md"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "policy",
+    "split": "dev",
+    "answer_contains": [
+      "budget cuts"
+    ]
+  },
+  {
+    "id": 23,
+    "question": "What uptime did Project Alpha's Compute Engine maintain in February 2024?",
+    "filters": {},
+    "expected_sources": [
+      "report_2024-02_projectAlpha_computeEngine.txt"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "report",
+    "split": "test",
+    "answer_contains": [
+      "99.95%"
+    ]
+  },
+  {
+    "id": 24,
+    "question": "What caused the CPU usage spike on February 14th?",
+    "filters": {},
+    "expected_sources": [
+      "report_2024-02_projectAlpha_computeEngine.txt"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "report",
+    "split": "dev",
+    "answer_contains": [
+      "batch"
+    ]
+  },
+  {
+    "id": 25,
+    "question": "What does the report recommend to handle sudden traffic spikes?",
+    "filters": {},
+    "expected_sources": [
+      "report_2024-02_projectAlpha_computeEngine.txt"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "report",
+    "split": "dev",
+    "answer_contains": [
+      "auto-scaling"
+    ]
+  },
+  {
+    "id": 26,
+    "question": "When were the outdated SSL certificates rotated?",
+    "filters": {},
+    "expected_sources": [
+      "report_2024-03_projectBeta_security.txt"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "report",
+    "split": "test",
+    "answer_contains": [
+      "March 6th"
+    ]
+  },
+  {
+    "id": 27,
+    "question": "Is Project Beta compliant with the internal security standards after the scan?",
+    "filters": {},
+    "expected_sources": [
+      "report_2024-03_projectBeta_security.txt"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "report",
+    "split": "dev",
+    "answer_contains": [
+      "compliant"
+    ]
+  },
+  {
+    "id": 28,
+    "question": "What is the mailbox_id field used for?",
+    "filters": {},
+    "expected_sources": [
+      "email_payload_spec.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "unclassified PDF",
+    "split": "dev",
+    "answer_contains": [
+      "routing key"
+    ]
+  },
+  {
+    "id": 29,
+    "question": "What value does html_body currently have in the email payload?",
+    "filters": {},
+    "expected_sources": [
+      "email_payload_spec.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "unclassified PDF",
+    "split": "test",
+    "answer_contains": [
+      "null"
+    ]
+  },
+  {
+    "id": 30,
+    "question": "Which GCP role is needed to read the billing export data in BigQuery?",
+    "filters": {},
+    "expected_sources": [
+      "Task-3.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "unclassified PDF",
+    "split": "dev",
+    "answer_contains": [
+      "bigquery.dataViewer"
+    ]
+  },
+  {
+    "id": 31,
+    "question": "How many hours are estimated for building the chat interface?",
+    "filters": {},
+    "expected_sources": [
+      "Task-3.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "unclassified PDF",
+    "split": "dev",
+    "answer_contains": [
+      "15 hours"
+    ]
+  },
+  {
+    "id": 32,
+    "question": "What is the estimated total number of hours for the Trainee 3 task?",
+    "filters": {},
+    "expected_sources": [
+      "Task-3.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "unclassified PDF",
+    "split": "test",
+    "answer_contains": [
+      "70 hours"
+    ]
+  },
+  {
+    "id": 33,
+    "question": "من الذي يوافق على إضافة دورة جديدة؟",
+    "filters": {},
+    "expected_sources": [
+      "الوظيفة*الثانية*.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "Arabic",
+    "split": "dev",
+    "answer_contains": [
+      "admin"
+    ]
+  },
+  {
+    "id": 34,
+    "question": "متى يجب إرسال التقرير المختصر عن الوظيفة؟",
+    "filters": {},
+    "expected_sources": [
+      "الوظيفة*الثانية*.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "Arabic",
+    "split": "dev",
+    "answer_contains": [
+      "5/7"
+    ]
+  },
+  {
+    "id": 35,
+    "question": "ما المطلوب في بند توزيع الحمل؟",
+    "filters": {},
+    "expected_sources": [
+      "الوظيفة*الثانية*.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "Arabic",
+    "split": "test",
+    "answer_contains": [
+      "خدمة داخلية"
+    ]
+  },
+  {
+    "id": 36,
+    "question": "What is the total amount due?",
+    "filters": {
+      "document_type": "invoice",
+      "month": "2024-01"
+    },
+    "expected_sources": [
+      "invoice_2024-01_projectAlpha_computeEngine.txt",
+      "invoice_2024-01_projectAlpha_computeEngine.pdf"
+    ],
+    "should_reject": false,
+    "kind": "answerable",
+    "tests": "metadata filter (document_type + month)",
+    "split": "dev",
+    "answer_contains": [
+      "4,500"
+    ]
+  },
+  {
+    "id": 9,
+    "question": "What is the refund policy for Project Beta?",
+    "filters": {},
+    "expected_sources": [],
+    "should_reject": true,
+    "kind": "near_topic_missing",
+    "tests": "close to the billing policy, no refund policy exists",
+    "split": "dev"
+  },
+  {
+    "id": 10,
+    "question": "What was the cost of Project Gamma in January 2024?",
+    "filters": {},
+    "expected_sources": [],
+    "should_reject": true,
+    "kind": "unknown_entity",
+    "tests": "looks like the invoices, project does not exist",
+    "split": "dev"
+  },
+  {
+    "id": 37,
+    "question": "What is the multi-factor authentication policy for Project Beta?",
+    "filters": {},
+    "expected_sources": [],
+    "should_reject": true,
+    "kind": "near_topic_missing",
+    "tests": "MFA exists only for Alpha",
+    "split": "test"
+  },
+  {
+    "id": 38,
+    "question": "Who is the Chief Technology Officer of CloudTech Solutions?",
+    "filters": {},
+    "expected_sources": [],
+    "should_reject": true,
+    "kind": "near_topic_missing",
+    "tests": "the role is mentioned, no name",
+    "split": "dev"
+  },
+  {
+    "id": 39,
+    "question": "What was the total amount due for Project Beta in March 2024?",
+    "filters": {},
+    "expected_sources": [],
+    "should_reject": true,
+    "kind": "near_topic_missing",
+    "tests": "Beta's invoice is February",
+    "split": "dev"
+  },
+  {
+    "id": 40,
+    "question": "What was the uptime of Project Alpha's Compute Engine in March 2024?",
+    "filters": {},
+    "expected_sources": [],
+    "should_reject": true,
+    "kind": "near_topic_missing",
+    "tests": "uptime exists for February only",
+    "split": "test"
+  },
+  {
+    "id": 41,
+    "question": "How many vulnerabilities were found in Project Alpha's security scan?",
+    "filters": {},
+    "expected_sources": [],
+    "should_reject": true,
+    "kind": "near_topic_missing",
+    "tests": "the scan exists for Beta only",
+    "split": "dev"
+  },
+  {
+    "id": 42,
+    "question": "What is the password policy for Project Delta?",
+    "filters": {},
+    "expected_sources": [],
+    "should_reject": true,
+    "kind": "unknown_entity",
+    "tests": "project does not exist",
+    "split": "dev"
+  },
+  {
+    "id": 43,
+    "question": "What is the maximum size of an email attachment in the payload?",
+    "filters": {},
+    "expected_sources": [],
+    "should_reject": true,
+    "kind": "near_topic_missing",
+    "tests": "spec lists attachment names only",
+    "split": "test"
+  },
+  {
+    "id": 44,
+    "question": "How much does Cloud Run cost per hour?",
+    "filters": {},
+    "expected_sources": [],
+    "should_reject": true,
+    "kind": "near_topic_missing",
+    "tests": "Cloud Run is mentioned, no pricing",
+    "split": "dev"
+  },
+  {
+    "id": 45,
+    "question": "What is the capital of France?",
+    "filters": {},
+    "expected_sources": [],
+    "should_reject": true,
+    "kind": "off_topic",
+    "tests": "unrelated",
+    "split": "dev"
+  },
+  {
+    "id": 46,
+    "question": "How do I bake sourdough bread?",
+    "filters": {},
+    "expected_sources": [],
+    "should_reject": true,
+    "kind": "off_topic",
+    "tests": "unrelated",
+    "split": "test"
+  },
+  {
+    "id": 47,
+    "question": "ما هي سياسة الإجازات السنوية للموظفين؟",
+    "filters": {},
+    "expected_sources": [],
+    "should_reject": true,
+    "kind": "off_topic",
+    "tests": "Arabic, unrelated",
+    "split": "dev"
+  },
+  {
+    "id": 48,
+    "question": "كم راتب المدرب في المنصة؟",
+    "filters": {},
+    "expected_sources": [],
+    "should_reject": true,
+    "kind": "near_topic_missing",
+    "tests": "Arabic, trainer is mentioned, no salary",
+    "split": "dev"
+  },
+  {
+    "id": 49,
+    "question": "What is the total amount due?",
+    "filters": {
+      "project": "projectBeta",
+      "month": "2024-01"
+    },
+    "expected_sources": [],
+    "should_reject": true,
+    "kind": "filter_no_match",
+    "tests": "no document matches these filters",
+    "split": "test"
+  }
+]
