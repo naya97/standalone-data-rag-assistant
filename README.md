@@ -18,10 +18,14 @@ standalone-data-rag-assistant/
 │   │   ├── retail_pipeline.db          # SQLite database (Week 4 pipeline output, used by Week 6)
 │   │   └── chroma/                     # (Week 8) ChromaDB vector index, derived from rag_chunks (git-ignored)
 │   ├── eval/
-│   │   └── week8/
-│   │       ├── eval_questions.json            # 49 questions (dev/test), expected sources + expected facts
-│   │       ├── eval_questions_extended.json   # 35 questions (calib/holdout): cross-language + fresh ones
-│   │       └── eval_results.json              # last evaluation run (every score, signal and answer)
+│   │   ├── week8/
+│   │   │   ├── eval_questions.json            # 49 questions (dev/test), expected sources + expected facts
+│   │   │   ├── eval_questions_extended.json   # 35 questions (calib/holdout): cross-language + fresh ones
+│   │   │   └── eval_results.json              # last evaluation run (every score, signal and answer)
+│   │   └── week9/
+│   │       ├── llm_eval_results.json        # last LLM evaluation (every outcome, token count, latency)
+│   │       ├── gate_experiment.json         # lexical-gate settings compared on the saved questions
+│   │       └── llm_cache.json               # cached model replies for the evaluation (git-ignored)
 │   ├── raw/
 │   │   ├── config.json                 # App config (Task 1)
 │   │   ├── sample.csv                  # Sample data (Task 1)
@@ -44,7 +48,20 @@ standalone-data-rag-assistant/
 ├── src/
 │   ├── api/
 │   │   ├── health_controller.py        # FastAPI app + /health endpoint (Task 1)
-│   │   └── rag_controller.py           # (Week 8) POST /rag/ask, GET /rag/status
+│   │   ├── rag_controller.py           # (Week 8) POST /rag/ask, GET /rag/status
+│   │   └── llm_controller.py            # (Week 9) POST /llm/sales-insights, POST /llm/summarize-documents
+│   ├── llm/
+│   │   └── week9/
+│   │       ├── config.py                    # LLM settings from .env
+│   │       ├── client.py                    # Gemini client, scripted fake, error types, one shared client
+│   │       ├── retry.py                     # retries, time budget, request throttle
+│   │       ├── schemas.py                   # structured outputs (RAG answer, sales insights, document summary)
+│   │       ├── guardrails.py                # JSON/schema checks, citations, numbers must exist in the source
+│   │       ├── prompts.py                   # prompts for summaries and insights
+│   │       ├── runner.py                    # ask for a small JSON object: send, check, repair once
+│   │       ├── data_facts.py                # sales figures computed by SQL (the model never computes)
+│   │       ├── insights.py                  # sales summary and insights (+ no-LLM fallback)
+│   │       └── tool_specs.py                # function-calling concept: two tools, validation, execution
 │   ├── infrastructure/
 │   │   ├── db_manager.py               # SQLiteManager (Task 1, extended in Week 4)
 │   │   └── file_reader.py              # CSV/JSON reader (Task 1)
@@ -79,11 +96,19 @@ standalone-data-rag-assistant/
 │           ├── answer_generator.py     # extractive answer (interface for the Week 9 LLM)
 │           ├── rag_service.py          # ask(): ties everything together
 │           └── evaluator.py            # system-level evaluation
+│       └── week9/
+│           ├── llm_generator.py             # LLM answer for /rag/ask with the extractive fallback
+│           ├── doc_summary.py               # document summary (+ no-LLM fallback)
+│           ├── evaluator.py                 # LLM vs extractive, several gate settings, cached replies
+│           └── gate_experiment.py           # which lexical threshold? (gate only, no model)
 │
 ├── sql/
 │   └── week6/
 │       ├── views.sql                   # Analytics layer: dimension table + reusable views
 │       └── queries.sql                 # KPI queries + JOIN-based analysis
+│
+├── tests/
+│   └── week9/                               # scripted fake model: no network, no key
 │
 ├── notebooks/
 │   ├── week3/
@@ -102,18 +127,24 @@ standalone-data-rag-assistant/
 │   ├── week7/
 │   │   ├── Report_week7.md                      # Summary, results, known limitations
 │   │   └── parsing_and_chunking_walkthrough.txt  # Full step-by-step design-decision log
-│   └── week8/
-│       ├── Report_week8.md
-│       ├── retrieval_evaluation.md         # evaluation notes (the 10 predefined questions + the 84-question run)
-│       └── rag_design_walkthrough.txt
+│   ├── week8/
+│   │   ├── Report_week8.md
+│   │   ├── retrieval_evaluation.md         # evaluation notes (the 10 predefined questions + the 84-question run)
+│   │   └── rag_design_walkthrough.txt
+│   └── week9/
+│       ├── Report_week9.md
+│       ├── llm_evaluation.md
+│       └── llm_design_walkthrough.txt
 │
 ├── logs/
 │   ├── week4/
 │   │   └── pipeline.log                # ETL pipeline run log (Week 4)
 │   ├── week7/
 │   │   └── ingestion.log               # RAG ingestion run log (Week 7)
-│   └── week8/
-│       └── rag.log
+│   ├── week8/
+│   │   └── rag.log
+│   └── week9/
+│       └── llm.log                          # every model request: attempt, latency, tokens, errors (never the key)
 │
 ├── practice/
 │   ├── week2/                          # Standalone Pandas/SQL practice (Superstore dataset)
@@ -131,6 +162,9 @@ standalone-data-rag-assistant/
 │       │   └── week5_queries.sql       # 8 analytical queries (BigQuery-style)
 │       └── notes/
 │           └── GCP_BigQuery_notes.md   # Concept notes + local-equivalent mapping
+│   └── week9/                          # LLM concepts notes
+│       └── notes/
+│           └── Gemini_Vertex_notes.md  # Gemini API vs Vertex AI concepts (no cloud account: notes only)
 │
 ├── .env                                 # Environment variables
 ├── .gitignore
@@ -140,6 +174,11 @@ standalone-data-rag-assistant/
 ├── run_rag_indexing.py                  # build / sync the vector index (Week 8)
 ├── run_rag_query.py                     # dev tool: one question from the terminal (--ask prints the full response)
 ├── run_rag_eval.py                      # evaluation entry point
+├── run_llm_insights.py                  # sales / docs summaries and insights from the command line
+├── run_llm_tools.py                     # function-calling concept demo
+├── run_llm_eval.py                      # LLM evaluation entry point
+├── run_gate_experiment.py               # lexical-gate experiment entry point
+├── .env.example                         # every setting, without secrets
 ├── requirements.txt
 └── README.md
 ```
@@ -167,6 +206,8 @@ pypdf==5.9.0
 pdfplumber
 sentence-transformers==<version>
 chromadb==<version>
+google-genai==<version>      # pin what `pip show google-genai` prints
+pytest                       # tests/week9
 ```
 
 `pypdf` is the primary PDF text extractor (Week 7). `pdfplumber` is used narrowly, only to detect and cleanly extract tables on PDF pages that have one — it is not a replacement for `pypdf` (see Week 7 below for why). `fpdf2` was used once, as a dev-only tool, to generate a synthetic sample invoice PDF for testing — it is not a runtime dependency of the ingestion pipeline.
@@ -194,9 +235,29 @@ RAG_MIN_LEXICAL_COVERAGE=0.5
 RAG_UNKNOWN_ENTITY_CHECK=True
 RAG_MIN_SCORE_CROSS_LINGUAL=0.30
 RAG_SUPPORT_RATIO=0.65
+
+RETAIL_DB_PATH="data/db/retail_pipeline.db"
+RAG_ANSWER_MODE="llm"
+RAG_EXTRACTIVE_MIN_LEXICAL_COVERAGE=0.5
+RAG_ARABIC_LIGHT=False
+
+LLM_PROVIDER="gemini"
+GEMINI_API_KEY=""                 # Google AI Studio key. NEVER commit .env
+GEMINI_MODEL=""                   # exact model id from AI Studio
+LLM_TEMPERATURE=0.1
+LLM_MAX_OUTPUT_TOKENS=1024
+LLM_TIMEOUT_SECONDS=45
+LLM_DEADLINE_SECONDS=100
+LLM_MAX_RETRIES=1
+LLM_BACKOFF_BASE_SECONDS=1.0
+LLM_MAX_RPM=10
+LLM_THINKING_LEVEL=
 ```
 
-`.gitignore`: add `data/db/chroma/`.
+`RAG_MIN_LEXICAL_COVERAGE` is now the gate **in front of the LLM** (0.33 after the Week 9 evaluation); verbatim answers keep
+the Week 8 value through `RAG_EXTRACTIVE_MIN_LEXICAL_COVERAGE`.
+
+`.gitignore`: add `data/db/chroma/`, `.env` and `data/eval/week9/llm_cache.json`.
 
 ---
 
@@ -446,7 +507,7 @@ By format: {pdf: 4, txt: 4, md: 2}
 
 Turns the Week 7 document collection into a question-answering flow: local embeddings, a local vector store, retrieval
 with metadata filtering, a grounded prompt, citations, handling of missing information, an evaluation set, and a
-`POST /rag/ask` endpoint. No LLM yet (Week 9): the answer is **extractive** (the best chunk, quoted verbatim, cited).
+`POST /rag/ask` endpoint. The answer is extractive by default; Week 9 adds the LLM.
 
 ### Architecture
 ```
@@ -517,6 +578,85 @@ Details: `reports/week8/retrieval_evaluation.md`.
 
 ---
 
+## Week 9 — LLM Application Basics (Gemini): prompts, structured outputs, fallback, summaries and insights
+
+Puts a language model on top of the Week 8 RAG and the cleaned retail data. Gemini (Google AI Studio key) writes the
+answers; every function has a fallback that needs no model; the model's output is checked before it is trusted. No Google
+Cloud account was available, so Vertex AI is documented in `practice/week9/notes/Gemini_Vertex_notes.md`, not executed.
+
+### Architecture
+```
+question ─► retrieve ─► gate (lenient) ─► Gemini (system + user, JSON schema) ─► guardrails ─► answer + citations
+                                               │  error, or output rejected twice (one repair request in between)
+                                               ▼
+                         extractive answer (Week 8), judged AGAIN by the stricter gate
+```
+- **Structured outputs.** The model answers in a fixed JSON shape (`schemas.py`); the shape is validated, then the content: cited passages must exist, every number must appear in the source (passages or computed facts).
+- **System / user messages.** Rules and examples in the system message; passages and question in the user message, wrapped so a passage cannot talk as the prompt.
+- **Retries and timeouts.** Transient errors (timeout, 429 per-minute, 5xx, network) are retried with backoff inside a total time budget; wrong key, unknown model, bad request and an exhausted daily quota fail at once. A throttle keeps requests under the per-minute limit; one shared client means one limiter for the whole app. Every attempt is logged to `logs/week9/llm.log` (the key is removed from any message).
+- **Two-tier gate.** `RAG_MIN_LEXICAL_COVERAGE` (0.33) lets questions reach the model, which can answer "not found". A verbatim chunk (extractive mode, or the fallback when the model fails) is judged again with `RAG_EXTRACTIVE_MIN_LEXICAL_COVERAGE` (0.50). Statuses are unchanged: `answered`, `no_relevant_context` (the model's "not found" adds the reason `llm_not_found`), `no_documents_match_filter`.
+- **Sales insights.** `data_facts.py` computes the figures with SQL on `sales_clean` (revenue, months and growth, categories vs targets, payment methods, locations; optional category and month range). The model words them; incomplete first/last months are marked and left out of best/worst/growth; the targets are labelled hypothetical. Fallback: a fixed template from the same figures.
+- **Document summary.** Passages chosen by filters or by a question (the same search as `/rag/ask`), up to 20, numbered; the model returns a summary and key points with their source numbers. Fallback: the passages as written (a large selection: the opening passage of each document).
+- **Function calling (concept).** Two tools (`search_documents`, `get_sales_summary`): the model chooses one and its arguments, `tool_specs.py` validates them and runs the tool without ever raising. Sending results back and routing are Week 10–11.
+
+### Run
+```bash
+# .env: GEMINI_API_KEY, GEMINI_MODEL (+ the Week 8 setup: ingestion and indexing already done)
+python -m pytest tests/week9 -v                                     # no key needed
+python run_rag_query.py "What is the total amount due?" --ask --mode llm      # or --mode extractive
+python run_llm_insights.py sales --focus "Which categories are behind their revenue target?"
+python run_llm_insights.py sales --category Furniture --start 2024-01 --end 2024-06 --language ar
+python run_llm_insights.py docs --filter project=projectBeta --filter document_type=invoice
+python run_llm_insights.py --no-llm sales                            # the fallback, no request is sent
+python run_llm_tools.py --demo                                       # 6 requests: which tool does the model choose?
+python run_llm_eval.py --variants extractive@0.50,llm@0.33 --ids 1,2,3,4,5,6,7,8,9,10 --max-requests 15
+python run_gate_experiment.py                                        # lexical threshold, no model
+uvicorn src.api.health_controller:app --reload                       # /docs
+```
+
+### API
+- `POST /rag/ask`: unchanged request; the response has a new `generation` block (`mode` = `llm` / `extractive` / `extractive_fallback`, `fallback_reason`, `model`, `prompt_version`, `attempts`, `repairs`, tokens incl. `thinking_tokens`, `model_latency_ms`). With `include_prompt=true`, `prompt` is the system + user text actually sent.
+- `POST /llm/sales-insights` `{category?, start?, end?, focus?, language: en|ar}` → `{mode, result: {summary, insights, caveats}, facts, notes, generation}`.
+- `POST /llm/summarize-documents` `{question?, filters?, top_k?, language?}` (a question or at least one filter) → `{mode, result: {summary, key_points: [{text, sources}]}, sources, generation}`.
+- Both new endpoints answer even without a key (`mode: "fallback"` + the reason); they return 422 for a bad request, 404 for no matching documents, 503 for missing data.
+
+### Failure handling — verified scenarios (real API)
+1. **Wrong key:** `LLMAuthError`, one attempt, no retry, the key is not in the output, fallback returned.
+2. **Wrong model:** `LLMConfigError` (404) with Google's message, no retry.
+3. **Timeout:** `LLMTimeoutError`, one retry as configured, then the fallback.
+4. **Daily quota exhausted:** detected as permanent; the evaluation stops, never scores unanswered questions as if the model had answered, and resumes from the cache.
+5. **Model down, question accepted only by the lenient gate:** `no_relevant_context` ("stricter gate ... minimum 50%") instead of quoting a chunk.
+
+### Bugs found and fixed during Week 9
+- **Fallback loophole with a lenient gate:** a failed model call returned a chunk for a question that only the lenient gate accepted → verbatim answers are judged by the stricter gate.
+- **A permanent 429 was retried three times** (15–30 s each) → quota exhaustion is not retried; the provider's retry delay is honoured.
+- **20 s timeout cut valid answers** (median 9 s, 95th percentile 53 s on one model) → 45 s, and one retry.
+- **Error messages cut at 300 characters** hid the quota details → 1000.
+- **`include_prompt` showed the Week 8 prompt** → it shows what was sent.
+- **Cached replies reported a 20 ms latency** → latency is the model's own time.
+- **Sales insights:** the model needed the number 100 to say "no category is behind its target" (rejected by the numbers check) → definitions in the facts; the last month (2025-01) was incomplete and read as a decline → incomplete months flagged; the template was silent when no category was behind → it now says so.
+- **Summary fallback lost the amount due** (one point per document) → small selections are shown passage by passage.
+- **A cache keyed on the configuration object** failed for non-hashable configs → explicit key; one shared client.
+
+### Latest verified runs (Gemini 3.5 Flash Lite)
+```
+Week 8's 10 questions     extractive: 7/8 answerable correct, 1/2 unanswerable rejected
+                          LLM @ 0.33: 8/8 correct, 2/2 rejected (Q9 by the model)
+Everything tried (18)     answerable 11/12 correct (Q27 false refusal); unanswerable 6/6 rejected (5 by the model)
+Cost                      RAG answer ~850 in / ~45 out tokens; sales insights ~2,560 / ~350; no hidden thinking tokens
+Model time                median 5.8 s, 95th percentile 11.3 s
+```
+Details: `reports/week9/llm_evaluation.md`.
+
+### Known limitations (see `Report_week9.md`)
+- Small evaluation (18 different questions with the model): a difference of one question is not evidence.
+- The numbers check misses small numbers that always occur in the source (years, months, counts) and does not judge whether a sentence makes sense.
+- Wording is not deterministic between runs; the evaluation caches replies.
+- Free-tier limits depend on the model; free-tier prompts may be used by Google (only synthetic and public data are sent).
+- The fallback texts are English only; the sales targets are hypothetical (Week 6).
+
+---
+
 ## Git Tags
 
 Each completed week is marked with an annotated Git tag once finalized, so the project history can be browsed one week at a time:
@@ -530,4 +670,5 @@ git checkout tags/week5-complete
 git checkout tags/week6-complete
 git checkout tags/week7-complete
 git checkout tags/week8-complete
+git checkout tags/week9-complete
 ```

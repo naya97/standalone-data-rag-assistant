@@ -12,6 +12,7 @@ from dotenv import load_dotenv
 BASE_DIR = Path(__file__).resolve().parents[3]
 
 VALID_TEXT_VARIANTS = {"text_only", "header_plus_text"}
+VALID_ANSWER_MODES = {"llm", "extractive"}  # Week 9
 
 
 @dataclass(frozen=True)
@@ -31,6 +32,11 @@ class RagConfig:
     min_score_cross_lingual: float
     answer_support_ratio: float
     log_path: Path
+    answer_mode: str = "llm"  # Week 9: "llm" (extractive answer is the fallback) | "extractive" (no LLM calls)
+    arabic_light: bool = False  # Week 9: light Arabic normalisation + function words in the lexical gate
+    # Week 9: min_lexical_coverage is the gate IN FRONT OF THE LLM (a reader follows it, so it can be lenient).
+    # An extractive answer has no reader after the gate, so it is judged again with this stricter value.
+    extractive_min_lexical_coverage: float = 0.5
 
 
 def _resolve(value: str) -> Path:
@@ -53,6 +59,14 @@ def get_config() -> RagConfig:
     if not 1 <= top_k <= 10:
         raise ValueError(f"RAG_TOP_K must be between 1 and 10, got {top_k}")
 
+    answer_mode = os.getenv("RAG_ANSWER_MODE", "llm").strip().lower()  # Week 9
+    if answer_mode not in VALID_ANSWER_MODES:
+        raise ValueError(f"RAG_ANSWER_MODE must be one of {sorted(VALID_ANSWER_MODES)}, got {answer_mode!r}")
+
+    extractive_floor = float(os.getenv("RAG_EXTRACTIVE_MIN_LEXICAL_COVERAGE", "0.5"))  # Week 9
+    if not 0.0 <= extractive_floor <= 1.0:
+        raise ValueError(f"RAG_EXTRACTIVE_MIN_LEXICAL_COVERAGE must be between 0 and 1, got {extractive_floor}")
+
     return RagConfig(
         base_dir=BASE_DIR,
         db_path=_resolve(os.getenv("DB_PATH", "data/db/local_storage.sqlite")),
@@ -68,4 +82,7 @@ def get_config() -> RagConfig:
         min_score_cross_lingual=float(os.getenv("RAG_MIN_SCORE_CROSS_LINGUAL", "0.30")),
         answer_support_ratio=float(os.getenv("RAG_SUPPORT_RATIO", "0.65")),
         log_path=BASE_DIR / "logs" / "week8" / "rag.log",
+        answer_mode=answer_mode,
+        arabic_light=_as_bool(os.getenv("RAG_ARABIC_LIGHT", "False")),  # Week 9
+        extractive_min_lexical_coverage=extractive_floor,  # Week 9
     )

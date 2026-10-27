@@ -1,8 +1,8 @@
-"""Turns retrieved chunks into an answer. The interface is what Week 9's LLM generator will implement."""
+"""Turns retrieved chunks into an answer. The interface is what Week 9's LLM generator implements."""
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Protocol
 
 if TYPE_CHECKING:  # pragma: no cover
@@ -13,6 +13,12 @@ if TYPE_CHECKING:  # pragma: no cover
 class GeneratedAnswer:
     text: str
     cited_ids: list[int]  # 1-based positions in the chunk list that the answer actually relies on
+    # Week 9 (all optional, so ExtractiveGenerator is unchanged):
+    not_found: bool = False                 # the LLM judged that the context does not contain the answer
+    mode: str = "extractive"                # "extractive" | "llm" | "extractive_fallback"
+    fallback_reason: str | None = None      # why the LLM answer was not used
+    meta: dict = field(default_factory=dict)  # model, prompt_version, attempts, repairs, tokens
+    prompt_sent: str | None = None          # the exact system+user text sent to the LLM (None: nothing was sent)
 
 
 class AnswerGenerator(Protocol):

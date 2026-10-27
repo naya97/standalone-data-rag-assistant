@@ -1263,3 +1263,382 @@
 2026-10-13 14:58:38,579 - INFO - No device provided, using cpu
 2026-10-13 14:58:38,585 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
 2026-10-13 14:58:44,163 - INFO - RAG service ready (embedding model loaded, index opened)
+2026-10-17 15:01:34,601 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-17 15:01:34,601 - INFO - No device provided, using cpu
+2026-10-17 15:01:38,655 - INFO - HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-10-17 15:01:38,669 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-17 15:01:42,661 - INFO - RAG service ready (embedding model loaded, index opened, answer_mode=llm)
+2026-10-17 15:09:16,886 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-17 15:09:26,518 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-17 15:09:26,875 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=10127 tokens=844/55 finish=STOP
+2026-10-17 15:09:26,875 - INFO - ask status=answered mode=llm filters={} top1=0.6061 latency_ms=10879 q='What is the total amount due?'
+2026-10-17 15:16:39,740 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-17 15:16:39,741 - INFO - No device provided, using cpu
+2026-10-17 15:16:39,749 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-17 15:16:43,287 - INFO - RAG service ready (embedding model loaded, index opened, answer_mode=llm)
+2026-10-17 15:18:43,815 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-17 15:18:47,880 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-17 15:18:47,942 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=4250 tokens=790/36 finish=STOP
+2026-10-17 15:18:47,942 - INFO - ask status=no_relevant_context mode=llm filters={} top1=0.5815 latency_ms=4665 q='متى سيكون موعد تسليم المشروع؟'
+2026-10-17 15:20:01,621 - INFO - ask status=no_relevant_context mode=None filters={} top1=0.605 latency_ms=80 q='متى سيكون موعد المقابلات؟'
+2026-10-17 15:20:51,658 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-17 15:21:03,044 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-17 15:21:03,052 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=11395 tokens=844/71 finish=STOP
+2026-10-17 15:21:03,057 - INFO - ask status=answered mode=llm filters={} top1=0.6061 latency_ms=11470 q='What is the total amount due?'
+2026-10-17 15:21:27,011 - INFO - ask status=no_relevant_context mode=None filters={} top1=0.3796 latency_ms=102 q='What is the main task?'
+2026-10-17 15:21:33,722 - INFO - ask status=no_relevant_context mode=None filters={} top1=0.3796 latency_ms=72 q='What is the main task?'
+2026-10-17 15:22:13,623 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-17 15:22:17,202 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-17 15:22:17,209 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=3586 tokens=851/57 finish=STOP
+2026-10-17 15:22:17,211 - INFO - ask status=answered mode=llm filters={} top1=0.6603 latency_ms=3700 q='ما هو الحد الأقصى للميزانية الشهرية لمشروع Beta؟'
+2026-10-17 15:22:58,743 - INFO - ask status=no_relevant_context mode=None filters={} top1=0.4133 latency_ms=81 q='كل كم يوم يجب تغيير كلمات المرور؟؟'
+2026-10-17 15:23:20,870 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-17 15:23:26,909 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-17 15:23:26,925 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=6052 tokens=798/34 finish=STOP
+2026-10-17 15:23:26,926 - INFO - ask status=answered mode=llm filters={} top1=0.4885 latency_ms=6116 q='كل كم يوم يجب تغيير كلمات المرور؟'
+2026-10-17 15:23:41,331 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-17 15:23:46,677 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-17 15:23:46,684 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=5356 tokens=839/37 finish=STOP
+2026-10-17 15:23:46,684 - INFO - ask status=answered mode=llm filters={} top1=0.4806 latency_ms=5421 q='؟كل كم يوم يجب تغيير كلمات المرور؟'
+2026-10-17 15:24:32,188 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-17 15:24:37,775 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-17 15:24:37,781 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=5596 tokens=850/44 finish=STOP
+2026-10-17 15:24:37,781 - INFO - ask status=answered mode=llm filters={} top1=0.6052 latency_ms=5694 q='كم ساعة مقدرة لبناء واجهة الدردشة؟'
+2026-10-17 15:25:08,996 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-17 15:25:25,096 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-17 15:25:25,285 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=16289 tokens=861/38 finish=STOP
+2026-10-17 15:25:25,288 - INFO - ask status=answered mode=llm filters={} top1=0.5984 latency_ms=16361 q='When are the interviews held?'
+2026-10-17 15:26:16,997 - INFO - ask status=no_relevant_context mode=None filters={} top1=0.605 latency_ms=68 q='متى سيكون موعد المقابلات؟'
+2026-10-17 15:26:22,309 - INFO - ask status=no_relevant_context mode=None filters={} top1=0.605 latency_ms=64 q='متى سيكون موعد المقابلات؟'
+2026-10-17 15:26:38,217 - INFO - ask status=no_relevant_context mode=None filters={} top1=0.6466 latency_ms=69 q='متى سيتم اجراء المقابلات؟'
+2026-10-17 15:26:41,867 - INFO - ask status=no_relevant_context mode=None filters={} top1=0.6466 latency_ms=66 q='متى سيتم اجراء المقابلات؟'
+2026-10-17 15:36:16,048 - INFO - ask status=no_relevant_context mode=None filters={} top1=0.6461 latency_ms=79 q='متى سيتم إجراء المقابلة؟'
+2026-10-17 15:37:09,276 - INFO - ask status=no_relevant_context mode=None filters={} top1=0.6395 latency_ms=65 q='متى سيتم إجراء المقابلات؟'
+2026-10-17 15:39:05,795 - INFO - ask status=no_relevant_context mode=None filters={} top1=0.6395 latency_ms=42 q='متى سيتم إجراء المقابلات؟'
+2026-10-17 15:39:09,584 - INFO - ask status=no_relevant_context mode=None filters={} top1=0.6395 latency_ms=29 q='متى سيتم إجراء المقابلات؟'
+2026-10-17 15:40:35,694 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-17 15:40:35,694 - INFO - No device provided, using cpu
+2026-10-17 15:40:35,713 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-17 15:40:39,648 - INFO - RAG service ready (embedding model loaded, index opened, answer_mode=llm)
+2026-10-17 15:42:35,551 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-17 15:42:56,309 - WARNING - llm error attempt=1 model=gemini-3.8-flash type=LLMTimeoutError retryable=True msg=Request timed out: ReadTimeout
+2026-10-17 15:42:57,536 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-17 15:43:05,783 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-17 15:43:05,831 - INFO - llm ok attempt=2 model=gemini-3.8-flash latency_ms=8295 tokens=864/40 finish=STOP
+2026-10-17 15:43:05,832 - INFO - ask status=answered mode=llm filters={} top1=0.6395 latency_ms=30588 q='متى سيتم إجراء المقابلات؟'
+2026-10-17 15:43:51,184 - INFO - ask status=no_relevant_context mode=None filters={} top1=0.1333 latency_ms=28 q='من هو سانت ألتمان؟'
+2026-10-17 15:44:09,630 - INFO - ask status=no_relevant_context mode=None filters={} top1=0.0789 latency_ms=32 q='ِ Are you crazy man?'
+2026-10-17 15:44:41,250 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-17 15:44:45,409 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-17 15:44:45,609 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=4365 tokens=867/44 finish=STOP
+2026-10-17 15:44:45,609 - INFO - ask status=answered mode=llm filters={} top1=0.608 latency_ms=4396 q='متى يجب إرسال التقرير المختصر عن الوظيفة?'
+2026-10-17 16:24:58,086 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-17 16:24:58,086 - INFO - No device provided, using cpu
+2026-10-17 16:24:58,098 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-17 16:25:01,413 - INFO - RAG service ready (embedding model loaded, index opened, answer_mode=llm)
+2026-10-17 16:25:07,658 - INFO - ask status=no_relevant_context mode=None filters={} top1=0.6477 latency_ms=171 q='متى يكون موعد اجراء المقابلات ؟'
+2026-10-17 16:25:32,160 - INFO - ask status=no_relevant_context mode=None filters={} top1=0.6165 latency_ms=41 q='متى يكون موعد اجراء المقابلات؟'
+2026-10-17 16:25:35,832 - INFO - ask status=no_relevant_context mode=None filters={} top1=0.6165 latency_ms=35 q='متى يكون موعد اجراء المقابلات؟'
+2026-10-17 16:28:02,136 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-17 16:28:02,138 - INFO - No device provided, using cpu
+2026-10-17 16:28:02,145 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-17 16:28:06,626 - INFO - RAG service ready (embedding model loaded, index opened, answer_mode=llm)
+2026-10-19 23:25:32,468 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-19 23:25:32,468 - INFO - No device provided, using cpu
+2026-10-19 23:25:33,347 - INFO - HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-10-19 23:25:33,347 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-19 23:25:36,866 - INFO - RAG service ready (embedding model loaded, index opened, answer_mode=llm)
+2026-10-19 23:28:19,040 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-19 23:28:26,723 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-19 23:28:26,757 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=7765 tokens=788/33 finish=STOP
+2026-10-19 23:28:26,757 - INFO - ask status=no_relevant_context mode=llm filters={} top1=0.7125 latency_ms=7997 q='Who is the Chief Technology Officer of CloudTech Solutions?'
+2026-10-19 23:30:05,018 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-19 23:30:24,738 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 504 Gateway Timeout"
+2026-10-19 23:30:24,797 - WARNING - llm error attempt=1 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-19 23:30:26,140 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-19 23:30:45,238 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 504 Gateway Timeout"
+2026-10-19 23:30:45,238 - WARNING - llm error attempt=2 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-19 23:30:45,238 - WARNING - llm giving up: waiting 2.7s would exceed the 40.0s budget
+2026-10-19 23:30:45,238 - WARNING - llm fallback to extractive answer: LLMServerError: Gemini server error (504): Deadline expired before operation could complete.
+2026-10-19 23:30:45,238 - INFO - ask status=answered mode=extractive_fallback filters={} top1=0.4684 latency_ms=40275 q='كم راتب المدرب في المنصة؟'
+2026-10-19 23:32:29,571 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-19 23:32:48,504 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 504 Gateway Timeout"
+2026-10-19 23:32:48,504 - WARNING - llm error attempt=1 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-19 23:32:49,132 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-19 23:33:07,810 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 504 Gateway Timeout"
+2026-10-19 23:33:07,810 - WARNING - llm error attempt=2 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-19 23:33:07,810 - WARNING - llm giving up: waiting 2.8s would exceed the 40.0s budget
+2026-10-19 23:33:07,810 - WARNING - llm fallback to extractive answer: LLMServerError: Gemini server error (504): Deadline expired before operation could complete.
+2026-10-19 23:33:07,810 - INFO - ask status=answered mode=extractive_fallback filters={} top1=0.6243 latency_ms=38272 q='متى موعد إجراء المقابلات؟'
+2026-10-19 23:34:13,550 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-19 23:34:34,202 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 504 Gateway Timeout"
+2026-10-19 23:34:34,202 - WARNING - llm error attempt=1 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-19 23:34:34,807 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-19 23:34:53,940 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 504 Gateway Timeout"
+2026-10-19 23:34:54,118 - WARNING - llm error attempt=2 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-19 23:34:54,118 - WARNING - llm giving up: waiting 2.2s would exceed the 40.0s budget
+2026-10-19 23:34:54,120 - WARNING - llm fallback to extractive answer: LLMServerError: Gemini server error (504): Deadline expired before operation could complete.
+2026-10-19 23:34:54,120 - INFO - ask status=answered mode=extractive_fallback filters={} top1=0.537 latency_ms=40619 q='What does the payload specification say about the Reply-To header?'
+2026-10-20 11:22:39,382 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-20 11:22:39,382 - INFO - No device provided, using cpu
+2026-10-20 11:22:39,392 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-20 11:22:41,842 - INFO - RAG service ready (embedding model loaded, index opened, answer_mode=llm)
+2026-10-20 11:24:51,587 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 11:24:56,154 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-10-20 11:24:56,636 - WARNING - llm error attempt=1 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-20 11:24:57,978 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 11:25:17,067 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 504 Gateway Timeout"
+2026-10-20 11:25:17,374 - WARNING - llm error attempt=2 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 11:25:19,148 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 11:25:38,373 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 504 Gateway Timeout"
+2026-10-20 11:25:38,774 - WARNING - llm error attempt=3 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 11:25:38,775 - WARNING - llm fallback to extractive answer: LLMServerError: Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 11:25:38,776 - INFO - ask status=answered mode=extractive_fallback filters={} top1=0.7125 latency_ms=47512 q='Who is the Chief Technology Officer of CloudTech Solutions?'
+2026-10-20 11:28:57,897 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-20 11:28:57,899 - INFO - No device provided, using cpu
+2026-10-20 11:28:57,906 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-20 11:29:01,585 - INFO - RAG service ready (embedding model loaded, index opened, answer_mode=llm)
+2026-10-20 11:29:20,939 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-20 11:29:20,942 - INFO - No device provided, using cpu
+2026-10-20 11:29:20,954 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-20 11:29:24,650 - INFO - RAG service ready (embedding model loaded, index opened, answer_mode=llm)
+2026-10-20 11:29:39,876 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 11:29:47,318 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-20 11:29:47,602 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=7755 tokens=788/33 finish=STOP
+2026-10-20 11:29:47,603 - INFO - ask status=no_relevant_context mode=llm filters={} top1=0.7125 latency_ms=7932 q='Who is the Chief Technology Officer of CloudTech Solutions?'
+2026-10-20 11:36:48,691 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 11:37:09,293 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 504 Gateway Timeout"
+2026-10-20 11:37:09,585 - WARNING - llm error attempt=1 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 11:37:10,576 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 11:37:29,544 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 504 Gateway Timeout"
+2026-10-20 11:37:29,831 - WARNING - llm error attempt=2 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 11:37:29,832 - WARNING - llm giving up: waiting 1.5s would exceed the 40.0s budget
+2026-10-20 11:37:29,833 - WARNING - llm fallback to extractive answer: LLMServerError: Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 11:37:29,835 - INFO - ask status=answered mode=extractive_fallback filters={} top1=0.4684 latency_ms=41178 q='كم راتب المدرب في المنصة؟'
+2026-10-20 11:37:53,697 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 11:38:14,229 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 504 Gateway Timeout"
+2026-10-20 11:38:14,499 - WARNING - llm error attempt=1 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 11:38:15,161 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 11:38:15,914 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-10-20 11:38:16,205 - WARNING - llm error attempt=2 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-20 11:38:21,160 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 11:38:22,077 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-10-20 11:38:22,491 - WARNING - llm error attempt=3 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-20 11:38:22,492 - WARNING - llm fallback to extractive answer: LLMServerError: Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-20 11:38:22,492 - INFO - ask status=answered mode=extractive_fallback filters={} top1=0.4684 latency_ms=28822 q='كم راتب المدرب في المنصة؟'
+2026-10-20 11:39:17,628 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 11:39:37,840 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 504 Gateway Timeout"
+2026-10-20 11:39:38,157 - WARNING - llm error attempt=1 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 11:39:39,541 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 11:39:58,827 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 504 Gateway Timeout"
+2026-10-20 11:39:58,830 - WARNING - llm error attempt=2 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 11:39:58,831 - WARNING - llm giving up: waiting 2.3s would exceed the 40.0s budget
+2026-10-20 11:39:58,832 - WARNING - llm fallback to extractive answer: LLMServerError: Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 11:39:58,832 - INFO - ask status=answered mode=extractive_fallback filters={} top1=0.4684 latency_ms=41240 q='كم راتب المدرب في المنصة؟'
+2026-10-20 11:42:20,754 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 11:42:23,054 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-10-20 11:42:23,346 - WARNING - llm error attempt=1 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-20 11:42:26,755 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 11:42:27,745 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-10-20 11:42:28,101 - WARNING - llm error attempt=2 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-20 11:42:32,748 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 11:42:33,650 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-10-20 11:42:33,938 - WARNING - llm error attempt=3 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-20 11:42:33,938 - WARNING - llm fallback to extractive answer: LLMServerError: Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-20 11:42:33,938 - INFO - ask status=answered mode=extractive_fallback filters={} top1=0.4684 latency_ms=13224 q='كم راتب المدرب في المنصة؟'
+2026-10-20 12:09:13,189 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 12:09:28,545 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-20 12:09:28,798 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=15613 tokens=841/36 finish=STOP
+2026-10-20 12:09:28,798 - INFO - ask status=no_relevant_context mode=llm filters={} top1=0.4684 latency_ms=15656 q='كم راتب المدرب في المنصة؟'
+2026-10-20 12:10:37,943 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 12:10:57,798 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 504 Gateway Timeout"
+2026-10-20 12:10:58,076 - WARNING - llm error attempt=1 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 12:10:59,216 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 12:11:18,293 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 504 Gateway Timeout"
+2026-10-20 12:11:18,575 - WARNING - llm error attempt=2 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 12:11:18,577 - WARNING - llm giving up: waiting 1.4s would exceed the 40.0s budget
+2026-10-20 12:11:18,577 - WARNING - llm fallback to extractive answer: LLMServerError: Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 12:11:18,577 - INFO - ask status=answered mode=extractive_fallback filters={} top1=0.6197 latency_ms=40696 q='متى موعد اجراء المقابلات؟'
+2026-10-20 13:14:46,511 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-20 13:14:46,513 - INFO - No device provided, using cpu
+2026-10-20 13:14:46,529 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-20 13:14:51,538 - INFO - RAG service ready (embedding model loaded, index opened, answer_mode=llm)
+2026-10-20 13:16:41,756 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 13:17:08,305 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 504 Gateway Timeout"
+2026-10-20 13:17:08,791 - WARNING - llm error attempt=1 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 13:17:09,912 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 13:17:29,739 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 504 Gateway Timeout"
+2026-10-20 13:17:29,930 - WARNING - llm error attempt=2 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 13:17:29,930 - WARNING - llm giving up: waiting 1.8s would exceed the 40.0s budget
+2026-10-20 13:17:29,930 - WARNING - llm fallback to extractive answer: LLMServerError: Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 13:17:29,939 - INFO - ask status=answered mode=extractive_fallback filters={} top1=0.6197 latency_ms=48977 q='متى موعد اجراء المقابلات؟'
+2026-10-20 13:24:27,783 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 13:24:31,533 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-20 13:24:31,783 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=3995 tokens=841/36 finish=STOP
+2026-10-20 13:24:31,783 - INFO - ask status=no_relevant_context mode=llm filters={} top1=0.4684 latency_ms=4151 q='كم راتب المدرب في المنصة؟'
+2026-10-20 13:36:15,280 - INFO - ask status=no_relevant_context mode=None filters={} top1=0.6152 latency_ms=398 q='ماهو موعد اجراء المقابلات؟'
+2026-10-20 13:36:39,508 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 13:36:43,465 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-20 13:36:43,474 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=3984 tokens=845/40 finish=STOP
+2026-10-20 13:36:43,493 - INFO - ask status=answered mode=llm filters={} top1=0.6197 latency_ms=4029 q='متى موعد اجراء المقابلات؟'
+2026-10-20 13:40:58,385 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 13:41:20,249 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 504 Gateway Timeout"
+2026-10-20 13:41:20,464 - WARNING - llm error attempt=1 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 13:41:21,697 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 13:41:22,173 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-10-20 13:41:22,382 - WARNING - llm error attempt=2 model=gemini-3.8-flash type=LLMRateLimitError retryable=True msg=Rate limit / quota exceeded (429): You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-
+2026-10-20 13:41:27,712 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 13:41:28,582 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-10-20 13:41:28,584 - WARNING - llm error attempt=3 model=gemini-3.8-flash type=LLMRateLimitError retryable=True msg=Rate limit / quota exceeded (429): You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-
+2026-10-20 13:41:28,584 - WARNING - llm fallback to extractive answer: LLMRateLimitError: Rate limit / quota exceeded (429): You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.
+2026-10-20 13:41:28,586 - INFO - ask status=answered mode=extractive_fallback filters={} top1=0.537 latency_ms=30345 q='What does the payload specification say about the Reply-To header?'
+2026-10-20 13:48:34,480 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-20 13:48:34,480 - INFO - No device provided, using cpu
+2026-10-20 13:48:34,480 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-20 13:48:37,482 - INFO - RAG service ready (embedding model loaded, index opened, answer_mode=llm)
+2026-10-20 13:49:09,299 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 13:49:11,856 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-10-20 13:49:11,861 - WARNING - llm error attempt=1 model=gemini-3.8-flash type=LLMRateLimitError retryable=True msg=Rate limit / quota exceeded (429): You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-
+2026-10-20 13:49:15,240 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 13:49:16,330 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-10-20 13:49:16,531 - WARNING - llm error attempt=2 model=gemini-3.8-flash type=LLMRateLimitError retryable=True msg=Rate limit / quota exceeded (429): You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-
+2026-10-20 13:49:21,228 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 13:49:22,415 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-10-20 13:49:22,779 - WARNING - llm error attempt=3 model=gemini-3.8-flash type=LLMRateLimitError retryable=True msg=Rate limit / quota exceeded (429): You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-
+2026-10-20 13:49:22,781 - WARNING - llm fallback to extractive answer: LLMRateLimitError: Rate limit / quota exceeded (429): You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.
+2026-10-20 13:49:22,781 - INFO - ask status=answered mode=extractive_fallback filters={} top1=0.6197 latency_ms=13885 q='متى موعد اجراء المقابلات؟'
+2026-10-20 13:53:46,644 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-20 13:53:46,644 - INFO - No device provided, using cpu
+2026-10-20 13:53:46,662 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-20 13:53:50,470 - INFO - RAG service ready (embedding model loaded, index opened, answer_mode=llm)
+2026-10-20 13:54:27,010 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 13:54:38,793 - WARNING - llm error attempt=1 model=gemini-3.8-flash type=LLMConnectionError retryable=True msg=Network error: ConnectError: [Errno 11001] getaddrinfo failed
+2026-10-20 13:54:39,576 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 13:54:51,242 - WARNING - llm error attempt=2 model=gemini-3.8-flash type=LLMConnectionError retryable=True msg=Network error: ConnectError: [Errno 11001] getaddrinfo failed
+2026-10-20 13:54:53,102 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 13:55:04,776 - WARNING - llm error attempt=3 model=gemini-3.8-flash type=LLMConnectionError retryable=True msg=Network error: ConnectError: [Errno 11001] getaddrinfo failed
+2026-10-20 13:55:04,776 - WARNING - llm fallback to extractive answer: LLMConnectionError: Network error: ConnectError: [Errno 11001] getaddrinfo failed
+2026-10-20 13:55:04,776 - INFO - ask status=answered mode=extractive_fallback filters={} top1=0.6061 latency_ms=38147 q='What is the total amount due?'
+2026-10-20 21:14:11,679 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-20 21:14:11,679 - INFO - No device provided, using cpu
+2026-10-20 21:14:11,679 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-20 21:14:14,416 - INFO - RAG service ready (embedding model loaded, index opened, answer_mode=llm)
+2026-10-20 21:17:01,559 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 21:17:04,576 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent "HTTP/1.1 404 Not Found"
+2026-10-20 21:17:04,893 - WARNING - llm error attempt=1 model=gemini-1.5-flash type=LLMConfigError retryable=False msg=Model not found (404). Check GEMINI_MODEL in .env: models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of
+2026-10-20 21:17:04,893 - WARNING - llm fallback to extractive answer: LLMConfigError: Model not found (404). Check GEMINI_MODEL in .env: models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+2026-10-20 21:17:04,893 - INFO - ask status=answered mode=extractive_fallback filters={} top1=0.6061 latency_ms=3689 q='What is the total amount due?'
+2026-10-20 21:19:13,509 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 21:19:14,206 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent "HTTP/1.1 404 Not Found"
+2026-10-20 21:19:14,325 - WARNING - llm error attempt=1 model=gemini-1.5-flash type=LLMConfigError retryable=False msg=Model not found (404). Check GEMINI_MODEL in .env: models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of
+2026-10-20 21:19:14,325 - WARNING - llm fallback to extractive answer: LLMConfigError: Model not found (404). Check GEMINI_MODEL in .env: models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+2026-10-20 21:19:14,326 - INFO - ask status=answered mode=extractive_fallback filters={} top1=0.6061 latency_ms=844 q='What is the total amount due?'
+2026-10-20 21:19:42,183 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 21:19:42,774 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent "HTTP/1.1 404 Not Found"
+2026-10-20 21:19:42,774 - WARNING - llm error attempt=1 model=gemini-1.5-flash type=LLMConfigError retryable=False msg=Model not found (404). Check GEMINI_MODEL in .env: models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of
+2026-10-20 21:19:42,774 - WARNING - llm fallback to extractive answer: LLMConfigError: Model not found (404). Check GEMINI_MODEL in .env: models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+2026-10-20 21:19:42,774 - INFO - ask status=answered mode=extractive_fallback filters={} top1=0.6061 latency_ms=620 q='What is the total amount due?'
+2026-10-20 21:20:18,873 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-20 21:20:18,873 - INFO - No device provided, using cpu
+2026-10-20 21:20:18,876 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-20 21:20:21,118 - INFO - RAG service ready (embedding model loaded, index opened, answer_mode=llm)
+2026-10-20 21:20:33,024 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 21:20:39,515 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-10-20 21:20:39,679 - WARNING - llm error attempt=1 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-20 21:20:40,985 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 21:20:48,975 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-10-20 21:20:48,975 - WARNING - llm error attempt=2 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-20 21:20:51,544 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 21:21:26,973 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-20 21:21:27,033 - INFO - llm ok attempt=3 model=gemini-3.5-flash latency_ms=35490 tokens=844/75 finish=STOP
+2026-10-20 21:21:27,033 - INFO - ask status=answered mode=llm filters={} top1=0.6061 latency_ms=54201 q='What is the total amount due?'
+2026-10-20 21:23:13,772 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 21:23:17,404 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-20 21:23:17,405 - INFO - llm ok attempt=1 model=gemini-3.5-flash latency_ms=3640 tokens=788/28 finish=STOP
+2026-10-20 21:23:17,405 - INFO - ask status=no_relevant_context mode=llm filters={} top1=0.7125 latency_ms=3672 q='Who is the Chief Technology Officer of CloudTech Solutions?'
+2026-10-20 21:24:40,727 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 21:24:46,606 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-10-20 21:24:47,537 - WARNING - llm error attempt=1 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-20 21:24:48,633 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 21:24:59,270 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-20 21:24:59,270 - INFO - llm ok attempt=2 model=gemini-3.5-flash latency_ms=10643 tokens=845/40 finish=STOP
+2026-10-20 21:24:59,270 - INFO - ask status=answered mode=llm filters={} top1=0.6197 latency_ms=18578 q='متى موعد اجراء المقابلات؟'
+2026-10-20 21:26:15,535 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-20 21:26:21,886 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-20 21:26:21,886 - INFO - llm ok attempt=1 model=gemini-3.5-flash latency_ms=6363 tokens=855/39 finish=STOP
+2026-10-20 21:26:21,886 - INFO - ask status=answered mode=llm filters={} top1=0.537 latency_ms=6402 q='What does the payload specification say about the Reply-To header?'
+2026-10-20 22:45:43,756 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-20 22:45:43,759 - INFO - No device provided, using cpu
+2026-10-20 22:45:43,766 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-20 22:45:47,517 - INFO - RAG service ready (embedding model loaded, index opened, answer_mode=llm)
+2026-10-20 22:48:39,198 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-20 22:48:39,202 - INFO - No device provided, using cpu
+2026-10-20 22:48:39,211 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-20 22:48:42,963 - INFO - RAG service ready (embedding model loaded, index opened, answer_mode=llm)
+2026-10-20 22:49:21,502 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-20 22:49:21,504 - INFO - No device provided, using cpu
+2026-10-20 22:49:21,516 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-20 22:49:25,616 - INFO - RAG service ready (embedding model loaded, index opened, answer_mode=llm)
+2026-10-20 22:49:46,820 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-20 22:49:46,820 - INFO - No device provided, using cpu
+2026-10-20 22:49:46,839 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-20 22:49:50,814 - INFO - RAG service ready (embedding model loaded, index opened, answer_mode=llm)
+2026-10-20 22:50:12,256 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-20 22:50:12,258 - INFO - No device provided, using cpu
+2026-10-20 22:50:12,267 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-20 22:50:34,212 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-20 22:50:34,215 - INFO - No device provided, using cpu
+2026-10-20 22:50:34,226 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-20 22:50:55,649 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-20 22:50:55,652 - INFO - No device provided, using cpu
+2026-10-20 22:50:55,659 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-20 22:51:15,709 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-20 22:51:15,710 - INFO - No device provided, using cpu
+2026-10-20 22:51:15,710 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-20 22:51:47,224 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-20 22:51:47,225 - INFO - No device provided, using cpu
+2026-10-20 22:51:47,234 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-20 22:52:23,646 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-20 22:52:23,648 - INFO - No device provided, using cpu
+2026-10-20 22:52:23,656 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-20 22:52:27,721 - INFO - RAG service ready (embedding model loaded, index opened, answer_mode=llm)
+2026-10-20 22:53:05,610 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-20 22:53:05,612 - INFO - No device provided, using cpu
+2026-10-20 22:53:05,618 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-20 22:53:09,171 - INFO - RAG service ready (embedding model loaded, index opened, answer_mode=llm)
+2026-10-20 22:55:29,136 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-20 22:55:29,150 - INFO - No device provided, using cpu
+2026-10-20 22:55:29,175 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-20 22:55:35,116 - INFO - RAG service ready (embedding model loaded, index opened, answer_mode=llm)
+2026-10-20 22:56:19,689 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-20 22:56:19,694 - INFO - No device provided, using cpu
+2026-10-20 22:56:19,705 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-20 22:56:27,493 - INFO - RAG service ready (embedding model loaded, index opened, answer_mode=llm)
+2026-10-24 23:21:51,115 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-24 23:21:51,227 - INFO - No device provided, using cpu
+2026-10-24 23:21:51,252 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-24 23:22:04,472 - INFO - RAG service ready (embedding model loaded, index opened, answer_mode=llm)
+2026-10-24 23:22:51,811 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-24 23:22:53,604 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent "HTTP/1.1 400 Bad Request"
+2026-10-24 23:22:54,017 - WARNING - llm error attempt=1 model=gemini-3.5-flash-lite type=LLMAuthError retryable=False msg=Gemini rejected the API key or permissions (400): API key not valid. Please pass a valid API key.
+2026-10-24 23:22:54,020 - WARNING - llm fallback to extractive answer: LLMAuthError: Gemini rejected the API key or permissions (400): API key not valid. Please pass a valid API key.
+2026-10-24 23:22:54,020 - INFO - ask status=no_relevant_context mode=extractive_fallback filters={} top1=0.4684 latency_ms=2742 q='كم راتب المدرب في المنصة؟'
+2026-10-24 23:23:41,244 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-24 23:23:44,689 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent "HTTP/1.1 400 Bad Request"
+2026-10-24 23:23:44,697 - WARNING - llm error attempt=1 model=gemini-3.5-flash-lite type=LLMAuthError retryable=False msg=Gemini rejected the API key or permissions (400): API key not valid. Please pass a valid API key.
+2026-10-24 23:23:44,697 - WARNING - llm fallback to extractive answer: LLMAuthError: Gemini rejected the API key or permissions (400): API key not valid. Please pass a valid API key.
+2026-10-24 23:23:44,697 - INFO - ask status=answered mode=extractive_fallback filters={} top1=0.6061 latency_ms=3524 q='What is the total amount due?'
+2026-10-27 10:18:05,445 - INFO - Loading embedding model 'paraphrase-multilingual-MiniLM-L12-v2' from the local cache
+2026-10-27 10:18:05,445 - INFO - No device provided, using cpu
+2026-10-27 10:18:08,200 - INFO - HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-10-27 10:18:08,492 - INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-27 10:18:16,995 - INFO - RAG service ready (embedding model loaded, index opened, answer_mode=llm)
+2026-10-27 10:19:39,057 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-27 10:19:42,544 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-10-27 10:19:42,908 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=3895 tokens in/out/thinking=2564/346/None finish=STOP
+2026-10-27 10:23:26,072 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-27 10:24:14,621 - WARNING - llm error attempt=1 model=gemini-3.5-flash-lite type=LLMTimeoutError retryable=True msg=Request timed out: ConnectTimeout
+2026-10-27 10:24:16,111 - INFO - AFC is enabled with max remote calls: 10.
+2026-10-27 10:24:36,204 - WARNING - llm error attempt=2 model=gemini-3.5-flash-lite type=LLMConnectionError retryable=True msg=Network error: RemoteProtocolError: Server disconnected without sending a response.

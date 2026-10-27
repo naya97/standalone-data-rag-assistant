@@ -13,6 +13,7 @@ from src.rag.week8.embedder import EmbedderError
 from src.rag.week8.rag_service import RagService
 from src.rag.week8.retriever import IndexStaleError, InvalidFilterError
 from src.rag.week8.vector_store import IndexNotBuiltError, VectorStoreError
+from src.rag.week9.llm_generator import build_answer_generator  # Week 9
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/rag", tags=["rag"])
@@ -72,6 +73,20 @@ class Answerability(BaseModel):
     signals: dict[str, Any]
 
 
+class Generation(BaseModel):
+    """Week 9: how the answer was produced."""
+    mode: str  # "llm" | "extractive" | "extractive_fallback"
+    fallback_reason: Optional[str] = None  # why the LLM answer was not used (mode = extractive_fallback)
+    model: Optional[str] = None
+    prompt_version: Optional[str] = None
+    attempts: Optional[int] = None  # HTTP attempts, retries of transient errors included
+    repairs: Optional[int] = None   # times the model was asked to correct a rejected answer
+    input_tokens: Optional[int] = None
+    output_tokens: Optional[int] = None
+    thinking_tokens: Optional[int] = None  # hidden reasoning tokens, not included in output_tokens
+    model_latency_ms: Optional[int] = None  # time spent waiting for the model (retries included)
+
+
 class AskResponse(BaseModel):
     status: Literal["answered", "no_relevant_context", "no_documents_match_filter"]
     answer: str
@@ -82,14 +97,17 @@ class AskResponse(BaseModel):
     prompt: Optional[str] = None
     retrieved: Optional[list[Citation]] = None
     latency_ms: int
+    generation: Optional[Generation] = None  # Week 9
 
 
 # ----------------------------------------------------------------------------------------------- lifecycle
 def _init_service(app: FastAPI) -> None:
     try:
-        app.state.rag_service = RagService.from_config(get_config(), warm_up=True)
+        config = get_config()
+        generator = build_answer_generator(config)  # Week 9: LLM (extractive fallback) or extractive only
+        app.state.rag_service = RagService.from_config(config, generator=generator, warm_up=True)
         app.state.rag_error = None
-        logger.info("RAG service ready (embedding model loaded, index opened)")
+        logger.info("RAG service ready (embedding model loaded, index opened, answer_mode=%s)", config.answer_mode)
     except (VectorStoreError, EmbedderError, ValueError) as exc:  # ValueError: invalid configuration
         app.state.rag_service = None
         app.state.rag_error = f"{type(exc).__name__}: {exc}"

@@ -1,0 +1,204 @@
+2026-10-17 14:55:15,096 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=10081 tokens=13/1 finish=STOP
+2026-10-17 15:09:26,875 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=10127 tokens=844/55 finish=STOP
+2026-10-17 15:18:47,942 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=4250 tokens=790/36 finish=STOP
+2026-10-17 15:21:03,052 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=11395 tokens=844/71 finish=STOP
+2026-10-17 15:22:17,209 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=3586 tokens=851/57 finish=STOP
+2026-10-17 15:23:26,925 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=6052 tokens=798/34 finish=STOP
+2026-10-17 15:23:46,684 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=5356 tokens=839/37 finish=STOP
+2026-10-17 15:24:37,781 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=5596 tokens=850/44 finish=STOP
+2026-10-17 15:25:25,285 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=16289 tokens=861/38 finish=STOP
+2026-10-17 15:42:56,309 - WARNING - llm error attempt=1 model=gemini-3.8-flash type=LLMTimeoutError retryable=True msg=Request timed out: ReadTimeout
+2026-10-17 15:43:05,831 - INFO - llm ok attempt=2 model=gemini-3.8-flash latency_ms=8295 tokens=864/40 finish=STOP
+2026-10-17 15:44:45,609 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=4365 tokens=867/44 finish=STOP
+2026-10-19 23:28:26,757 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=7765 tokens=788/33 finish=STOP
+2026-10-19 23:30:24,797 - WARNING - llm error attempt=1 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-19 23:30:45,238 - WARNING - llm error attempt=2 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-19 23:30:45,238 - WARNING - llm giving up: waiting 2.7s would exceed the 40.0s budget
+2026-10-19 23:32:48,504 - WARNING - llm error attempt=1 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-19 23:33:07,810 - WARNING - llm error attempt=2 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-19 23:33:07,810 - WARNING - llm giving up: waiting 2.8s would exceed the 40.0s budget
+2026-10-19 23:34:34,202 - WARNING - llm error attempt=1 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-19 23:34:54,118 - WARNING - llm error attempt=2 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-19 23:34:54,118 - WARNING - llm giving up: waiting 2.2s would exceed the 40.0s budget
+2026-10-20 11:24:56,636 - WARNING - llm error attempt=1 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-20 11:25:17,374 - WARNING - llm error attempt=2 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 11:25:38,774 - WARNING - llm error attempt=3 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 11:29:47,602 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=7755 tokens=788/33 finish=STOP
+2026-10-20 11:37:09,585 - WARNING - llm error attempt=1 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 11:37:29,831 - WARNING - llm error attempt=2 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 11:37:29,832 - WARNING - llm giving up: waiting 1.5s would exceed the 40.0s budget
+2026-10-20 11:38:14,499 - WARNING - llm error attempt=1 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 11:38:16,205 - WARNING - llm error attempt=2 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-20 11:38:22,491 - WARNING - llm error attempt=3 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-20 11:39:38,157 - WARNING - llm error attempt=1 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 11:39:58,830 - WARNING - llm error attempt=2 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 11:39:58,831 - WARNING - llm giving up: waiting 2.3s would exceed the 40.0s budget
+2026-10-20 11:42:23,346 - WARNING - llm error attempt=1 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-20 11:42:28,101 - WARNING - llm error attempt=2 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-20 11:42:33,938 - WARNING - llm error attempt=3 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-20 12:09:28,798 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=15613 tokens=841/36 finish=STOP
+2026-10-20 12:10:58,076 - WARNING - llm error attempt=1 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 12:11:18,575 - WARNING - llm error attempt=2 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 12:11:18,577 - WARNING - llm giving up: waiting 1.4s would exceed the 40.0s budget
+2026-10-20 13:17:08,791 - WARNING - llm error attempt=1 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 13:17:29,930 - WARNING - llm error attempt=2 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 13:17:29,930 - WARNING - llm giving up: waiting 1.8s would exceed the 40.0s budget
+2026-10-20 13:24:31,783 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=3995 tokens=841/36 finish=STOP
+2026-10-20 13:36:43,474 - INFO - llm ok attempt=1 model=gemini-3.8-flash latency_ms=3984 tokens=845/40 finish=STOP
+2026-10-20 13:41:20,464 - WARNING - llm error attempt=1 model=gemini-3.8-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-20 13:41:22,382 - WARNING - llm error attempt=2 model=gemini-3.8-flash type=LLMRateLimitError retryable=True msg=Rate limit / quota exceeded (429): You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-
+2026-10-20 13:41:28,584 - WARNING - llm error attempt=3 model=gemini-3.8-flash type=LLMRateLimitError retryable=True msg=Rate limit / quota exceeded (429): You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-
+2026-10-20 13:49:11,861 - WARNING - llm error attempt=1 model=gemini-3.8-flash type=LLMRateLimitError retryable=True msg=Rate limit / quota exceeded (429): You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-
+2026-10-20 13:49:16,531 - WARNING - llm error attempt=2 model=gemini-3.8-flash type=LLMRateLimitError retryable=True msg=Rate limit / quota exceeded (429): You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-
+2026-10-20 13:49:22,779 - WARNING - llm error attempt=3 model=gemini-3.8-flash type=LLMRateLimitError retryable=True msg=Rate limit / quota exceeded (429): You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-
+2026-10-20 13:54:38,793 - WARNING - llm error attempt=1 model=gemini-3.8-flash type=LLMConnectionError retryable=True msg=Network error: ConnectError: [Errno 11001] getaddrinfo failed
+2026-10-20 13:54:51,242 - WARNING - llm error attempt=2 model=gemini-3.8-flash type=LLMConnectionError retryable=True msg=Network error: ConnectError: [Errno 11001] getaddrinfo failed
+2026-10-20 13:55:04,776 - WARNING - llm error attempt=3 model=gemini-3.8-flash type=LLMConnectionError retryable=True msg=Network error: ConnectError: [Errno 11001] getaddrinfo failed
+2026-10-20 21:17:04,893 - WARNING - llm error attempt=1 model=gemini-1.5-flash type=LLMConfigError retryable=False msg=Model not found (404). Check GEMINI_MODEL in .env: models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of
+2026-10-20 21:19:14,325 - WARNING - llm error attempt=1 model=gemini-1.5-flash type=LLMConfigError retryable=False msg=Model not found (404). Check GEMINI_MODEL in .env: models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of
+2026-10-20 21:19:42,774 - WARNING - llm error attempt=1 model=gemini-1.5-flash type=LLMConfigError retryable=False msg=Model not found (404). Check GEMINI_MODEL in .env: models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of
+2026-10-20 21:20:39,679 - WARNING - llm error attempt=1 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-20 21:20:48,975 - WARNING - llm error attempt=2 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-20 21:21:27,033 - INFO - llm ok attempt=3 model=gemini-3.5-flash latency_ms=35490 tokens=844/75 finish=STOP
+2026-10-20 21:23:17,405 - INFO - llm ok attempt=1 model=gemini-3.5-flash latency_ms=3640 tokens=788/28 finish=STOP
+2026-10-20 21:24:47,537 - WARNING - llm error attempt=1 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-20 21:24:59,270 - INFO - llm ok attempt=2 model=gemini-3.5-flash latency_ms=10643 tokens=845/40 finish=STOP
+2026-10-20 21:26:21,886 - INFO - llm ok attempt=1 model=gemini-3.5-flash latency_ms=6363 tokens=855/39 finish=STOP
+2026-10-21 23:15:35,027 - WARNING - llm error attempt=1 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-21 23:15:45,533 - WARNING - llm error attempt=2 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-21 23:15:53,429 - INFO - llm ok attempt=3 model=gemini-3.5-flash latency_ms=5898 tokens in/out/thinking=859/45/185 finish=STOP
+2026-10-21 23:15:55,270 - WARNING - llm error attempt=1 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-21 23:16:01,086 - WARNING - llm error attempt=2 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-21 23:16:25,421 - WARNING - llm error attempt=3 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-21 23:16:26,381 - WARNING - llm error attempt=1 model=gemini-3.5-flash type=LLMRateLimitError retryable=True msg=Rate limit exceeded (429): You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-3.6-flash
+Please retry in 34.604503739s.
+2026-10-21 23:17:06,670 - WARNING - llm error attempt=2 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-21 23:17:06,670 - WARNING - llm giving up: waiting 2.3s would exceed the 40.0s budget
+2026-10-21 23:17:14,335 - INFO - llm ok attempt=1 model=gemini-3.5-flash latency_ms=7643 tokens in/out/thinking=825/46/128 finish=STOP
+2026-10-21 23:17:20,355 - INFO - llm ok attempt=1 model=gemini-3.5-flash latency_ms=5993 tokens in/out/thinking=813/46/227 finish=STOP
+2026-10-21 23:17:24,760 - WARNING - llm error attempt=1 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-21 23:17:33,106 - WARNING - llm error attempt=2 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-21 23:19:57,119 - WARNING - llm error attempt=1 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-21 23:19:59,176 - WARNING - llm error attempt=2 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-21 23:20:18,083 - WARNING - llm error attempt=3 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-21 23:20:28,075 - INFO - llm ok attempt=1 model=gemini-3.5-flash latency_ms=9960 tokens in/out/thinking=870/37/195 finish=STOP
+2026-10-21 23:20:38,133 - INFO - llm ok attempt=1 model=gemini-3.5-flash latency_ms=10000 tokens in/out/thinking=906/47/283 finish=STOP
+2026-10-21 23:20:39,683 - WARNING - llm error attempt=1 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-21 23:20:45,323 - WARNING - llm error attempt=2 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-21 23:20:51,659 - WARNING - llm error attempt=3 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-21 23:20:59,484 - INFO - llm ok attempt=1 model=gemini-3.5-flash latency_ms=3319 tokens in/out/thinking=862/37/175 finish=STOP
+2026-10-21 23:21:03,133 - WARNING - llm error attempt=1 model=gemini-3.5-flash type=LLMQuotaExhaustedError retryable=False msg=Quota exhausted (429), retrying will not help: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash
+Please retry in 10h38m57.937523848s.
+2026-10-22 20:05:14,289 - WARNING - llm error attempt=1 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-22 20:05:33,832 - WARNING - llm error attempt=2 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-22 20:05:33,833 - WARNING - llm giving up: waiting 2.3s would exceed the 40.0s budget
+2026-10-22 20:05:37,275 - INFO - llm ok attempt=1 model=gemini-3.5-flash latency_ms=3031 tokens in/out/thinking=746/33/228 finish=STOP
+2026-10-22 20:05:43,296 - WARNING - llm error attempt=1 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-22 20:05:49,917 - INFO - llm ok attempt=2 model=gemini-3.5-flash latency_ms=3663 tokens in/out/thinking=869/37/201 finish=STOP
+2026-10-22 20:05:56,770 - WARNING - llm error attempt=1 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-22 20:06:04,144 - INFO - llm ok attempt=2 model=gemini-3.5-flash latency_ms=5887 tokens in/out/thinking=859/48/210 finish=STOP
+2026-10-22 20:06:11,422 - INFO - llm ok attempt=1 model=gemini-3.5-flash latency_ms=7172 tokens in/out/thinking=869/40/99 finish=STOP
+2026-10-22 20:06:15,102 - INFO - llm ok attempt=1 model=gemini-3.5-flash latency_ms=3610 tokens in/out/thinking=901/37/244 finish=STOP
+2026-10-22 20:06:21,463 - WARNING - llm error attempt=1 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-22 20:06:27,592 - WARNING - llm error attempt=2 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-22 20:06:33,228 - WARNING - llm error attempt=3 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-22 20:06:54,832 - WARNING - llm error attempt=1 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (504): Deadline expired before operation could complete.
+2026-10-22 20:06:56,571 - WARNING - llm error attempt=2 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-22 20:07:02,203 - WARNING - llm error attempt=3 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-22 20:07:08,961 - WARNING - llm error attempt=1 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-22 20:07:14,902 - WARNING - llm error attempt=2 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-22 20:07:20,843 - WARNING - llm error attempt=3 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-22 20:07:27,910 - INFO - llm ok attempt=1 model=gemini-3.5-flash latency_ms=2525 tokens in/out/thinking=787/38/202 finish=STOP
+2026-10-22 20:07:33,745 - INFO - llm ok attempt=1 model=gemini-3.5-flash latency_ms=2347 tokens in/out/thinking=823/45/148 finish=STOP
+2026-10-22 20:07:37,839 - WARNING - llm error attempt=1 model=gemini-3.5-flash type=LLMRateLimitError retryable=True msg=Rate limit exceeded (429): You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-3.6-flash
+Please retry in 23.097734766s.
+2026-10-22 20:08:03,029 - WARNING - llm error attempt=2 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-22 20:08:07,947 - WARNING - llm error attempt=3 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-22 20:08:13,475 - WARNING - llm error attempt=1 model=gemini-3.5-flash type=LLMQuotaExhaustedError retryable=False msg=Quota exhausted (429), retrying will not help: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash
+Please retry in 13h51m47.519154609s.
+2026-10-23 11:37:47,591 - WARNING - llm error attempt=1 model=gemini-2.5-flash-lite type=LLMConfigError retryable=False msg=Model not found (404). Check GEMINI_MODEL in .env: This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+2026-10-23 11:40:05,243 - WARNING - llm error attempt=1 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-23 11:40:19,554 - WARNING - llm error attempt=2 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-23 11:40:40,989 - WARNING - llm error attempt=3 model=gemini-3.5-flash type=LLMTimeoutError retryable=True msg=Request timed out: ReadTimeout
+2026-10-23 11:41:03,829 - INFO - llm ok attempt=1 model=gemini-3.5-flash latency_ms=17599 tokens in/out/thinking=899/33/270 finish=STOP
+2026-10-23 11:41:19,660 - INFO - llm ok attempt=1 model=gemini-3.5-flash latency_ms=10821 tokens in/out/thinking=865/35/237 finish=STOP
+2026-10-23 11:41:40,814 - INFO - llm ok attempt=1 model=gemini-3.5-flash latency_ms=16120 tokens in/out/thinking=814/38/212 finish=STOP
+2026-10-23 11:42:16,813 - WARNING - llm error attempt=1 model=gemini-3.5-flash type=LLMTimeoutError retryable=True msg=Request timed out: ReadTimeout
+2026-10-23 11:42:34,487 - INFO - llm ok attempt=2 model=gemini-3.5-flash latency_ms=16810 tokens in/out/thinking=813/41/240 finish=STOP
+2026-10-23 11:43:17,496 - WARNING - llm error attempt=1 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-23 11:43:27,308 - INFO - llm ok attempt=2 model=gemini-3.5-flash latency_ms=8832 tokens in/out/thinking=835/29/217 finish=STOP
+2026-10-23 11:43:36,506 - INFO - llm ok attempt=1 model=gemini-3.5-flash latency_ms=4178 tokens in/out/thinking=836/41/203 finish=STOP
+2026-10-23 11:43:46,286 - INFO - llm ok attempt=1 model=gemini-3.5-flash latency_ms=4754 tokens in/out/thinking=831/41/203 finish=STOP
+2026-10-23 11:43:55,572 - INFO - llm ok attempt=1 model=gemini-3.5-flash latency_ms=4278 tokens in/out/thinking=773/45/232 finish=STOP
+2026-10-23 11:44:10,406 - INFO - llm ok attempt=1 model=gemini-3.5-flash latency_ms=9804 tokens in/out/thinking=789/37/205 finish=STOP
+2026-10-23 11:44:25,396 - WARNING - llm error attempt=1 model=gemini-3.5-flash type=LLMServerError retryable=True msg=Gemini server error (503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+2026-10-23 11:44:30,675 - INFO - llm ok attempt=2 model=gemini-3.5-flash latency_ms=4380 tokens in/out/thinking=840/33/265 finish=STOP
+2026-10-23 11:44:51,820 - INFO - llm ok attempt=1 model=gemini-3.5-flash latency_ms=16120 tokens in/out/thinking=862/39/157 finish=STOP
+2026-10-23 11:45:16,239 - INFO - llm ok attempt=1 model=gemini-3.5-flash latency_ms=19394 tokens in/out/thinking=827/34/318 finish=STOP
+2026-10-23 11:45:41,648 - INFO - llm ok attempt=1 model=gemini-3.5-flash latency_ms=20396 tokens in/out/thinking=850/41/236 finish=STOP
+2026-10-23 11:45:54,555 - INFO - llm ok attempt=1 model=gemini-3.5-flash latency_ms=7868 tokens in/out/thinking=840/46/823 finish=STOP
+2026-10-23 11:46:27,103 - INFO - llm ok attempt=1 model=gemini-3.5-flash latency_ms=27531 tokens in/out/thinking=833/35/355 finish=STOP
+2026-10-23 11:46:59,903 - WARNING - llm error attempt=1 model=gemini-3.5-flash type=LLMTimeoutError retryable=True msg=Request timed out: ReadTimeout
+2026-10-23 11:48:02,059 - WARNING - llm error attempt=2 model=gemini-3.5-flash type=LLMQuotaExhaustedError retryable=False msg=Quota exhausted (429), retrying will not help: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash
+Please retry in 22h11m59.216983601s.
+2026-10-23 11:49:36,438 - WARNING - llm error attempt=1 model=gemini-3.5-flash type=LLMConnectionError retryable=True msg=Network error: RemoteProtocolError: Server disconnected without sending a response.
+2026-10-23 11:49:52,303 - WARNING - llm error attempt=2 model=gemini-3.5-flash type=LLMQuotaExhaustedError retryable=False msg=Quota exhausted (429), retrying will not help: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash
+Please retry in 22h10m9.607649468s.
+2026-10-23 12:04:06,875 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=2435 tokens in/out/thinking=859/56/None finish=STOP
+2026-10-23 12:04:11,579 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=1139 tokens in/out/thinking=864/50/None finish=STOP
+2026-10-23 12:04:18,553 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=2118 tokens in/out/thinking=840/33/None finish=STOP
+2026-10-23 12:04:24,576 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=2141 tokens in/out/thinking=894/48/None finish=STOP
+2026-10-23 12:04:30,713 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=2267 tokens in/out/thinking=861/48/None finish=STOP
+2026-10-23 12:04:36,537 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=2110 tokens in/out/thinking=855/50/None finish=STOP
+2026-10-23 12:04:41,735 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=1294 tokens in/out/thinking=788/33/None finish=STOP
+2026-10-23 12:04:48,358 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=1922 tokens in/out/thinking=841/36/None finish=STOP
+2026-10-23 12:04:53,416 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=970 tokens in/out/thinking=827/36/None finish=STOP
+2026-10-23 12:04:59,777 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=1336 tokens in/out/thinking=859/44/None finish=STOP
+2026-10-23 12:09:16,698 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=1925 tokens in/out/thinking=818/46/None finish=STOP
+2026-10-23 12:09:21,881 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=1117 tokens in/out/thinking=870/48/None finish=STOP
+2026-10-23 12:09:27,981 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=1214 tokens in/out/thinking=825/44/None finish=STOP
+2026-10-23 12:09:33,774 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=1004 tokens in/out/thinking=813/44/None finish=STOP
+2026-10-23 12:09:39,676 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=908 tokens in/out/thinking=906/48/None finish=STOP
+2026-10-23 12:09:45,963 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=1197 tokens in/out/thinking=746/39/None finish=STOP
+2026-10-23 12:09:51,713 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=943 tokens in/out/thinking=862/41/None finish=STOP
+2026-10-23 12:09:58,231 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=1467 tokens in/out/thinking=869/35/None finish=STOP
+2026-10-23 12:10:03,831 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=1069 tokens in/out/thinking=859/48/None finish=STOP
+2026-10-23 12:10:09,841 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=1069 tokens in/out/thinking=869/34/None finish=STOP
+2026-10-23 12:10:16,077 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=1305 tokens in/out/thinking=901/37/None finish=STOP
+2026-10-23 12:10:21,773 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=1001 tokens in/out/thinking=899/33/None finish=STOP
+2026-10-23 12:10:28,606 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=1840 tokens in/out/thinking=865/35/None finish=STOP
+2026-10-23 12:10:34,133 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=1379 tokens in/out/thinking=814/36/None finish=STOP
+2026-10-23 12:10:40,646 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=1882 tokens in/out/thinking=787/50/None finish=STOP
+2026-10-24 17:37:18,713 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=7669 tokens in/out/thinking=2358/331/None finish=STOP
+2026-10-24 17:37:27,370 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=8641 tokens in/out/thinking=2602/267/None finish=STOP
+2026-10-24 17:38:18,230 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=9041 tokens in/out/thinking=410/249/None finish=STOP
+2026-10-24 17:39:53,727 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=11278 tokens in/out/thinking=842/44/None finish=STOP
+2026-10-24 17:54:11,164 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=7706 tokens in/out/thinking=2564/346/None finish=STOP
+2026-10-24 17:55:00,845 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=21923 tokens in/out/thinking=410/188/None finish=STOP
+2026-10-24 23:06:25,503 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=3825 tokens in/out/thinking=410/240/None finish=STOP
+2026-10-24 23:06:51,803 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=5320 tokens in/out/thinking=410/186/None finish=STOP
+2026-10-24 23:17:19,125 - WARNING - llm error attempt=1 model=gemini-3.5-flash-lite type=LLMAuthError retryable=False msg=Gemini rejected the API key or permissions (400): API key not valid. Please pass a valid API key.
+2026-10-24 23:18:15,204 - WARNING - llm error attempt=1 model=gemini-3.5-flash-lite type=LLMTimeoutError retryable=True msg=Request timed out: ConnectTimeout
+2026-10-24 23:18:22,012 - WARNING - llm error attempt=2 model=gemini-3.5-flash-lite type=LLMConnectionError retryable=True msg=Network error: ConnectError: The operation did not complete (read) (_ssl.c:1010)
+2026-10-24 23:19:40,183 - WARNING - llm error attempt=1 model=gemini-3.5-flash-lite type=LLMAuthError retryable=False msg=Gemini rejected the API key or permissions (400): API key not valid. Please pass a valid API key.
+2026-10-24 23:20:03,839 - WARNING - llm error attempt=1 model=gemini-does-not-exist type=LLMConfigError retryable=False msg=Model not found (404). Check GEMINI_MODEL in .env: models/gemini-does-not-exist is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+2026-10-24 23:20:34,597 - WARNING - llm error attempt=1 model=gemini-3.5-flash-lite type=LLMTimeoutError retryable=True msg=Request timed out: ReadTimeout
+2026-10-24 23:20:40,082 - WARNING - llm error attempt=2 model=gemini-3.5-flash-lite type=LLMTimeoutError retryable=True msg=Request timed out: ConnectTimeout
+2026-10-24 23:22:54,017 - WARNING - llm error attempt=1 model=gemini-3.5-flash-lite type=LLMAuthError retryable=False msg=Gemini rejected the API key or permissions (400): API key not valid. Please pass a valid API key.
+2026-10-24 23:23:44,697 - WARNING - llm error attempt=1 model=gemini-3.5-flash-lite type=LLMAuthError retryable=False msg=Gemini rejected the API key or permissions (400): API key not valid. Please pass a valid API key.
+2026-10-26 23:32:06,150 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=3759 tokens in/out/thinking=410/249/None finish=STOP
+2026-10-26 23:36:19,332 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=3465 tokens in/out/thinking=510/39/None finish=STOP
+2026-10-26 23:36:22,448 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=614 tokens in/out/thinking=508/31/None finish=STOP
+2026-10-26 23:36:29,408 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=1584 tokens in/out/thinking=503/20/None finish=STOP
+2026-10-26 23:36:34,678 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=847 tokens in/out/thinking=500/12/None finish=STOP
+2026-10-26 23:36:41,403 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=1566 tokens in/out/thinking=518/42/None finish=STOP
+2026-10-26 23:36:46,696 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=863 tokens in/out/thinking=500/7/None finish=STOP
+2026-10-27 10:19:42,908 - INFO - llm ok attempt=1 model=gemini-3.5-flash-lite latency_ms=3895 tokens in/out/thinking=2564/346/None finish=STOP
+2026-10-27 10:24:14,621 - WARNING - llm error attempt=1 model=gemini-3.5-flash-lite type=LLMTimeoutError retryable=True msg=Request timed out: ConnectTimeout
+2026-10-27 10:24:36,204 - WARNING - llm error attempt=2 model=gemini-3.5-flash-lite type=LLMConnectionError retryable=True msg=Network error: RemoteProtocolError: Server disconnected without sending a response.

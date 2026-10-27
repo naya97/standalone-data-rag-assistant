@@ -3,9 +3,11 @@ from fastapi import FastAPI
 from datetime import datetime
 from src.infrastructure.db_manager import SQLiteManager
 from src.api.rag_controller import router as rag_router, rag_lifespan  # Week 8
+from src.api.llm_controller import router as llm_router  # Week 9
 
 app = FastAPI(title="Standalone Data-RAG Assistant API", lifespan=rag_lifespan)  # Week 8: lifespan
 app.include_router(rag_router)  # Week 8
+app.include_router(llm_router)  # Week 9
 
 @app.get("/health")
 def health_check():

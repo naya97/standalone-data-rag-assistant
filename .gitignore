@@ -5,3 +5,4 @@
 __pycache__/
 *.pyc
 *chroma
+data/eval/week9/llm_cache.json
