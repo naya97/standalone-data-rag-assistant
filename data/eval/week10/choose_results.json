@@ -1,0 +1,1724 @@
+{
+  "meta": {
+    "mode": "choose",
+    "model": "gemini-3.5-flash-lite",
+    "splits": [
+      "calib",
+      "dev",
+      "test"
+    ],
+    "domain": "all",
+    "ids": null,
+    "requests_sent": 0,
+    "max_requests": 100,
+    "cache_hits": 87,
+    "cache_misses": 0,
+    "aborted": null,
+    "seconds": 0,
+    "fingerprint": "gemini-3.5-flash-lite|t=0.1|max=1024|think=|8904fbfa11c7"
+  },
+  "excluded_ids": [
+    8,
+    36,
+    49
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "question": "What is the total amount due for Project Alpha in January 2024?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "month": "2024-01",
+        "project": "projectAlpha",
+        "query": "total amount due"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 509,
+        "output": 37
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 2,
+      "question": "Which vulnerabilities were found in Project Beta's March security scan?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "project": "projectBeta",
+        "month": "2025-03",
+        "query": "vulnerabilities security scan"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 505,
+        "output": 39
+      },
+      "issues": [
+        "assumed: month '2025-03': the question names the month but not the year"
+      ],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 3,
+      "question": "What is the minimum password length for Project Alpha?",
+      "split": "test",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "minimum password length",
+        "project": "projectAlpha"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 502,
+        "output": 25
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 4,
+      "question": "Who must approve spending that exceeds Project Beta's budget?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "project": "Project Beta",
+        "query": "spending budget approval exceeded"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 504,
+        "output": 26
+      },
+      "issues": [
+        "format: project 'Project Beta' is not in the stored form (projectAlpha)"
+      ],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 5,
+      "question": "Which fields are required in the email ingestion payload?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "email ingestion payload required fields"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 502,
+        "output": 20
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 6,
+      "question": "What is the unit price of the n2-highmem-8 instance?",
+      "split": "test",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "n2-highmem-8"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 508,
+        "output": 22
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 7,
+      "question": "متى موعد إجراء المقابلات؟",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "المقابلات"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 501,
+        "output": 18
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 11,
+      "question": "How many hours of high-memory instances were used for Project Alpha in January 2024?",
+      "split": "test",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "month": "2024-01",
+        "project": "Project Alpha",
+        "query": "high-memory instances hours"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 513,
+        "output": 39
+      },
+      "issues": [
+        "format: project 'Project Alpha' is not in the stored form (projectAlpha)"
+      ],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 12,
+      "question": "Within how many days must the Project Alpha invoice be paid?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "project": "Project Alpha",
+        "query": "invoice paid days"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 504,
+        "output": 25
+      },
+      "issues": [
+        "format: project 'Project Alpha' is not in the stored form (projectAlpha)"
+      ],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 13,
+      "question": "How much data did the engineering team store for Project Beta in February 2024?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "project": "Project Beta",
+        "month": "2024-02",
+        "query": "data stored"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 511,
+        "output": 36
+      },
+      "issues": [
+        "format: project 'Project Beta' is not in the stored form (projectAlpha)"
+      ],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 14,
+      "question": "How is payment made for the Project Beta storage invoice?",
+      "split": "test",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "project": "Project Beta",
+        "query": "payment storage invoice"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 503,
+        "output": 25
+      },
+      "issues": [
+        "format: project 'Project Beta' is not in the stored form (projectAlpha)"
+      ],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 15,
+      "question": "What is the price per GB of persistent SSD storage?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "persistent SSD storage price per GB"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 503,
+        "output": 21
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 16,
+      "question": "How much does network egress cost per GB?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "network egress cost per GB"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 501,
+        "output": 20
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 17,
+      "question": "How often must passwords be rotated for Project Alpha?",
+      "split": "test",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "project": "Project Alpha",
+        "query": "password rotation frequency"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 502,
+        "output": 25
+      },
+      "issues": [
+        "format: project 'Project Alpha' is not in the stored form (projectAlpha)"
+      ],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 18,
+      "question": "Is direct SSH access allowed from public IP addresses?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "direct SSH access public IP addresses"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 502,
+        "output": 21
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 19,
+      "question": "What is required to access the compute engines from outside the corporate network?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "access compute engines outside corporate network"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 506,
+        "output": 21
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 20,
+      "question": "What is the maximum monthly budget for Project Beta's cloud infrastructure?",
+      "split": "test",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "project": "Project Beta",
+        "query": "maximum monthly budget cloud infrastructure"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 506,
+        "output": 27
+      },
+      "issues": [
+        "format: project 'Project Beta' is not in the stored form (projectAlpha)"
+      ],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 21,
+      "question": "By which day of the month must cloud storage invoices be submitted to the finance department?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "cloud storage invoices submitted finance department day of the month"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 509,
+        "output": 25
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 22,
+      "question": "What are the consequences of late invoice submissions?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "consequences of late invoice submissions"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 501,
+        "output": 21
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 23,
+      "question": "What uptime did Project Alpha's Compute Engine maintain in February 2024?",
+      "split": "test",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "month": "2024-02",
+        "query": "uptime Compute Engine",
+        "project": "projectAlpha"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 510,
+        "output": 37
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 24,
+      "question": "What caused the CPU usage spike on February 14th?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "CPU usage spike February 14th",
+        "month": "2024-02"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 505,
+        "output": 35
+      },
+      "issues": [
+        "assumed: month '2024-02': the question names the month but not the year"
+      ],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 25,
+      "question": "What does the report recommend to handle sudden traffic spikes?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "traffic spikes",
+        "document_type": "report"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 503,
+        "output": 25
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 26,
+      "question": "When were the outdated SSL certificates rotated?",
+      "split": "test",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "outdated SSL certificates rotated"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 500,
+        "output": 20
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 27,
+      "question": "Is Project Beta compliant with the internal security standards after the scan?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "project": "Project Beta",
+        "query": "security standards compliance scan"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 505,
+        "output": 26
+      },
+      "issues": [
+        "format: project 'Project Beta' is not in the stored form (projectAlpha)"
+      ],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 28,
+      "question": "What is the mailbox_id field used for?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "mailbox_id"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 502,
+        "output": 18
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 29,
+      "question": "What value does html_body currently have in the email payload?",
+      "split": "test",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "html_body"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 505,
+        "output": 18
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 30,
+      "question": "Which GCP role is needed to read the billing export data in BigQuery?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "GCP role read billing export data BigQuery"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 507,
+        "output": 24
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 31,
+      "question": "How many hours are estimated for building the chat interface?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "chat interface hours estimate"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 503,
+        "output": 19
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 32,
+      "question": "What is the estimated total number of hours for the Trainee 3 task?",
+      "split": "test",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "Trainee 3 task estimated total number of hours"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 508,
+        "output": 26
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 33,
+      "question": "من الذي يوافق على إضافة دورة جديدة؟",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "الموافقة على إضافة دورة جديدة"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 503,
+        "output": 23
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 34,
+      "question": "متى يجب إرسال التقرير المختصر عن الوظيفة؟",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "التقرير المختصر عن الوظيفة"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 508,
+        "output": 23
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 35,
+      "question": "ما المطلوب في بند توزيع الحمل؟",
+      "split": "test",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "توزيع الحمل"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 499,
+        "output": 18
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 9,
+      "question": "What is the refund policy for Project Beta?",
+      "split": "dev",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "refund policy",
+        "project": "Project Beta"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 501,
+        "output": 24
+      },
+      "issues": [
+        "format: project 'Project Beta' is not in the stored form (projectAlpha)"
+      ],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 10,
+      "question": "What was the cost of Project Gamma in January 2024?",
+      "split": "dev",
+      "kind": "unknown_entity",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "cost",
+        "project": "projectGamma",
+        "month": "2024-01"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 507,
+        "output": 35
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 37,
+      "question": "What is the multi-factor authentication policy for Project Beta?",
+      "split": "test",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "project": "Project Beta",
+        "query": "multi-factor authentication policy"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 504,
+        "output": 27
+      },
+      "issues": [
+        "format: project 'Project Beta' is not in the stored form (projectAlpha)"
+      ],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 38,
+      "question": "Who is the Chief Technology Officer of CloudTech Solutions?",
+      "split": "dev",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "Chief Technology Officer CloudTech Solutions"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 503,
+        "output": 21
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 39,
+      "question": "What was the total amount due for Project Beta in March 2024?",
+      "split": "dev",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "project": "Project Beta",
+        "month": "2024-03",
+        "query": "total amount due invoice"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 509,
+        "output": 38
+      },
+      "issues": [
+        "format: project 'Project Beta' is not in the stored form (projectAlpha)"
+      ],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 40,
+      "question": "What was the uptime of Project Alpha's Compute Engine in March 2024?",
+      "split": "test",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "uptime Compute Engine",
+        "month": "2024-03",
+        "project": "projectAlpha"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 511,
+        "output": 37
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 41,
+      "question": "How many vulnerabilities were found in Project Alpha's security scan?",
+      "split": "dev",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "project": "projectAlpha",
+        "query": "vulnerabilities security scan"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 505,
+        "output": 27
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 42,
+      "question": "What is the password policy for Project Delta?",
+      "split": "dev",
+      "kind": "unknown_entity",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "password policy",
+        "project": "Project Delta"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 501,
+        "output": 24
+      },
+      "issues": [
+        "format: project 'Project Delta' is not in the stored form (projectAlpha)"
+      ],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 43,
+      "question": "What is the maximum size of an email attachment in the payload?",
+      "split": "test",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "maximum size of an email attachment payload"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 505,
+        "output": 22
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 44,
+      "question": "How much does Cloud Run cost per hour?",
+      "split": "dev",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": null,
+      "args": {},
+      "answered_in_words": "Cloud Run pricing depends on CPU, memory, and request allocation, so there is no single fixed cost per hour.",
+      "choose_tokens": {
+        "input": 501,
+        "output": 23
+      },
+      "issues": [],
+      "outcome": "no_tool"
+    },
+    {
+      "id": 45,
+      "question": "What is the capital of France?",
+      "split": "dev",
+      "kind": "off_topic",
+      "domain": "documents",
+      "expected_tool": null,
+      "tool": null,
+      "args": {},
+      "answered_in_words": "The capital of France is Paris.",
+      "choose_tokens": {
+        "input": 499,
+        "output": 7
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 46,
+      "question": "How do I bake sourdough bread?",
+      "split": "test",
+      "kind": "off_topic",
+      "domain": "documents",
+      "expected_tool": null,
+      "tool": null,
+      "args": {},
+      "answered_in_words": "To bake sourdough bread, you mix active sourdough starter, flour, water, and salt, then let it ferment, shape it, and bake it in a Dutch oven.",
+      "choose_tokens": {
+        "input": 499,
+        "output": 34
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 47,
+      "question": "ما هي سياسة الإجازات السنوية للموظفين؟",
+      "split": "dev",
+      "kind": "off_topic",
+      "domain": "documents",
+      "expected_tool": null,
+      "tool": "search_documents",
+      "args": {
+        "query": "سياسة الإجازات السنوية للموظفين"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 506,
+        "output": 26
+      },
+      "issues": [],
+      "outcome": "unneeded_tool"
+    },
+    {
+      "id": 48,
+      "question": "كم راتب المدرب في المنصة؟",
+      "split": "dev",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": null,
+      "args": {},
+      "answered_in_words": "لا توجد معلومات لدي حول راتب المدرب في المنصة.",
+      "choose_tokens": {
+        "input": 501,
+        "output": 14
+      },
+      "issues": [],
+      "outcome": "no_tool"
+    },
+    {
+      "id": 50,
+      "question": "ما هو الحد الأقصى للميزانية الشهرية لمشروع Beta؟",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "الحد الأقصى للميزانية الشهرية",
+        "project": "projectBeta"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 508,
+        "output": 32
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 51,
+      "question": "كم عدد ساعات المثيلات عالية الذاكرة المستخدمة في مشروع Alpha؟",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "project": "projectAlpha",
+        "query": "المثيلات عالية الذاكرة"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 507,
+        "output": 29
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 53,
+      "question": "كل كم يوماً يجب تغيير كلمات المرور؟",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "كلمات المرور تغيير"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 503,
+        "output": 20
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 54,
+      "question": "هل يسمح بالدخول المباشر إلى المحركات من عناوين الإنترنت العامة؟",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "الدخول المباشر إلى المحركات من عناوين الإنترنت العامة"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 510,
+        "output": 28
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 56,
+      "question": "متى تم تدوير شهادات SSL القديمة؟",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "SSL"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 504,
+        "output": 16
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 57,
+      "question": "كم حجم البيانات التي خزنها فريق الهندسة لمشروع Beta؟",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "حجم البيانات",
+        "project": "Beta"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 507,
+        "output": 24
+      },
+      "issues": [
+        "format: project 'Beta' is not in the stored form (projectAlpha)"
+      ],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 59,
+      "question": "ما سعر الغيغابايت الواحد لتخزين SSD الدائم؟",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "سعر الغيغابايت SSD الدائم"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 508,
+        "output": 26
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 60,
+      "question": "كم ساعة مقدرة لبناء واجهة الدردشة؟",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "واجهة الدردشة ساعات"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 505,
+        "output": 21
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 62,
+      "question": "ما الحقول المطلوبة في حمولة البريد الإلكتروني؟",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "حمولة البريد الإلكتروني الحقول المطلوبة"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 505,
+        "output": 25
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 63,
+      "question": "When are the interviews held?",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "interviews held"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 498,
+        "output": 18
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 65,
+      "question": "When must the short report about the job be sent?",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "short report job send when"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 503,
+        "output": 20
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 66,
+      "question": "Which load balancing mechanism is given as an example?",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "load balancing mechanism example"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 502,
+        "output": 19
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 67,
+      "question": "ما هي سياسة استرداد الأموال لمشروع Beta؟",
+      "split": "calib",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "استرداد الأموال",
+        "project": "projectBeta"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 506,
+        "output": 27
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 68,
+      "question": "كم كانت تكلفة مشروع Gamma في يناير؟",
+      "split": "calib",
+      "kind": "unknown_entity",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "month": "2025-01",
+        "project": "projectGamma",
+        "query": "cost"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 501,
+        "output": 35
+      },
+      "issues": [
+        "assumed: month '2025-01': the question names the month but not the year"
+      ],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 70,
+      "question": "كيف أخبز خبز العجين المخمر؟",
+      "split": "calib",
+      "kind": "off_topic",
+      "domain": "documents",
+      "expected_tool": null,
+      "tool": null,
+      "args": {},
+      "answered_in_words": "كيفية خبز خبز العجين المخمر تتطلب خطوات أساسية تشمل تحضير البادئة (Sourdough Starter)، عجن المكونات، التخمير الأولي، التشكيل، التخمير النهائي، وأخيراً الخبز في الفرن.",
+      "choose_tokens": {
+        "input": 503,
+        "output": 61
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 71,
+      "question": "من هو المدير التنفيذي لشركة CloudTech؟",
+      "split": "calib",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": null,
+      "args": {},
+      "answered_in_words": "من هو المدير التنفيذي لشركة CloudTech؟",
+      "choose_tokens": {
+        "input": 503,
+        "output": 11
+      },
+      "issues": [],
+      "outcome": "no_tool"
+    },
+    {
+      "id": 73,
+      "question": "What is the capital of Japan?",
+      "split": "calib",
+      "kind": "off_topic",
+      "domain": "documents",
+      "expected_tool": null,
+      "tool": null,
+      "args": {},
+      "answered_in_words": "The capital of Japan is Tokyo.",
+      "choose_tokens": {
+        "input": 499,
+        "output": 7
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 74,
+      "question": "ما هي سياسة المصادقة متعددة العوامل لمشروع Beta؟",
+      "split": "calib",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "project": "projectBeta",
+        "query": "المصادقة متعددة العوامل"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 508,
+        "output": 30
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 76,
+      "question": "What currency is the Project Beta storage invoice in?",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "storage invoice currency",
+        "project": "projectBeta"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 502,
+        "output": 25
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 77,
+      "question": "What is the effective date of Project Alpha's general access policy?",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "project": "projectAlpha",
+        "query": "general access policy effective date"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 506,
+        "output": 27
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 79,
+      "question": "How many hours is the Deploy and Monitor Feedback step estimated at?",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "Deploy and Monitor Feedback"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 505,
+        "output": 19
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 81,
+      "question": "Who approved the Project Beta budget in March 2024?",
+      "split": "calib",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "project": "Project Beta",
+        "month": "2024-03",
+        "query": "budget approval"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 506,
+        "output": 36
+      },
+      "issues": [
+        "format: project 'Project Beta' is not in the stored form (projectAlpha)"
+      ],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 82,
+      "question": "What is the invoice number of the Project Alpha January invoice?",
+      "split": "calib",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "tool": "search_documents",
+      "args": {
+        "query": "invoice number",
+        "month": "2025-01",
+        "project": "projectAlpha"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 504,
+        "output": 36
+      },
+      "issues": [
+        "assumed: month '2025-01': the question names the month but not the year"
+      ],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 84,
+      "question": "What is the weather in Secaucus today?",
+      "split": "calib",
+      "kind": "off_topic",
+      "domain": "documents",
+      "expected_tool": null,
+      "tool": null,
+      "args": {},
+      "answered_in_words": "I don't have access to live weather information.",
+      "choose_tokens": {
+        "input": 502,
+        "output": 11
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 1001,
+      "question": "Which category has the highest revenue?",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "tool": "get_sales_summary",
+      "args": {},
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 499,
+        "output": 12
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 1002,
+      "question": "What is the total revenue?",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "tool": "get_sales_summary",
+      "args": {},
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 498,
+        "output": 12
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 1003,
+      "question": "How many transactions are there in total?",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "tool": "get_sales_summary",
+      "args": {},
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 500,
+        "output": 12
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 1004,
+      "question": "What is the average order value?",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "tool": "get_sales_summary",
+      "args": {},
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 499,
+        "output": 12
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 1005,
+      "question": "What is the total revenue of the Furniture category?",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "tool": "get_sales_summary",
+      "args": {
+        "category": "Furniture"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 502,
+        "output": 18
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 1006,
+      "question": "How many units of Furniture were sold?",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "tool": "get_sales_summary",
+      "args": {
+        "category": "Furniture"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 500,
+        "output": 18
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 1007,
+      "question": "Which payment method brings the most revenue?",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "tool": "get_sales_summary",
+      "args": {},
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 500,
+        "output": 12
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 1008,
+      "question": "Is online or in-store revenue higher?",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "tool": "get_sales_summary",
+      "args": {},
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 501,
+        "output": 12
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 1009,
+      "question": "Which category has the lowest revenue?",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "tool": "get_sales_summary",
+      "args": {},
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 499,
+        "output": 12
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 1010,
+      "question": "What was the total revenue in January 2024?",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "tool": "get_sales_summary",
+      "args": {
+        "start": "2024-01",
+        "end": "2024-01"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 505,
+        "output": 36
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 1011,
+      "question": "How much revenue did Food make between 2024-01 and 2024-06?",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "tool": "get_sales_summary",
+      "args": {
+        "category": "Food",
+        "start": "2024-01",
+        "end": "2024-06"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 517,
+        "output": 42
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 1012,
+      "question": "What was the total revenue in 2024?",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "tool": "get_sales_summary",
+      "args": {
+        "start": "2024-01",
+        "end": "2024-12"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 504,
+        "output": 36
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 1013,
+      "question": "ما هي الفئة الأعلى إيراداً؟",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "tool": "get_sales_summary",
+      "args": {},
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 502,
+        "output": 12
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 1014,
+      "question": "كم إجمالي الإيرادات؟",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "tool": "get_sales_summary",
+      "args": {},
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 499,
+        "output": 12
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 1015,
+      "question": "What is the revenue of the Toys category?",
+      "split": "dev",
+      "kind": "sales_tool_error",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "tool": "get_sales_summary",
+      "args": {
+        "category": "Toys"
+      },
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 501,
+        "output": 18
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    },
+    {
+      "id": 1016,
+      "question": "What is the profit margin?",
+      "split": "dev",
+      "kind": "sales_not_found",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "tool": null,
+      "args": {},
+      "answered_in_words": "I cannot answer that question as the required financial data is not available.",
+      "choose_tokens": {
+        "input": 498,
+        "output": 14
+      },
+      "issues": [],
+      "outcome": "no_tool"
+    },
+    {
+      "id": 1017,
+      "question": "Which month had the highest revenue?",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "tool": "get_sales_summary",
+      "args": {},
+      "answered_in_words": null,
+      "choose_tokens": {
+        "input": 499,
+        "output": 12
+      },
+      "issues": [],
+      "outcome": "tool_ok"
+    }
+  ]
+}

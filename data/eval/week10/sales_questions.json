@@ -1,0 +1,256 @@
+[
+  {
+    "id": 1001,
+    "question": "Which category has the highest revenue?",
+    "split": "dev",
+    "kind": "sales_answerable",
+    "domain": "sales",
+    "expected_tool": "get_sales_summary",
+    "expected_args": {},
+    "facts": [
+      "by_category.0.category",
+      "by_category.0.revenue"
+    ],
+    "expect": "answer",
+    "tests": "highest category, from the first row of by_category"
+  },
+  {
+    "id": 1002,
+    "question": "What is the total revenue?",
+    "split": "dev",
+    "kind": "sales_answerable",
+    "domain": "sales",
+    "expected_tool": "get_sales_summary",
+    "expected_args": {},
+    "facts": [
+      "overall.total_revenue"
+    ],
+    "expect": "answer",
+    "tests": "one number, no arguments"
+  },
+  {
+    "id": 1003,
+    "question": "How many transactions are there in total?",
+    "split": "dev",
+    "kind": "sales_answerable",
+    "domain": "sales",
+    "expected_tool": "get_sales_summary",
+    "expected_args": {},
+    "facts": [
+      "overall.transactions"
+    ],
+    "expect": "answer",
+    "tests": "count"
+  },
+  {
+    "id": 1004,
+    "question": "What is the average order value?",
+    "split": "dev",
+    "kind": "sales_answerable",
+    "domain": "sales",
+    "expected_tool": "get_sales_summary",
+    "expected_args": {},
+    "facts": [
+      "overall.average_order_value"
+    ],
+    "expect": "answer",
+    "tests": "a figure that must be copied, not recomputed"
+  },
+  {
+    "id": 1005,
+    "question": "What is the total revenue of the Furniture category?",
+    "split": "dev",
+    "kind": "sales_answerable",
+    "domain": "sales",
+    "expected_tool": "get_sales_summary",
+    "expected_args": {
+      "category": "Furniture"
+    },
+    "facts": [
+      "overall.total_revenue"
+    ],
+    "expect": "answer",
+    "tests": "category argument"
+  },
+  {
+    "id": 1006,
+    "question": "How many units of Furniture were sold?",
+    "split": "dev",
+    "kind": "sales_answerable",
+    "domain": "sales",
+    "expected_tool": "get_sales_summary",
+    "expected_args": {
+      "category": "Furniture"
+    },
+    "facts": [
+      "overall.units_sold"
+    ],
+    "expect": "answer",
+    "tests": "category argument, different field"
+  },
+  {
+    "id": 1007,
+    "question": "Which payment method brings the most revenue?",
+    "split": "dev",
+    "kind": "sales_answerable",
+    "domain": "sales",
+    "expected_tool": "get_sales_summary",
+    "expected_args": {},
+    "facts": [
+      "by_payment_method.0.payment_method",
+      "by_payment_method.0.revenue"
+    ],
+    "expect": "answer",
+    "tests": "breakdown by payment method"
+  },
+  {
+    "id": 1008,
+    "question": "Is online or in-store revenue higher?",
+    "split": "dev",
+    "kind": "sales_answerable",
+    "domain": "sales",
+    "expected_tool": "get_sales_summary",
+    "expected_args": {},
+    "facts": [
+      "by_location.0.location"
+    ],
+    "expect": "answer",
+    "tests": "breakdown by location"
+  },
+  {
+    "id": 1009,
+    "question": "Which category has the lowest revenue?",
+    "split": "dev",
+    "kind": "sales_answerable",
+    "domain": "sales",
+    "expected_tool": "get_sales_summary",
+    "expected_args": {},
+    "facts": [
+      "by_category.-1.category",
+      "by_category.-1.revenue"
+    ],
+    "expect": "answer",
+    "tests": "last row of by_category"
+  },
+  {
+    "id": 1010,
+    "question": "What was the total revenue in January 2024?",
+    "split": "dev",
+    "kind": "sales_answerable",
+    "domain": "sales",
+    "expected_tool": "get_sales_summary",
+    "expected_args": {
+      "start": "2024-01",
+      "end": "2024-01"
+    },
+    "facts": [
+      "overall.total_revenue"
+    ],
+    "expect": "answer",
+    "tests": "one month: start = end"
+  },
+  {
+    "id": 1011,
+    "question": "How much revenue did Food make between 2024-01 and 2024-06?",
+    "split": "dev",
+    "kind": "sales_answerable",
+    "domain": "sales",
+    "expected_tool": "get_sales_summary",
+    "expected_args": {
+      "category": "Food",
+      "start": "2024-01",
+      "end": "2024-06"
+    },
+    "facts": [
+      "overall.total_revenue"
+    ],
+    "expect": "answer",
+    "tests": "category and period together"
+  },
+  {
+    "id": 1012,
+    "question": "What was the total revenue in 2024?",
+    "split": "dev",
+    "kind": "sales_answerable",
+    "domain": "sales",
+    "expected_tool": "get_sales_summary",
+    "expected_args": {
+      "start": "2024-01",
+      "end": "2024-12"
+    },
+    "facts": [
+      "overall.total_revenue"
+    ],
+    "expect": "answer",
+    "tests": "a year must become a month range"
+  },
+  {
+    "id": 1013,
+    "question": "ما هي الفئة الأعلى إيراداً؟",
+    "split": "dev",
+    "kind": "sales_answerable",
+    "domain": "sales",
+    "expected_tool": "get_sales_summary",
+    "expected_args": {},
+    "facts": [
+      "by_category.0.category",
+      "by_category.0.revenue"
+    ],
+    "expect": "answer",
+    "tests": "Arabic question; category names stay in English"
+  },
+  {
+    "id": 1014,
+    "question": "كم إجمالي الإيرادات؟",
+    "split": "dev",
+    "kind": "sales_answerable",
+    "domain": "sales",
+    "expected_tool": "get_sales_summary",
+    "expected_args": {},
+    "facts": [
+      "overall.total_revenue"
+    ],
+    "expect": "answer",
+    "tests": "Arabic question"
+  },
+  {
+    "id": 1015,
+    "question": "What is the revenue of the Toys category?",
+    "split": "dev",
+    "kind": "sales_tool_error",
+    "domain": "sales",
+    "expected_tool": "get_sales_summary",
+    "expected_args": {
+      "category": "Toys"
+    },
+    "facts": [],
+    "expect": "tool_error",
+    "tests": "a category that does not exist: the tool must fail and the answer must say so"
+  },
+  {
+    "id": 1016,
+    "question": "What is the profit margin?",
+    "split": "dev",
+    "kind": "sales_not_found",
+    "domain": "sales",
+    "expected_tool": "get_sales_summary",
+    "expected_args": {},
+    "facts": [],
+    "expect": "not_found",
+    "tests": "not in the facts: the model must not invent it"
+  },
+  {
+    "id": 1017,
+    "question": "Which month had the highest revenue?",
+    "split": "dev",
+    "kind": "sales_answerable",
+    "domain": "sales",
+    "expected_tool": "get_sales_summary",
+    "expected_args": {},
+    "facts": [
+      "best_month.revenue"
+    ],
+    "expect": "answer",
+    "tests": "the month name is not checked (its spelling varies); its revenue is"
+  }
+]

@@ -1,0 +1,404 @@
+{
+  "meta": {
+    "mode": "full",
+    "model": "gemini-3.5-flash-lite",
+    "splits": [
+      "holdout"
+    ],
+    "domain": "all",
+    "ids": null,
+    "requests_sent": 21,
+    "max_requests": 100,
+    "cache_hits": 0,
+    "cache_misses": 17,
+    "aborted": null,
+    "seconds": 285,
+    "fingerprint": "gemini-3.5-flash-lite|t=0.1|max=1024|think=|8904fbfa11c7"
+  },
+  "excluded_ids": [],
+  "rows": [
+    {
+      "id": 52,
+      "question": "خلال كم يوماً يجب دفع فاتورة مشروع Alpha؟",
+      "split": "holdout",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "unavailable",
+      "tool": null,
+      "args": {},
+      "tool_status": null,
+      "answer": "No answer: the model request failed. Reason: LLMConnectionError: Network error: RemoteProtocolError: Server disconnected without sending a response.\nThe tools can still be run directly (--tool).",
+      "model_calls": 1,
+      "attempts": 2,
+      "choose_tokens": {},
+      "seconds": 92.81,
+      "summary_source": null,
+      "summary_status": null,
+      "summary_tokens": {},
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "outcome": "not_evaluated",
+      "error": "LLMConnectionError: Network error: RemoteProtocolError: Server disconnected without sending a response.",
+      "abort": false
+    },
+    {
+      "id": 55,
+      "question": "ما نسبة وقت التشغيل لمحرك الحوسبة في فبراير؟",
+      "split": "holdout",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "unavailable",
+      "tool": null,
+      "args": {},
+      "tool_status": null,
+      "answer": "No answer: the model request failed. Reason: LLMConnectionError: Network error: RemoteProtocolError: Server disconnected without sending a response.\nThe tools can still be run directly (--tool).",
+      "model_calls": 1,
+      "attempts": 2,
+      "choose_tokens": {},
+      "seconds": 48.9,
+      "summary_source": null,
+      "summary_status": null,
+      "summary_tokens": {},
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "outcome": "not_evaluated",
+      "error": "LLMConnectionError: Network error: RemoteProtocolError: Server disconnected without sending a response.",
+      "abort": false
+    },
+    {
+      "id": 58,
+      "question": "كيف يتم دفع فاتورة التخزين الخاصة بمشروع Beta؟",
+      "split": "holdout",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "project": "projectBeta",
+        "query": "فاتورة التخزين الدفع"
+      },
+      "tool_status": "ok",
+      "answer": "يتم خصم مبلغ فاتورة التخزين لمشروع Beta تلقائياً من بطاقة الائتمان الخاصة بالشركة المسجلة في الملف [2].",
+      "model_calls": 2,
+      "attempts": 2,
+      "choose_tokens": {
+        "input": 506,
+        "output": 29
+      },
+      "seconds": 38.7,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 334,
+        "output": 35
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 2,
+      "cited_files": [
+        "invoice_2024-02_projectBeta_cloudStorage.txt"
+      ],
+      "facts_ok": false,
+      "facts_rule": null,
+      "outcome": "right_source_missing_fact"
+    },
+    {
+      "id": 61,
+      "question": "ما الدور المطلوب لقراءة بيانات الفوترة في BigQuery؟",
+      "split": "holdout",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "الدور المطلوب قراءة بيانات الفوترة BigQuery"
+      },
+      "tool_status": "ok",
+      "answer": "الدور المطلوب لقراءة بيانات تصدير الفوترة الخاصة بـ GCP في BigQuery هو دور bigquery.dataViewer [2].",
+      "model_calls": 2,
+      "attempts": 2,
+      "choose_tokens": {
+        "input": 505,
+        "output": 26
+      },
+      "seconds": 10.08,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 356,
+        "output": 29
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "Task-3.pdf"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "outcome": "correct"
+    },
+    {
+      "id": 64,
+      "question": "Who must approve a new course?",
+      "split": "holdout",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "new course approve approval"
+      },
+      "tool_status": "ok",
+      "answer": "يجب أن تتم الموافقة من قبل الـ admin عند إضافة دورة جديدة [1].",
+      "model_calls": 2,
+      "attempts": 2,
+      "choose_tokens": {
+        "input": 499,
+        "output": 19
+      },
+      "seconds": 14.19,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 379,
+        "output": 20
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "الوظيفة الثانية (1).pdf"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "outcome": "correct"
+    },
+    {
+      "id": 69,
+      "question": "ما هي عاصمة فرنسا؟",
+      "split": "holdout",
+      "kind": "off_topic",
+      "domain": "documents",
+      "expected_tool": null,
+      "route": "no_tool",
+      "tool": null,
+      "args": {},
+      "tool_status": null,
+      "answer": "عاصمة فرنسا هي باريس.",
+      "model_calls": 1,
+      "attempts": 1,
+      "choose_tokens": {
+        "input": 498,
+        "output": 7
+      },
+      "seconds": 6.92,
+      "summary_source": null,
+      "summary_status": null,
+      "summary_tokens": {},
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "outcome": "no_tool_answer"
+    },
+    {
+      "id": 72,
+      "question": "What is the monthly salary of the trainer?",
+      "split": "holdout",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "trainer monthly salary"
+      },
+      "tool_status": "ok",
+      "answer": "The available information does not contain the answer to this question.",
+      "model_calls": 2,
+      "attempts": 2,
+      "choose_tokens": {
+        "input": 501,
+        "output": 18
+      },
+      "seconds": 20.54,
+      "summary_source": "model",
+      "summary_status": "not_found",
+      "summary_tokens": {
+        "input": 355,
+        "output": 3
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "outcome": "correct_rejection"
+    },
+    {
+      "id": 75,
+      "question": "Which service does the February 2024 report for Project Alpha cover?",
+      "split": "holdout",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "project": "projectAlpha",
+        "month": "2024-02",
+        "query": "service covered"
+      },
+      "tool_status": "ok",
+      "answer": "The February 2024 report for Project Alpha covers the Compute Engine service [1].",
+      "model_calls": 2,
+      "attempts": 2,
+      "choose_tokens": {
+        "input": 508,
+        "output": 36
+      },
+      "seconds": 13.37,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 326,
+        "output": 19
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "report_2024-02_projectAlpha_computeEngine.txt"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "outcome": "correct"
+    },
+    {
+      "id": 78,
+      "question": "What does the payload specification say about the Reply-To header?",
+      "split": "holdout",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "Reply-To header"
+      },
+      "tool_status": "ok",
+      "answer": "The payload specification states that Reply-To is the reply-to header if present [1][3].",
+      "model_calls": 2,
+      "attempts": 2,
+      "choose_tokens": {
+        "input": 505,
+        "output": 19
+      },
+      "seconds": 16.22,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 386,
+        "output": 21
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "email_payload_spec.pdf",
+        "email_payload_spec.pdf"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "outcome": "correct"
+    },
+    {
+      "id": 80,
+      "question": "What is the SLA penalty if Project Alpha's uptime drops below 99%?",
+      "split": "holdout",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "SLA penalty uptime 99%",
+        "project": "projectAlpha"
+      },
+      "tool_status": "ok",
+      "answer": "The available information does not contain the answer to this question.",
+      "model_calls": 2,
+      "attempts": 2,
+      "choose_tokens": {
+        "input": 510,
+        "output": 30
+      },
+      "seconds": 13.51,
+      "summary_source": "model",
+      "summary_status": "not_found",
+      "summary_tokens": {
+        "input": 332,
+        "output": 3
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "outcome": "correct_rejection"
+    },
+    {
+      "id": 83,
+      "question": "Which encryption algorithm protects the production database?",
+      "split": "holdout",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "encryption algorithm production database"
+      },
+      "tool_status": "ok",
+      "answer": "The available information does not contain the answer to this question.",
+      "model_calls": 2,
+      "attempts": 2,
+      "choose_tokens": {
+        "input": 500,
+        "output": 19
+      },
+      "seconds": 9.9,
+      "summary_source": "model",
+      "summary_status": "not_found",
+      "summary_tokens": {
+        "input": 331,
+        "output": 3
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "outcome": "correct_rejection"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Standalone Data-RAG Assistant Engine
 
-A simple standalone project built to practice core Python and data engineering basics: reading CSV/JSON files, storing data in SQLite, running basic SQL queries, exposing a simple REST API, cleaning messy real-world datasets with Pandas, building a repeatable ETL pipeline, understanding core Google Cloud / BigQuery concepts, building a small analytics layer with an interactive dashboard, and preparing a clean, metadata-tagged document collection as the foundation for a Retrieval-Augmented Generation (RAG) assistant.
+A simple standalone project built to practice core Python and data engineering basics: reading CSV/JSON files, storing data in SQLite, running basic SQL queries, exposing a simple REST API, cleaning messy real-world datasets with Pandas, building a repeatable ETL pipeline, understanding core Google Cloud / BigQuery concepts, building a small analytics layer with an interactive dashboard, preparing a clean, metadata-tagged document collection as the foundation for a Retrieval-Augmented Generation (RAG) assistant, and putting a language model with tool calling (LangChain) on top of it.
 
 The project is organized into two parts:
 - **Core application** (Task 1): loads sample question/category data from CSV and JSON files, stores it in a local SQLite database, runs basic SQL queries, and provides a `/health` endpoint.
@@ -22,9 +22,13 @@ standalone-data-rag-assistant/
 │   │   │   ├── eval_questions.json            # 49 questions (dev/test), expected sources + expected facts
 │   │   │   ├── eval_questions_extended.json   # 35 questions (calib/holdout): cross-language + fresh ones
 │   │   │   └── eval_results.json              # last evaluation run (every score, signal and answer)
-│   │   └── week9/
-│   │       ├── llm_eval_results.json        # last LLM evaluation (every outcome, token count, latency)
-│   │       ├── gate_experiment.json         # lexical-gate settings compared on the saved questions
+│   │   ├── week9/
+│   │   │   ├── llm_eval_results.json        # last LLM evaluation (every outcome, token count, latency)
+│   │   │   ├── gate_experiment.json         # lexical-gate settings compared on the saved questions
+│   │   │   └── llm_cache.json               # cached model replies for the evaluation (git-ignored)
+│   │   └── week10/
+│   │       ├── sales_questions.json         # 17 sales questions; the expected figures are computed from SQL at run time
+│   │       ├── <mode>_<splits>[_tag]_results.json   # one results file per evaluation run (never overwritten by another run)
 │   │       └── llm_cache.json               # cached model replies for the evaluation (git-ignored)
 │   ├── raw/
 │   │   ├── config.json                 # App config (Task 1)
@@ -51,17 +55,27 @@ standalone-data-rag-assistant/
 │   │   ├── rag_controller.py           # (Week 8) POST /rag/ask, GET /rag/status
 │   │   └── llm_controller.py            # (Week 9) POST /llm/sales-insights, POST /llm/summarize-documents
 │   ├── llm/
-│   │   └── week9/
-│   │       ├── config.py                    # LLM settings from .env
-│   │       ├── client.py                    # Gemini client, scripted fake, error types, one shared client
-│   │       ├── retry.py                     # retries, time budget, request throttle
-│   │       ├── schemas.py                   # structured outputs (RAG answer, sales insights, document summary)
-│   │       ├── guardrails.py                # JSON/schema checks, citations, numbers must exist in the source
-│   │       ├── prompts.py                   # prompts for summaries and insights
-│   │       ├── runner.py                    # ask for a small JSON object: send, check, repair once
-│   │       ├── data_facts.py                # sales figures computed by SQL (the model never computes)
-│   │       ├── insights.py                  # sales summary and insights (+ no-LLM fallback)
-│   │       └── tool_specs.py                # function-calling concept: two tools, validation, execution
+│   │   ├── week9/
+│   │   │   ├── config.py                    # LLM settings from .env
+│   │   │   ├── client.py                    # Gemini client, scripted fake, error types, one shared client
+│   │   │   ├── retry.py                     # retries, time budget, request throttle
+│   │   │   ├── schemas.py                   # structured outputs (RAG answer, sales insights, document summary)
+│   │   │   ├── guardrails.py                # JSON/schema checks, citations, numbers must exist in the source
+│   │   │   ├── prompts.py                   # prompts for summaries and insights
+│   │   │   ├── runner.py                    # ask for a small JSON object: send, check, repair once
+│   │   │   ├── data_facts.py                # sales figures computed by SQL (the model never computes)
+│   │   │   ├── insights.py                  # sales summary and insights (+ no-LLM fallback)
+│   │   │   └── tool_specs.py                # function-calling concept: two tools, validation, execution
+│   │   └── week10/
+│   │       ├── model_factory.py             # LangChain Gemini model from the Week 9 settings (no retries of its own)
+│   │       ├── request_layer.py             # ONE layer for every model call: shared limiter, retries, budget, request counter
+│   │       ├── tools.py                     # the Week 9 tools as LangChain StructuredTools + run_validated
+│   │       ├── arguments.py                 # the backend cleans the model's search arguments (project form, month/year)
+│   │       ├── summarize.py                 # summarize_result: plain text, grounding checks, one repair, fallback
+│   │       ├── assistant.py                 # choose -> clean -> validate -> run -> summarize (+ --tool without a model)
+│   │       ├── tool_logging.py              # readable tool log (LangChain callback handler)
+│   │       ├── evaluation.py                # tool-choice and whole-flow evaluation, reply cache, report
+│   │       └── filter_check.py              # retrieval-only diagnostics (filters, top-k): no model request
 │   ├── infrastructure/
 │   │   ├── db_manager.py               # SQLiteManager (Task 1, extended in Week 4)
 │   │   └── file_reader.py              # CSV/JSON reader (Task 1)
@@ -101,6 +115,8 @@ standalone-data-rag-assistant/
 │           ├── doc_summary.py               # document summary (+ no-LLM fallback)
 │           ├── evaluator.py                 # LLM vs extractive, several gate settings, cached replies
 │           └── gate_experiment.py           # which lexical threshold? (gate only, no model)
+│       └── week10/
+│           └── langchain_retriever.py       # the Week 8 retriever as a LangChain BaseRetriever
 │
 ├── sql/
 │   └── week6/
@@ -108,7 +124,8 @@ standalone-data-rag-assistant/
 │       └── queries.sql                 # KPI queries + JOIN-based analysis
 │
 ├── tests/
-│   └── week9/                               # scripted fake model: no network, no key
+│   ├── week9/                               # scripted fake model: no network, no key
+│   └── week10/                              # scripted fake model, fake retriever, temporary databases: no network, no key
 │
 ├── notebooks/
 │   ├── week3/
@@ -131,10 +148,12 @@ standalone-data-rag-assistant/
 │   │   ├── Report_week8.md
 │   │   ├── retrieval_evaluation.md         # evaluation notes (the 10 predefined questions + the 84-question run)
 │   │   └── rag_design_walkthrough.txt
-│   └── week9/
-│       ├── Report_week9.md
-│       ├── llm_evaluation.md
-│       └── llm_design_walkthrough.txt
+│   ├── week9/
+│   │   ├── Report_week9.md
+│   │   ├── llm_evaluation.md
+│   │   └── llm_design_walkthrough.txt
+│   └── week10/
+│       └── Report_week10.md             # summary, results, bugs found, known limitations
 │
 ├── logs/
 │   ├── week4/
@@ -143,8 +162,10 @@ standalone-data-rag-assistant/
 │   │   └── ingestion.log               # RAG ingestion run log (Week 7)
 │   ├── week8/
 │   │   └── rag.log
-│   └── week9/
-│       └── llm.log                          # every model request: attempt, latency, tokens, errors (never the key)
+│   ├── week9/
+│   │   └── llm.log                          # every model request: attempt, latency, tokens, errors (never the key)
+│   └── week10/
+│       └── tool_calls.log                   # one line per step of every question: model choice, tool, result, summary, answer
 │
 ├── practice/
 │   ├── week2/                          # Standalone Pandas/SQL practice (Superstore dataset)
@@ -178,6 +199,9 @@ standalone-data-rag-assistant/
 ├── run_llm_tools.py                     # function-calling concept demo
 ├── run_llm_eval.py                      # LLM evaluation entry point
 ├── run_gate_experiment.py               # lexical-gate experiment entry point
+├── run_langchain_assistant.py           # (Week 10) the data-aware assistant from the command line (--tool: no model)
+├── run_langchain_eval.py                # (Week 10) tool-choice and whole-flow evaluation (--mode choose|full)
+├── run_filter_check.py                  # (Week 10) filters / top-k diagnostics on the real index, no model
 ├── .env.example                         # every setting, without secrets
 ├── requirements.txt
 └── README.md
@@ -207,7 +231,9 @@ pdfplumber
 sentence-transformers==<version>
 chromadb==<version>
 google-genai==<version>      # pin what `pip show google-genai` prints
-pytest                       # tests/week9
+langchain-core==1.7.3        # Week 10
+langchain-google-genai==4.4.2    # Week 10
+pytest                       # tests/week9, tests/week10
 ```
 
 `pypdf` is the primary PDF text extractor (Week 7). `pdfplumber` is used narrowly, only to detect and cleanly extract tables on PDF pages that have one — it is not a replacement for `pypdf` (see Week 7 below for why). `fpdf2` was used once, as a dev-only tool, to generate a synthetic sample invoice PDF for testing — it is not a runtime dependency of the ingestion pipeline.
@@ -257,7 +283,9 @@ LLM_THINKING_LEVEL=
 `RAG_MIN_LEXICAL_COVERAGE` is now the gate **in front of the LLM** (0.33 after the Week 9 evaluation); verbatim answers keep
 the Week 8 value through `RAG_EXTRACTIVE_MIN_LEXICAL_COVERAGE`.
 
-`.gitignore`: add `data/db/chroma/`, `.env` and `data/eval/week9/llm_cache.json`.
+`.gitignore`: add `data/db/chroma/`, `.env`, `data/eval/week9/llm_cache.json` and `data/eval/week10/llm_cache.json`.
+
+Week 10 adds no setting: it reads the same `LLM_*` variables as Week 9 (the request layer uses `LLM_MAX_RPM`, `LLM_MAX_RETRIES`, `LLM_TIMEOUT_SECONDS`, `LLM_DEADLINE_SECONDS`; the LangChain model itself is built without retries of its own).
 
 ---
 
@@ -657,6 +685,94 @@ Details: `reports/week9/llm_evaluation.md`.
 
 ---
 
+## Week 10 — LangChain basics for data and RAG tools: tool calling, a data-aware assistant, readable tool logs
+
+Lets Gemini call the two Week 9 tools through LangChain (chains, a retriever, tools, an output parser, callbacks) without
+building an agent: the model chooses **one** tool, the backend cleans and validates what it chose, the tool runs, and a second
+request words the result. Every step is logged; every model call goes through one request layer. No new endpoint: the
+deliverable is the assistant on the command line and its log.
+
+### Architecture
+```
+question ─► choose: prompt | Gemini.bind_tools ─► (no tool needed: the model answers in words)
+               │
+               ▼
+      clean arguments ─► validate_call ─► search_documents (RagRetriever over the Week 8 retriever)
+                                       └► get_sales_summary (Week 9 SQL facts)
+               │
+               ▼
+      summarize: plain text with [n] citations ─► parser (numbers/citations checked, one repair) ─► answer
+               │  model failure, or output rejected twice
+               ▼
+      fallback built from the tool result (no model)
+every model call ─► ONE request layer (shared Week 9 limiter, retries, time budget, request counter, optional budget)
+every step       ─► logs/week10/tool_calls.log
+```
+- **The plan's tools.** `search_documents` and `get_sales_summary` (the plan's `query_cost_table` example: the tool that queries the cleaned sales table) are LangChain `StructuredTool`s built from the Week 9 `tool_specs.py`; `summarize_result` is a **step** of the flow (a model asked to copy a previous result by hand costs tokens and invites errors).
+- **One retry layer.** `ChatGoogleGenerativeAI` is built with `max_retries=0` (its default is 6); retries, spacing and the time budget are the Week 9 ones. The package wraps API errors, so the original error (with the status code) is unwrapped before it is classified.
+- **Gemini extracts, the backend validates.** The backend writes the filters in the stored form (`Project Beta` → `projectBeta`), drops a month the question does not mention or whose year is not stated (the index stores `2024-03` as one value; a year is never guessed), never removes an explicit year, and never turns an unknown project into another one (the filter then matches nothing: "not found"). Every change is a `CLEAN` line in the log.
+- **Summaries are plain text.** Citations `[1]` are read back, every number must exist in the data the model was shown, one repair request, then a fallback. Tool data is in the user message, never in the system message.
+- **Counting.** `model_requests` = model calls made for an answer; `attempts` = requests actually sent, retries included. `--max-requests` stops an evaluation before the limit request is sent.
+- **Without a model** (no key, wrong model, provider down) nothing is invented: the answer says why, and `--tool` still runs any tool directly.
+
+### Run
+```bash
+# .env: GEMINI_API_KEY, GEMINI_MODEL (+ Week 7 ingestion and Week 8 indexing done, retail_pipeline.db built)
+python -m pytest tests/week10 -v                                          # 177 tests, no key needed
+python run_langchain_assistant.py "Which category has the highest revenue?" --verbose
+python run_langchain_assistant.py "Within how many days must the Project Alpha invoice be paid?"
+python run_langchain_assistant.py "Which category has the highest revenue?" --no-summary       # 1 request: the tool result as it is
+python run_langchain_assistant.py --tool get_sales_summary --arg category=Furniture            # no model request
+python run_langchain_assistant.py --tool search_documents --arg query="late fee" --arg project=projectAlpha --full
+python run_langchain_eval.py --mode choose --max-requests 100             # 1 request per question
+python run_langchain_eval.py --mode full --max-requests 100               # choose + run + summarize
+python run_langchain_eval.py --mode full --max-requests 40 --tag after_cleaning
+python run_filter_check.py data/eval/week10/full_calib-dev-test_after_cleaning_results.json --all-answerable --top-ks 3,5,8
+```
+`--arg KEY=VALUE` avoids the JSON quoting problems of `--args` in the Windows command line. `--no-cleaning` runs the arguments exactly as the model chose them (it reproduces the results before the cleaning). The evaluation sets are `dev`, `test`, `calib`; `holdout` is only read with `--splits holdout`.
+
+### Failure handling — verified scenarios
+1. **Wrong model id (real API):** `GoogleModelNotFoundError` → `LLMConfigError` (404), one attempt, not retried.
+2. **Provider errors arrive wrapped (tests with the real `google.genai` error classes):** a per-minute 429 is retried after the provider's own delay; a daily quota, a wrong model and a wrong key are not retried.
+3. **The model's arguments are untrusted (tests):** unknown tool, missing or unknown argument, `top_k` out of range, a document type outside the list, a bad month format: rejected before anything runs.
+4. **A tool that fails (real API):** a category that does not exist ends as a tool error, with no summary request.
+5. **Output rejected by the numbers/citations check (real API):** one repair request, accepted at the second attempt (Q32); after two rejections the fallback is used (tests).
+6. **Request budget (tests):** the run stops before the limit request is sent; retries count; cache hits do not.
+7. **Infrastructure failure during an evaluation:** the question is `not_evaluated`, never scored as a wrong answer (two holdout questions, real API).
+8. **No key (command line):** the assistant starts, says why it cannot answer, and `--tool` still works.
+
+### Bugs found and fixed during Week 10
+- **API errors lost their status code** inside LangChain's wrapper (nothing was retried) → unwrapped before the Week 9 classification.
+- **LangChain's own retries (6) would have multiplied every request** → `max_retries=0`, one layer.
+- **Failed requests were not counted** → calls counted when made, `attempts` read from the layer.
+- **Exact filters matched nothing:** the model wrote `Project Beta` for the stored `projectBeta` (14 questions) and added a year the question never gave (4); 10 answerable questions failed and 5 rejections were accidental → backend cleaning: 31 → 41 correct of 47, with 16 new requests.
+- **The retrieval rank is the rank of the file, not of the fact** (Q66: rank 1, the chunk with the answer not retrieved) → the evaluation records whether the fact is in the text the model received and separates `retrieval_miss` from `false_refusal`.
+- **A second evaluation run overwrote the first results file** → files are named after the run.
+- **JSON in `--args` breaks on Windows** → `--arg KEY=VALUE`.
+
+### Latest verified runs (Gemini 3.5 Flash Lite)
+```
+Tool choice (87 questions)  82 right | 4 answered in words when a tool was needed | 1 tool for an off-topic question | 0 wrong tool | 0 wrong arguments
+Documents answerable (47)   before the cleaning: 31 correct | 4 fact missing | 2 refused with the source retrieved | 10 source not retrieved
+                            after the cleaning:  41 correct | 4 fact missing | 2 refused | 0 not retrieved   (Q54, Q56 are correct in Arabic: 43/47 after review)
+Sales (17)                  14/15 answerable correct (Q1007 refused) | missing category = tool error | profit margin answered in words
+Rejections                  near-topic 11/14, unknown entity 3/3 (the 5 formerly accidental ones are now genuine), no leak
+Retrieval at top_k 3/5/8    fact in the text: 43 / 44 / 46 of 47 (cleaned filters); 41 / 44 / 46 without filters; top_k stays 3
+Holdout (read once, before the cleaning)  9 evaluated: tool choice 9/9, 4 correct + 1 fact-check miss, 3 rejected, 1 answered in words; 2 not evaluated
+Cost                        choice ~504 in / 24 out; summary ~644 in / 19 out (sales ~2,040 in); median 5.7-5.8 s per request; 183 requests for the whole evaluation
+```
+Details: `reports/week10/Report_week10.md`.
+
+### Known limitations (see `Report_week10.md`)
+- Small evaluation (70 document + 17 sales questions, holdout 11): a difference of 1–3 questions is not evidence, `top_k` included.
+- Chunks are at most ~300 characters, so a fact is often separated from its heading (Q66 is not retrieved even with 8 passages); larger chunks, overlap or neighbouring chunks are the likely next step (re-indexing; measured with `run_filter_check.py`).
+- When the asked quantity is missing the model can answer with a related one (Q31/Q60: the total instead of one step); the numbers check cannot see it. The expected fact "15 hours" also occurs for three steps of the same PDF.
+- The fact check is literal: correct Arabic answers to English sources are flagged (Q54, Q56, Q58).
+- Q1007 refused although the data reaches the model (one sample, not explained); answers in words to company-sounding questions (Q44, Q71) belong to Week 11's validation.
+- The sales checks use the same SQL function as the tool; the holdout was read once before the cleaning; cached replies do not measure run-to-run variation; the month/year catalog is implemented but not wired (the index holds one year).
+
+---
+
 ## Git Tags
 
 Each completed week is marked with an annotated Git tag once finalized, so the project history can be browsed one week at a time:
@@ -671,4 +787,5 @@ git checkout tags/week6-complete
 git checkout tags/week7-complete
 git checkout tags/week8-complete
 git checkout tags/week9-complete
+git checkout tags/week10-complete
 ```

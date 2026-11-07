@@ -1,0 +1,3748 @@
+{
+  "meta": {
+    "mode": "full",
+    "model": "gemini-3.5-flash-lite",
+    "splits": [
+      "calib",
+      "dev",
+      "test"
+    ],
+    "domain": "all",
+    "ids": null,
+    "requests_sent": 16,
+    "max_requests": 40,
+    "cache_hits": 145,
+    "cache_misses": 16,
+    "aborted": null,
+    "seconds": 159,
+    "fingerprint": "gemini-3.5-flash-lite|t=0.1|max=1024|think=|8904fbfa11c7",
+    "cleaning": true,
+    "tag": "after_cleaning"
+  },
+  "excluded_ids": [
+    8,
+    36,
+    49
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "question": "What is the total amount due for Project Alpha in January 2024?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "month": "2024-01",
+        "project": "projectAlpha",
+        "query": "total amount due"
+      },
+      "tool_status": "ok",
+      "answer": "The total amount due for Project Alpha in January 2024 is $4,500 USD [1][2].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 509,
+        "output": 37
+      },
+      "seconds": 65.59,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 381,
+        "output": 27
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "invoice_2024-01_projectAlpha_computeEngine.txt"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "month": "2024-01",
+        "project": "projectAlpha",
+        "query": "total amount due"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 2,
+      "question": "Which vulnerabilities were found in Project Beta's March security scan?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "project": "projectBeta",
+        "month": "2025-03",
+        "query": "vulnerabilities security scan"
+      },
+      "tool_status": "ok",
+      "answer": "Project Beta's March security scan detected two low-level vulnerabilities regarding outdated SSL certificates on the frontend servers [2].",
+      "model_calls": 2,
+      "attempts": 1,
+      "choose_tokens": {
+        "input": 505,
+        "output": 39
+      },
+      "seconds": 1.53,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 309,
+        "output": 24
+      },
+      "fallback_reason": null,
+      "issues": [
+        "assumed: month '2025-03': the question names the month but not the year"
+      ],
+      "rank": 1,
+      "cited_files": [
+        "report_2024-03_projectBeta_security.txt"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "project": "projectBeta",
+        "query": "vulnerabilities security scan"
+      },
+      "clean_notes": [
+        "month '2025-03' dropped (the question does not state the year)"
+      ],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 3,
+      "question": "What is the minimum password length for Project Alpha?",
+      "split": "test",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "minimum password length",
+        "project": "projectAlpha"
+      },
+      "tool_status": "ok",
+      "answer": "The minimum password length for Project Alpha is 16 characters [1].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 502,
+        "output": 25
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 397,
+        "output": 15
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "policy_2024-01_projectAlpha_general.md"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "minimum password length",
+        "project": "projectAlpha"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 4,
+      "question": "Who must approve spending that exceeds Project Beta's budget?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "project": "Project Beta",
+        "query": "spending budget approval exceeded"
+      },
+      "tool_status": "ok",
+      "answer": "Any new service provisioning that exceeds Project Beta's budget limit requires explicit written approval from the Chief Technology Officer (CTO) [3].",
+      "model_calls": 2,
+      "attempts": 1,
+      "choose_tokens": {
+        "input": 504,
+        "output": 26
+      },
+      "seconds": 5.94,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 317,
+        "output": 28
+      },
+      "fallback_reason": null,
+      "issues": [
+        "format: project 'Project Beta' is not in the stored form (like projectAlpha); an exact filter matches nothing"
+      ],
+      "rank": 1,
+      "cited_files": [
+        "policy_2024-03_projectBeta_billing.md"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "project": "projectBeta",
+        "query": "spending budget approval exceeded"
+      },
+      "clean_notes": [
+        "project 'Project Beta' -> 'projectBeta'"
+      ],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 5,
+      "question": "Which fields are required in the email ingestion payload?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "email ingestion payload required fields"
+      },
+      "tool_status": "ok",
+      "answer": "The required fields in the email ingestion payload are mailbox_id, mailbox_email, and provider_message_id [1].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 502,
+        "output": 20
+      },
+      "seconds": 0.06,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 328,
+        "output": 26
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "email_payload_spec.pdf"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "email ingestion payload required fields"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 6,
+      "question": "What is the unit price of the n2-highmem-8 instance?",
+      "split": "test",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "n2-highmem-8"
+      },
+      "tool_status": "ok",
+      "answer": "The unit price of the High-Memory Instance (n2-highmem-8) is $8.50 [1].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 508,
+        "output": 22
+      },
+      "seconds": 0.04,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 369,
+        "output": 27
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.pdf"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "n2-highmem-8"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 7,
+      "question": "متى موعد إجراء المقابلات؟",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "المقابلات"
+      },
+      "tool_status": "ok",
+      "answer": "تجرى المقابلات يوم الأحد بتاريخ 6/7 [1][3].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 501,
+        "output": 18
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 379,
+        "output": 19
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "الوظيفة الثانية (1).pdf",
+        "الوظيفة الثانية (1).pdf"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "المقابلات"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 11,
+      "question": "How many hours of high-memory instances were used for Project Alpha in January 2024?",
+      "split": "test",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "month": "2024-01",
+        "project": "Project Alpha",
+        "query": "high-memory instances hours"
+      },
+      "tool_status": "ok",
+      "answer": "For Project Alpha in January 2024, 500 hours of high-memory instances were used [1][2].",
+      "model_calls": 2,
+      "attempts": 1,
+      "choose_tokens": {
+        "input": 513,
+        "output": 39
+      },
+      "seconds": 5.06,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 408,
+        "output": 28
+      },
+      "fallback_reason": null,
+      "issues": [
+        "format: project 'Project Alpha' is not in the stored form (like projectAlpha); an exact filter matches nothing"
+      ],
+      "rank": 1,
+      "cited_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "month": "2024-01",
+        "project": "projectAlpha",
+        "query": "high-memory instances hours"
+      },
+      "clean_notes": [
+        "project 'Project Alpha' -> 'projectAlpha'"
+      ],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 12,
+      "question": "Within how many days must the Project Alpha invoice be paid?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "project": "Project Alpha",
+        "query": "invoice paid days"
+      },
+      "tool_status": "ok",
+      "answer": "The Project Alpha invoice must be paid within 30 days [1][2][3].",
+      "model_calls": 2,
+      "attempts": 1,
+      "choose_tokens": {
+        "input": 504,
+        "output": 25
+      },
+      "seconds": 6.83,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 310,
+        "output": 19
+      },
+      "fallback_reason": null,
+      "issues": [
+        "format: project 'Project Alpha' is not in the stored form (like projectAlpha); an exact filter matches nothing"
+      ],
+      "rank": 1,
+      "cited_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.txt",
+        "invoice_2024-01_projectAlpha_computeEngine.pdf",
+        "invoice_2024-01_projectAlpha_computeEngine.txt"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "project": "projectAlpha",
+        "query": "invoice paid days"
+      },
+      "clean_notes": [
+        "project 'Project Alpha' -> 'projectAlpha'"
+      ],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 13,
+      "question": "How much data did the engineering team store for Project Beta in February 2024?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "project": "Project Beta",
+        "month": "2024-02",
+        "query": "data stored"
+      },
+      "tool_status": "ok",
+      "answer": "The engineering team stored approximately 50 Terabytes of raw analytical backup data for Project Beta in February 2024 [1].",
+      "model_calls": 2,
+      "attempts": 1,
+      "choose_tokens": {
+        "input": 511,
+        "output": 36
+      },
+      "seconds": 5.67,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 282,
+        "output": 28
+      },
+      "fallback_reason": null,
+      "issues": [
+        "format: project 'Project Beta' is not in the stored form (like projectAlpha); an exact filter matches nothing"
+      ],
+      "rank": 1,
+      "cited_files": [
+        "invoice_2024-02_projectBeta_cloudStorage.txt"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "project": "projectBeta",
+        "month": "2024-02",
+        "query": "data stored"
+      },
+      "clean_notes": [
+        "project 'Project Beta' -> 'projectBeta'"
+      ],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 14,
+      "question": "How is payment made for the Project Beta storage invoice?",
+      "split": "test",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "project": "Project Beta",
+        "query": "payment storage invoice"
+      },
+      "tool_status": "ok",
+      "answer": "Payment is automatically deducted from the corporate credit card on file [2].",
+      "model_calls": 2,
+      "attempts": 1,
+      "choose_tokens": {
+        "input": 503,
+        "output": 25
+      },
+      "seconds": 6.02,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 335,
+        "output": 14
+      },
+      "fallback_reason": null,
+      "issues": [
+        "format: project 'Project Beta' is not in the stored form (like projectAlpha); an exact filter matches nothing"
+      ],
+      "rank": 2,
+      "cited_files": [
+        "invoice_2024-02_projectBeta_cloudStorage.txt"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "project": "projectBeta",
+        "query": "payment storage invoice"
+      },
+      "clean_notes": [
+        "project 'Project Beta' -> 'projectBeta'"
+      ],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 15,
+      "question": "What is the price per GB of persistent SSD storage?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "persistent SSD storage price per GB"
+      },
+      "tool_status": "ok",
+      "answer": "The price per GB of persistent SSD storage is $0.17 [1].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 503,
+        "output": 21
+      },
+      "seconds": 0.05,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 416,
+        "output": 17
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.pdf"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "persistent SSD storage price per GB"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 16,
+      "question": "How much does network egress cost per GB?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "network egress cost per GB"
+      },
+      "tool_status": "ok",
+      "answer": "Network egress costs $0.12 per GB [1].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 501,
+        "output": 20
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 399,
+        "output": 13
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.pdf"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "network egress cost per GB"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 17,
+      "question": "How often must passwords be rotated for Project Alpha?",
+      "split": "test",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "project": "Project Alpha",
+        "query": "password rotation frequency"
+      },
+      "tool_status": "ok",
+      "answer": "For Project Alpha, passwords must be rotated every 90 days [1].",
+      "model_calls": 2,
+      "attempts": 1,
+      "choose_tokens": {
+        "input": 502,
+        "output": 25
+      },
+      "seconds": 5.69,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 304,
+        "output": 16
+      },
+      "fallback_reason": null,
+      "issues": [
+        "format: project 'Project Alpha' is not in the stored form (like projectAlpha); an exact filter matches nothing"
+      ],
+      "rank": 1,
+      "cited_files": [
+        "policy_2024-01_projectAlpha_general.md"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "project": "projectAlpha",
+        "query": "password rotation frequency"
+      },
+      "clean_notes": [
+        "project 'Project Alpha' -> 'projectAlpha'"
+      ],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 18,
+      "question": "Is direct SSH access allowed from public IP addresses?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "direct SSH access public IP addresses"
+      },
+      "tool_status": "ok",
+      "answer": "No direct SSH access is permitted from public IP addresses under any circumstances [1].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 502,
+        "output": 21
+      },
+      "seconds": 0.05,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 315,
+        "output": 16
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "policy_2024-01_projectAlpha_general.md"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "direct SSH access public IP addresses"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 19,
+      "question": "What is required to access the compute engines from outside the corporate network?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "access compute engines outside corporate network"
+      },
+      "tool_status": "ok",
+      "answer": "Accessing the compute engines from outside the corporate network requires a secure VPN connection [1].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 506,
+        "output": 21
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 334,
+        "output": 18
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "policy_2024-01_projectAlpha_general.md"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "access compute engines outside corporate network"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 20,
+      "question": "What is the maximum monthly budget for Project Beta's cloud infrastructure?",
+      "split": "test",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "project": "Project Beta",
+        "query": "maximum monthly budget cloud infrastructure"
+      },
+      "tool_status": "ok",
+      "answer": "The maximum monthly budget for Project Beta's cloud infrastructure is strictly capped at $5,000 USD [1].",
+      "model_calls": 2,
+      "attempts": 1,
+      "choose_tokens": {
+        "input": 506,
+        "output": 27
+      },
+      "seconds": 6.33,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 323,
+        "output": 25
+      },
+      "fallback_reason": null,
+      "issues": [
+        "format: project 'Project Beta' is not in the stored form (like projectAlpha); an exact filter matches nothing"
+      ],
+      "rank": 1,
+      "cited_files": [
+        "policy_2024-03_projectBeta_billing.md"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "project": "projectBeta",
+        "query": "maximum monthly budget cloud infrastructure"
+      },
+      "clean_notes": [
+        "project 'Project Beta' -> 'projectBeta'"
+      ],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 21,
+      "question": "By which day of the month must cloud storage invoices be submitted to the finance department?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "cloud storage invoices submitted finance department day of the month"
+      },
+      "tool_status": "ok",
+      "answer": "Cloud storage invoices must be submitted to the finance department by the 5th of each month [1].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 509,
+        "output": 25
+      },
+      "seconds": 0.05,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 320,
+        "output": 21
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "policy_2024-03_projectBeta_billing.md"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "cloud storage invoices submitted finance department day of the month"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 22,
+      "question": "What are the consequences of late invoice submissions?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "consequences of late invoice submissions"
+      },
+      "tool_status": "ok",
+      "answer": "Late invoice submissions will result in budget cuts for the following quarter [1].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 501,
+        "output": 21
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 341,
+        "output": 15
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "policy_2024-03_projectBeta_billing.md"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "consequences of late invoice submissions"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 23,
+      "question": "What uptime did Project Alpha's Compute Engine maintain in February 2024?",
+      "split": "test",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "month": "2024-02",
+        "query": "uptime Compute Engine",
+        "project": "projectAlpha"
+      },
+      "tool_status": "ok",
+      "answer": "Project Alpha's Compute Engine maintained an uptime of 99.95% in February 2024 [2].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 510,
+        "output": 37
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 328,
+        "output": 27
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "report_2024-02_projectAlpha_computeEngine.txt"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "month": "2024-02",
+        "query": "uptime Compute Engine",
+        "project": "projectAlpha"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 24,
+      "question": "What caused the CPU usage spike on February 14th?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "CPU usage spike February 14th",
+        "month": "2024-02"
+      },
+      "tool_status": "ok",
+      "answer": "The CPU usage spike on February 14th was caused by a heavy batch processing job [1].",
+      "model_calls": 2,
+      "attempts": 1,
+      "choose_tokens": {
+        "input": 505,
+        "output": 35
+      },
+      "seconds": 5.52,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 369,
+        "output": 21
+      },
+      "fallback_reason": null,
+      "issues": [
+        "assumed: month '2024-02': the question names the month but not the year"
+      ],
+      "rank": 1,
+      "cited_files": [
+        "report_2024-02_projectAlpha_computeEngine.txt"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "CPU usage spike February 14th"
+      },
+      "clean_notes": [
+        "month '2024-02' dropped (the question does not state the year)"
+      ],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 25,
+      "question": "What does the report recommend to handle sudden traffic spikes?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "traffic spikes",
+        "document_type": "report"
+      },
+      "tool_status": "ok",
+      "answer": "The report strongly suggests upgrading to auto-scaling node pools next month to handle sudden traffic spikes smoothly without manual intervention [1].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 503,
+        "output": 25
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 321,
+        "output": 25
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "report_2024-02_projectAlpha_computeEngine.txt"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "traffic spikes",
+        "document_type": "report"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 26,
+      "question": "When were the outdated SSL certificates rotated?",
+      "split": "test",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "outdated SSL certificates rotated"
+      },
+      "tool_status": "ok",
+      "answer": "The outdated SSL certificates were rotated on March 6th [1].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 500,
+        "output": 20
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 312,
+        "output": 14
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "report_2024-03_projectBeta_security.txt"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "outdated SSL certificates rotated"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 27,
+      "question": "Is Project Beta compliant with the internal security standards after the scan?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "project": "Project Beta",
+        "query": "security standards compliance scan"
+      },
+      "tool_status": "ok",
+      "answer": "Yes, after the outdated SSL certificates were successfully rotated and updated, the system is now fully compliant with the internal security standards [2][3].",
+      "model_calls": 2,
+      "attempts": 1,
+      "choose_tokens": {
+        "input": 505,
+        "output": 26
+      },
+      "seconds": 5.99,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 309,
+        "output": 29
+      },
+      "fallback_reason": null,
+      "issues": [
+        "format: project 'Project Beta' is not in the stored form (like projectAlpha); an exact filter matches nothing"
+      ],
+      "rank": 1,
+      "cited_files": [
+        "report_2024-03_projectBeta_security.txt",
+        "report_2024-03_projectBeta_security.txt"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "project": "projectBeta",
+        "query": "security standards compliance scan"
+      },
+      "clean_notes": [
+        "project 'Project Beta' -> 'projectBeta'"
+      ],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 28,
+      "question": "What is the mailbox_id field used for?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "mailbox_id"
+      },
+      "tool_status": "ok",
+      "answer": "The mailbox_id field is an internal mailbox identifier used as the main routing key [1].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 502,
+        "output": 18
+      },
+      "seconds": 0.04,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 340,
+        "output": 19
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "email_payload_spec.pdf"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "mailbox_id"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 29,
+      "question": "What value does html_body currently have in the email payload?",
+      "split": "test",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "html_body"
+      },
+      "tool_status": "ok",
+      "answer": "The value of html_body in the email payload is currently null [2].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 505,
+        "output": 18
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 342,
+        "output": 16
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "email_payload_spec.pdf"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "html_body"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 30,
+      "question": "Which GCP role is needed to read the billing export data in BigQuery?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "GCP role read billing export data BigQuery"
+      },
+      "tool_status": "ok",
+      "answer": "To read the GCP billing export data in BigQuery, you need the bigquery.dataViewer role [2].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 507,
+        "output": 24
+      },
+      "seconds": 0.04,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 365,
+        "output": 23
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "Task-3.pdf"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "GCP role read billing export data BigQuery"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 31,
+      "question": "How many hours are estimated for building the chat interface?",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "chat interface hours estimate"
+      },
+      "tool_status": "ok",
+      "answer": "The estimated total hours for building the LLM-powered assistant from data connection to chat interface is 70 hours [1].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 503,
+        "output": 19
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 355,
+        "output": 26
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "Task-3.pdf"
+      ],
+      "facts_ok": false,
+      "facts_rule": null,
+      "fact_in_passages": false,
+      "run_args": {
+        "query": "chat interface hours estimate"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "right_source_missing_fact"
+    },
+    {
+      "id": 32,
+      "question": "What is the estimated total number of hours for the Trainee 3 task?",
+      "split": "test",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "Trainee 3 task estimated total number of hours"
+      },
+      "tool_status": "ok",
+      "answer": "The estimated total number of hours for the Trainee task is 70 hours [1].",
+      "model_calls": 3,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 508,
+        "output": 26
+      },
+      "seconds": 0.04,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 757,
+        "output": 40
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "Task-3.pdf"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "Trainee 3 task estimated total number of hours"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 33,
+      "question": "من الذي يوافق على إضافة دورة جديدة؟",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "الموافقة على إضافة دورة جديدة"
+      },
+      "tool_status": "ok",
+      "answer": "تتم الموافقة على إضافة دورة جديدة من قبل الـ admin [1].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 503,
+        "output": 23
+      },
+      "seconds": 0.04,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 364,
+        "output": 18
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "الوظيفة الثانية (1).pdf"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "الموافقة على إضافة دورة جديدة"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 34,
+      "question": "متى يجب إرسال التقرير المختصر عن الوظيفة؟",
+      "split": "dev",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "التقرير المختصر عن الوظيفة"
+      },
+      "tool_status": "ok",
+      "answer": "يجب إرسال تقرير مختصر عن الوظيفة قبل نهاية 5/7 [1][2].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 508,
+        "output": 23
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 368,
+        "output": 23
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "الوظيفة الثانية (1).pdf",
+        "الوظيفة الثانية (1).pdf"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "التقرير المختصر عن الوظيفة"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 35,
+      "question": "ما المطلوب في بند توزيع الحمل؟",
+      "split": "test",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "توزيع الحمل"
+      },
+      "tool_status": "ok",
+      "answer": "المطلوب في بند توزيع الحمل هو اختيار خدمة داخلية واحدة وتطبيق آلية توزيع حمل عليها، وتوضيح تكامل آلية توزيع الحمل (مثل Ribbon) مع نظام اكتشاف الخدمات من الناحية التنظيمية [1].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 499,
+        "output": 18
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 321,
+        "output": 48
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "الوظيفة الثانية (1).pdf"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "توزيع الحمل"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 9,
+      "question": "What is the refund policy for Project Beta?",
+      "split": "dev",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "refund policy",
+        "project": "Project Beta"
+      },
+      "tool_status": "ok",
+      "answer": "The available information does not contain the answer to this question.",
+      "model_calls": 2,
+      "attempts": 1,
+      "choose_tokens": {
+        "input": 501,
+        "output": 24
+      },
+      "seconds": 5.75,
+      "summary_source": "model",
+      "summary_status": "not_found",
+      "summary_tokens": {
+        "input": 329,
+        "output": 3
+      },
+      "fallback_reason": null,
+      "issues": [
+        "format: project 'Project Beta' is not in the stored form (like projectAlpha); an exact filter matches nothing"
+      ],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "fact_in_passages": null,
+      "run_args": {
+        "query": "refund policy",
+        "project": "projectBeta"
+      },
+      "clean_notes": [
+        "project 'Project Beta' -> 'projectBeta'"
+      ],
+      "issues_after": [],
+      "outcome": "correct_rejection"
+    },
+    {
+      "id": 10,
+      "question": "What was the cost of Project Gamma in January 2024?",
+      "split": "dev",
+      "kind": "unknown_entity",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "cost",
+        "project": "projectGamma",
+        "month": "2024-01"
+      },
+      "tool_status": "ok",
+      "answer": "The available information does not contain the answer to this question.",
+      "model_calls": 1,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 507,
+        "output": 35
+      },
+      "seconds": 0.01,
+      "summary_source": "none",
+      "summary_status": "not_found",
+      "summary_tokens": {
+        "input": 0,
+        "output": 0
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "fact_in_passages": null,
+      "run_args": {
+        "query": "cost",
+        "project": "projectGamma",
+        "month": "2024-01"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct_rejection"
+    },
+    {
+      "id": 37,
+      "question": "What is the multi-factor authentication policy for Project Beta?",
+      "split": "test",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "project": "Project Beta",
+        "query": "multi-factor authentication policy"
+      },
+      "tool_status": "ok",
+      "answer": "The available information does not contain the answer to this question.",
+      "model_calls": 2,
+      "attempts": 1,
+      "choose_tokens": {
+        "input": 504,
+        "output": 27
+      },
+      "seconds": 5.66,
+      "summary_source": "model",
+      "summary_status": "not_found",
+      "summary_tokens": {
+        "input": 325,
+        "output": 3
+      },
+      "fallback_reason": null,
+      "issues": [
+        "format: project 'Project Beta' is not in the stored form (like projectAlpha); an exact filter matches nothing"
+      ],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "fact_in_passages": null,
+      "run_args": {
+        "project": "projectBeta",
+        "query": "multi-factor authentication policy"
+      },
+      "clean_notes": [
+        "project 'Project Beta' -> 'projectBeta'"
+      ],
+      "issues_after": [],
+      "outcome": "correct_rejection"
+    },
+    {
+      "id": 38,
+      "question": "Who is the Chief Technology Officer of CloudTech Solutions?",
+      "split": "dev",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "Chief Technology Officer CloudTech Solutions"
+      },
+      "tool_status": "ok",
+      "answer": "The available information does not contain the answer to this question.",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 503,
+        "output": 21
+      },
+      "seconds": 0.04,
+      "summary_source": "model",
+      "summary_status": "not_found",
+      "summary_tokens": {
+        "input": 303,
+        "output": 3
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "fact_in_passages": null,
+      "run_args": {
+        "query": "Chief Technology Officer CloudTech Solutions"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct_rejection"
+    },
+    {
+      "id": 39,
+      "question": "What was the total amount due for Project Beta in March 2024?",
+      "split": "dev",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "project": "Project Beta",
+        "month": "2024-03",
+        "query": "total amount due invoice"
+      },
+      "tool_status": "ok",
+      "answer": "The available information does not contain the answer to this question.",
+      "model_calls": 2,
+      "attempts": 1,
+      "choose_tokens": {
+        "input": 509,
+        "output": 38
+      },
+      "seconds": 6.62,
+      "summary_source": "model",
+      "summary_status": "not_found",
+      "summary_tokens": {
+        "input": 322,
+        "output": 3
+      },
+      "fallback_reason": null,
+      "issues": [
+        "format: project 'Project Beta' is not in the stored form (like projectAlpha); an exact filter matches nothing"
+      ],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "fact_in_passages": null,
+      "run_args": {
+        "project": "projectBeta",
+        "month": "2024-03",
+        "query": "total amount due invoice"
+      },
+      "clean_notes": [
+        "project 'Project Beta' -> 'projectBeta'"
+      ],
+      "issues_after": [],
+      "outcome": "correct_rejection"
+    },
+    {
+      "id": 40,
+      "question": "What was the uptime of Project Alpha's Compute Engine in March 2024?",
+      "split": "test",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "uptime Compute Engine",
+        "month": "2024-03",
+        "project": "projectAlpha"
+      },
+      "tool_status": "ok",
+      "answer": "The available information does not contain the answer to this question.",
+      "model_calls": 1,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 511,
+        "output": 37
+      },
+      "seconds": 0.0,
+      "summary_source": "none",
+      "summary_status": "not_found",
+      "summary_tokens": {
+        "input": 0,
+        "output": 0
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "fact_in_passages": null,
+      "run_args": {
+        "query": "uptime Compute Engine",
+        "month": "2024-03",
+        "project": "projectAlpha"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct_rejection"
+    },
+    {
+      "id": 41,
+      "question": "How many vulnerabilities were found in Project Alpha's security scan?",
+      "split": "dev",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "project": "projectAlpha",
+        "query": "vulnerabilities security scan"
+      },
+      "tool_status": "ok",
+      "answer": "The available information does not contain the answer to this question.",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 505,
+        "output": 27
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "not_found",
+      "summary_tokens": {
+        "input": 335,
+        "output": 3
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "fact_in_passages": null,
+      "run_args": {
+        "project": "projectAlpha",
+        "query": "vulnerabilities security scan"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct_rejection"
+    },
+    {
+      "id": 42,
+      "question": "What is the password policy for Project Delta?",
+      "split": "dev",
+      "kind": "unknown_entity",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "password policy",
+        "project": "Project Delta"
+      },
+      "tool_status": "ok",
+      "answer": "The available information does not contain the answer to this question.",
+      "model_calls": 1,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 501,
+        "output": 24
+      },
+      "seconds": 0.0,
+      "summary_source": "none",
+      "summary_status": "not_found",
+      "summary_tokens": {
+        "input": 0,
+        "output": 0
+      },
+      "fallback_reason": null,
+      "issues": [
+        "format: project 'Project Delta' is not in the stored form (like projectAlpha); an exact filter matches nothing"
+      ],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "fact_in_passages": null,
+      "run_args": {
+        "query": "password policy",
+        "project": "projectDelta"
+      },
+      "clean_notes": [
+        "project 'Project Delta' -> 'projectDelta'"
+      ],
+      "issues_after": [],
+      "outcome": "correct_rejection"
+    },
+    {
+      "id": 43,
+      "question": "What is the maximum size of an email attachment in the payload?",
+      "split": "test",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "maximum size of an email attachment payload"
+      },
+      "tool_status": "ok",
+      "answer": "The available information does not contain the answer to this question.",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 505,
+        "output": 22
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "not_found",
+      "summary_tokens": {
+        "input": 374,
+        "output": 3
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "fact_in_passages": null,
+      "run_args": {
+        "query": "maximum size of an email attachment payload"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct_rejection"
+    },
+    {
+      "id": 44,
+      "question": "How much does Cloud Run cost per hour?",
+      "split": "dev",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "no_tool",
+      "tool": null,
+      "args": {},
+      "tool_status": null,
+      "answer": "Cloud Run pricing depends on CPU, memory, and request allocation, so there is no single fixed cost per hour.",
+      "model_calls": 1,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 501,
+        "output": 23
+      },
+      "seconds": 0.0,
+      "summary_source": null,
+      "summary_status": null,
+      "summary_tokens": {},
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "fact_in_passages": null,
+      "run_args": null,
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "no_tool_answer"
+    },
+    {
+      "id": 45,
+      "question": "What is the capital of France?",
+      "split": "dev",
+      "kind": "off_topic",
+      "domain": "documents",
+      "expected_tool": null,
+      "route": "no_tool",
+      "tool": null,
+      "args": {},
+      "tool_status": null,
+      "answer": "The capital of France is Paris.",
+      "model_calls": 1,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 499,
+        "output": 7
+      },
+      "seconds": 0.0,
+      "summary_source": null,
+      "summary_status": null,
+      "summary_tokens": {},
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "fact_in_passages": null,
+      "run_args": null,
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "no_tool_answer"
+    },
+    {
+      "id": 46,
+      "question": "How do I bake sourdough bread?",
+      "split": "test",
+      "kind": "off_topic",
+      "domain": "documents",
+      "expected_tool": null,
+      "route": "no_tool",
+      "tool": null,
+      "args": {},
+      "tool_status": null,
+      "answer": "To bake sourdough bread, you mix active sourdough starter, flour, water, and salt, then let it ferment, shape it, and bake it in a Dutch oven.",
+      "model_calls": 1,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 499,
+        "output": 34
+      },
+      "seconds": 0.0,
+      "summary_source": null,
+      "summary_status": null,
+      "summary_tokens": {},
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "fact_in_passages": null,
+      "run_args": null,
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "no_tool_answer"
+    },
+    {
+      "id": 47,
+      "question": "ما هي سياسة الإجازات السنوية للموظفين؟",
+      "split": "dev",
+      "kind": "off_topic",
+      "domain": "documents",
+      "expected_tool": null,
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "سياسة الإجازات السنوية للموظفين"
+      },
+      "tool_status": "ok",
+      "answer": "المعلومات المتاحة لا تحتوي على إجابة لهذا السؤال.",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 506,
+        "output": 26
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "not_found",
+      "summary_tokens": {
+        "input": 319,
+        "output": 3
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "fact_in_passages": null,
+      "run_args": {
+        "query": "سياسة الإجازات السنوية للموظفين"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct_rejection"
+    },
+    {
+      "id": 48,
+      "question": "كم راتب المدرب في المنصة؟",
+      "split": "dev",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "no_tool",
+      "tool": null,
+      "args": {},
+      "tool_status": null,
+      "answer": "لا توجد معلومات لدي حول راتب المدرب في المنصة.",
+      "model_calls": 1,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 501,
+        "output": 14
+      },
+      "seconds": 0.0,
+      "summary_source": null,
+      "summary_status": null,
+      "summary_tokens": {},
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "fact_in_passages": null,
+      "run_args": null,
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "no_tool_answer"
+    },
+    {
+      "id": 50,
+      "question": "ما هو الحد الأقصى للميزانية الشهرية لمشروع Beta؟",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "الحد الأقصى للميزانية الشهرية",
+        "project": "projectBeta"
+      },
+      "tool_status": "ok",
+      "answer": "الحد الأقصى للميزانية الشهرية للبنية السحابية لمشروع Beta هو 5,000 دولار أمريكي [2].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 508,
+        "output": 32
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 321,
+        "output": 32
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "policy_2024-03_projectBeta_billing.md"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "الحد الأقصى للميزانية الشهرية",
+        "project": "projectBeta"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 51,
+      "question": "كم عدد ساعات المثيلات عالية الذاكرة المستخدمة في مشروع Alpha؟",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "project": "projectAlpha",
+        "query": "المثيلات عالية الذاكرة"
+      },
+      "tool_status": "ok",
+      "answer": "عدد ساعات المثيلات عالية الذاكرة المستخدمة في مشروع Alpha هو 500 hrs [1].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 507,
+        "output": 29
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 381,
+        "output": 22
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.pdf"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "project": "projectAlpha",
+        "query": "المثيلات عالية الذاكرة"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 53,
+      "question": "كل كم يوماً يجب تغيير كلمات المرور؟",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "كلمات المرور تغيير"
+      },
+      "tool_status": "ok",
+      "answer": "المعلومات المتاحة لا تحتوي على إجابة لهذا السؤال.",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 503,
+        "output": 20
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "not_found",
+      "summary_tokens": {
+        "input": 316,
+        "output": 3
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 2,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "fact_in_passages": false,
+      "run_args": {
+        "query": "كلمات المرور تغيير"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "false_refusal"
+    },
+    {
+      "id": 54,
+      "question": "هل يسمح بالدخول المباشر إلى المحركات من عناوين الإنترنت العامة؟",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "الدخول المباشر إلى المحركات من عناوين الإنترنت العامة"
+      },
+      "tool_status": "ok",
+      "answer": "لا، لا يُسمح بالدخول المباشر إلى المحركات من عناوين الإنترنت العامة تحت أي ظرف من الظروف، ويتطلب الوصول من خارج شبكة الشركة استخدام اتصال VPN آمن [1].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 510,
+        "output": 28
+      },
+      "seconds": 0.02,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 374,
+        "output": 43
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "policy_2024-01_projectAlpha_general.md"
+      ],
+      "facts_ok": false,
+      "facts_rule": null,
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "الدخول المباشر إلى المحركات من عناوين الإنترنت العامة"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "right_source_missing_fact"
+    },
+    {
+      "id": 56,
+      "question": "متى تم تدوير شهادات SSL القديمة؟",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "SSL"
+      },
+      "tool_status": "ok",
+      "answer": "تم تدوير شهادات SSL القديمة وتحديثها في السادس من مارس [2].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 504,
+        "output": 16
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 319,
+        "output": 19
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 2,
+      "cited_files": [
+        "report_2024-03_projectBeta_security.txt"
+      ],
+      "facts_ok": false,
+      "facts_rule": null,
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "SSL"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "right_source_missing_fact"
+    },
+    {
+      "id": 57,
+      "question": "كم حجم البيانات التي خزنها فريق الهندسة لمشروع Beta؟",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "حجم البيانات",
+        "project": "Beta"
+      },
+      "tool_status": "ok",
+      "answer": "خزن فريق الهندسة للمشروع حوالي 50 Terabytes من بيانات النسخ الاحتياطي التحليلي الخام [1].",
+      "model_calls": 2,
+      "attempts": 1,
+      "choose_tokens": {
+        "input": 507,
+        "output": 24
+      },
+      "seconds": 5.35,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 363,
+        "output": 28
+      },
+      "fallback_reason": null,
+      "issues": [
+        "format: project 'Beta' is not in the stored form (like projectAlpha); an exact filter matches nothing"
+      ],
+      "rank": 1,
+      "cited_files": [
+        "invoice_2024-02_projectBeta_cloudStorage.txt"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "حجم البيانات",
+        "project": "projectBeta"
+      },
+      "clean_notes": [
+        "project 'Beta' -> 'projectBeta'"
+      ],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 59,
+      "question": "ما سعر الغيغابايت الواحد لتخزين SSD الدائم؟",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "سعر الغيغابايت SSD الدائم"
+      },
+      "tool_status": "ok",
+      "answer": "سعر الغيغابايت الواحد لتخزين SSD الدائم هو $0.17 [1].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 508,
+        "output": 26
+      },
+      "seconds": 0.04,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 378,
+        "output": 24
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "invoice_2024-01_projectAlpha_computeEngine.pdf"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "سعر الغيغابايت SSD الدائم"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 60,
+      "question": "كم ساعة مقدرة لبناء واجهة الدردشة؟",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "واجهة الدردشة ساعات"
+      },
+      "tool_status": "ok",
+      "answer": "الساعات المقدرة لبناء مساعد الذكاء الاصطناعي (LLM-powered assistant) من ربط البيانات إلى واجهة الدردشة هي 70 ساعة إجمالاً [2].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 505,
+        "output": 21
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 360,
+        "output": 44
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 2,
+      "cited_files": [
+        "Task-3.pdf"
+      ],
+      "facts_ok": false,
+      "facts_rule": null,
+      "fact_in_passages": false,
+      "run_args": {
+        "query": "واجهة الدردشة ساعات"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "right_source_missing_fact"
+    },
+    {
+      "id": 62,
+      "question": "ما الحقول المطلوبة في حمولة البريد الإلكتروني؟",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "حمولة البريد الإلكتروني الحقول المطلوبة"
+      },
+      "tool_status": "ok",
+      "answer": "الحقول المطلوبة في حمولة البريد الإلكتروني هي: mailbox_id، mailbox_email، وprovider_message_id [1].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 505,
+        "output": 25
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 373,
+        "output": 30
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "email_payload_spec.pdf"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "حمولة البريد الإلكتروني الحقول المطلوبة"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 63,
+      "question": "When are the interviews held?",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "interviews held"
+      },
+      "tool_status": "ok",
+      "answer": "تجرى المقابلات يوم الأحد بتاريخ 6/7 [1].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 498,
+        "output": 18
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 357,
+        "output": 17
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "الوظيفة الثانية (1).pdf"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "interviews held"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 65,
+      "question": "When must the short report about the job be sent?",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "short report job send when"
+      },
+      "tool_status": "ok",
+      "answer": "يجب إرسال تقرير مختصر عن الوظيفة قبل نهاية 5/7 [1][2].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 503,
+        "output": 20
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 364,
+        "output": 23
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "الوظيفة الثانية (1).pdf",
+        "الوظيفة الثانية (1).pdf"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "short report job send when"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 66,
+      "question": "Which load balancing mechanism is given as an example?",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "load balancing mechanism example"
+      },
+      "tool_status": "ok",
+      "answer": "The available information does not contain the answer to this question.",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 502,
+        "output": 19
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "not_found",
+      "summary_tokens": {
+        "input": 327,
+        "output": 3
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "fact_in_passages": false,
+      "run_args": {
+        "query": "load balancing mechanism example"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "false_refusal"
+    },
+    {
+      "id": 67,
+      "question": "ما هي سياسة استرداد الأموال لمشروع Beta؟",
+      "split": "calib",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "استرداد الأموال",
+        "project": "projectBeta"
+      },
+      "tool_status": "ok",
+      "answer": "المعلومات المتاحة لا تحتوي على إجابة لهذا السؤال.",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 506,
+        "output": 27
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "not_found",
+      "summary_tokens": {
+        "input": 334,
+        "output": 3
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "fact_in_passages": null,
+      "run_args": {
+        "query": "استرداد الأموال",
+        "project": "projectBeta"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct_rejection"
+    },
+    {
+      "id": 68,
+      "question": "كم كانت تكلفة مشروع Gamma في يناير؟",
+      "split": "calib",
+      "kind": "unknown_entity",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "month": "2025-01",
+        "project": "projectGamma",
+        "query": "cost"
+      },
+      "tool_status": "ok",
+      "answer": "المعلومات المتاحة لا تحتوي على إجابة لهذا السؤال.",
+      "model_calls": 1,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 501,
+        "output": 35
+      },
+      "seconds": 0.0,
+      "summary_source": "none",
+      "summary_status": "not_found",
+      "summary_tokens": {
+        "input": 0,
+        "output": 0
+      },
+      "fallback_reason": null,
+      "issues": [
+        "assumed: month '2025-01': the question names the month but not the year"
+      ],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "fact_in_passages": null,
+      "run_args": {
+        "project": "projectGamma",
+        "query": "cost"
+      },
+      "clean_notes": [
+        "month '2025-01' dropped (the question does not state the year)"
+      ],
+      "issues_after": [],
+      "outcome": "correct_rejection"
+    },
+    {
+      "id": 70,
+      "question": "كيف أخبز خبز العجين المخمر؟",
+      "split": "calib",
+      "kind": "off_topic",
+      "domain": "documents",
+      "expected_tool": null,
+      "route": "no_tool",
+      "tool": null,
+      "args": {},
+      "tool_status": null,
+      "answer": "كيفية خبز خبز العجين المخمر تتطلب خطوات أساسية تشمل تحضير البادئة (Sourdough Starter)، عجن المكونات، التخمير الأولي، التشكيل، التخمير النهائي، وأخيراً الخبز في الفرن.",
+      "model_calls": 1,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 503,
+        "output": 61
+      },
+      "seconds": 0.0,
+      "summary_source": null,
+      "summary_status": null,
+      "summary_tokens": {},
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "fact_in_passages": null,
+      "run_args": null,
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "no_tool_answer"
+    },
+    {
+      "id": 71,
+      "question": "من هو المدير التنفيذي لشركة CloudTech؟",
+      "split": "calib",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "no_tool",
+      "tool": null,
+      "args": {},
+      "tool_status": null,
+      "answer": "من هو المدير التنفيذي لشركة CloudTech؟",
+      "model_calls": 1,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 503,
+        "output": 11
+      },
+      "seconds": 0.0,
+      "summary_source": null,
+      "summary_status": null,
+      "summary_tokens": {},
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "fact_in_passages": null,
+      "run_args": null,
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "no_tool_answer"
+    },
+    {
+      "id": 73,
+      "question": "What is the capital of Japan?",
+      "split": "calib",
+      "kind": "off_topic",
+      "domain": "documents",
+      "expected_tool": null,
+      "route": "no_tool",
+      "tool": null,
+      "args": {},
+      "tool_status": null,
+      "answer": "The capital of Japan is Tokyo.",
+      "model_calls": 1,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 499,
+        "output": 7
+      },
+      "seconds": 0.0,
+      "summary_source": null,
+      "summary_status": null,
+      "summary_tokens": {},
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "fact_in_passages": null,
+      "run_args": null,
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "no_tool_answer"
+    },
+    {
+      "id": 74,
+      "question": "ما هي سياسة المصادقة متعددة العوامل لمشروع Beta؟",
+      "split": "calib",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "project": "projectBeta",
+        "query": "المصادقة متعددة العوامل"
+      },
+      "tool_status": "ok",
+      "answer": "المعلومات المتاحة لا تحتوي على إجابة لهذا السؤال.",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 508,
+        "output": 30
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "not_found",
+      "summary_tokens": {
+        "input": 298,
+        "output": 3
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "fact_in_passages": null,
+      "run_args": {
+        "project": "projectBeta",
+        "query": "المصادقة متعددة العوامل"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct_rejection"
+    },
+    {
+      "id": 76,
+      "question": "What currency is the Project Beta storage invoice in?",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "storage invoice currency",
+        "project": "projectBeta"
+      },
+      "tool_status": "ok",
+      "answer": "The Project Beta storage invoice is in USD [2].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 502,
+        "output": 25
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 330,
+        "output": 11
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 2,
+      "cited_files": [
+        "invoice_2024-02_projectBeta_cloudStorage.txt"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "storage invoice currency",
+        "project": "projectBeta"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 77,
+      "question": "What is the effective date of Project Alpha's general access policy?",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "project": "projectAlpha",
+        "query": "general access policy effective date"
+      },
+      "tool_status": "ok",
+      "answer": "The effective date of Project Alpha's general access policy is January 1, 2024 [1].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 506,
+        "output": 27
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 302,
+        "output": 24
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "policy_2024-01_projectAlpha_general.md"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "project": "projectAlpha",
+        "query": "general access policy effective date"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 79,
+      "question": "How many hours is the Deploy and Monitor Feedback step estimated at?",
+      "split": "calib",
+      "kind": "answerable",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "Deploy and Monitor Feedback"
+      },
+      "tool_status": "ok",
+      "answer": "The Deploy and Monitor Feedback step is estimated at 10 hours [2].",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 505,
+        "output": 19
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 318,
+        "output": 16
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": 1,
+      "cited_files": [
+        "Task-3.pdf"
+      ],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": true,
+      "run_args": {
+        "query": "Deploy and Monitor Feedback"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 81,
+      "question": "Who approved the Project Beta budget in March 2024?",
+      "split": "calib",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "project": "Project Beta",
+        "month": "2024-03",
+        "query": "budget approval"
+      },
+      "tool_status": "ok",
+      "answer": "The available information does not contain the answer to this question.",
+      "model_calls": 2,
+      "attempts": 1,
+      "choose_tokens": {
+        "input": 506,
+        "output": 36
+      },
+      "seconds": 5.96,
+      "summary_source": "model",
+      "summary_status": "not_found",
+      "summary_tokens": {
+        "input": 319,
+        "output": 3
+      },
+      "fallback_reason": null,
+      "issues": [
+        "format: project 'Project Beta' is not in the stored form (like projectAlpha); an exact filter matches nothing"
+      ],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "fact_in_passages": null,
+      "run_args": {
+        "project": "projectBeta",
+        "month": "2024-03",
+        "query": "budget approval"
+      },
+      "clean_notes": [
+        "project 'Project Beta' -> 'projectBeta'"
+      ],
+      "issues_after": [],
+      "outcome": "correct_rejection"
+    },
+    {
+      "id": 82,
+      "question": "What is the invoice number of the Project Alpha January invoice?",
+      "split": "calib",
+      "kind": "near_topic_missing",
+      "domain": "documents",
+      "expected_tool": "search_documents",
+      "route": "tool",
+      "tool": "search_documents",
+      "args": {
+        "query": "invoice number",
+        "month": "2025-01",
+        "project": "projectAlpha"
+      },
+      "tool_status": "ok",
+      "answer": "The available information does not contain the answer to this question.",
+      "model_calls": 2,
+      "attempts": 1,
+      "choose_tokens": {
+        "input": 504,
+        "output": 36
+      },
+      "seconds": 5.49,
+      "summary_source": "model",
+      "summary_status": "not_found",
+      "summary_tokens": {
+        "input": 343,
+        "output": 3
+      },
+      "fallback_reason": null,
+      "issues": [
+        "assumed: month '2025-01': the question names the month but not the year"
+      ],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "fact_in_passages": null,
+      "run_args": {
+        "query": "invoice number",
+        "project": "projectAlpha"
+      },
+      "clean_notes": [
+        "month '2025-01' dropped (the question does not state the year)"
+      ],
+      "issues_after": [],
+      "outcome": "correct_rejection"
+    },
+    {
+      "id": 84,
+      "question": "What is the weather in Secaucus today?",
+      "split": "calib",
+      "kind": "off_topic",
+      "domain": "documents",
+      "expected_tool": null,
+      "route": "no_tool",
+      "tool": null,
+      "args": {},
+      "tool_status": null,
+      "answer": "I don't have access to live weather information.",
+      "model_calls": 1,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 502,
+        "output": 11
+      },
+      "seconds": 0.0,
+      "summary_source": null,
+      "summary_status": null,
+      "summary_tokens": {},
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "fact_in_passages": null,
+      "run_args": null,
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "no_tool_answer"
+    },
+    {
+      "id": 1001,
+      "question": "Which category has the highest revenue?",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "route": "tool",
+      "tool": "get_sales_summary",
+      "args": {},
+      "tool_status": "ok",
+      "answer": "Based on the data, the category with the highest revenue is Butchers, with a revenue of 208118.0.",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 499,
+        "output": 12
+      },
+      "seconds": 0.07,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 2048,
+        "output": 29
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": null,
+      "run_args": {},
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 1002,
+      "question": "What is the total revenue?",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "route": "tool",
+      "tool": "get_sales_summary",
+      "args": {},
+      "tool_status": "ok",
+      "answer": "The total revenue is 1552071.0.",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 498,
+        "output": 12
+      },
+      "seconds": 0.07,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 2047,
+        "output": 15
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": null,
+      "run_args": {},
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 1003,
+      "question": "How many transactions are there in total?",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "route": "tool",
+      "tool": "get_sales_summary",
+      "args": {},
+      "tool_status": "ok",
+      "answer": "There are 11971 transactions in total.",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 500,
+        "output": 12
+      },
+      "seconds": 0.08,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 2049,
+        "output": 12
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": null,
+      "run_args": {},
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 1004,
+      "question": "What is the average order value?",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "route": "tool",
+      "tool": "get_sales_summary",
+      "args": {},
+      "tool_status": "ok",
+      "answer": "The average order value is 129.65.",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 499,
+        "output": 12
+      },
+      "seconds": 0.06,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 2048,
+        "output": 13
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": null,
+      "run_args": {},
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 1005,
+      "question": "What is the total revenue of the Furniture category?",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "route": "tool",
+      "tool": "get_sales_summary",
+      "args": {
+        "category": "Furniture"
+      },
+      "tool_status": "ok",
+      "answer": "The total revenue of the Furniture category is 195310.0.",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 502,
+        "output": 18
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 1590,
+        "output": 18
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": null,
+      "run_args": {
+        "category": "Furniture"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 1006,
+      "question": "How many units of Furniture were sold?",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "route": "tool",
+      "tool": "get_sales_summary",
+      "args": {
+        "category": "Furniture"
+      },
+      "tool_status": "ok",
+      "answer": "A total of 8462 units of Furniture were sold.",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 500,
+        "output": 18
+      },
+      "seconds": 0.03,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 1588,
+        "output": 14
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": null,
+      "run_args": {
+        "category": "Furniture"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 1007,
+      "question": "Which payment method brings the most revenue?",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "route": "tool",
+      "tool": "get_sales_summary",
+      "args": {},
+      "tool_status": "ok",
+      "answer": "The available information does not contain the answer to this question.",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 500,
+        "output": 12
+      },
+      "seconds": 0.07,
+      "summary_source": "model",
+      "summary_status": "not_found",
+      "summary_tokens": {
+        "input": 2049,
+        "output": 3
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "fact_in_passages": null,
+      "run_args": {},
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "false_refusal"
+    },
+    {
+      "id": 1008,
+      "question": "Is online or in-store revenue higher?",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "route": "tool",
+      "tool": "get_sales_summary",
+      "args": {},
+      "tool_status": "ok",
+      "answer": "Online revenue is higher. Online revenue is 791401.0, while in-store revenue is 760670.0.",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 501,
+        "output": 12
+      },
+      "seconds": 0.07,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 2050,
+        "output": 34
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": null,
+      "run_args": {},
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 1009,
+      "question": "Which category has the lowest revenue?",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "route": "tool",
+      "tool": "get_sales_summary",
+      "args": {},
+      "tool_status": "ok",
+      "answer": "The category with the lowest revenue is Milk Products, with a revenue of 180112.0.",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 499,
+        "output": 12
+      },
+      "seconds": 0.07,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 2048,
+        "output": 24
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": null,
+      "run_args": {},
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 1010,
+      "question": "What was the total revenue in January 2024?",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "route": "tool",
+      "tool": "get_sales_summary",
+      "args": {
+        "start": "2024-01",
+        "end": "2024-01"
+      },
+      "tool_status": "ok",
+      "answer": "The total revenue in January 2024 was 47908.5.",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 505,
+        "output": 36
+      },
+      "seconds": 0.13,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 940,
+        "output": 20
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": null,
+      "run_args": {
+        "start": "2024-01",
+        "end": "2024-01"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 1011,
+      "question": "How much revenue did Food make between 2024-01 and 2024-06?",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "route": "tool",
+      "tool": "get_sales_summary",
+      "args": {
+        "category": "Food",
+        "start": "2024-01",
+        "end": "2024-06"
+      },
+      "tool_status": "ok",
+      "answer": "Food made a total revenue of 31534.5 between 2024-01 and 2024-06.",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 517,
+        "output": 42
+      },
+      "seconds": 0.04,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 827,
+        "output": 33
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": null,
+      "run_args": {
+        "category": "Food",
+        "start": "2024-01",
+        "end": "2024-06"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 1012,
+      "question": "What was the total revenue in 2024?",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "route": "tool",
+      "tool": "get_sales_summary",
+      "args": {
+        "start": "2024-01",
+        "end": "2024-12"
+      },
+      "tool_status": "ok",
+      "answer": "The total revenue in 2024 was 524881.0.",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 504,
+        "output": 36
+      },
+      "seconds": 0.08,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 1386,
+        "output": 20
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": null,
+      "run_args": {
+        "start": "2024-01",
+        "end": "2024-12"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 1013,
+      "question": "ما هي الفئة الأعلى إيراداً؟",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "route": "tool",
+      "tool": "get_sales_summary",
+      "args": {},
+      "tool_status": "ok",
+      "answer": "الفئة الأعلى إيراداً هي Butchers بإيرادات بلغت 208118.0.",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 502,
+        "output": 12
+      },
+      "seconds": 0.1,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 2051,
+        "output": 25
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": null,
+      "run_args": {},
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 1014,
+      "question": "كم إجمالي الإيرادات؟",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "route": "tool",
+      "tool": "get_sales_summary",
+      "args": {},
+      "tool_status": "ok",
+      "answer": "إجمالي الإيرادات هو 1552071.0.",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 499,
+        "output": 12
+      },
+      "seconds": 0.1,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 2048,
+        "output": 17
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": null,
+      "run_args": {},
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 1015,
+      "question": "What is the revenue of the Toys category?",
+      "split": "dev",
+      "kind": "sales_tool_error",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "route": "tool",
+      "tool": "get_sales_summary",
+      "args": {
+        "category": "Toys"
+      },
+      "tool_status": "error",
+      "answer": "The tool could not answer: ValueError: Unknown category 'Toys'. Available: ['Beverages', 'Butchers', 'Computers and electric accessories', 'Electric household essentials', 'Food', 'Furniture', 'Milk Products', 'Patisserie']",
+      "model_calls": 1,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 501,
+        "output": 18
+      },
+      "seconds": 0.01,
+      "summary_source": null,
+      "summary_status": null,
+      "summary_tokens": {},
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "fact_in_passages": null,
+      "run_args": {
+        "category": "Toys"
+      },
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    },
+    {
+      "id": 1016,
+      "question": "What is the profit margin?",
+      "split": "dev",
+      "kind": "sales_not_found",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "route": "no_tool",
+      "tool": null,
+      "args": {},
+      "tool_status": null,
+      "answer": "I cannot answer that question as the required financial data is not available.",
+      "model_calls": 1,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 498,
+        "output": 14
+      },
+      "seconds": 0.0,
+      "summary_source": null,
+      "summary_status": null,
+      "summary_tokens": {},
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": null,
+      "facts_rule": null,
+      "fact_in_passages": null,
+      "run_args": null,
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "no_tool_answer"
+    },
+    {
+      "id": 1017,
+      "question": "Which month had the highest revenue?",
+      "split": "dev",
+      "kind": "sales_answerable",
+      "domain": "sales",
+      "expected_tool": "get_sales_summary",
+      "route": "tool",
+      "tool": "get_sales_summary",
+      "args": {},
+      "tool_status": "ok",
+      "answer": "The month with the highest revenue was 2022-01, with a revenue of 52911.5.",
+      "model_calls": 2,
+      "attempts": 0,
+      "choose_tokens": {
+        "input": 499,
+        "output": 12
+      },
+      "seconds": 0.09,
+      "summary_source": "model",
+      "summary_status": "answered",
+      "summary_tokens": {
+        "input": 2048,
+        "output": 29
+      },
+      "fallback_reason": null,
+      "issues": [],
+      "rank": null,
+      "cited_files": [],
+      "facts_ok": true,
+      "facts_rule": "exact",
+      "fact_in_passages": null,
+      "run_args": {},
+      "clean_notes": [],
+      "issues_after": [],
+      "outcome": "correct"
+    }
+  ]
+}
