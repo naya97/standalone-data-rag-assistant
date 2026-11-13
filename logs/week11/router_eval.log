@@ -1,0 +1,150 @@
+2026-11-08 14:44:00 | q-655f | QUESTION  What is the total amount due for Project Alpha in January 2024?
+2026-11-08 14:44:00 | q-655f | MODEL     chose search_documents args={'month': '2024-01', 'project': 'projectAlpha', 'query': 'total amount due'} (tokens 509/37, 0.0s)
+2026-11-08 14:44:00 | q-655f | ROUTE     rag
+2026-11-08 14:44:00 | q-655f | TOOL      search_documents args={"month": "2024-01", "project": "projectAlpha", "query": "total amount due"} ... running
+2026-11-08 14:44:25 | q-655f | RESULT    search_documents ok in 25121 ms, 0.9 KB: 3 passages from ['invoice_2024-01_projectAlpha_computeEngine.pdf', 'invoice_2024-01_projectAlpha_computeEngine.txt']
+2026-11-08 14:44:25 | q-655f | SUMMARY   source=model status=answered requests=1 tokens=381/27 citations=[1, 2]
+2026-11-08 14:44:25 | q-655f | ANSWER    [rag/answer, 2 model calls] The total amount due for Project Alpha in January 2024 is $4,500 USD [1][2].
+2026-11-08 14:44:25 | q-a578 | QUESTION  What is the minimum password length for Project Alpha?
+2026-11-08 14:44:25 | q-a578 | MODEL     chose search_documents args={'query': 'minimum password length', 'project': 'projectAlpha'} (tokens 502/25, 0.0s)
+2026-11-08 14:44:25 | q-a578 | ROUTE     rag
+2026-11-08 14:44:25 | q-a578 | TOOL      search_documents args={"query": "minimum password length", "project": "projectAlpha"} ... running
+2026-11-08 14:44:26 | q-a578 | RESULT    search_documents ok in 18 ms, 1.0 KB: 3 passages from ['invoice_2024-01_projectAlpha_computeEngine.pdf', 'invoice_2024-01_projectAlpha_computeEngine.txt', 'policy_2024-01_projectAlpha_general.md']
+2026-11-08 14:44:26 | q-a578 | SUMMARY   source=model status=answered requests=1 tokens=397/15 citations=[1]
+2026-11-08 14:44:26 | q-a578 | ANSWER    [rag/answer, 2 model calls] The minimum password length for Project Alpha is 16 characters [1].
+2026-11-08 14:44:26 | q-605a | QUESTION  What is the unit price of the n2-highmem-8 instance?
+2026-11-08 14:44:26 | q-605a | MODEL     chose search_documents args={'query': 'n2-highmem-8'} (tokens 508/22, 0.0s)
+2026-11-08 14:44:26 | q-605a | ROUTE     rag
+2026-11-08 14:44:26 | q-605a | TOOL      search_documents args={"query": "n2-highmem-8"} ... running
+2026-11-08 14:44:26 | q-605a | RESULT    search_documents ok in 17 ms, 0.9 KB: 3 passages from ['Task-3.pdf', 'invoice_2024-01_projectAlpha_computeEngine.pdf', 'report_2024-02_projectAlpha_computeEngine.txt']
+2026-11-08 14:44:26 | q-605a | SUMMARY   source=model status=answered requests=1 tokens=369/27 citations=[1]
+2026-11-08 14:44:26 | q-605a | ANSWER    [rag/answer, 2 model calls] The unit price of the High-Memory Instance (n2-highmem-8) is $8.50 [1].
+2026-11-08 14:44:26 | q-e0a7 | QUESTION  متى موعد إجراء المقابلات؟
+2026-11-08 14:44:26 | q-e0a7 | MODEL     chose search_documents args={'query': 'المقابلات'} (tokens 501/18, 0.0s)
+2026-11-08 14:44:26 | q-e0a7 | ROUTE     rag
+2026-11-08 14:44:26 | q-e0a7 | TOOL      search_documents args={"query": "المقابلات"} ... running
+2026-11-08 14:44:26 | q-e0a7 | RESULT    search_documents ok in 18 ms, 0.9 KB: 3 passages from ['Task-3.pdf', 'الوظيفة الثانية (1).pdf']
+2026-11-08 14:44:26 | q-e0a7 | SUMMARY   source=model status=answered requests=1 tokens=379/19 citations=[1, 3]
+2026-11-08 14:44:26 | q-e0a7 | ANSWER    [rag/answer, 2 model calls] تجرى المقابلات يوم الأحد بتاريخ 6/7 [1][3].
+2026-11-08 14:44:26 | q-f575 | QUESTION  What uptime did Project Alpha's Compute Engine maintain in February 2024?
+2026-11-08 14:44:26 | q-f575 | MODEL     chose search_documents args={'month': '2024-02', 'query': 'uptime Compute Engine', 'project': 'projectAlpha'} (tokens 510/37, 0.0s)
+2026-11-08 14:44:26 | q-f575 | ROUTE     rag
+2026-11-08 14:44:26 | q-f575 | TOOL      search_documents args={"month": "2024-02", "query": "uptime Compute Engine", "project": "projectAlpha"} ... running
+2026-11-08 14:44:26 | q-f575 | RESULT    search_documents ok in 19 ms, 0.8 KB: 3 passages from ['report_2024-02_projectAlpha_computeEngine.txt']
+2026-11-08 14:44:26 | q-f575 | SUMMARY   source=model status=answered requests=1 tokens=328/27 citations=[2]
+2026-11-08 14:44:26 | q-f575 | ANSWER    [rag/answer, 2 model calls] Project Alpha's Compute Engine maintained an uptime of 99.95% in February 2024 [2].
+2026-11-08 14:44:26 | q-4cf4 | QUESTION  What is the refund policy for Project Beta?
+2026-11-08 14:44:26 | q-4cf4 | MODEL     chose search_documents args={'query': 'refund policy', 'project': 'Project Beta'} (tokens 501/24, 0.0s)
+2026-11-08 14:44:26 | q-4cf4 | ROUTE     rag
+2026-11-08 14:44:26 | q-4cf4 | CLEAN     project 'Project Beta' -> 'projectBeta'
+2026-11-08 14:44:26 | q-4cf4 | TOOL      search_documents args={"query": "refund policy", "project": "projectBeta"} ... running
+2026-11-08 14:44:26 | q-4cf4 | RESULT    search_documents ok in 19 ms, 0.8 KB: 3 passages from ['invoice_2024-02_projectBeta_cloudStorage.txt', 'policy_2024-03_projectBeta_billing.md']
+2026-11-08 14:44:26 | q-4cf4 | SUMMARY   source=model status=not_found requests=1 tokens=329/3 citations=[]
+2026-11-08 14:44:26 | q-4cf4 | ANSWER    [rag/not_found, 2 model calls] The available information does not contain the answer to this question.
+2026-11-08 14:44:26 | q-de96 | QUESTION  What was the cost of Project Gamma in January 2024?
+2026-11-08 14:44:26 | q-de96 | MODEL     chose search_documents args={'query': 'cost', 'project': 'projectGamma', 'month': '2024-01'} (tokens 507/35, 0.0s)
+2026-11-08 14:44:26 | q-de96 | ROUTE     rag
+2026-11-08 14:44:26 | q-de96 | TOOL      search_documents args={"query": "cost", "project": "projectGamma", "month": "2024-01"} ... running
+2026-11-08 14:44:26 | q-de96 | RESULT    search_documents ok in 2 ms, 0.1 KB: 0 passages from [] (no_documents_match_filter)
+2026-11-08 14:44:26 | q-de96 | SUMMARY   source=none status=not_found requests=0 tokens=0/0 citations=[]
+2026-11-08 14:44:26 | q-de96 | ANSWER    [rag/not_found, 1 model calls] The available information does not contain the answer to this question.
+2026-11-08 14:44:26 | q-12d5 | QUESTION  What is the multi-factor authentication policy for Project Beta?
+2026-11-08 14:44:26 | q-12d5 | MODEL     chose search_documents args={'project': 'Project Beta', 'query': 'multi-factor authentication policy'} (tokens 504/27, 0.0s)
+2026-11-08 14:44:26 | q-12d5 | ROUTE     rag
+2026-11-08 14:44:26 | q-12d5 | CLEAN     project 'Project Beta' -> 'projectBeta'
+2026-11-08 14:44:26 | q-12d5 | TOOL      search_documents args={"project": "projectBeta", "query": "multi-factor authentication policy"} ... running
+2026-11-08 14:44:26 | q-12d5 | RESULT    search_documents ok in 17 ms, 0.9 KB: 3 passages from ['policy_2024-03_projectBeta_billing.md', 'report_2024-03_projectBeta_security.txt']
+2026-11-08 14:44:26 | q-12d5 | SUMMARY   source=model status=not_found requests=1 tokens=325/3 citations=[]
+2026-11-08 14:44:26 | q-12d5 | ANSWER    [rag/not_found, 2 model calls] The available information does not contain the answer to this question.
+2026-11-08 14:44:26 | q-c70f | QUESTION  What is the capital of France?
+2026-11-08 14:44:26 | q-c70f | MODEL     no tool needed, answered in words (tokens 499/7, 0.0s)
+2026-11-08 14:44:26 | q-c70f | ROUTE     fallback (reason: no_tool)
+2026-11-08 14:44:26 | q-c70f | ANSWER    [fallback/no_tool, 1 model calls] I can only answer questions about the project documents (invoices, policies, reports) or about the sales data. This question is outside that scope, or it is not clear enough: please rephrase it.
+2026-11-08 14:44:26 | q-3d7c | QUESTION  ما هي سياسة الإجازات السنوية للموظفين؟
+2026-11-08 14:44:26 | q-3d7c | MODEL     chose search_documents args={'query': 'سياسة الإجازات السنوية للموظفين'} (tokens 506/26, 0.0s)
+2026-11-08 14:44:26 | q-3d7c | ROUTE     rag
+2026-11-08 14:44:26 | q-3d7c | TOOL      search_documents args={"query": "سياسة الإجازات السنوية للموظفين"} ... running
+2026-11-08 14:44:26 | q-3d7c | RESULT    search_documents ok in 20 ms, 0.8 KB: 3 passages from ['policy_2024-03_projectBeta_billing.md']
+2026-11-08 14:44:26 | q-3d7c | SUMMARY   source=model status=not_found requests=1 tokens=319/3 citations=[]
+2026-11-08 14:44:26 | q-3d7c | ANSWER    [rag/not_found, 2 model calls] المعلومات المتاحة لا تحتوي على إجابة لهذا السؤال.
+2026-11-08 14:44:26 | q-23f1 | QUESTION  Which category has the highest revenue?
+2026-11-08 14:44:26 | q-23f1 | MODEL     chose get_sales_summary args={} (tokens 499/12, 0.0s)
+2026-11-08 14:44:26 | q-23f1 | ROUTE     sql
+2026-11-08 14:44:26 | q-23f1 | TOOL      get_sales_summary args={} ... running
+2026-11-08 14:44:26 | q-23f1 | RESULT    get_sales_summary ok in 40 ms, 4.8 KB: sales 2022-01..2025-01, all categories: 11971 transactions, revenue 1552071.0
+2026-11-08 14:44:26 | q-23f1 | SUMMARY   source=model status=answered requests=1 tokens=2048/29 citations=[]
+2026-11-08 14:44:26 | q-23f1 | ANSWER    [sql/answer, 2 model calls] Based on the data, the category with the highest revenue is Butchers, with a revenue of 208118.0.
+2026-11-08 14:44:26 | q-6d06 | QUESTION  What is the total revenue of the Furniture category?
+2026-11-08 14:44:26 | q-6d06 | MODEL     chose get_sales_summary args={'category': 'Furniture'} (tokens 502/18, 0.0s)
+2026-11-08 14:44:26 | q-6d06 | ROUTE     sql
+2026-11-08 14:44:26 | q-6d06 | TOOL      get_sales_summary args={"category": "Furniture"} ... running
+2026-11-08 14:44:26 | q-6d06 | RESULT    get_sales_summary ok in 21 ms, 3.7 KB: sales 2022-01..2025-01, Furniture: 1525 transactions, revenue 195310.0
+2026-11-08 14:44:26 | q-6d06 | SUMMARY   source=model status=answered requests=1 tokens=1590/18 citations=[]
+2026-11-08 14:44:26 | q-6d06 | ANSWER    [sql/answer, 2 model calls] The total revenue of the Furniture category is 195310.0.
+2026-11-08 14:44:26 | q-a412 | QUESTION  What was the total revenue in 2024?
+2026-11-08 14:44:26 | q-a412 | MODEL     chose get_sales_summary args={'start': '2024-01', 'end': '2024-12'} (tokens 504/36, 0.0s)
+2026-11-08 14:44:26 | q-a412 | ROUTE     sql
+2026-11-08 14:44:26 | q-a412 | TOOL      get_sales_summary args={"start": "2024-01", "end": "2024-12"} ... running
+2026-11-08 14:44:26 | q-a412 | RESULT    get_sales_summary ok in 57 ms, 3.4 KB: sales 2024-01..2024-12, all categories: 4036 transactions, revenue 524881.0
+2026-11-08 14:44:26 | q-a412 | SUMMARY   source=model status=answered requests=1 tokens=1386/20 citations=[]
+2026-11-08 14:44:26 | q-a412 | ANSWER    [sql/answer, 2 model calls] The total revenue in 2024 was 524881.0.
+2026-11-08 14:44:26 | q-b087 | QUESTION  ما هي الفئة الأعلى إيراداً؟
+2026-11-08 14:44:26 | q-b087 | MODEL     chose get_sales_summary args={} (tokens 502/12, 0.0s)
+2026-11-08 14:44:26 | q-b087 | ROUTE     sql
+2026-11-08 14:44:26 | q-b087 | TOOL      get_sales_summary args={} ... running
+2026-11-08 14:44:26 | q-b087 | RESULT    get_sales_summary ok in 35 ms, 4.8 KB: sales 2022-01..2025-01, all categories: 11971 transactions, revenue 1552071.0
+2026-11-08 14:44:26 | q-b087 | SUMMARY   source=model status=answered requests=1 tokens=2051/25 citations=[]
+2026-11-08 14:44:26 | q-b087 | ANSWER    [sql/answer, 2 model calls] الفئة الأعلى إيراداً هي Butchers بإيرادات بلغت 208118.0.
+2026-11-08 14:44:26 | q-6d46 | QUESTION  What is the profit margin?
+2026-11-08 14:44:26 | q-6d46 | MODEL     no tool needed, answered in words (tokens 498/14, 0.0s)
+2026-11-08 14:44:26 | q-6d46 | ROUTE     fallback (reason: no_tool)
+2026-11-08 14:44:26 | q-6d46 | ANSWER    [fallback/no_tool, 1 model calls] I can only answer questions about the project documents (invoices, policies, reports) or about the sales data. This question is outside that scope, or it is not clear enough: please rephrase it.
+2026-11-08 14:44:26 | q-e951 | QUESTION  What is the weather today?
+2026-11-08 14:44:28 | q-e951 | MODEL     no tool needed, answered in words (tokens 498/17, 1.8s)
+2026-11-08 14:44:28 | q-e951 | ROUTE     fallback (reason: no_tool)
+2026-11-08 14:44:28 | q-e951 | ANSWER    [fallback/no_tool, 1 model calls] I can only answer questions about the project documents (invoices, policies, reports) or about the sales data. This question is outside that scope, or it is not clear enough: please rephrase it.
+2026-11-08 14:44:28 | q-079d | QUESTION  Write a Python function to sort a list.
+2026-11-08 14:44:34 | q-079d | MODEL     no tool needed, answered in words (tokens 501/40, 5.9s)
+2026-11-08 14:44:34 | q-079d | ROUTE     fallback (reason: no_tool)
+2026-11-08 14:44:34 | q-079d | ANSWER    [fallback/no_tool, 1 model calls] I can only answer questions about the project documents (invoices, policies, reports) or about the sales data. This question is outside that scope, or it is not clear enough: please rephrase it.
+2026-11-08 14:44:34 | q-c974 | QUESTION  Tell me something interesting.
+2026-11-08 14:44:40 | q-c974 | MODEL     no tool needed, answered in words (tokens 497/34, 5.8s)
+2026-11-08 14:44:40 | q-c974 | ROUTE     fallback (reason: no_tool)
+2026-11-08 14:44:40 | q-c974 | ANSWER    [fallback/no_tool, 1 model calls] I can only answer questions about the project documents (invoices, policies, reports) or about the sales data. This question is outside that scope, or it is not clear enough: please rephrase it.
+2026-11-08 14:44:40 | q-139b | QUESTION  Find the best category.
+2026-11-08 14:44:45 | q-139b | MODEL     chose get_sales_summary args={} (tokens 497/12, 5.1s)
+2026-11-08 14:44:45 | q-139b | ROUTE     sql
+2026-11-08 14:44:45 | q-139b | TOOL      get_sales_summary args={} ... running
+2026-11-08 14:44:45 | q-139b | RESULT    get_sales_summary ok in 42 ms, 4.8 KB: sales 2022-01..2025-01, all categories: 11971 transactions, revenue 1552071.0
+2026-11-08 14:44:51 | q-139b | SUMMARY   source=model status=not_found requests=1 tokens=2046/3 citations=[]
+2026-11-08 14:44:51 | q-139b | ANSWER    [sql/not_found, 2 model calls] The available information does not contain the answer to this question.
+2026-11-08 14:44:51 | q-026e | QUESTION  Which one is better?
+2026-11-08 14:44:57 | q-026e | MODEL     no tool needed, answered in words (tokens 497/8, 5.7s)
+2026-11-08 14:44:57 | q-026e | ROUTE     fallback (reason: no_tool)
+2026-11-08 14:44:57 | q-026e | ANSWER    [fallback/no_tool, 1 model calls] I can only answer questions about the project documents (invoices, policies, reports) or about the sales data. This question is outside that scope, or it is not clear enough: please rephrase it.
+2026-11-08 14:44:57 | q-f17c | QUESTION  
+2026-11-08 14:44:57 | q-f17c | INPUT     rejected: empty_question
+2026-11-08 14:44:57 | q-f17c | ANSWER    [fallback/empty_question, 0 model calls] Please type a question.
+2026-11-08 14:44:57 | q-bb4c | QUESTION  What is the total revenue? What is the total revenue? What is the total revenue? What is the total revenue? What is the total revenue? What is the total revenue? What is the total revenue? What is the total revenue? What is the total revenue? What is the total revenue? What is the total revenue? Wha...
+2026-11-08 14:44:57 | q-bb4c | INPUT     rejected: question_too_long
+2026-11-08 14:44:57 | q-bb4c | ANSWER    [fallback/question_too_long, 0 model calls] The question is too long (the limit is 1000 characters). Please shorten it.
+2026-11-08 14:44:57 | q-f8ae | QUESTION  Search the documents for invoices and return the top 50 passages.
+2026-11-08 14:45:03 | q-f8ae | MODEL     chose search_documents args={'query': 'invoice', 'top_k': 50, 'document_type': 'invoice'} (tokens 506/31, 6.2s)
+2026-11-08 14:45:03 | q-f8ae | ROUTE     rag
+2026-11-08 14:45:03 | q-f8ae | REJECTED  search_documents args={'query': 'invoice', 'top_k': 50, 'document_type': 'invoice'}: invalid tool call: search_documents.top_k must be between 1 and 10, got 50
+2026-11-08 14:45:03 | q-f8ae | VALIDATE  failed: rejected_call
+2026-11-08 14:45:03 | q-f8ae | ANSWER    [fallback/rejected_call, 1 model calls] I could not turn this question into a valid request. Please rephrase it with more detail.
+2026-11-08 14:45:03 | q-7fbc | QUESTION  What is the total amount due on the Project Gamma invoice?
+2026-11-08 14:45:09 | q-7fbc | MODEL     chose search_documents args={'project': 'projectGamma', 'query': 'total amount due invoice'} (tokens 504/26, 5.5s)
+2026-11-08 14:45:09 | q-7fbc | ROUTE     rag
+2026-11-08 14:45:09 | q-7fbc | TOOL      search_documents args={"project": "projectGamma", "query": "total amount due invoice"} ... running
+2026-11-08 14:45:09 | q-7fbc | RESULT    search_documents ok in 5 ms, 0.1 KB: 0 passages from [] (no_documents_match_filter)
+2026-11-08 14:45:09 | q-7fbc | SUMMARY   source=none status=not_found requests=0 tokens=0/0 citations=[]
+2026-11-08 14:45:09 | q-7fbc | ANSWER    [rag/not_found, 1 model calls] The available information does not contain the answer to this question.
+2026-11-08 14:45:09 | q-2284 | QUESTION  What is the total revenue of the Toys category?
+2026-11-08 14:45:15 | q-2284 | MODEL     chose get_sales_summary args={'category': 'Toys'} (tokens 502/18, 6.1s)
+2026-11-08 14:45:15 | q-2284 | ROUTE     sql
+2026-11-08 14:45:15 | q-2284 | TOOL      get_sales_summary args={"category": "Toys"} ... running
+2026-11-08 14:45:15 | q-2284 | RESULT    get_sales_summary FAILED in 8 ms, 0.2 KB: error: ValueError: Unknown category 'Toys'. Available: ['Beverages', 'Butchers', 'Computers and electric accessories', 'Electric household essentials', 'Food', 'Furniture', 'Milk Products', 'Patisserie']
+2026-11-08 14:45:15 | q-2284 | VALIDATE  failed: tool_error
+2026-11-08 14:45:15 | q-2284 | ANSWER    [fallback/tool_error, 1 model calls] The lookup failed for this request (for example, a category or a name that does not exist). Please check the names in your question and try again.

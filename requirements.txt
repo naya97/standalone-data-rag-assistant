@@ -143,3 +143,4 @@ wheel==0.47.0
 yarl==1.25.1
 langchain-core==1.7.3
 langchain-google-genai==4.4.2
+langgraph==1.2.20

@@ -1,0 +1,1089 @@
+{
+  "meta": {
+    "model": "gemini-3.5-flash-lite",
+    "requests_sent": 9,
+    "max_requests": 60,
+    "cache_hits": 27,
+    "cache_misses": 9,
+    "aborted": null,
+    "seconds": 74,
+    "fingerprint": "gemini-3.5-flash-lite|t=0.1|max=1024|think=|8904fbfa11c7",
+    "tag": null,
+    "cases": [
+      "Q1",
+      "Q3",
+      "Q6",
+      "Q7",
+      "Q23",
+      "Q9",
+      "Q10",
+      "Q37",
+      "Q45",
+      "Q47",
+      "Q1001",
+      "Q1005",
+      "Q1012",
+      "Q1013",
+      "Q1016",
+      "R1",
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R6",
+      "R7",
+      "R8",
+      "R9",
+      "R10"
+    ]
+  },
+  "rows": [
+    {
+      "label": "Q1",
+      "source": "existing",
+      "kind": "answerable",
+      "question": "What is the total amount due for Project Alpha in January 2024?",
+      "expected_route": [
+        "rag"
+      ],
+      "expected_final": "answer",
+      "expected_reason": null,
+      "classified": "rag",
+      "outcome": "answer",
+      "reason": null,
+      "error": null,
+      "tool": "search_documents",
+      "tool_status": "ok",
+      "trace": [
+        "check_input",
+        "classify",
+        "rag_route",
+        "validate_result",
+        "answer"
+      ],
+      "answer": "The total amount due for Project Alpha in January 2024 is $4,500 USD [1][2].",
+      "model_calls": 2,
+      "attempts": 0,
+      "seconds": 25.13,
+      "choose_tokens": {
+        "input": 509,
+        "output": 37
+      },
+      "summary_source": "model",
+      "summary_tokens": {
+        "input": 381,
+        "output": 27
+      },
+      "week10_outcome": "correct",
+      "note": "",
+      "route_ok": true,
+      "final_ok": true,
+      "reason_ok": null,
+      "content_ok": true,
+      "verdict": "pass"
+    },
+    {
+      "label": "Q3",
+      "source": "existing",
+      "kind": "answerable",
+      "question": "What is the minimum password length for Project Alpha?",
+      "expected_route": [
+        "rag"
+      ],
+      "expected_final": "answer",
+      "expected_reason": null,
+      "classified": "rag",
+      "outcome": "answer",
+      "reason": null,
+      "error": null,
+      "tool": "search_documents",
+      "tool_status": "ok",
+      "trace": [
+        "check_input",
+        "classify",
+        "rag_route",
+        "validate_result",
+        "answer"
+      ],
+      "answer": "The minimum password length for Project Alpha is 16 characters [1].",
+      "model_calls": 2,
+      "attempts": 0,
+      "seconds": 0.02,
+      "choose_tokens": {
+        "input": 502,
+        "output": 25
+      },
+      "summary_source": "model",
+      "summary_tokens": {
+        "input": 397,
+        "output": 15
+      },
+      "week10_outcome": "correct",
+      "note": "",
+      "route_ok": true,
+      "final_ok": true,
+      "reason_ok": null,
+      "content_ok": true,
+      "verdict": "pass"
+    },
+    {
+      "label": "Q6",
+      "source": "existing",
+      "kind": "answerable",
+      "question": "What is the unit price of the n2-highmem-8 instance?",
+      "expected_route": [
+        "rag"
+      ],
+      "expected_final": "answer",
+      "expected_reason": null,
+      "classified": "rag",
+      "outcome": "answer",
+      "reason": null,
+      "error": null,
+      "tool": "search_documents",
+      "tool_status": "ok",
+      "trace": [
+        "check_input",
+        "classify",
+        "rag_route",
+        "validate_result",
+        "answer"
+      ],
+      "answer": "The unit price of the High-Memory Instance (n2-highmem-8) is $8.50 [1].",
+      "model_calls": 2,
+      "attempts": 0,
+      "seconds": 0.02,
+      "choose_tokens": {
+        "input": 508,
+        "output": 22
+      },
+      "summary_source": "model",
+      "summary_tokens": {
+        "input": 369,
+        "output": 27
+      },
+      "week10_outcome": "correct",
+      "note": "",
+      "route_ok": true,
+      "final_ok": true,
+      "reason_ok": null,
+      "content_ok": true,
+      "verdict": "pass"
+    },
+    {
+      "label": "Q7",
+      "source": "existing",
+      "kind": "answerable",
+      "question": "متى موعد إجراء المقابلات؟",
+      "expected_route": [
+        "rag"
+      ],
+      "expected_final": "answer",
+      "expected_reason": null,
+      "classified": "rag",
+      "outcome": "answer",
+      "reason": null,
+      "error": null,
+      "tool": "search_documents",
+      "tool_status": "ok",
+      "trace": [
+        "check_input",
+        "classify",
+        "rag_route",
+        "validate_result",
+        "answer"
+      ],
+      "answer": "تجرى المقابلات يوم الأحد بتاريخ 6/7 [1][3].",
+      "model_calls": 2,
+      "attempts": 0,
+      "seconds": 0.02,
+      "choose_tokens": {
+        "input": 501,
+        "output": 18
+      },
+      "summary_source": "model",
+      "summary_tokens": {
+        "input": 379,
+        "output": 19
+      },
+      "week10_outcome": "correct",
+      "note": "",
+      "route_ok": true,
+      "final_ok": true,
+      "reason_ok": null,
+      "content_ok": true,
+      "verdict": "pass"
+    },
+    {
+      "label": "Q23",
+      "source": "existing",
+      "kind": "answerable",
+      "question": "What uptime did Project Alpha's Compute Engine maintain in February 2024?",
+      "expected_route": [
+        "rag"
+      ],
+      "expected_final": "answer",
+      "expected_reason": null,
+      "classified": "rag",
+      "outcome": "answer",
+      "reason": null,
+      "error": null,
+      "tool": "search_documents",
+      "tool_status": "ok",
+      "trace": [
+        "check_input",
+        "classify",
+        "rag_route",
+        "validate_result",
+        "answer"
+      ],
+      "answer": "Project Alpha's Compute Engine maintained an uptime of 99.95% in February 2024 [2].",
+      "model_calls": 2,
+      "attempts": 0,
+      "seconds": 0.03,
+      "choose_tokens": {
+        "input": 510,
+        "output": 37
+      },
+      "summary_source": "model",
+      "summary_tokens": {
+        "input": 328,
+        "output": 27
+      },
+      "week10_outcome": "correct",
+      "note": "",
+      "route_ok": true,
+      "final_ok": true,
+      "reason_ok": null,
+      "content_ok": true,
+      "verdict": "pass"
+    },
+    {
+      "label": "Q9",
+      "source": "existing",
+      "kind": "near_topic_missing",
+      "question": "What is the refund policy for Project Beta?",
+      "expected_route": [
+        "rag"
+      ],
+      "expected_final": "not_found",
+      "expected_reason": null,
+      "classified": "rag",
+      "outcome": "not_found",
+      "reason": null,
+      "error": null,
+      "tool": "search_documents",
+      "tool_status": "ok",
+      "trace": [
+        "check_input",
+        "classify",
+        "rag_route",
+        "validate_result",
+        "answer"
+      ],
+      "answer": "The available information does not contain the answer to this question.",
+      "model_calls": 2,
+      "attempts": 0,
+      "seconds": 0.03,
+      "choose_tokens": {
+        "input": 501,
+        "output": 24
+      },
+      "summary_source": "model",
+      "summary_tokens": {
+        "input": 329,
+        "output": 3
+      },
+      "week10_outcome": "correct_rejection",
+      "note": "",
+      "route_ok": true,
+      "final_ok": true,
+      "reason_ok": null,
+      "content_ok": null,
+      "verdict": "pass"
+    },
+    {
+      "label": "Q10",
+      "source": "existing",
+      "kind": "unknown_entity",
+      "question": "What was the cost of Project Gamma in January 2024?",
+      "expected_route": [
+        "rag"
+      ],
+      "expected_final": "not_found",
+      "expected_reason": null,
+      "classified": "rag",
+      "outcome": "not_found",
+      "reason": null,
+      "error": null,
+      "tool": "search_documents",
+      "tool_status": "ok",
+      "trace": [
+        "check_input",
+        "classify",
+        "rag_route",
+        "validate_result",
+        "answer"
+      ],
+      "answer": "The available information does not contain the answer to this question.",
+      "model_calls": 1,
+      "attempts": 0,
+      "seconds": 0.01,
+      "choose_tokens": {
+        "input": 507,
+        "output": 35
+      },
+      "summary_source": "none",
+      "summary_tokens": {
+        "input": 0,
+        "output": 0
+      },
+      "week10_outcome": "correct_rejection",
+      "note": "",
+      "route_ok": true,
+      "final_ok": true,
+      "reason_ok": null,
+      "content_ok": null,
+      "verdict": "pass"
+    },
+    {
+      "label": "Q37",
+      "source": "existing",
+      "kind": "near_topic_missing",
+      "question": "What is the multi-factor authentication policy for Project Beta?",
+      "expected_route": [
+        "rag"
+      ],
+      "expected_final": "not_found",
+      "expected_reason": null,
+      "classified": "rag",
+      "outcome": "not_found",
+      "reason": null,
+      "error": null,
+      "tool": "search_documents",
+      "tool_status": "ok",
+      "trace": [
+        "check_input",
+        "classify",
+        "rag_route",
+        "validate_result",
+        "answer"
+      ],
+      "answer": "The available information does not contain the answer to this question.",
+      "model_calls": 2,
+      "attempts": 0,
+      "seconds": 0.02,
+      "choose_tokens": {
+        "input": 504,
+        "output": 27
+      },
+      "summary_source": "model",
+      "summary_tokens": {
+        "input": 325,
+        "output": 3
+      },
+      "week10_outcome": "correct_rejection",
+      "note": "",
+      "route_ok": true,
+      "final_ok": true,
+      "reason_ok": null,
+      "content_ok": null,
+      "verdict": "pass"
+    },
+    {
+      "label": "Q45",
+      "source": "existing",
+      "kind": "off_topic",
+      "question": "What is the capital of France?",
+      "expected_route": [
+        "fallback"
+      ],
+      "expected_final": "fallback",
+      "expected_reason": "no_tool",
+      "classified": "fallback",
+      "outcome": "fallback",
+      "reason": "no_tool",
+      "error": null,
+      "tool": null,
+      "tool_status": null,
+      "trace": [
+        "check_input",
+        "classify",
+        "fallback"
+      ],
+      "answer": "I can only answer questions about the project documents (invoices, policies, reports) or about the sales data. This question is outside that scope, or it is not clear enough: please rephrase it.",
+      "model_calls": 1,
+      "attempts": 0,
+      "seconds": 0.0,
+      "choose_tokens": {
+        "input": 499,
+        "output": 7
+      },
+      "summary_source": null,
+      "summary_tokens": {},
+      "week10_outcome": "no_tool_answer",
+      "note": "",
+      "route_ok": true,
+      "final_ok": true,
+      "reason_ok": true,
+      "content_ok": null,
+      "verdict": "pass"
+    },
+    {
+      "label": "Q47",
+      "source": "existing",
+      "kind": "off_topic",
+      "question": "ما هي سياسة الإجازات السنوية للموظفين؟",
+      "expected_route": [
+        "fallback"
+      ],
+      "expected_final": "fallback",
+      "expected_reason": "no_tool",
+      "classified": "rag",
+      "outcome": "not_found",
+      "reason": null,
+      "error": null,
+      "tool": "search_documents",
+      "tool_status": "ok",
+      "trace": [
+        "check_input",
+        "classify",
+        "rag_route",
+        "validate_result",
+        "answer"
+      ],
+      "answer": "المعلومات المتاحة لا تحتوي على إجابة لهذا السؤال.",
+      "model_calls": 2,
+      "attempts": 0,
+      "seconds": 0.03,
+      "choose_tokens": {
+        "input": 506,
+        "output": 26
+      },
+      "summary_source": "model",
+      "summary_tokens": {
+        "input": 319,
+        "output": 3
+      },
+      "week10_outcome": "correct_rejection",
+      "note": "",
+      "route_ok": false,
+      "final_ok": false,
+      "reason_ok": false,
+      "content_ok": null,
+      "verdict": "fail"
+    },
+    {
+      "label": "Q1001",
+      "source": "existing",
+      "kind": "sales_answerable",
+      "question": "Which category has the highest revenue?",
+      "expected_route": [
+        "sql"
+      ],
+      "expected_final": "answer",
+      "expected_reason": null,
+      "classified": "sql",
+      "outcome": "answer",
+      "reason": null,
+      "error": null,
+      "tool": "get_sales_summary",
+      "tool_status": "ok",
+      "trace": [
+        "check_input",
+        "classify",
+        "sql_route",
+        "validate_result",
+        "answer"
+      ],
+      "answer": "Based on the data, the category with the highest revenue is Butchers, with a revenue of 208118.0.",
+      "model_calls": 2,
+      "attempts": 0,
+      "seconds": 0.05,
+      "choose_tokens": {
+        "input": 499,
+        "output": 12
+      },
+      "summary_source": "model",
+      "summary_tokens": {
+        "input": 2048,
+        "output": 29
+      },
+      "week10_outcome": "correct",
+      "note": "",
+      "route_ok": true,
+      "final_ok": true,
+      "reason_ok": null,
+      "content_ok": true,
+      "verdict": "pass"
+    },
+    {
+      "label": "Q1005",
+      "source": "existing",
+      "kind": "sales_answerable",
+      "question": "What is the total revenue of the Furniture category?",
+      "expected_route": [
+        "sql"
+      ],
+      "expected_final": "answer",
+      "expected_reason": null,
+      "classified": "sql",
+      "outcome": "answer",
+      "reason": null,
+      "error": null,
+      "tool": "get_sales_summary",
+      "tool_status": "ok",
+      "trace": [
+        "check_input",
+        "classify",
+        "sql_route",
+        "validate_result",
+        "answer"
+      ],
+      "answer": "The total revenue of the Furniture category is 195310.0.",
+      "model_calls": 2,
+      "attempts": 0,
+      "seconds": 0.03,
+      "choose_tokens": {
+        "input": 502,
+        "output": 18
+      },
+      "summary_source": "model",
+      "summary_tokens": {
+        "input": 1590,
+        "output": 18
+      },
+      "week10_outcome": "correct",
+      "note": "",
+      "route_ok": true,
+      "final_ok": true,
+      "reason_ok": null,
+      "content_ok": true,
+      "verdict": "pass"
+    },
+    {
+      "label": "Q1012",
+      "source": "existing",
+      "kind": "sales_answerable",
+      "question": "What was the total revenue in 2024?",
+      "expected_route": [
+        "sql"
+      ],
+      "expected_final": "answer",
+      "expected_reason": null,
+      "classified": "sql",
+      "outcome": "answer",
+      "reason": null,
+      "error": null,
+      "tool": "get_sales_summary",
+      "tool_status": "ok",
+      "trace": [
+        "check_input",
+        "classify",
+        "sql_route",
+        "validate_result",
+        "answer"
+      ],
+      "answer": "The total revenue in 2024 was 524881.0.",
+      "model_calls": 2,
+      "attempts": 0,
+      "seconds": 0.06,
+      "choose_tokens": {
+        "input": 504,
+        "output": 36
+      },
+      "summary_source": "model",
+      "summary_tokens": {
+        "input": 1386,
+        "output": 20
+      },
+      "week10_outcome": "correct",
+      "note": "",
+      "route_ok": true,
+      "final_ok": true,
+      "reason_ok": null,
+      "content_ok": true,
+      "verdict": "pass"
+    },
+    {
+      "label": "Q1013",
+      "source": "existing",
+      "kind": "sales_answerable",
+      "question": "ما هي الفئة الأعلى إيراداً؟",
+      "expected_route": [
+        "sql"
+      ],
+      "expected_final": "answer",
+      "expected_reason": null,
+      "classified": "sql",
+      "outcome": "answer",
+      "reason": null,
+      "error": null,
+      "tool": "get_sales_summary",
+      "tool_status": "ok",
+      "trace": [
+        "check_input",
+        "classify",
+        "sql_route",
+        "validate_result",
+        "answer"
+      ],
+      "answer": "الفئة الأعلى إيراداً هي Butchers بإيرادات بلغت 208118.0.",
+      "model_calls": 2,
+      "attempts": 0,
+      "seconds": 0.04,
+      "choose_tokens": {
+        "input": 502,
+        "output": 12
+      },
+      "summary_source": "model",
+      "summary_tokens": {
+        "input": 2051,
+        "output": 25
+      },
+      "week10_outcome": "correct",
+      "note": "",
+      "route_ok": true,
+      "final_ok": true,
+      "reason_ok": null,
+      "content_ok": true,
+      "verdict": "pass"
+    },
+    {
+      "label": "Q1016",
+      "source": "existing",
+      "kind": "sales_not_found",
+      "question": "What is the profit margin?",
+      "expected_route": [
+        "sql"
+      ],
+      "expected_final": "not_found",
+      "expected_reason": null,
+      "classified": "fallback",
+      "outcome": "fallback",
+      "reason": "no_tool",
+      "error": null,
+      "tool": null,
+      "tool_status": null,
+      "trace": [
+        "check_input",
+        "classify",
+        "fallback"
+      ],
+      "answer": "I can only answer questions about the project documents (invoices, policies, reports) or about the sales data. This question is outside that scope, or it is not clear enough: please rephrase it.",
+      "model_calls": 1,
+      "attempts": 0,
+      "seconds": 0.0,
+      "choose_tokens": {
+        "input": 498,
+        "output": 14
+      },
+      "summary_source": null,
+      "summary_tokens": {},
+      "week10_outcome": "no_tool_answer",
+      "note": "",
+      "route_ok": false,
+      "final_ok": false,
+      "reason_ok": null,
+      "content_ok": null,
+      "verdict": "fail"
+    },
+    {
+      "label": "R1",
+      "source": "designed",
+      "kind": "out_of_scope",
+      "question": "What is the weather today?",
+      "expected_route": [
+        "fallback"
+      ],
+      "expected_final": "fallback",
+      "expected_reason": "no_tool",
+      "classified": "fallback",
+      "outcome": "fallback",
+      "reason": "no_tool",
+      "error": null,
+      "tool": null,
+      "tool_status": null,
+      "trace": [
+        "check_input",
+        "classify",
+        "fallback"
+      ],
+      "answer": "I can only answer questions about the project documents (invoices, policies, reports) or about the sales data. This question is outside that scope, or it is not clear enough: please rephrase it.",
+      "model_calls": 1,
+      "attempts": 1,
+      "seconds": 1.81,
+      "choose_tokens": {
+        "input": 498,
+        "output": 17
+      },
+      "summary_source": null,
+      "summary_tokens": {},
+      "week10_outcome": null,
+      "note": "",
+      "route_ok": true,
+      "final_ok": true,
+      "reason_ok": true,
+      "content_ok": null,
+      "verdict": "pass"
+    },
+    {
+      "label": "R2",
+      "source": "designed",
+      "kind": "out_of_scope",
+      "question": "Write a Python function to sort a list.",
+      "expected_route": [
+        "fallback"
+      ],
+      "expected_final": "fallback",
+      "expected_reason": "no_tool",
+      "classified": "fallback",
+      "outcome": "fallback",
+      "reason": "no_tool",
+      "error": null,
+      "tool": null,
+      "tool_status": null,
+      "trace": [
+        "check_input",
+        "classify",
+        "fallback"
+      ],
+      "answer": "I can only answer questions about the project documents (invoices, policies, reports) or about the sales data. This question is outside that scope, or it is not clear enough: please rephrase it.",
+      "model_calls": 1,
+      "attempts": 1,
+      "seconds": 5.9,
+      "choose_tokens": {
+        "input": 501,
+        "output": 40
+      },
+      "summary_source": null,
+      "summary_tokens": {},
+      "week10_outcome": null,
+      "note": "",
+      "route_ok": true,
+      "final_ok": true,
+      "reason_ok": true,
+      "content_ok": null,
+      "verdict": "pass"
+    },
+    {
+      "label": "R3",
+      "source": "designed",
+      "kind": "out_of_scope",
+      "question": "Tell me something interesting.",
+      "expected_route": [
+        "fallback"
+      ],
+      "expected_final": "fallback",
+      "expected_reason": "no_tool",
+      "classified": "fallback",
+      "outcome": "fallback",
+      "reason": "no_tool",
+      "error": null,
+      "tool": null,
+      "tool_status": null,
+      "trace": [
+        "check_input",
+        "classify",
+        "fallback"
+      ],
+      "answer": "I can only answer questions about the project documents (invoices, policies, reports) or about the sales data. This question is outside that scope, or it is not clear enough: please rephrase it.",
+      "model_calls": 1,
+      "attempts": 1,
+      "seconds": 5.82,
+      "choose_tokens": {
+        "input": 497,
+        "output": 34
+      },
+      "summary_source": null,
+      "summary_tokens": {},
+      "week10_outcome": null,
+      "note": "",
+      "route_ok": true,
+      "final_ok": true,
+      "reason_ok": true,
+      "content_ok": null,
+      "verdict": "pass"
+    },
+    {
+      "label": "R4",
+      "source": "designed",
+      "kind": "ambiguous",
+      "question": "Find the best category.",
+      "expected_route": [
+        "sql",
+        "rag"
+      ],
+      "expected_final": "answer",
+      "expected_reason": null,
+      "classified": "sql",
+      "outcome": "not_found",
+      "reason": null,
+      "error": null,
+      "tool": "get_sales_summary",
+      "tool_status": "ok",
+      "trace": [
+        "check_input",
+        "classify",
+        "sql_route",
+        "validate_result",
+        "answer"
+      ],
+      "answer": "The available information does not contain the answer to this question.",
+      "model_calls": 2,
+      "attempts": 2,
+      "seconds": 11.72,
+      "choose_tokens": {
+        "input": 497,
+        "output": 12
+      },
+      "summary_source": "model",
+      "summary_tokens": {
+        "input": 2046,
+        "output": 3
+      },
+      "week10_outcome": null,
+      "note": "either route is accepted; judged by hand",
+      "route_ok": true,
+      "final_ok": false,
+      "reason_ok": null,
+      "content_ok": null,
+      "verdict": "fail"
+    },
+    {
+      "label": "R5",
+      "source": "designed",
+      "kind": "ambiguous",
+      "question": "Which one is better?",
+      "expected_route": [
+        "fallback"
+      ],
+      "expected_final": "fallback",
+      "expected_reason": "no_tool",
+      "classified": "fallback",
+      "outcome": "fallback",
+      "reason": "no_tool",
+      "error": null,
+      "tool": null,
+      "tool_status": null,
+      "trace": [
+        "check_input",
+        "classify",
+        "fallback"
+      ],
+      "answer": "I can only answer questions about the project documents (invoices, policies, reports) or about the sales data. This question is outside that scope, or it is not clear enough: please rephrase it.",
+      "model_calls": 1,
+      "attempts": 1,
+      "seconds": 5.67,
+      "choose_tokens": {
+        "input": 497,
+        "output": 8
+      },
+      "summary_source": null,
+      "summary_tokens": {},
+      "week10_outcome": null,
+      "note": "",
+      "route_ok": true,
+      "final_ok": true,
+      "reason_ok": true,
+      "content_ok": null,
+      "verdict": "pass"
+    },
+    {
+      "label": "R6",
+      "source": "designed",
+      "kind": "invalid_input",
+      "question": "   ",
+      "expected_route": [
+        "fallback"
+      ],
+      "expected_final": "fallback",
+      "expected_reason": "empty_question",
+      "classified": "fallback",
+      "outcome": "fallback",
+      "reason": "empty_question",
+      "error": null,
+      "tool": null,
+      "tool_status": null,
+      "trace": [
+        "check_input",
+        "fallback"
+      ],
+      "answer": "Please type a question.",
+      "model_calls": 0,
+      "attempts": 0,
+      "seconds": 0.0,
+      "choose_tokens": {},
+      "summary_source": null,
+      "summary_tokens": {},
+      "week10_outcome": null,
+      "note": "stopped before classify: no model request",
+      "route_ok": true,
+      "final_ok": true,
+      "reason_ok": true,
+      "content_ok": null,
+      "verdict": "pass"
+    },
+    {
+      "label": "R7",
+      "source": "designed",
+      "kind": "invalid_input",
+      "question": "What is the total revenue? What is the total revenue? What is the total revenue? What is the total revenue? What is the total revenue? What is the total revenue? What is the total revenue? What is the",
+      "expected_route": [
+        "fallback"
+      ],
+      "expected_final": "fallback",
+      "expected_reason": "question_too_long",
+      "classified": "fallback",
+      "outcome": "fallback",
+      "reason": "question_too_long",
+      "error": null,
+      "tool": null,
+      "tool_status": null,
+      "trace": [
+        "check_input",
+        "fallback"
+      ],
+      "answer": "The question is too long (the limit is 1000 characters). Please shorten it.",
+      "model_calls": 0,
+      "attempts": 0,
+      "seconds": 0.0,
+      "choose_tokens": {},
+      "summary_source": null,
+      "summary_tokens": {},
+      "week10_outcome": null,
+      "note": "built at run time; the limit is decided in stage 3",
+      "route_ok": true,
+      "final_ok": true,
+      "reason_ok": true,
+      "content_ok": null,
+      "verdict": "pass"
+    },
+    {
+      "label": "R8",
+      "source": "designed",
+      "kind": "no_valid_tool_call",
+      "question": "Search the documents for invoices and return the top 50 passages.",
+      "expected_route": [
+        "rag"
+      ],
+      "expected_final": "fallback",
+      "expected_reason": "rejected_call",
+      "classified": "rag",
+      "outcome": "fallback",
+      "reason": "rejected_call",
+      "error": "invalid tool call: search_documents.top_k must be between 1 and 10, got 50",
+      "tool": "search_documents",
+      "tool_status": "rejected",
+      "trace": [
+        "check_input",
+        "classify",
+        "rag_route",
+        "validate_result",
+        "fallback"
+      ],
+      "answer": "I could not turn this question into a valid request. Please rephrase it with more detail.",
+      "model_calls": 1,
+      "attempts": 1,
+      "seconds": 6.18,
+      "choose_tokens": {
+        "input": 506,
+        "output": 31
+      },
+      "summary_source": null,
+      "summary_tokens": {},
+      "week10_outcome": null,
+      "note": "the model classifies it as rag, the call is rejected (top_k must be 1..10), the question ends in the fallback. Needs the model to really send top_k=50 (it did on 2026-11-08)",
+      "route_ok": true,
+      "final_ok": true,
+      "reason_ok": true,
+      "content_ok": null,
+      "verdict": "pass"
+    },
+    {
+      "label": "R9",
+      "source": "designed",
+      "kind": "rag_no_document",
+      "question": "What is the total amount due on the Project Gamma invoice?",
+      "expected_route": [
+        "rag"
+      ],
+      "expected_final": "not_found",
+      "expected_reason": null,
+      "classified": "rag",
+      "outcome": "not_found",
+      "reason": null,
+      "error": null,
+      "tool": "search_documents",
+      "tool_status": "ok",
+      "trace": [
+        "check_input",
+        "classify",
+        "rag_route",
+        "validate_result",
+        "answer"
+      ],
+      "answer": "The available information does not contain the answer to this question.",
+      "model_calls": 1,
+      "attempts": 1,
+      "seconds": 5.54,
+      "choose_tokens": {
+        "input": 504,
+        "output": 26
+      },
+      "summary_source": "none",
+      "summary_tokens": {
+        "input": 0,
+        "output": 0
+      },
+      "week10_outcome": null,
+      "note": "a correct 'not found' is NOT a fallback",
+      "route_ok": true,
+      "final_ok": true,
+      "reason_ok": null,
+      "content_ok": null,
+      "verdict": "pass"
+    },
+    {
+      "label": "R10",
+      "source": "designed",
+      "kind": "sql_no_data",
+      "question": "What is the total revenue of the Toys category?",
+      "expected_route": [
+        "sql"
+      ],
+      "expected_final": "fallback",
+      "expected_reason": "tool_error",
+      "classified": "sql",
+      "outcome": "fallback",
+      "reason": "tool_error",
+      "error": "ValueError: Unknown category 'Toys'. Available: ['Beverages', 'Butchers', 'Computers and electric accessories', 'Electric household essentials', 'Food', 'Furniture', 'Milk Products', 'Patisserie']",
+      "tool": "get_sales_summary",
+      "tool_status": "error",
+      "trace": [
+        "check_input",
+        "classify",
+        "sql_route",
+        "validate_result",
+        "fallback"
+      ],
+      "answer": "The lookup failed for this request (for example, a category or a name that does not exist). Please check the names in your question and try again.",
+      "model_calls": 1,
+      "attempts": 1,
+      "seconds": 6.12,
+      "choose_tokens": {
+        "input": 502,
+        "output": 18
+      },
+      "summary_source": null,
+      "summary_tokens": {},
+      "week10_outcome": null,
+      "note": "the category does not exist in the sales table",
+      "route_ok": true,
+      "final_ok": true,
+      "reason_ok": true,
+      "content_ok": null,
+      "verdict": "pass"
+    }
+  ]
+}

@@ -26,10 +26,13 @@ standalone-data-rag-assistant/
 │   │   │   ├── llm_eval_results.json        # last LLM evaluation (every outcome, token count, latency)
 │   │   │   ├── gate_experiment.json         # lexical-gate settings compared on the saved questions
 │   │   │   └── llm_cache.json               # cached model replies for the evaluation (git-ignored)
-│   │   └── week10/
-│   │       ├── sales_questions.json         # 17 sales questions; the expected figures are computed from SQL at run time
-│   │       ├── <mode>_<splits>[_tag]_results.json   # one results file per evaluation run (never overwritten by another run)
-│   │       └── llm_cache.json               # cached model replies for the evaluation (git-ignored)
+│   │   ├── week10/
+│   │   │   ├── sales_questions.json         # 17 sales questions; the expected figures are computed from SQL at run time
+│   │   │   ├── <mode>_<splits>[_tag]_results.json   # one results file per evaluation run (never overwritten by another run)
+│   │   │   └── llm_cache.json               # cached model replies for the evaluation (git-ignored)
+│   │   └── week11/
+│   │       ├── router_cases.json            # 10 designed router cases: what each tests, expected route / ending / reason
+│   │       └── router_results[_tag].json    # one results file per router evaluation run
 │   ├── raw/
 │   │   ├── config.json                 # App config (Task 1)
 │   │   ├── sample.csv                  # Sample data (Task 1)
@@ -66,16 +69,23 @@ standalone-data-rag-assistant/
 │   │   │   ├── data_facts.py                # sales figures computed by SQL (the model never computes)
 │   │   │   ├── insights.py                  # sales summary and insights (+ no-LLM fallback)
 │   │   │   └── tool_specs.py                # function-calling concept: two tools, validation, execution
-│   │   └── week10/
-│   │       ├── model_factory.py             # LangChain Gemini model from the Week 9 settings (no retries of its own)
-│   │       ├── request_layer.py             # ONE layer for every model call: shared limiter, retries, budget, request counter
-│   │       ├── tools.py                     # the Week 9 tools as LangChain StructuredTools + run_validated
-│   │       ├── arguments.py                 # the backend cleans the model's search arguments (project form, month/year)
-│   │       ├── summarize.py                 # summarize_result: plain text, grounding checks, one repair, fallback
-│   │       ├── assistant.py                 # choose -> clean -> validate -> run -> summarize (+ --tool without a model)
-│   │       ├── tool_logging.py              # readable tool log (LangChain callback handler)
-│   │       ├── evaluation.py                # tool-choice and whole-flow evaluation, reply cache, report
-│   │       └── filter_check.py              # retrieval-only diagnostics (filters, top-k): no model request
+│   │   ├── week10/
+│   │   │   ├── model_factory.py             # LangChain Gemini model from the Week 9 settings (no retries of its own)
+│   │   │   ├── request_layer.py             # ONE layer for every model call: shared limiter, retries, budget, request counter
+│   │   │   ├── tools.py                     # the Week 9 tools as LangChain StructuredTools + run_validated
+│   │   │   ├── arguments.py                 # the backend cleans the model's search arguments (project form, month/year)
+│   │   │   ├── summarize.py                 # summarize_result: plain text, grounding checks, one repair, fallback
+│   │   │   ├── assistant.py                 # choose -> clean -> validate -> run -> summarize (+ --tool without a model)
+│   │   │   ├── tool_logging.py              # readable tool log (LangChain callback handler)
+│   │   │   ├── evaluation.py                # tool-choice and whole-flow evaluation, reply cache, report
+│   │   │   └── filter_check.py              # retrieval-only diagnostics (filters, top-k): no model request
+│   │   └── week11/
+│   │       ├── state.py                     # RouterState: the one object that travels through the graph
+│   │       ├── validation.py                # input guard, result check, fixed fallback messages (no model)
+│   │       ├── nodes.py                     # check_input, classify, rag_route, sql_route, validate_result, answer, fallback
+│   │       ├── placeholders.py              # nodes without a model: defaults of the graph tests
+│   │       ├── graph.py                     # the LangGraph graph: nodes and edges
+│   │       └── evaluation.py                # route + ending evaluation (15 existing questions + 10 designed cases)
 │   ├── infrastructure/
 │   │   ├── db_manager.py               # SQLiteManager (Task 1, extended in Week 4)
 │   │   └── file_reader.py              # CSV/JSON reader (Task 1)
@@ -125,7 +135,8 @@ standalone-data-rag-assistant/
 │
 ├── tests/
 │   ├── week9/                               # scripted fake model: no network, no key
-│   └── week10/                              # scripted fake model, fake retriever, temporary databases: no network, no key
+│   ├── week10/                              # scripted fake model, fake retriever, temporary databases: no network, no key
+│   └── week11/                              # fake assistant, scripted model, the real Week 10 Assistant: no network, no key
 │
 ├── notebooks/
 │   ├── week3/
@@ -152,8 +163,10 @@ standalone-data-rag-assistant/
 │   │   ├── Report_week9.md
 │   │   ├── llm_evaluation.md
 │   │   └── llm_design_walkthrough.txt
-│   └── week10/
-│       └── Report_week10.md             # summary, results, bugs found, known limitations
+│   ├── week10/
+│   │   └── Report_week10.md             # summary, results, bugs found, known limitations
+│   └── week11/
+│       └── Report_week11.md             # summary, results, the three misses, bugs found, known limitations
 │
 ├── logs/
 │   ├── week4/
@@ -164,8 +177,11 @@ standalone-data-rag-assistant/
 │   │   └── rag.log
 │   ├── week9/
 │   │   └── llm.log                          # every model request: attempt, latency, tokens, errors (never the key)
-│   └── week10/
-│       └── tool_calls.log                   # one line per step of every question: model choice, tool, result, summary, answer
+│   ├── week10/
+│   │   └── tool_calls.log                   # one line per step of every question: model choice, tool, result, summary, answer
+│   └── week11/
+│       ├── router.log                       # one line per step of every question (the Week 10 format + ROUTE / INPUT / VALIDATE)
+│       └── router_eval.log
 │
 ├── practice/
 │   ├── week2/                          # Standalone Pandas/SQL practice (Superstore dataset)
@@ -202,6 +218,8 @@ standalone-data-rag-assistant/
 ├── run_langchain_assistant.py           # (Week 10) the data-aware assistant from the command line (--tool: no model)
 ├── run_langchain_eval.py                # (Week 10) tool-choice and whole-flow evaluation (--mode choose|full)
 ├── run_filter_check.py                  # (Week 10) filters / top-k diagnostics on the real index, no model
+├── run_langgraph_router.py              # (Week 11) the LangGraph router from the command line (--show-graph, --json)
+├── run_router_eval.py                   # (Week 11) route + ending evaluation (15 existing questions + 10 designed cases)
 ├── .env.example                         # every setting, without secrets
 ├── requirements.txt
 └── README.md
@@ -233,7 +251,8 @@ chromadb==<version>
 google-genai==<version>      # pin what `pip show google-genai` prints
 langchain-core==1.7.3        # Week 10
 langchain-google-genai==4.4.2    # Week 10
-pytest                       # tests/week9, tests/week10
+langgraph==1.2.20                # Week 11
+pytest                       # tests/week9, tests/week10, tests/week11
 ```
 
 `pypdf` is the primary PDF text extractor (Week 7). `pdfplumber` is used narrowly, only to detect and cleanly extract tables on PDF pages that have one — it is not a replacement for `pypdf` (see Week 7 below for why). `fpdf2` was used once, as a dev-only tool, to generate a synthetic sample invoice PDF for testing — it is not a runtime dependency of the ingestion pipeline.
@@ -773,6 +792,82 @@ Details: `reports/week10/Report_week10.md`.
 
 ---
 
+## Week 11 — Intro to Agentic AI + a simple LangGraph router: classify, RAG or SQL route, validate, answer or fallback
+
+Turns the Week 10 assistant into a small **stateful graph** (LangGraph): the question is checked, classified, sent to **one** of
+two routes (documents or sales data), the result is validated, and the answer is written, or a fixed fallback message is returned.
+Two routes and one fallback; no loop, no memory between questions, no new endpoint.
+
+### Architecture
+```
+question ─► check_input ──(empty / too long)──────────────────────────────► fallback ─► END
+               ▼
+            classify        (the Week 10 tool choice IS the classification: one model request)
+      ┌────────┼──────────────────────────────┐
+ search_documents     get_sales_summary    no tool / unknown tool / model failed ─► fallback ─► END
+      ▼                     ▼
+  rag_route             sql_route           (clean arguments, validate_call, run the tool: the Week 10 step)
+      └──────────┬──────────┘
+                 ▼
+          validate_result ──(rejected call / tool error / no sales data)──► fallback ─► END
+                 ▼
+              answer        (Week 10 summarize_result: numbers and citations checked, one repair)  ─► END
+every step ─► logs/week11/router.log (the Week 10 log format, plus ROUTE / INPUT / VALIDATE lines)
+```
+- **One state object** (`RouterState`) travels through the graph; every node adds its name to `trace`, so the path of a question is visible and testable.
+- **Classification costs no extra request:** the tool the model picks decides the route. The nodes are built around the Week 10 `Assistant` (chooser, tools, argument cleaning, log and summarizer are reused, Week 10 is unchanged).
+- **Fallback reasons are short codes:** `empty_question`, `question_too_long`, `no_tool`, `unknown_tool`, `model_unavailable`, `model_failed`, `rejected_call`, `tool_error`, `no_data`. The message is fixed per reason, in Arabic when the question is Arabic; the tool's own error stays in the log.
+- **"Not found" is an answer, not a fallback:** no passages, or a summary that says the information is missing, ends as `not_found` on its route.
+- **Input limit 1000 characters** (the API's own limit for a question). Requests per question: 2 normally, 3 with the one summary repair, 0 or 1 for a fallback.
+
+### Run
+```bash
+python -m pytest tests/week11 -v                                          # no key needed
+python run_langgraph_router.py "Which category has the highest revenue?" --verbose
+python run_langgraph_router.py "What is the late payment fee?"
+python run_langgraph_router.py "What is the weather today?" --json        # the whole final state
+python run_langgraph_router.py --show-graph                               # the graph as a Mermaid diagram, no model
+python run_langgraph_router.py "What is the total revenue?" --placeholder   # placeholder nodes: no model, no tools
+python run_router_eval.py --max-requests 60                               # 15 existing questions + 10 designed cases
+```
+The evaluation shares the Week 10 reply cache (`data/eval/week10/llm_cache.json`): a question already evaluated in Week 10 costs no request. Holdout is never read.
+
+### Failure handling — verified scenarios
+1. **Empty or blank question (real run):** stopped by `check_input`, no model request.
+2. **Question over 1000 characters (evaluation and tests):** `question_too_long`, no model request; 1000 is accepted, 1001 rejected.
+3. **Out of scope, English and Arabic (real API):** the model answers in words → `no_tool` fallback, message in the language of the question.
+4. **Invalid tool call (real API):** `top_k=50` is rejected by `validate_call` → `rejected_call`; the question is still classified as `rag`.
+5. **A tool that fails (real API):** an unknown category → `tool_error`; the error text is logged, not shown.
+6. **A project that is not in the index (real API):** the cleaned filter matches nothing → `not_found` with no summary request.
+7. **Model failure (tests):** classify → `model_failed` / `model_unavailable`; a failing summary model → an answer built from the tool data.
+8. **Quota or infrastructure failure during the evaluation:** the case is `not_evaluated`, never scored as wrong, and the run stops.
+
+### Bugs found and fixed during Week 11
+- The fallback node overwrote `route`, hiding what `classify` had chosen → the evaluation reads the classification from `tool`.
+- The command line refused an empty question before the graph, so the input guard never ran.
+- The `no_tool` message said "outside that scope" for a sales question about data we do not have (profit margin) → reworded.
+- A designed case (an invalid call) expected `fallback` as the route; the model really chooses a tool and the call is rejected later → expected route `rag`.
+
+### Latest verified run (Gemini 3.5 Flash Lite)
+```
+Cases        25 (15 existing questions + 10 designed): pass 22 | route 23/25 | ending 22/25 | reason 9/10 | content 9/9
+Passing      9/9 answerable (5 document, 4 sales, 2 in Arabic) | 4 not_found | out of scope, empty, over-long, rejected call, tool error
+Misses       Q47 (annual-leave policy: a tool was chosen, ended "not found") | Q1016 (profit margin: answered in words, so fallback)
+             R4 ("Find the best category.": sql chosen, the summary refused to guess what "best" means)
+Week 10 rules on the 15 existing questions: 9 correct | 4 correct rejection | 2 answered in words
+Cost         model calls per question: answer 2.0 | not_found 1.7 | fallback 0.8; 9 requests sent, 27 replies from the cache
+```
+Details: `reports/week11/Report_week11.md`.
+
+### Known limitations (see `Report_week11.md`)
+- Small evaluation (25 cases): a difference of one or two cases is not evidence, and no threshold is set from it.
+- The tool choice stays the model's: the router cannot fix an answer in words (Q1016) or a tool used for a policy question about a missing topic (Q47); changing the prompt would invalidate the Week 10 cache and results.
+- Ambiguous questions end in `not_found` or a rephrase request, not a guess; `no_data` is only unit-tested.
+- The 15 existing questions used cached Week 10 replies, so run-to-run variation is not measured.
+- Not built on purpose: loops, memory between questions, a checkpointer, an endpoint.
+
+---
+
 ## Git Tags
 
 Each completed week is marked with an annotated Git tag once finalized, so the project history can be browsed one week at a time:
@@ -788,4 +883,5 @@ git checkout tags/week7-complete
 git checkout tags/week8-complete
 git checkout tags/week9-complete
 git checkout tags/week10-complete
+git checkout tags/week11-complete
 ```

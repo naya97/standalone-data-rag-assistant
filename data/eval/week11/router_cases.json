@@ -1,0 +1,114 @@
+{
+  "note": "10 designed cases: each tests a different behaviour. expected_route = what classify chooses (a call that is later rejected still counts as classified); expected_final = how the question ends (answer | not_found | fallback); reason = the fallback reason code. The 15 existing questions of the evaluation get their expectations from their own labels (see src/llm/week11/evaluation.py).",
+  "cases": [
+    {
+      "id": "R1",
+      "kind": "out_of_scope",
+      "question": "What is the weather today?",
+      "expected_route": [
+        "fallback"
+      ],
+      "expected_final": "fallback",
+      "reason": "no_tool"
+    },
+    {
+      "id": "R2",
+      "kind": "out_of_scope",
+      "question": "Write a Python function to sort a list.",
+      "expected_route": [
+        "fallback"
+      ],
+      "expected_final": "fallback",
+      "reason": "no_tool"
+    },
+    {
+      "id": "R3",
+      "kind": "out_of_scope",
+      "question": "Tell me something interesting.",
+      "expected_route": [
+        "fallback"
+      ],
+      "expected_final": "fallback",
+      "reason": "no_tool"
+    },
+    {
+      "id": "R4",
+      "kind": "ambiguous",
+      "question": "Find the best category.",
+      "expected_route": [
+        "sql",
+        "rag"
+      ],
+      "expected_final": "answer",
+      "note": "either route is accepted; judged by hand"
+    },
+    {
+      "id": "R5",
+      "kind": "ambiguous",
+      "question": "Which one is better?",
+      "expected_route": [
+        "fallback"
+      ],
+      "expected_final": "fallback",
+      "reason": "no_tool"
+    },
+    {
+      "id": "R6",
+      "kind": "invalid_input",
+      "question": "   ",
+      "expected_route": [
+        "fallback"
+      ],
+      "expected_final": "fallback",
+      "reason": "empty_question",
+      "note": "stopped before classify: no model request"
+    },
+    {
+      "id": "R7",
+      "kind": "invalid_input",
+      "question": null,
+      "build": {
+        "repeat": "What is the total revenue? ",
+        "longer_than_limit": true
+      },
+      "expected_route": [
+        "fallback"
+      ],
+      "expected_final": "fallback",
+      "reason": "question_too_long",
+      "note": "built at run time; the limit is decided in stage 3"
+    },
+    {
+      "id": "R8",
+      "kind": "no_valid_tool_call",
+      "question": "Search the documents for invoices and return the top 50 passages.",
+      "expected_route": [
+        "rag"
+      ],
+      "expected_final": "fallback",
+      "reason": "rejected_call",
+      "note": "the model classifies it as rag, the call is rejected (top_k must be 1..10), the question ends in the fallback. Needs the model to really send top_k=50 (it did on 2026-11-08)"
+    },
+    {
+      "id": "R9",
+      "kind": "rag_no_document",
+      "question": "What is the total amount due on the Project Gamma invoice?",
+      "expected_route": [
+        "rag"
+      ],
+      "expected_final": "not_found",
+      "note": "a correct 'not found' is NOT a fallback"
+    },
+    {
+      "id": "R10",
+      "kind": "sql_no_data",
+      "question": "What is the total revenue of the Toys category?",
+      "expected_route": [
+        "sql"
+      ],
+      "expected_final": "fallback",
+      "reason": "tool_error",
+      "note": "the category does not exist in the sales table"
+    }
+  ]
+}
